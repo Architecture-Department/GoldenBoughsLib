@@ -1,13 +1,12 @@
 {
-  "itemGroup.goldenboughs_lib": "Example Mod Tab",
-  "block.goldenboughs_lib.example_block": "Example Block",
-  "item.goldenboughs_lib.example_item": "Example Item",
-
-  "goldenboughs_lib.configuration.title": "GoldenBoughsLib Configs",
-  "goldenboughs_lib.configuration.section.goldenboughs_lib.common.toml": "GoldenBoughsLib Configs",
-  "goldenboughs_lib.configuration.section.goldenboughs_lib.common.toml.title": "GoldenBoughsLib Configs",
-  "goldenboughs_lib.configuration.items": "Item List",
-  "goldenboughs_lib.configuration.logDirtBlock": "Log Dirt Block",
-  "goldenboughs_lib.configuration.magicNumberIntroduction": "Magic Number Text",
-  "goldenboughs_lib.configuration.magicNumber": "Magic Number"
+	"itemGroup.goldenboughs_lib": "Example Mod Tab",
+	"block.goldenboughs_lib.example_block": "Example Block",
+	"item.goldenboughs_lib.example_item": "Example Item",
+	"goldenboughs_lib.configuration.title": "GoldenBoughsLib Configs",
+	"goldenboughs_lib.configuration.section.goldenboughs_lib.common.toml": "GoldenBoughsLib Configs",
+	"goldenboughs_lib.configuration.section.goldenboughs_lib.common.toml.title": "GoldenBoughsLib Configs",
+	"goldenboughs_lib.configuration.items": "Item List",
+	"goldenboughs_lib.configuration.logDirtBlock": "Log Dirt Block",
+	"goldenboughs_lib.configuration.magicNumberIntroduction": "Magic Number Text",
+	"goldenboughs_lib.configuration.magicNumber": "Magic Number"
 }
