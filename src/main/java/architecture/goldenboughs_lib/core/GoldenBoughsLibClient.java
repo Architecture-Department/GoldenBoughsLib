@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib;
+package architecture.goldenboughs_lib.core;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
