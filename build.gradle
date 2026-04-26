@@ -5,10 +5,6 @@ plugins {
 	id 'idea'
 }
 
-//tasks.named('wrapper', Wrapper).configure {
-//	distributionType = Wrapper.DistributionType.BIN
-//}
-
 version = mod_version
 group = mod_group_id
 
@@ -62,6 +58,13 @@ neoForge {
 
 		configureEach {
 			systemProperty 'forge.logging.markers', 'REGISTRIES'
+			systemProperty 'forge.logging.console.level', 'debug'
+
+			jvmArguments.addAll([
+							// 忽略无效指令，避免有的人没安装 JetBrain Runtime 无法启动游戏
+							"-XX:+IgnoreUnrecognizedVMOptions",
+							// 启用 JetBrain Runtime 热重载功能
+							"-XX:+AllowEnhancedClassRedefinition"])
 
 			logLevel = org.slf4j.event.Level.DEBUG
 		}
