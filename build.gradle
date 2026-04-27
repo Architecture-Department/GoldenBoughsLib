@@ -16,6 +16,11 @@ sourceSets.main.resources {
 }
 
 repositories {
+	// GeckoLib 仓库 - GeckoLib 动画库（用于实体动画渲染）
+	maven {
+		url = uri("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
+		content { includeGroup("software.bernie.geckolib") }
+	}
 }
 
 base {
@@ -82,6 +87,8 @@ configurations {
 }
 
 dependencies {
+	// geckolib
+	implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

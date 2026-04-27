@@ -1,5 +1,7 @@
 package architecture.goldenboughs_lib.core;
 
+import architecture.goldenboughs_lib.config.LibConfig;
+import architecture.goldenboughs_lib.init.*;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -16,14 +18,22 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 @Mod(GoldenBoughsLib.ID)
-public class GoldenBoughsLib {
+public final class GoldenBoughsLib {
 
-	public static final String ID = "goldenboughs_lib";
+	public static final String ID = "abnormalities";
 	public static final String NAME = "GoldenBoughsLib";
 	public static final Logger LOGGER = LogManager.getLogger(ID);
 
-	public GoldenBoughsLib(IEventBus modEventBus, ModContainer modContainer) {
+	public GoldenBoughsLib(IEventBus eventBus, ModContainer container) {
 		NeoForge.EVENT_BUS.register(this);
+		LibConfig.init(container);
+		LibMobEffects.REGISTRY.register(eventBus);
+		LibAttributes.REGISTRY.register(eventBus);
+		LibAttachments.REGISTRY.register(eventBus);
+		LibParticleTypes.REGISTRY.register(eventBus);
+		LibDataComponents.REGISTRY.register(eventBus);
+		LibArmorMaterials.REGISTRY.register(eventBus);
+		LibAbsorptionShieldsRegistry.init();
 	}
 
 	@SubscribeEvent

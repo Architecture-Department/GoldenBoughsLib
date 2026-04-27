@@ -12,7 +12,7 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 @Mod(value = GoldenBoughsLib.ID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = GoldenBoughsLib.ID, value = Dist.CLIENT)
-public class GoldenBoughsLibClient {
+public final class GoldenBoughsLibClient {
 	public GoldenBoughsLibClient(ModContainer container) {
 		container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
 	}
