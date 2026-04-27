@@ -2,11 +2,32 @@
 	"required": true,
 	"package": "architecture.goldenboughs_lib.mixin",
 	"compatibilityLevel": "JAVA_21",
-	"mixins": [],
+	"mixins": [
+		"client.ModelBuilderMixin",
+		"client.ModelFileAccessorMixin",
+		"world.CombatRulesMixin",
+		"world.DamageContainerMixin",
+		"world.DamageSourceMixin",
+		"world.entity.LivingDamageEvent$PostMixin",
+		"world.entity.LivingEntityAccessorMixin",
+		"world.entity.LivingEntityMixin",
+		"world.entity.PlayerMixin",
+		"world.item.ItemStackMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	},
 	"overwrites": {
 		"requireAnnotations": true
-	}
+	},
+	"mixinextras": {
+		"minVersion": "0.5.0"
+	},
+	"client": [
+		"client.FontMixin",
+		"client.GuiMixin",
+		"client.KeyMappingMixin",
+		"client.world.BlockEntityWithoutLevelRendererMixin",
+		"client.world.ItemRendererMixin"
+	]
 }

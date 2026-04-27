@@ -27,12 +27,12 @@ public final class GoldenBoughsLib {
 	public GoldenBoughsLib(IEventBus eventBus, ModContainer container) {
 		NeoForge.EVENT_BUS.register(this);
 		LibConfig.init(container);
+		LibItems.REGISTRY.register(eventBus);
 		LibMobEffects.REGISTRY.register(eventBus);
 		LibAttributes.REGISTRY.register(eventBus);
 		LibAttachments.REGISTRY.register(eventBus);
 		LibParticleTypes.REGISTRY.register(eventBus);
 		LibDataComponents.REGISTRY.register(eventBus);
-		LibArmorMaterials.REGISTRY.register(eventBus);
 		LibAbsorptionShieldsRegistry.init();
 	}
 

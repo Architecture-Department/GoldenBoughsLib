@@ -1,8 +1,8 @@
 package architecture.goldenboughs_lib.datagen.i18n;
 
-import architecture.goldenboughs_lib.config.ConfigUtil;
+import architecture.goldenboughs_lib.config.LibConfigUtil;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
-import architecture.goldenboughs_lib.datagen.DatagenSoundDefinitionsProvider;
+import architecture.goldenboughs_lib.datagen.LibDatagenSoundDefinitionsProvider;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.data.PackOutput;
@@ -18,20 +18,12 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
 public abstract class DatagenI18n extends LanguageProvider {
 	public DatagenI18n(PackOutput output, String locale) {
 		super(output, GoldenBoughsLib.ID, locale);
-	}
-
-	public static List<LanguageProvider> init(PackOutput output) {
-		List<LanguageProvider> list = new ArrayList<>();
-		list.add(new ZhCn(output));
-		return list;
 	}
 
 	public static @NotNull String getFormattedKey(String... key) {
@@ -45,6 +37,10 @@ public abstract class DatagenI18n extends LanguageProvider {
 
 	@Override
 	protected abstract void addTranslations();
+
+	protected void addPackDescription(String a, String description) {
+		add("pack." + a + "description", description);
+	}
 
 	protected void addItemList(Map<Supplier<? extends Item>, String> map) {
 		map.forEach((holder, zhName) -> add(holder.get(), zhName));
@@ -74,7 +70,7 @@ public abstract class DatagenI18n extends LanguageProvider {
 	}
 
 	public void add(SoundEvent damageType, String name) {
-		add(DatagenSoundDefinitionsProvider.getSubtitle(damageType), name);
+		add(LibDatagenSoundDefinitionsProvider.getSubtitle(damageType), name);
 	}
 
 	protected void addJadePlugin(ResourceLocation pluginId, String name) {
@@ -88,11 +84,11 @@ public abstract class DatagenI18n extends LanguageProvider {
 
 	protected void add(ModConfigSpec.ConfigValue<?> configValue, String value, String tooltipValue) {
 		add(configValue, value);
-		add(ConfigUtil.getTranslation(configValue.getPath().toArray(String[]::new)) + ".tooltip", value);
+		add(LibConfigUtil.getTranslation(configValue.getPath().toArray(String[]::new)) + ".tooltip", value);
 	}
 
 	protected void add(ModConfigSpec.ConfigValue<?> configValue, String value) {
-		add(ConfigUtil.getTranslation(configValue.getPath().toArray(String[]::new)), value);
+		add(LibConfigUtil.getTranslation(configValue.getPath().toArray(String[]::new)), value);
 	}
 
 	protected <T> void add(DataComponentType<T> dataComponentType, String name) {

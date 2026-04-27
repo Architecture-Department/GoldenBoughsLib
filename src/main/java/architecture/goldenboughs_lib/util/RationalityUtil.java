@@ -1,8 +1,8 @@
 package architecture.goldenboughs_lib.util;
 
+import architecture.goldenboughs_lib.core.LibEventHooks;
 import architecture.goldenboughs_lib.init.LibAttachments;
 import architecture.goldenboughs_lib.init.LibAttributes;
-import architecture.imaginarycraft.core.ModEventHooks;
 import net.minecraft.world.entity.player.Player;
 
 import java.util.Map;
@@ -52,7 +52,7 @@ public class RationalityUtil {
 		float oldValue = getValue(player);
 		float newValue = value;
 		if (isEvent) {
-			Map.Entry<Boolean, Float> pre = ModEventHooks.sourceRationalityPre(player, oldValue, value);
+			Map.Entry<Boolean, Float> pre = LibEventHooks.sourceRationalityPre(player, oldValue, value);
 			newValue = pre.getValue();
 			if (pre.getKey()) {
 				return;
@@ -66,7 +66,7 @@ public class RationalityUtil {
 		}
 
 		if (isEvent) {
-			ModEventHooks.sourceRationalityPost(player, oldValue, newValue);
+			LibEventHooks.sourceRationalityPost(player, oldValue, newValue);
 		}
 
 		if (isParticle) {

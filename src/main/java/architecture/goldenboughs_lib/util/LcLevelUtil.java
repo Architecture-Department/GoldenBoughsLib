@@ -1,11 +1,11 @@
 package architecture.goldenboughs_lib.util;
 
 import architecture.goldenboughs_lib.api.LcLevel;
-import architecture.imaginarycraft.core.capability.block.IBlockLcLevel;
-import architecture.imaginarycraft.core.capability.entity.IEntityLcLevel;
-import architecture.imaginarycraft.core.capability.item.IItemLcLevel;
-import architecture.imaginarycraft.core.registry.CapabilityRegistry;
-import architecture.imaginarycraft.init.ModCapabilitys;
+import architecture.goldenboughs_lib.core.capability.block.IBlockLcLevel;
+import architecture.goldenboughs_lib.core.capability.entity.IEntityLcLevel;
+import architecture.goldenboughs_lib.core.capability.item.IItemLcLevel;
+import architecture.goldenboughs_lib.core.registry.CapabilityRegistry;
+import architecture.goldenboughs_lib.init.LibCapabilitys;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -15,6 +15,7 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
@@ -22,11 +23,22 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Supplier;
 
 public final class LcLevelUtil {
 	// 仅内部开发使用
 	@ApiStatus.Internal
 	public static final Map<EntityType<?>, @Nullable LcLevel> ENTITY_TYPE_LEVEL = new HashMap<>();
+
+	public static <T extends Entity> void lcLevel(LcLevel lcLevel, DeferredHolder<EntityType<?>, EntityType<T>> holder) {
+		(switch (lcLevel) {
+			case ZAYIN -> CapabilityRegistry.ENTITY_ZAYIN;
+			case TETH -> CapabilityRegistry.ENTITY_TETH;
+			case HE -> CapabilityRegistry.ENTITY_HE;
+			case WAW -> CapabilityRegistry.ENTITY_WAW;
+			case ALEPH -> CapabilityRegistry.ENTITY_ALEPH;
+		}).add((Supplier<EntityType<?>>) holder);
+	}
 
 	/**
 	 * 如果没注册到能力中返回LcLevel.ZAYIN
@@ -41,7 +53,7 @@ public final class LcLevelUtil {
 
 	@Nullable
 	public static IEntityLcLevel getLevelCapability(Entity entity) {
-		return entity.getCapability(ModCapabilitys.LcLevel.LC_LEVEL_ENTITY);
+		return entity.getCapability(LibCapabilitys.LcLevel.LC_LEVEL_ENTITY);
 	}
 
 	/**
@@ -61,7 +73,7 @@ public final class LcLevelUtil {
 
 	@Nullable
 	public static IItemLcLevel getLevelCapability(ItemStack itemStack) {
-		return itemStack.getCapability(ModCapabilitys.LcLevel.LC_LEVEL_ITEM);
+		return itemStack.getCapability(LibCapabilitys.LcLevel.LC_LEVEL_ITEM);
 	}
 
 	/**
@@ -101,7 +113,7 @@ public final class LcLevelUtil {
 
 	@Nullable
 	public static IBlockLcLevel getLevelCapability(Level level, BlockPos pos, BlockState state, BlockEntity blockEntity) {
-		return level.getCapability(ModCapabilitys.LcLevel.LC_LEVEL_BLOCK, pos, state, blockEntity);
+		return level.getCapability(LibCapabilitys.LcLevel.LC_LEVEL_BLOCK, pos, state, blockEntity);
 	}
 
 	/**

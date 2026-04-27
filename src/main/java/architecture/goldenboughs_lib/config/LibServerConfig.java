@@ -5,7 +5,7 @@ import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 import net.neoforged.neoforge.common.ModConfigSpec.Builder;
 import org.jetbrains.annotations.NotNull;
 
-public final class LibServerConfig extends ConfigUtil {
+public final class LibServerConfig extends LibConfigUtil {
 
 	//理智/精神伤害配置
 	/**

@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api;
 
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
-import architecture.imaginarycraft.init.world.LibAttachments;
+import architecture.goldenboughs_lib.init.LibAttachments;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;

@@ -9,7 +9,7 @@ import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 @EventBusSubscriber(modid = GoldenBoughsLib.ID)
-public final class LibConfig extends ConfigUtil {
+public final class LibConfig extends LibConfigUtil {
 	public static final LibCommonConfig COMMON;
 	public static final ModConfigSpec COMMON_SPEC;
 	public static final LibServerConfig SERVER;
@@ -31,9 +31,9 @@ public final class LibConfig extends ConfigUtil {
 
 	public static void init(ModContainer modContainer) {
 		GoldenBoughsLib.LOGGER.info("Initialize the {} config files", GoldenBoughsLib.NAME);
-		modContainer.registerConfig(net.neoforged.fml.config.ModConfig.Type.COMMON, ModConfig.COMMON_SPEC);
-		modContainer.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, ModConfig.SERVER_SPEC);
-		modContainer.registerConfig(net.neoforged.fml.config.ModConfig.Type.CLIENT, ModConfig.CLIENT_SPEC);
+		modContainer.registerConfig(ModConfig.Type.COMMON, LibConfig.COMMON_SPEC);
+		modContainer.registerConfig(ModConfig.Type.SERVER, LibConfig.SERVER_SPEC);
+		modContainer.registerConfig(ModConfig.Type.CLIENT, LibConfig.CLIENT_SPEC);
 	}
 
 	@SubscribeEvent

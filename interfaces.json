@@ -1,0 +1,23 @@
+{
+	"net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer": [
+		"architecture/goldenboughs_lib/mixed/client/IBlockEntityWithoutLevelRenderer"
+	],
+	"net/minecraft/client/gui/Font": [
+		"architecture/goldenboughs_lib/mixed/client/IFont"
+	],
+	"net/minecraft/client/KeyMapping": [
+		"architecture/goldenboughs_lib/mixed/client/IKeyMapping"
+	],
+	"net/minecraft/world/damagesource/DamageSource": [
+		"architecture/goldenboughs_lib/mixed/IDamageSource"
+	],
+	"net/neoforged/neoforge/event/entity/living/LivingDamageEvent$Post": [
+		"architecture/goldenboughs_lib/mixed/ILivingDamageEvent$Post"
+	],
+	"net/minecraft/world/entity/LivingEntity": [
+		"architecture/goldenboughs_lib/mixed/ILivingEntity"
+	],
+	"net/minecraft/world/entity/player/Player": [
+		"architecture/goldenboughs_lib/mixed/IPlayer"
+	]
+}

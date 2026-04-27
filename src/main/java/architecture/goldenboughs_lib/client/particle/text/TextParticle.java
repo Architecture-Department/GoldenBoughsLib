@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.particle.text;
 
-import architecture.imaginarycraft.client.ModParticleRenderTypes;
+import architecture.goldenboughs_lib.client.LibParticleRenderTypes;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -259,8 +259,8 @@ public class TextParticle extends Particle {
 	@Override
 	public @NotNull ParticleRenderType getRenderType() {
 		if (this.isThrough) {
-			return ModParticleRenderTypes.TEXT_PARTICLE_THROUGH;
+			return LibParticleRenderTypes.TEXT_PARTICLE_THROUGH;
 		}
-		return ModParticleRenderTypes.TEXT_PARTICLE;
+		return LibParticleRenderTypes.TEXT_PARTICLE;
 	}
 }

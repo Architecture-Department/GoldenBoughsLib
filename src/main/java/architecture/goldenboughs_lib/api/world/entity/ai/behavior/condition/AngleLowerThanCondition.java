@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.entity.ai.behavior.condition;
 
-import architecture.imaginarycraft.util.EntityUtil;
+import architecture.goldenboughs_lib.util.EntityUtil;
 import net.minecraft.world.entity.Mob;
 
 /**

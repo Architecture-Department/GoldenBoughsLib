@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.item;
 
-import architecture.imaginarycraft.util.ItemBuilderUtil;
+import architecture.goldenboughs_lib.util.ItemBuilderUtil;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;

@@ -1,12 +1,12 @@
 package architecture.goldenboughs_lib.client.particle;
 
 import architecture.goldenboughs_lib.api.LcDamageType;
+import architecture.goldenboughs_lib.client.LibParticleRenderTypes;
 import architecture.goldenboughs_lib.init.LibParticleTypes;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.*;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.Holder;
@@ -54,7 +54,7 @@ public class LcDamageIconParticle extends TextureSheetParticle {
 
 	@Override
 	public @NotNull ParticleRenderType getRenderType() {
-		return ModParticleRenderTypes.LOBOTOMY_CORPORATION_DAMAGE_ICON_PARTICLE;
+		return LibParticleRenderTypes.LOBOTOMY_CORPORATION_DAMAGE_ICON_PARTICLE;
 	}
 
 	public enum Type {

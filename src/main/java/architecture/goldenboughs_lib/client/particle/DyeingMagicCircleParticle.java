@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.client.particle;
 
+import architecture.goldenboughs_lib.client.LibParticleRenderTypes;
 import architecture.goldenboughs_lib.init.LibParticleTypes;
-import architecture.imaginarycraft.client.ModParticleRenderTypes;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -9,7 +9,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.*;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.particles.ParticleOptions;
@@ -89,7 +88,7 @@ public class DyeingMagicCircleParticle extends TextureSheetParticle {
 
 	@Override
 	public @NotNull ParticleRenderType getRenderType() {
-		return ModParticleRenderTypes.MAGIC_CIRCLE_PARTICLE;
+		return LibParticleRenderTypes.MAGIC_CIRCLE_PARTICLE;
 	}
 
 	public static class Builder {

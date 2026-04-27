@@ -1,8 +1,8 @@
 package architecture.goldenboughs_lib.api.virtue;
 
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
-import architecture.imaginarycraft.init.world.LibAttachments;
-import architecture.imaginarycraft.init.world.LibAttributes;
+import architecture.goldenboughs_lib.init.LibAttachments;
+import architecture.goldenboughs_lib.init.LibAttributes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.RegistryFriendlyByteBuf;

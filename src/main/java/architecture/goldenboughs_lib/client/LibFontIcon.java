@@ -69,7 +69,7 @@ public enum LibFontIcon implements StringRepresentable {
 
 	public MutableComponent getComponent() {
 		return CACHE.computeIfAbsent(this.charName, (chars) -> Component.literal(chars)
-			.setStyle(Style.EMPTY.withFont(GoldenBoughsLib.modRl("imaginarycraft_icon"))));
+			.setStyle(Style.EMPTY.withFont(GoldenBoughsLib.modRl("goldenboughs_lib_icon"))));
 	}
 
 	@Override

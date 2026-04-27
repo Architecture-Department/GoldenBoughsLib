@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.virtue;
 
-import architecture.imaginarycraft.init.world.LibAttributes;
+import architecture.goldenboughs_lib.init.LibAttributes;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.Holder;

@@ -2,6 +2,7 @@ package architecture.goldenboughs_lib.api;
 
 import architecture.goldenboughs_lib.client.LibFontIcon;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.eventexecute.LcDamageEventExecutes;
 import architecture.goldenboughs_lib.init.LibAttributes;
 import architecture.goldenboughs_lib.init.LibDamageTypes;
 import architecture.goldenboughs_lib.init.tag.LibDamageTypeTags;

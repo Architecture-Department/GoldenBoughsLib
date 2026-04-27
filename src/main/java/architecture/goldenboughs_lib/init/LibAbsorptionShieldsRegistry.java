@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.init;
 
-import architecture.imaginarycraft.config.ModConfig;
+import architecture.goldenboughs_lib.config.LibConfig;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -36,28 +36,28 @@ public final class LibAbsorptionShieldsRegistry {
 			LibMobEffects.PHYSIC_ABSORPTION_SHIELD,
 			LibDamageTypes.PHYSICS.location(),
 			LibAttachments.PHYSIC_DAMAGE_ABSORPTION_AMOUNT,
-			(amp, old) -> (float) ((amp + 1) * ModConfig.SERVER.shieldAdditionalValuePerLevel.get()),
+			(amp, old) -> (float) ((amp + 1) * LibConfig.SERVER.shieldAdditionalValuePerLevel.get()),
 			null
 		);
 		register(
 			LibMobEffects.SPIRIT_ABSORPTION_SHIELD,
 			LibDamageTypes.SPIRIT.location(),
 			LibAttachments.SPIRIT_DAMAGE_ABSORPTION_AMOUNT,
-			(amp, old) -> (float) ((amp + 1) * ModConfig.SERVER.shieldAdditionalValuePerLevel.get()),
+			(amp, old) -> (float) ((amp + 1) * LibConfig.SERVER.shieldAdditionalValuePerLevel.get()),
 			null
 		);
 		register(
 			LibMobEffects.EROSION_ABSORPTION_SHIELD,
 			LibDamageTypes.EROSION.location(),
 			LibAttachments.EROSION_DAMAGE_ABSORPTION_AMOUNT,
-			(amp, old) -> (float) ((amp + 1) * ModConfig.SERVER.shieldAdditionalValuePerLevel.get()),
+			(amp, old) -> (float) ((amp + 1) * LibConfig.SERVER.shieldAdditionalValuePerLevel.get()),
 			null
 		);
 		register(
 			LibMobEffects.SOUL_ABSORPTION_SHIELD,
 			LibDamageTypes.THE_SOUL.location(),
 			LibAttachments.SOUL_DAMAGE_ABSORPTION_AMOUNT,
-			(amp, old) -> (float) ((amp + 1) * ModConfig.SERVER.shieldAdditionalValuePerLevel.get()),
+			(amp, old) -> (float) ((amp + 1) * LibConfig.SERVER.shieldAdditionalValuePerLevel.get()),
 			null
 		);
 	}

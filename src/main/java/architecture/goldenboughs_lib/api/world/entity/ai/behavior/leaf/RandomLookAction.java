@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api.world.entity.ai.behavior.leaf;
 
 import architecture.goldenboughs_lib.api.world.entity.ai.behavior.BTNode;
-import architecture.imaginarycraft.util.EntityUtil;
+import architecture.goldenboughs_lib.util.EntityUtil;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.phys.Vec3;

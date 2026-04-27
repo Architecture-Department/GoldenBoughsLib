@@ -1,9 +1,9 @@
 package architecture.goldenboughs_lib.util;
 
 import architecture.goldenboughs_lib.api.LcDamageType;
+import architecture.goldenboughs_lib.core.capability.item.IItemLcDamageType;
+import architecture.goldenboughs_lib.init.LibCapabilitys;
 import architecture.goldenboughs_lib.init.LibDataComponents;
-import architecture.imaginarycraft.core.capability.item.IItemLcDamageType;
-import architecture.imaginarycraft.init.ModCapabilitys;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +36,7 @@ public final class LcDamageTypeUtil {
 
 	@Nullable
 	public static IItemLcDamageType getLcDamageTypeCapability(ItemStack itemStack) {
-		return itemStack.getCapability(ModCapabilitys.LC_DAMAGE_TYPE_ITEM);
+		return itemStack.getCapability(LibCapabilitys.LC_DAMAGE_TYPE_ITEM);
 	}
 
 	@NotNull

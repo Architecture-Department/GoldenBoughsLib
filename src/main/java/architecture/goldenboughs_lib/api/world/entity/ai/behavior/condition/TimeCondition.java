@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.entity.ai.behavior.condition;
 
-import architecture.imaginarycraft.util.DateUtils;
+import architecture.goldenboughs_lib.util.DateUtils;
 import net.minecraft.world.level.Level;
 
 /**

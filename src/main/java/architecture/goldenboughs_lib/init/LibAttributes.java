@@ -1,10 +1,10 @@
 package architecture.goldenboughs_lib.init;
 
+import architecture.goldenboughs_lib.common.attribute.BasicAttribute;
+import architecture.goldenboughs_lib.common.attribute.MaxAttribute;
+import architecture.goldenboughs_lib.common.attribute.MinAttribute;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
-import architecture.imaginarycraft.common.world.attribute.BasicAttribute;
-import architecture.imaginarycraft.common.world.attribute.MaxAttribute;
-import architecture.imaginarycraft.common.world.attribute.MinAttribute;
-import architecture.imaginarycraft.datagen.i18n.ZhCn;
+import architecture.goldenboughs_lib.datagen.i18n.LibZhCn;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
@@ -174,7 +174,7 @@ public final class LibAttributes {
 		final T attribute
 	) {
 		DeferredHolder<Attribute, T> register = LibAttributes.REGISTRY.register(name, () -> (T) function.apply(attribute));
-		ZhCn.addI18nAttributeText(zhName, register);
+		LibZhCn.addI18nAttributeText(zhName, register);
 		return register;
 	}
 

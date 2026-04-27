@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 /**
  * 伤害来源
  * <p>
- * 关于四色伤害的使用推荐直接使用{@link architecture.imaginarycraft.mixed.IDamageSource} 中的方法
+ * 关于四色伤害的使用推荐直接使用{@link architecture.goldenboughs_lib.mixed.IDamageSource} 中的方法
  */
 public class LibDamageSources extends DamageSources {
 	private final DamageSource physics;

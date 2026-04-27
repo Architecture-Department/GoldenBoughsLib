@@ -1,11 +1,11 @@
 package architecture.goldenboughs_lib.init;
 
+import architecture.goldenboughs_lib.client.particle.DyeingMagicCircleParticle;
+import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle;
+import architecture.goldenboughs_lib.client.particle.magicbullet.MagicBulletMagicCircleParticle;
+import architecture.goldenboughs_lib.client.particle.text.DamageTextParticle;
+import architecture.goldenboughs_lib.client.particle.text.TextParticleOptions;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
-import architecture.imaginarycraft.client.particle.DyeingMagicCircleParticle;
-import architecture.imaginarycraft.client.particle.LcDamageIconParticle;
-import architecture.imaginarycraft.client.particle.magicbullet.MagicBulletMagicCircleParticle;
-import architecture.imaginarycraft.client.particle.text.DamageTextParticle;
-import architecture.imaginarycraft.client.particle.text.TextParticleOptions;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;

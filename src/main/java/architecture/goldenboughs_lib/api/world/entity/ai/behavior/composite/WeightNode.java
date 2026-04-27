@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.api.world.entity.ai.behavior.composite;
 
 
 import architecture.goldenboughs_lib.api.world.entity.ai.behavior.BTNode;
-import architecture.imaginarycraft.util.EntityUtil;
+import architecture.goldenboughs_lib.util.EntityUtil;
 
 import java.util.ArrayList;
 import java.util.List;

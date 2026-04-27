@@ -24,14 +24,14 @@ import java.util.function.Predicate;
  * 穿透工具类
  * 为弹射物提供穿墙效果和射线检测穿透功能
  *
- * @author ImaginaryCraft
+ * @author GoldenBoughsLib
  */
 public final class PiercingUtil {
 
 	/**
 	 * 穿透标签名称
 	 */
-	public static final String PIERCING_TAG = "imaginarycraft:piercing";
+	public static final String PIERCING_TAG = "goldenboughs_lib:piercing";
 
 	//#region 穿墙效果配置
 	public static final String PIERCING_CONFIG_KEY = "PiercingConfig";

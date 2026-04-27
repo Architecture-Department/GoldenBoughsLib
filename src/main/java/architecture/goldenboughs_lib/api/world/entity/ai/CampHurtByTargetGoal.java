@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api.world.entity.ai;
 
 import architecture.goldenboughs_lib.api.LcLevel;
-import architecture.imaginarycraft.util.LcLevelUtil;
+import architecture.goldenboughs_lib.util.LcLevelUtil;
 import net.minecraft.world.entity.Mob;
 
 import java.util.function.Predicate;
