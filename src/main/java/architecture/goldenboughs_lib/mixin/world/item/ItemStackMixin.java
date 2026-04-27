@@ -58,7 +58,7 @@ public abstract class ItemStackMixin implements DataComponentHolder, MutableData
 	@Expression("this.has(HIDE_ADDITIONAL_TOOLTIP)")
 	@ModifyExpressionValue(method = "getTooltipLines", at = @At("MIXINEXTRAS:EXPRESSION"))
 	private boolean goldenboughs_lib$addTooltip(
-		boolean original, @Local(argsOnly = true) Consumer<Component> instance,
+		boolean original, @Local Consumer<Component> instance,
 		@Local(argsOnly = true) Item.TooltipContext tooltipContext,
 		@Local(argsOnly = true) TooltipFlag tooltipFlag
 	) {

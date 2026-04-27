@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 @Mod(GoldenBoughsLib.ID)
 public final class GoldenBoughsLib {
 
-	public static final String ID = "abnormalities";
+	public static final String ID = "goldenboughs_lib";
 	public static final String NAME = "GoldenBoughsLib";
 	public static final Logger LOGGER = LogManager.getLogger(ID);
 
