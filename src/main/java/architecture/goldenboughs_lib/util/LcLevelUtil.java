@@ -37,7 +37,7 @@ public final class LcLevelUtil {
 			case HE -> CapabilityRegistry.ENTITY_HE;
 			case WAW -> CapabilityRegistry.ENTITY_WAW;
 			case ALEPH -> CapabilityRegistry.ENTITY_ALEPH;
-		}).add((Supplier<EntityType<?>>) holder);
+		}).add((Supplier<EntityType<?>>) (Supplier) holder);
 	}
 
 	/**
