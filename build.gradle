@@ -119,7 +119,6 @@ configurations {
 
 dependencies {
 	implementation "net.neoforged:neoforge:${neo_version}"
-	implementation "dev.latvian.mods:rhino-neoforge:${rhino_version}"
 	localRuntime "org.javassist:javassist:3.30.2-GA"
 
 	// MixinSquared
@@ -128,11 +127,6 @@ dependencies {
 
 	// geckolib
 	implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
-
-	// kubejs
-	api "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
-	interfaceInjectionData "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
-	localRuntime "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
 
 	// Jade
 	implementation "maven.modrinth:jade:${jade_version}+neoforge"

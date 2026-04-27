@@ -1,1 +1,0 @@
-architecture.goldenboughs_lib.linkage.kubejs.ModKubejsPlgin goldenboughs_lib
