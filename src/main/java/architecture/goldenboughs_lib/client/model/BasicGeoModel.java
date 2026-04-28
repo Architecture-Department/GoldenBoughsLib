@@ -17,33 +17,21 @@ public abstract class BasicGeoModel<T extends GeoAnimatable> extends GeoModel<T>
 	}
 
 	public BasicGeoModel(ResourceLocation modelPath, ResourceLocation texturePath, ResourceLocation animationsPath) {
-		this.modelPath = modelPath;
-		this.texturePath = texturePath;
-		this.animationsPath = animationsPath;
-	}
-
-	public BasicGeoModel(String name) {
-		this.modelPath = modelPath(name);
-		this.texturePath = texturePath(name);
-		this.animationsPath = animationsPath(name);
-	}
-
-	public static ResourceLocation modelPath(String path) {
-		return GoldenBoughsLib.modRl("geo/" + path + ".geo.json");
-	}
-
-	public static ResourceLocation texturePath(String path) {
-		return GoldenBoughsLib.modRl("textures/geo/" + path + ".png");
-	}
-
-	public static ResourceLocation animationsPath(String path) {
-		return GoldenBoughsLib.modRl("animations/" + path + ".animation.json");
-	}
-
-	public BasicGeoModel(String modelPath, String textureName, String animationsName) {
 		this.modelPath = modelPath(modelPath);
-		this.texturePath = texturePath(textureName);
-		this.animationsPath = animationsPath(animationsName);
+		this.texturePath = texturePath(texturePath);
+		this.animationsPath = animationsPath(animationsPath);
+	}
+
+	public static ResourceLocation modelPath(ResourceLocation path) {
+		return path.withPrefix("geo/").withSuffix(".geo.json");
+	}
+
+	public static ResourceLocation texturePath(ResourceLocation path) {
+		return path.withPrefix("textures/geo/").withSuffix(".png");
+	}
+
+	public static ResourceLocation animationsPath(ResourceLocation path) {
+		return path.withPrefix("animations/").withSuffix(".animation.json");
 	}
 
 	@Override
@@ -53,7 +41,7 @@ public abstract class BasicGeoModel<T extends GeoAnimatable> extends GeoModel<T>
 
 	@NotNull
 	protected ResourceLocation getDefaultModelResource() {
-		return modelPath("item/default");
+		return modelPath(GoldenBoughsLib.modRl("item/default"));
 	}
 
 	@Override
