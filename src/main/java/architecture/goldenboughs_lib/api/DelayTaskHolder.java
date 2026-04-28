@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+// TODO 提供饰品栏移除
 public class DelayTaskHolder {
 	private final IAttachmentHolder attachmentHolder;
 	private final Map<ResourceLocation, ITask> runList = new LinkedHashMap<>();
