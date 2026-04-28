@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.core.capability.item;
+package architecture.goldenboughs_lib.api.capability.item;
 
 import architecture.goldenboughs_lib.api.LcLevel;
 import net.minecraft.world.item.ItemStack;

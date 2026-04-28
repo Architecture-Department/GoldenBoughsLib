@@ -2,7 +2,7 @@
 	"providers": [
 		{
 			"type": "bitmap",
-			"file": "imaginarycraft:particle/damage_type/physics.png",
+			"file": "goldenboughs_lib:particle/damage_type/physics.png",
 			"ascent": 12,
 			"height": 16,
 			"chars": [
@@ -11,7 +11,7 @@
 		},
 		{
 			"type": "bitmap",
-			"file": "imaginarycraft:gui/sprites/physics8x.png",
+			"file": "goldenboughs_lib:gui/sprites/physics8x.png",
 			"ascent": 8,
 			"height": 8,
 			"chars": [

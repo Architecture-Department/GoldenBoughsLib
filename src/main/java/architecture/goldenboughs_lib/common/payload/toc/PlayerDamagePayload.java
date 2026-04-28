@@ -5,7 +5,6 @@ import architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter.LcDamageS
 import architecture.goldenboughs_lib.common.payload.api.ToClientPayload;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
 import architecture.goldenboughs_lib.util.PayloadUtil;
-import com.mojang.datafixers.types.Type;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;

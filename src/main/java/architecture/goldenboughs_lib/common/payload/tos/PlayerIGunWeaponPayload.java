@@ -4,7 +4,6 @@ import architecture.goldenboughs_lib.api.world.item.IGunWeapon;
 import architecture.goldenboughs_lib.common.payload.api.ToServerPayload;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
 import architecture.goldenboughs_lib.util.PayloadUtil;
-import com.mojang.datafixers.types.Type;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;

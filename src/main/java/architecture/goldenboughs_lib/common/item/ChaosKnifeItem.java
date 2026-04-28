@@ -1,9 +1,9 @@
 package architecture.goldenboughs_lib.common.item;
 
 import architecture.goldenboughs_lib.api.LcDamageType;
+import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType;
 import architecture.goldenboughs_lib.api.world.item.IMeleeEgoWeaponItem;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
-import architecture.goldenboughs_lib.core.capability.item.IItemLcDamageType;
 import architecture.goldenboughs_lib.init.LibDataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;

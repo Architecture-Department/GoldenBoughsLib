@@ -2,21 +2,15 @@ package architecture.goldenboughs_lib.client.gui.hudlayers.chop_flavor;
 
 
 import architecture.goldenboughs_lib.client.gui.hudlayers.BasicHudLayer;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
 import architecture.goldenboughs_lib.event.ChopFlavorLayerEvent;
-import architecture.goldenboughs_lib.util.ConditionalProviderFactory;
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.fml.ModLoader;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.LinkedHashMap;
 import java.util.function.Function;
-import java.util.function.Predicate;
 
 // TODO 等新系统
 public class ChopFlavorLayer extends BasicHudLayer {

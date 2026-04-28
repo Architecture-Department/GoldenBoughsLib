@@ -1,11 +1,11 @@
 package architecture.goldenboughs_lib.init;
 
+import architecture.goldenboughs_lib.api.capability.block.IBlockLcLevel;
+import architecture.goldenboughs_lib.api.capability.entity.IEntityLcLevel;
+import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType;
+import architecture.goldenboughs_lib.api.capability.item.IItemLcLevel;
+import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
-import architecture.goldenboughs_lib.core.capability.block.IBlockLcLevel;
-import architecture.goldenboughs_lib.core.capability.entity.IEntityLcLevel;
-import architecture.goldenboughs_lib.core.capability.item.IItemLcDamageType;
-import architecture.goldenboughs_lib.core.capability.item.IItemLcLevel;
-import architecture.goldenboughs_lib.core.capability.item.IItemUsageReq;
 import net.neoforged.neoforge.capabilities.BlockCapability;
 import net.neoforged.neoforge.capabilities.EntityCapability;
 import net.neoforged.neoforge.capabilities.ItemCapability;

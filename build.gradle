@@ -142,12 +142,6 @@ dependencies {
 	compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
 	compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
 	localRuntime "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
-
-	// Kotlin
-	implementation "thedarkcolour:kotlinforforge-neoforge:${kff_version}"
-	compileOnly "org.jetbrains.kotlin:kotlin-stdlib"
-	compileOnly "org.jetbrains.kotlin:kotlin-reflect"
-	compileOnly "org.jetbrains.kotlinx:kotlinx-coroutines-core"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

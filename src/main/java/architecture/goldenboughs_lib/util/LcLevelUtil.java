@@ -1,9 +1,9 @@
 package architecture.goldenboughs_lib.util;
 
 import architecture.goldenboughs_lib.api.LcLevel;
-import architecture.goldenboughs_lib.core.capability.block.IBlockLcLevel;
-import architecture.goldenboughs_lib.core.capability.entity.IEntityLcLevel;
-import architecture.goldenboughs_lib.core.capability.item.IItemLcLevel;
+import architecture.goldenboughs_lib.api.capability.block.IBlockLcLevel;
+import architecture.goldenboughs_lib.api.capability.entity.IEntityLcLevel;
+import architecture.goldenboughs_lib.api.capability.item.IItemLcLevel;
 import architecture.goldenboughs_lib.core.registry.CapabilityRegistry;
 import architecture.goldenboughs_lib.init.LibCapabilitys;
 import net.minecraft.core.BlockPos;

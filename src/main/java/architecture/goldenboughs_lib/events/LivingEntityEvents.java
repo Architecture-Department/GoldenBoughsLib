@@ -250,6 +250,7 @@ public final class LivingEntityEvents {
 		ParticleUtil.createDamageTextParticles(entity, damageType, lcDamageType, newDamage, false, false);
 
 		// TODO 速度快的子弹无法正常显示位置
+
 //    if (source.getDirectEntity() instanceof Projectile projectile) {
 //      Vec3 position = source.getSourcePosition();
 //      double x;

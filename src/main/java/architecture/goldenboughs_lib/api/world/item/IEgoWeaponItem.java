@@ -1,8 +1,8 @@
 package architecture.goldenboughs_lib.api.world.item;
 
 import architecture.goldenboughs_lib.api.LcDamageType;
-import architecture.goldenboughs_lib.core.capability.item.IItemLcDamageType;
-import architecture.goldenboughs_lib.core.capability.item.IItemUsageReq;
+import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType;
+import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import org.jetbrains.annotations.Nullable;

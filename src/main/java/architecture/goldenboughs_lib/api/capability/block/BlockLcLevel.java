@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.core.capability.block;
+package architecture.goldenboughs_lib.api.capability.block;
 
 import architecture.goldenboughs_lib.api.LcLevel;
 import net.minecraft.core.BlockPos;

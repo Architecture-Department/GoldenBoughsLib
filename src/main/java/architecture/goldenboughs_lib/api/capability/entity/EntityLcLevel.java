@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.core.capability.entity;
+package architecture.goldenboughs_lib.api.capability.entity;
 
 import architecture.goldenboughs_lib.api.LcLevel;
 import org.jetbrains.annotations.NotNull;

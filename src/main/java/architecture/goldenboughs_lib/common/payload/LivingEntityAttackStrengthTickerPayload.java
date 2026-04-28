@@ -3,7 +3,6 @@ package architecture.goldenboughs_lib.common.payload;
 import architecture.goldenboughs_lib.common.payload.api.ToServerAndClientPayload;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
 import architecture.goldenboughs_lib.mixin.world.entity.LivingEntityAccessorMixin;
-import com.mojang.datafixers.types.Type;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.network.codec.ByteBufCodecs;

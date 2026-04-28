@@ -1,15 +1,15 @@
 package architecture.goldenboughs_lib.core.registry;
 
 import architecture.goldenboughs_lib.api.LcLevel;
+import architecture.goldenboughs_lib.api.capability.block.BlockLcLevel;
+import architecture.goldenboughs_lib.api.capability.block.IBlockLcLevel;
+import architecture.goldenboughs_lib.api.capability.entity.EntityLcLevel;
+import architecture.goldenboughs_lib.api.capability.entity.IEntityLcLevel;
+import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType;
+import architecture.goldenboughs_lib.api.capability.item.IItemLcLevel;
+import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq;
+import architecture.goldenboughs_lib.api.capability.item.ItemLcLevel;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
-import architecture.goldenboughs_lib.core.capability.block.BlockLcLevel;
-import architecture.goldenboughs_lib.core.capability.block.IBlockLcLevel;
-import architecture.goldenboughs_lib.core.capability.entity.EntityLcLevel;
-import architecture.goldenboughs_lib.core.capability.entity.IEntityLcLevel;
-import architecture.goldenboughs_lib.core.capability.item.IItemLcDamageType;
-import architecture.goldenboughs_lib.core.capability.item.IItemLcLevel;
-import architecture.goldenboughs_lib.core.capability.item.IItemUsageReq;
-import architecture.goldenboughs_lib.core.capability.item.ItemLcLevel;
 import architecture.goldenboughs_lib.init.LibCapabilitys;
 import architecture.goldenboughs_lib.init.LibItems;
 import architecture.goldenboughs_lib.util.LcLevelUtil;

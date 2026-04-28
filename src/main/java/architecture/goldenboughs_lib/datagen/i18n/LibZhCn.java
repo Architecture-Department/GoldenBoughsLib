@@ -121,7 +121,7 @@ public final class LibZhCn extends DatagenI18n {
 		//endregion
 
 		//region tag标签
-		add(LibItemTags.EGO, "E.G.O");
+		add(LibItemTags.EGO, "E.G.O.");
 		//endregion
 
 		//region tooltip
