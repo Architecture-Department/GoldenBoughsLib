@@ -129,8 +129,8 @@ dependencies {
 	localRuntime "org.javassist:javassist:3.30.2-GA"
 
 	// MixinSquared
-	compileOnly(jarJar(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:${mixinsquared_version}")))
-	implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:[${mixinsquared_version},)"))
+	compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:${mixinsquared_version}"))
+	implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:${mixinsquared_version}"))
 
 	// geckolib
 	implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
