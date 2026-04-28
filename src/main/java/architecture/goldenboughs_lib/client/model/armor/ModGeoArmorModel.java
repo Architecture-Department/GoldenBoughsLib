@@ -19,6 +19,6 @@ public class ModGeoArmorModel<T extends GeoAnimatable> extends BasicGeoModel<T> 
 	@NotNull
 	@Override
 	protected ResourceLocation getDefaultModelResource() {
-		return modelPath(GoldenBoughsLib.modRl("armor/default"));
+		return model(GoldenBoughsLib.modRl("armor/default"));
 	}
 }

@@ -22,8 +22,8 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public abstract class DatagenI18n extends LanguageProvider {
-	public DatagenI18n(PackOutput output, String locale) {
-		super(output, GoldenBoughsLib.ID, locale);
+	public DatagenI18n(PackOutput output, String modid, String locale) {
+		super(output, modid, locale);
 	}
 
 	public static @NotNull String getFormattedKey(String... key) {

@@ -29,7 +29,7 @@ public final class LibZhCn extends DatagenI18n {
 	private static final Map<String, String> MAP = new HashMap<>();
 
 	public LibZhCn(final PackOutput output) {
-		super(output, "zh_cn");
+		super(output, GoldenBoughsLib.ID, "zh_cn");
 	}
 
 	public static void addI18nText(String zhCn, String key) {

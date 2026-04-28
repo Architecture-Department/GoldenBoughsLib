@@ -17,12 +17,12 @@ public abstract class BasicGeoModel<T extends GeoAnimatable> extends GeoModel<T>
 	}
 
 	public BasicGeoModel(ResourceLocation modelPath, ResourceLocation texturePath, ResourceLocation animationsPath) {
-		this.modelPath = modelPath(modelPath);
+		this.modelPath = model(modelPath);
 		this.texturePath = texturePath(texturePath);
 		this.animationsPath = animationsPath(animationsPath);
 	}
 
-	public static ResourceLocation modelPath(ResourceLocation path) {
+	public static ResourceLocation model(ResourceLocation path) {
 		return path.withPrefix("geo/").withSuffix(".geo.json");
 	}
 
@@ -41,7 +41,7 @@ public abstract class BasicGeoModel<T extends GeoAnimatable> extends GeoModel<T>
 
 	@NotNull
 	protected ResourceLocation getDefaultModelResource() {
-		return modelPath(GoldenBoughsLib.modRl("item/default"));
+		return model(GoldenBoughsLib.modRl("item/default"));
 	}
 
 	@Override
