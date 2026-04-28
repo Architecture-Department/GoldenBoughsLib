@@ -1,8 +1,6 @@
 package architecture.goldenboughs_lib.init;
 
-import architecture.goldenboughs_lib.client.particle.DyeingMagicCircleParticle;
 import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle;
-import architecture.goldenboughs_lib.client.particle.magicbullet.MagicBulletMagicCircleParticle;
 import architecture.goldenboughs_lib.client.particle.text.DamageTextParticle;
 import architecture.goldenboughs_lib.client.particle.text.TextParticleOptions;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
@@ -32,17 +30,6 @@ public final class LibParticleTypes {
 
 	public static final Supplier<ParticleType<LcDamageIconParticle.Options>> LC_DAMAGE_ICON = register(
 		"lobotomycorporation_damage_icon", true, LcDamageIconParticle.Options.CODEC, LcDamageIconParticle.Options.STREAM_CODEC);
-
-	public static final Supplier<ParticleType<DyeingMagicCircleParticle.Options>> DYEING_MAGIC_CIRCLE = register(
-		"dyeing_magic_circle", true, DyeingMagicCircleParticle.Options.CODEC, DyeingMagicCircleParticle.Options.STREAM_CODEC);
-
-	public static final Supplier<ParticleType<MagicBulletMagicCircleParticle.Options>> MAGIC_BULLET_MAGIC_CIRCLE = register(
-		"magic_bullet_magic_circle", true, MagicBulletMagicCircleParticle.Options.CODEC, MagicBulletMagicCircleParticle.Options.STREAM_CODEC);
-
-	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SOLEMN_LAMENT_BUTTERFLY_BLACK = registerSimpleParticle(
-		"solemn_lament_butterfly_black", true);
-	public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SOLEMN_LAMENT_BUTTERFLY_WHITE = registerSimpleParticle(
-		"solemn_lament_butterfly_white", true);
 
 	private static <T extends ParticleOptions> @NotNull DeferredHolder<ParticleType<?>, ParticleType<T>> register(
 		String id,
