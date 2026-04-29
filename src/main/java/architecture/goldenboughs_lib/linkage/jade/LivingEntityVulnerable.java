@@ -23,6 +23,18 @@ public enum LivingEntityVulnerable implements IEntityComponentProvider {
 	public static final String EROSION_KEY = GoldenBoughsLib.modRlText("entity.attribute_description.erosion");
 	public static final String THE_SOUL_KEY = GoldenBoughsLib.modRlText("entity.attribute_description.the_soul");
 
+	private static void add(ITooltip iTooltip, String key, String spriteRl, LcDamageType damageType, LivingEntity entity, IElementHelper elements) {
+		iTooltip.add(elements.sprite(GoldenBoughsLib.modRl(spriteRl), 8, 8));
+		Holder<Attribute> vulnerable = damageType.getVulnerable();
+		double text = hasAttribute(entity, vulnerable) ? entity.getAttributeValue(vulnerable) : vulnerable.value().getDefaultValue();
+		int colour = damageType.getColourValue();
+		iTooltip.append(Component.translatable(key).append(String.format(" %.2f", text)).withColor(colour));
+	}
+
+	private static boolean hasAttribute(final LivingEntity entity, Holder<Attribute> attribute) {
+		return entity.getAttributes().hasAttribute(attribute);
+	}
+
 	@Override
 	public void appendTooltip(ITooltip iTooltip, EntityAccessor entityAccessor, IPluginConfig iPluginConfig) {
 		if (!(entityAccessor.getEntity() instanceof LivingEntity entity)) {
@@ -34,18 +46,6 @@ public enum LivingEntityVulnerable implements IEntityComponentProvider {
 		add(iTooltip, SPIRIT_KEY, "spirit8x", LcDamageType.SPIRIT, entity, elements);
 		add(iTooltip, EROSION_KEY, "erosion8x", LcDamageType.EROSION, entity, elements);
 		add(iTooltip, THE_SOUL_KEY, "the_soul8x", LcDamageType.THE_SOUL, entity, elements);
-	}
-
-	private static void add(ITooltip iTooltip, String key, String spriteRl, LcDamageType damageType, LivingEntity entity, IElementHelper elements) {
-		iTooltip.add(elements.sprite(GoldenBoughsLib.modRl(spriteRl), 8, 8));
-		Holder<Attribute> vulnerable = damageType.getVulnerable();
-		double text = hasAttribute(entity, vulnerable) ? entity.getAttributeValue(vulnerable) : vulnerable.value().getDefaultValue();
-		int colour = damageType.getColourValue();
-		iTooltip.append(Component.translatable(key).append(String.format(" %.2f", text)).withColor(colour));
-	}
-
-	private static boolean hasAttribute(final LivingEntity entity, Holder<Attribute> attribute) {
-		return entity.getAttributes().hasAttribute(attribute);
 	}
 
 	@Override

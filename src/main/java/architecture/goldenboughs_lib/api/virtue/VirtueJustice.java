@@ -76,6 +76,30 @@ public final class VirtueJustice extends AbstractVirtue {
 		setFlightSpeedBonus(newPoints);
 	}
 
+	@Override
+	public void updateTrigger() {
+	}
+
+	public double getFlightSpeedBonus() {
+		return flightSpeedBonus;
+	}
+
+	public void setFlightSpeedBonus(double flightSpeedBonus) {
+		if (getFlightSpeedBonus() == flightSpeedBonus) {
+			return;
+		}
+		updateFlightSpeedBonus(flightSpeedBonus);
+		this.flightSpeedBonus = flightSpeedBonus;
+		updateTrigger();
+		syncData();
+	}
+
+	// TODO 重构飞行速度加成
+	private void updateFlightSpeedBonus(double newFlightSpeedBonus) {
+//    var abilities = getPlayer().getAbilities();
+//    abilities.setFlyingSpeed(abilities.getFlyingSpeed() + (float) (newFlightSpeedBonus * JUSTICE_FLIGHT_SPEED));
+	}
+
 	public static class Serialize extends AbstractSerialize<VirtueJustice> {
 
 		@Override
@@ -116,31 +140,6 @@ public final class VirtueJustice extends AbstractVirtue {
 			newAttachment.flightSpeedBonus = buf.readDouble();
 			return newAttachment;
 		}
-	}
-
-	@Override
-	public void updateTrigger() {
-	}
-
-
-	public double getFlightSpeedBonus() {
-		return flightSpeedBonus;
-	}
-
-	public void setFlightSpeedBonus(double flightSpeedBonus) {
-		if (getFlightSpeedBonus() == flightSpeedBonus) {
-			return;
-		}
-		updateFlightSpeedBonus(flightSpeedBonus);
-		this.flightSpeedBonus = flightSpeedBonus;
-		updateTrigger();
-		syncData();
-	}
-
-	// TODO 重构飞行速度加成
-	private void updateFlightSpeedBonus(double newFlightSpeedBonus) {
-//    var abilities = getPlayer().getAbilities();
-//    abilities.setFlyingSpeed(abilities.getFlyingSpeed() + (float) (newFlightSpeedBonus * JUSTICE_FLIGHT_SPEED));
 	}
 
 

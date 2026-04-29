@@ -30,6 +30,11 @@ public abstract class FontMixin implements IFontExtension, IFont {
 	@Final
 	public boolean filterFishyGlyphs;
 
+	@Shadow
+	private static int adjustColor(final int color) {
+		return 0;
+	}
+
 	@Unique
 	@Override
 	public int goldenboughs_lib$drawInBatch(
@@ -94,11 +99,6 @@ public abstract class FontMixin implements IFontExtension, IFont {
 
 		x = goldenboughs_lib$renderText(text, x, y, color, false, matrix4f, vertexConsumer, backgroundColor, packedLightCoords);
 		return (int) x + (dropShadow ? 1 : adjustColor(0));
-	}
-
-	@Shadow
-	private static int adjustColor(final int color) {
-		return 0;
 	}
 
 	@Shadow

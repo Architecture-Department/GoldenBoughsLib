@@ -32,6 +32,15 @@ public record PlayerIGunWeaponPayload(
 		this((setHand(hand) | setSim(sim) | setShoot(shoot)));
 	}
 
+	/**
+	 * @param isMainHand 0b1:主手 0b0:副手
+	 * @param sim        0b1:瞄准 0b0:不瞄准
+	 * @param shoot      0b1:射击 0b0:不射击
+	 */
+	public PlayerIGunWeaponPayload(boolean isMainHand, boolean sim, boolean shoot) {
+		this(((isMainHand ? 0b1 : 0b0) | setSim(sim) | setShoot(shoot)));
+	}
+
 	private static int setHand(InteractionHand hand) {
 		return hand == InteractionHand.MAIN_HAND ? 0b1 : 0b0;
 	}
@@ -42,15 +51,6 @@ public record PlayerIGunWeaponPayload(
 
 	private static int setSim(boolean sim) {
 		return (sim ? 0b10 : 0b0);
-	}
-
-	/**
-	 * @param isMainHand 0b1:主手 0b0:副手
-	 * @param sim        0b1:瞄准 0b0:不瞄准
-	 * @param shoot      0b1:射击 0b0:不射击
-	 */
-	public PlayerIGunWeaponPayload(boolean isMainHand, boolean sim, boolean shoot) {
-		this(((isMainHand ? 0b1 : 0b0) | setSim(sim) | setShoot(shoot)));
 	}
 
 	public static void send(InteractionHand usedItemHand, boolean sim, boolean shoot) {

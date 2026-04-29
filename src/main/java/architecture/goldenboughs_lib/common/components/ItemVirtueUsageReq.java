@@ -223,6 +223,47 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 		}
 
 		/**
+		 * @param fortitude  勇气
+		 * @param prudence   谨慎
+		 * @param temperance 自律
+		 * @param justice    正义
+		 * @param composite  综合等级
+		 */
+		public static Builder of(int fortitude, int prudence, int temperance, int justice, int composite) {
+			Builder builder = new Builder();
+			if (fortitude != 0) {
+				builder.fortitude(fortitude);
+			}
+			if (prudence != 0) {
+				builder.prudence(prudence);
+			}
+			if (temperance != 0) {
+				builder.temperance(temperance);
+			}
+			if (justice != 0) {
+				builder.justice(justice);
+			}
+			if (composite != 0) {
+				builder.composite(composite);
+			}
+			return builder;
+		}
+
+		/**
+		 * 将构建器添加到物品属性中
+		 *
+		 * @param properties 物品属性
+		 * @param builder    品德使用要求构建器
+		 */
+		public static void add(final Item.Properties properties, final Builder builder) {
+			if (builder == null || (builder.isEmpty())) {
+				return;
+			}
+
+			properties.component(LibDataComponents.ITEM_VIRTUE_USAGE_REQ, builder.build());
+		}
+
+		/**
 		 * 设置勇气属性要求（不低于）
 		 *
 		 * @param value 要求等级
@@ -280,33 +321,6 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 		}
 
 		/**
-		 * @param fortitude  勇气
-		 * @param prudence   谨慎
-		 * @param temperance 自律
-		 * @param justice    正义
-		 * @param composite  综合等级
-		 */
-		public static Builder of(int fortitude, int prudence, int temperance, int justice, int composite) {
-			Builder builder = new Builder();
-			if (fortitude != 0) {
-				builder.fortitude(fortitude);
-			}
-			if (prudence != 0) {
-				builder.prudence(prudence);
-			}
-			if (temperance != 0) {
-				builder.temperance(temperance);
-			}
-			if (justice != 0) {
-				builder.justice(justice);
-			}
-			if (composite != 0) {
-				builder.composite(composite);
-			}
-			return builder;
-		}
-
-		/**
 		 * 设置勇气属性要求（不低于）
 		 *
 		 * @param value 要求值
@@ -354,20 +368,6 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 		 */
 		public Builder composite(int value) {
 			return updateList(composite, value, false);
-		}
-
-		/**
-		 * 将构建器添加到物品属性中
-		 *
-		 * @param properties 物品属性
-		 * @param builder    品德使用要求构建器
-		 */
-		public static void add(final Item.Properties properties, final Builder builder) {
-			if (builder == null || (builder.isEmpty())) {
-				return;
-			}
-
-			properties.component(LibDataComponents.ITEM_VIRTUE_USAGE_REQ, builder.build());
 		}
 
 		/**

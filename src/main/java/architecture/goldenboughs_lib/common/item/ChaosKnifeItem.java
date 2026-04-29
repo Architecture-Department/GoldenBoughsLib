@@ -33,6 +33,10 @@ public class ChaosKnifeItem extends SwordItem implements IMeleeEgoWeaponItem, II
 				new LcDamageType.Component(LcDamageType.PHYSICS, LcDamageType.values())));
 	}
 
+	private static LcDamageType.Component getComponent(ItemStack stack) {
+		return stack.getOrDefault(LibDataComponents.LC_DAMAGE_TYPE, DEFAULT_COMPONENT);
+	}
+
 	@Override
 	@NotNull
 	public InteractionResultHolder<ItemStack> use(@NotNull Level world, @NotNull Player playerEntity, @NotNull InteractionHand handUsed) {
@@ -54,10 +58,6 @@ public class ChaosKnifeItem extends SwordItem implements IMeleeEgoWeaponItem, II
 	@Override
 	public @Nullable LcDamageType getLcDamageType(ItemStack stack) {
 		return getComponent(stack).lcDamageType();
-	}
-
-	private static LcDamageType.Component getComponent(ItemStack stack) {
-		return stack.getOrDefault(LibDataComponents.LC_DAMAGE_TYPE, DEFAULT_COMPONENT);
 	}
 
 	@Override

@@ -30,6 +30,26 @@ public record VirtueAttributeModifier(
 	}
 
 	/**
+	 * 添加属性
+	 */
+	private static void addAttributeModifier(final LivingEntity entity, final ResourceLocation id, final ItemStack stack, final @Nullable Builder.AttributeModifierBuilder modifierBuilder) {
+		if (modifierBuilder == null) {
+			return;
+		}
+		entity.getAttributes().addTransientAttributeModifiers(modifierBuilder.apply(entity, id, stack));
+	}
+
+	/**
+	 * 移除属性
+	 */
+	private static void removeAttributeModifier(final LivingEntity entity, final ResourceLocation id, final ItemStack stack, final @Nullable Builder.AttributeModifierBuilder modifierBuilder) {
+		if (modifierBuilder == null || entity == null) {
+			return;
+		}
+		entity.getAttributes().removeAttributeModifiers(modifierBuilder.apply(entity, id, stack));
+	}
+
+	/**
 	 * 获取
 	 */
 	public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(LivingEntity entity, ResourceLocation id, ItemStack stack) {
@@ -62,16 +82,6 @@ public record VirtueAttributeModifier(
 	}
 
 	/**
-	 * 添加属性
-	 */
-	private static void addAttributeModifier(final LivingEntity entity, final ResourceLocation id, final ItemStack stack, final @Nullable Builder.AttributeModifierBuilder modifierBuilder) {
-		if (modifierBuilder == null) {
-			return;
-		}
-		entity.getAttributes().addTransientAttributeModifiers(modifierBuilder.apply(entity, id, stack));
-	}
-
-	/**
 	 * 移除属性
 	 */
 	public void removeAttributeModifiers(LivingEntity entity, ResourceLocation id, ItemStack stack) {
@@ -79,16 +89,6 @@ public record VirtueAttributeModifier(
 		removeAttributeModifier(entity, id, stack, this.prudenceModifier);
 		removeAttributeModifier(entity, id, stack, this.temperanceModifier);
 		removeAttributeModifier(entity, id, stack, this.justiceModifier);
-	}
-
-	/**
-	 * 移除属性
-	 */
-	private static void removeAttributeModifier(final LivingEntity entity, final ResourceLocation id, final ItemStack stack, final @Nullable Builder.AttributeModifierBuilder modifierBuilder) {
-		if (modifierBuilder == null || entity == null) {
-			return;
-		}
-		entity.getAttributes().removeAttributeModifiers(modifierBuilder.apply(entity, id, stack));
 	}
 
 	/**
