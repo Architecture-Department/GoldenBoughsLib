@@ -1,8 +1,4 @@
 plugins {
-	id 'java-library'
-	id 'maven-publish'
-	id 'net.neoforged.moddev' version '2.0.141'
-	id 'idea'
 }
 
 version = mod_version
@@ -90,7 +86,7 @@ configurations {
 
 dependencies {
 	implementation "net.neoforged:neoforge:${neo_version}"
-	localRuntime "org.javassist:javassist:3.30.2-GA"
+	localRuntime "org.javassist:javassist:${javassist_version}"
 
 	// MixinSquared
 	compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:${mixinsquared_version}"))
