@@ -67,7 +67,13 @@ neoForge {
 							// 忽略无效指令，避免有的人没安装 JetBrain Runtime 无法启动游戏
 							"-XX:+IgnoreUnrecognizedVMOptions",
 							// 启用 JetBrain Runtime 热重载功能
-							"-XX:+AllowEnhancedClassRedefinition"])
+							"-XX:+AllowEnhancedClassRedefinition",
+							// 以下是修复 Kotlin 模块访问权限的参数
+							"--add-reads", "kotlin.stdlib=kotlinx.coroutines.core",
+							"--add-opens", "kotlin.stdlib/kotlin.coroutines.jvm.internal=ALL-UNNAMED",
+							"--add-opens", "kotlinx.coroutines.core/kotlinx.coroutines.debug.internal=ALL-UNNAMED",
+							"-Dkotlinx.coroutines.debug=off" // 关闭 Kotlin 协程调试
+			])
 
 			logLevel = org.slf4j.event.Level.DEBUG
 		}
@@ -86,10 +92,10 @@ configurations {
 
 dependencies {
 	implementation "net.neoforged:neoforge:${neo_version}"
-	localRuntime "org.javassist:javassist:${javassist_version}"
+	runtimeOnly "org.javassist:javassist:${javassist_version}"
 
 	// MixinSquared
-	compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:${mixinsquared_version}"))
+	runtimeOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:${mixinsquared_version}"))
 	implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:${mixinsquared_version}"))
 
 	// geckolib
@@ -99,9 +105,9 @@ dependencies {
 	implementation "maven.modrinth:jade:${jade_version}+neoforge"
 
 	// JEI
-	compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
-	compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
-	localRuntime "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+	runtimeOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+	runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+	runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
