@@ -2,6 +2,7 @@ package architecture.goldenboughs_lib.util;
 
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
 import net.neoforged.neoforge.network.PacketDistributor;
 
 public final class PayloadUtil {
@@ -17,5 +18,9 @@ public final class PayloadUtil {
 	 */
 	public static void sendToServer(CustomPacketPayload customPacketPayload) {
 		PacketDistributor.sendToServer(customPacketPayload);
+	}
+
+	public static void sendToPlayersTrackingEntityAndSelf(Entity entity, CustomPacketPayload customPacketPayload) {
+		PacketDistributor.sendToPlayersTrackingEntityAndSelf(entity, customPacketPayload);
 	}
 }

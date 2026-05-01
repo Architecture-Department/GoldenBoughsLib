@@ -4,6 +4,7 @@ import architecture.goldenboughs_lib.common.payload.LivingEntityAttackStrengthTi
 import architecture.goldenboughs_lib.common.payload.api.ToClientPayload;
 import architecture.goldenboughs_lib.common.payload.api.ToServerAndClientPayload;
 import architecture.goldenboughs_lib.common.payload.api.ToServerPayload;
+import architecture.goldenboughs_lib.common.payload.toc.GeckolibAnimationSynchroPayload;
 import architecture.goldenboughs_lib.common.payload.toc.PlayerDamagePayload;
 import architecture.goldenboughs_lib.common.payload.tos.PlayerIGunWeaponPayload;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
@@ -27,6 +28,7 @@ public final class PayloadRegistry {
 
 		// 接收来自服务端的数据 发送到 客户端
 		playToClient(registrar, PlayerDamagePayload.TYPE, PlayerDamagePayload.STREAM_CODEC);
+		playToClient(registrar, GeckolibAnimationSynchroPayload.TYPE, GeckolibAnimationSynchroPayload.STREAM_CODEC);
 
 		// 接收来自客户端的数据 发送到 服务端
 		playToServer(registrar, PlayerIGunWeaponPayload.TYPE, PlayerIGunWeaponPayload.STREAM_CODEC);

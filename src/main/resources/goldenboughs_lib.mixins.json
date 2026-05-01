@@ -5,6 +5,7 @@
 	"mixins": [
 		"client.ModelBuilderMixin",
 		"client.ModelFileAccessorMixin",
+		"geckolib.AnimationControllerAccessorMixin",
 		"world.CombatRulesMixin",
 		"world.DamageContainerMixin",
 		"world.DamageSourceMixin",
