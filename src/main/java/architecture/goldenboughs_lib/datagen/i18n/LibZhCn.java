@@ -11,6 +11,7 @@ import architecture.goldenboughs_lib.linkage.jade.ModJadePlugin;
 import net.minecraft.data.PackOutput;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.Item;
 import net.neoforged.fml.loading.FMLEnvironment;
@@ -26,6 +27,7 @@ public final class LibZhCn extends DatagenI18n {
 	private static final Map<Supplier<? extends MobEffect>, String> MOB_EFFECT = new HashMap<>();
 	private static final Map<Supplier<? extends Attribute>, String> ATTRIBUTE = new HashMap<>();
 	private static final Map<Supplier<? extends SoundEvent>, String> SOUND_EVENT = new HashMap<>();
+	private static final Map<Supplier<? extends EntityType<?>>, String> ENTITY_TYPES = new HashMap<>();
 	private static final Map<String, String> MAP = new HashMap<>();
 
 	public LibZhCn(final PackOutput output) {
@@ -62,6 +64,12 @@ public final class LibZhCn extends DatagenI18n {
 		}
 	}
 
+	public static void addI18nEntityTypeText(String zhName, Supplier<? extends EntityType<?>> supplier) {
+		if (!FMLEnvironment.production) {
+			ENTITY_TYPES.put(supplier, zhName);
+		}
+	}
+
 	@Override
 	protected void addTranslations() {
 		addPackDescription(GoldenBoughsLib.ID, "金枝");
@@ -69,6 +77,7 @@ public final class LibZhCn extends DatagenI18n {
 		addAttributeList(ATTRIBUTE);
 		addSoundEventList(SOUND_EVENT);
 		addItemList(ITEMS);
+		addEntityList(ENTITY_TYPES);
 		MAP.forEach(this::add);
 
 		addJadePlugin(ModJadePlugin.ENTITY_LC_LEVEL, "生物等级");

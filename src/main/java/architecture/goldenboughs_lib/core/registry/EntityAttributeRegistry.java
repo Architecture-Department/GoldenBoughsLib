@@ -3,14 +3,17 @@ package architecture.goldenboughs_lib.core.registry;
 import architecture.goldenboughs_lib.api.LcLevel;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
 import architecture.goldenboughs_lib.init.LibAttributes;
+import architecture.goldenboughs_lib.init.LibEntityTypes;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.*;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 
 import java.util.HashMap;
@@ -18,6 +21,14 @@ import java.util.Map;
 
 @EventBusSubscriber(modid = GoldenBoughsLib.ID)
 public final class EntityAttributeRegistry {
+	/**
+	 * 注册实体属性
+	 */
+	@SubscribeEvent
+	public static void entityAttributeCreation(EntityAttributeCreationEvent event) {
+		event.put(LibEntityTypes.STAFF_CORPSE.get(), Mob.createMobAttributes().build());
+	}
+
 	// TODO 重写编写
 	/**
 	 * 分级到血量倍数的映射表

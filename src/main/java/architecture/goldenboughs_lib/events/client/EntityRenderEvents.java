@@ -1,7 +1,9 @@
 package architecture.goldenboughs_lib.events.client;
 
+import architecture.goldenboughs_lib.common.entiy.corpse.client.StaffCorpseRenderer;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
 import architecture.goldenboughs_lib.eventexecute.client.EntityRenderEventExecute;
+import architecture.goldenboughs_lib.init.LibEntityTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -13,6 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RenderLivingEvent;
 import net.neoforged.neoforge.client.event.RenderPlayerEvent;
 
@@ -34,5 +37,10 @@ public final class EntityRenderEvents {
 		MultiBufferSource multiBufferSource = event.getMultiBufferSource();
 		int packedLight = event.getPackedLight();
 		ShieldRenderer.renderShieldIfPresent(entity, poseStack, multiBufferSource, packedLight);
+	}
+
+	@SubscribeEvent
+	public static void entityRenderersRegister(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(LibEntityTypes.STAFF_CORPSE.get(), StaffCorpseRenderer::new);
 	}
 }
