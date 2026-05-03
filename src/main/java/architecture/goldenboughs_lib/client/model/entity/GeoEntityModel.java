@@ -6,14 +6,14 @@ import software.bernie.geckolib.animatable.GeoAnimatable;
 
 public class GeoEntityModel<T extends GeoAnimatable> extends BasicGeoModel<T> {
 	public GeoEntityModel(ResourceLocation name) {
-		super(name.withPrefix("entity/"));
+		super(getPath(name));
 	}
 
 	public GeoEntityModel(ResourceLocation modelPath, ResourceLocation textureName, ResourceLocation animationsName) {
-		super(modelPath.withPrefix("entity/"), textureName.withPrefix("entity/"), animationsName.withPrefix("entity/"));
+		super(getPath(modelPath), getPath(textureName), getPath(animationsName));
 	}
 
-	public static ResourceLocation getTexturePath(ResourceLocation textureName) {
-		return texturePath(textureName.withPrefix("entity/"));
+	public static ResourceLocation getPath(ResourceLocation location) {
+		return location.withPrefix("entity/");
 	}
 }
