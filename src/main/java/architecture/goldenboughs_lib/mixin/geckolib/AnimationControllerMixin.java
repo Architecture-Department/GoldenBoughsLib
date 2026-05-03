@@ -1,6 +1,8 @@
 package architecture.goldenboughs_lib.mixin.geckolib;
 
 import architecture.goldenboughs_lib.mixed.geckolib.IAnimationController;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,14 +13,17 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationProcessor;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.animation.state.BoneSnapshot;
 import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.model.GeoModel;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Mixin(AnimationController.class)
 public abstract class AnimationControllerMixin<T extends GeoAnimatable> implements IAnimationController<T> {
@@ -37,10 +42,37 @@ public abstract class AnimationControllerMixin<T extends GeoAnimatable> implemen
 	@Unique
 	protected final Map<String, GeoBone> goldenboughs_lib$bones = new Object2ObjectOpenHashMap<>();
 
-	@Inject(method = "process", at = @At(value = "INVOKE", target = "Lsoftware/bernie/geckolib/animation/AnimationController;createInitialQueues(Ljava/util/Collection;)V"))
-	public void goldenboughs_lib$processAnimation(GeoModel<T> model, AnimationState<T> state, Map<String, GeoBone> bones, Map<String, BoneSnapshot> snapshots, double seekTime, boolean crashWhenCantFindBone, CallbackInfo ci) {
-
+	@WrapOperation(method = "process", at = @At(value = "INVOKE", target = "Lsoftware/bernie/geckolib/animation/AnimationController;createInitialQueues(Ljava/util/Collection;)V"))
+	public void goldenboughs_lib$process$createInitialQueues(AnimationController<T> instance, Collection<GeoBone> geoBones, Operation<Void> original) {
+		original.call(instance, goldenboughs_lib$getGeoBonesCollect(geoBones, instance));
 	}
+
+	@WrapOperation(method = "process", at = @At(value = "INVOKE", target = "Lsoftware/bernie/geckolib/animation/AnimationController;saveSnapshotsForAnimation(Lsoftware/bernie/geckolib/animation/AnimationProcessor$QueuedAnimation;Ljava/util/Map;)V"))
+	public void goldenboughs_lib$process$saveSnapshotsForAnimation(AnimationController<T> instance, AnimationProcessor.QueuedAnimation snapshot, Map<String, BoneSnapshot> stringBoneSnapshotMap, Operation<Void> original) {
+		original.call(instance, snapshot, goldenboughs_lib$getStringBoneSnapshotMap(stringBoneSnapshotMap, instance));
+	}
+
+	@Unique
+	private static <T extends GeoAnimatable> Collection<GeoBone> goldenboughs_lib$getGeoBonesCollect(Collection<GeoBone> geoBones, AnimationController<T> instance) {
+		IAnimationController<T> iController = IAnimationController.of(instance);
+		return geoBones.stream()
+			.filter(bones -> iController.goldenboughs_lib$isInfluence(bones.getName()))
+			.collect(Collectors.toSet());
+	}
+
+	@Unique
+	private static <T extends GeoAnimatable> Map<String, BoneSnapshot> goldenboughs_lib$getStringBoneSnapshotMap(Map<String, BoneSnapshot> stringBoneSnapshotMap, AnimationController<T> instance) {
+		IAnimationController<T> iController = IAnimationController.of(instance);
+		return stringBoneSnapshotMap.entrySet().stream()
+			.filter(bones -> iController.goldenboughs_lib$isInfluence(bones.getKey()))
+			.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+	}
+
+//	@WrapOperation(method = "createInitialQueues", at = @At(value = "INVOKE", target = "Ljava/util/Map;put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"))
+//	public <V, K> V goldenboughs_lib$createInitialQueues(Map<?, ?> instance, K k, V v, Operation<BoneAnimationQueue> original) {
+//		//noinspection unchecked
+//		return goldenboughs_lib$isInfluence((String) k) ? (V) original.call(instance, k, v) : null;
+//	}
 
 	@Inject(method = "process", at = @At("HEAD"))
 	public void goldenboughs_lib$process(GeoModel<T> model, AnimationState<T> state, Map<String, GeoBone> bones, Map<String, BoneSnapshot> snapshots, double seekTime, boolean crashWhenCantFindBone, CallbackInfo ci) {
