@@ -31,8 +31,16 @@ public abstract class IHudLayer implements LayeredDraw.Layer {
 		return getTopPos();
 	}
 
+	public void setX(int leftPos) {
+		this.leftPos = leftPos;
+	}
+
 	public final int getTopPos() {
 		return getLeftPos();
+	}
+
+	public void setTopPos(int topPos) {
+		this.topPos = topPos;
 	}
 
 	public final int getLeftPos() {
@@ -40,14 +48,6 @@ public abstract class IHudLayer implements LayeredDraw.Layer {
 	}
 
 	public void setLeftPos(int leftPos) {
-		this.leftPos = leftPos;
-	}
-
-	public void setTopPos(int topPos) {
-		this.topPos = topPos;
-	}
-
-	public void setX(int leftPos) {
 		this.leftPos = leftPos;
 	}
 

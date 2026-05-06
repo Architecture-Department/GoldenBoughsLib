@@ -27,8 +27,6 @@ import java.util.stream.Collectors;
 
 @Mixin(AnimationController.class)
 public abstract class AnimationControllerMixin<T extends GeoAnimatable> implements IAnimationController<T> {
-	@Shadow
-	protected GeoModel<T> lastModel;
 	/**
 	 * 锁定的骨骼，类似黑名单
 	 */
@@ -41,16 +39,8 @@ public abstract class AnimationControllerMixin<T extends GeoAnimatable> implemen
 	protected final Set<String> goldenboughs_lib$enabledBones = new ObjectOpenHashSet<>();
 	@Unique
 	protected final Map<String, GeoBone> goldenboughs_lib$bones = new Object2ObjectOpenHashMap<>();
-
-	@WrapOperation(method = "process", at = @At(value = "INVOKE", target = "Lsoftware/bernie/geckolib/animation/AnimationController;createInitialQueues(Ljava/util/Collection;)V"))
-	public void goldenboughs_lib$process$createInitialQueues(AnimationController<T> instance, Collection<GeoBone> geoBones, Operation<Void> original) {
-		original.call(instance, goldenboughs_lib$getGeoBonesCollect(geoBones, instance));
-	}
-
-	@WrapOperation(method = "process", at = @At(value = "INVOKE", target = "Lsoftware/bernie/geckolib/animation/AnimationController;saveSnapshotsForAnimation(Lsoftware/bernie/geckolib/animation/AnimationProcessor$QueuedAnimation;Ljava/util/Map;)V"))
-	public void goldenboughs_lib$process$saveSnapshotsForAnimation(AnimationController<T> instance, AnimationProcessor.QueuedAnimation snapshot, Map<String, BoneSnapshot> stringBoneSnapshotMap, Operation<Void> original) {
-		original.call(instance, snapshot, goldenboughs_lib$getStringBoneSnapshotMap(stringBoneSnapshotMap, instance));
-	}
+	@Shadow
+	protected GeoModel<T> lastModel;
 
 	@Unique
 	private static <T extends GeoAnimatable> Collection<GeoBone> goldenboughs_lib$getGeoBonesCollect(Collection<GeoBone> geoBones, AnimationController<T> instance) {
@@ -66,6 +56,16 @@ public abstract class AnimationControllerMixin<T extends GeoAnimatable> implemen
 		return stringBoneSnapshotMap.entrySet().stream()
 			.filter(bones -> iController.goldenboughs_lib$isInfluence(bones.getKey()))
 			.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+	}
+
+	@WrapOperation(method = "process", at = @At(value = "INVOKE", target = "Lsoftware/bernie/geckolib/animation/AnimationController;createInitialQueues(Ljava/util/Collection;)V"))
+	public void goldenboughs_lib$process$createInitialQueues(AnimationController<T> instance, Collection<GeoBone> geoBones, Operation<Void> original) {
+		original.call(instance, goldenboughs_lib$getGeoBonesCollect(geoBones, instance));
+	}
+
+	@WrapOperation(method = "process", at = @At(value = "INVOKE", target = "Lsoftware/bernie/geckolib/animation/AnimationController;saveSnapshotsForAnimation(Lsoftware/bernie/geckolib/animation/AnimationProcessor$QueuedAnimation;Ljava/util/Map;)V"))
+	public void goldenboughs_lib$process$saveSnapshotsForAnimation(AnimationController<T> instance, AnimationProcessor.QueuedAnimation snapshot, Map<String, BoneSnapshot> stringBoneSnapshotMap, Operation<Void> original) {
+		original.call(instance, snapshot, goldenboughs_lib$getStringBoneSnapshotMap(stringBoneSnapshotMap, instance));
 	}
 
 //	@WrapOperation(method = "createInitialQueues", at = @At(value = "INVOKE", target = "Ljava/util/Map;put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"))

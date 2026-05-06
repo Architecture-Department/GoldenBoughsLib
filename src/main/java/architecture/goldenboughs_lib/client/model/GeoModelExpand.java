@@ -7,31 +7,31 @@ import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.cache.GeckoLibCache;
 import software.bernie.geckolib.model.GeoModel;
 
-public abstract class BasicGeoModel<T extends GeoAnimatable> extends GeoModel<T> {
+public class GeoModelExpand<T extends GeoAnimatable> extends GeoModel<T> {
+	public static final String MODEL_SUFFIX = ".geo.json";
+	public static final String TEXTURE_SUFFIX = ".png";
+	public static final String ANIMATIONS_SUFFIX = ".animation.json";
+	public static final ResourceLocation ITEM_DEFAULT_MODEL = model(GoldenBoughsLib.modRl("item/default")).withSuffix(MODEL_SUFFIX);
 	public final ResourceLocation modelPath;
 	public final ResourceLocation texturePath;
 	public final ResourceLocation animationsPath;
 
-	public BasicGeoModel(ResourceLocation pathName) {
-		this(pathName, pathName, pathName);
-	}
-
-	public BasicGeoModel(ResourceLocation modelPath, ResourceLocation texturePath, ResourceLocation animationsPath) {
-		this.modelPath = model(modelPath);
-		this.texturePath = texturePath(texturePath);
-		this.animationsPath = animationsPath(animationsPath);
+	public GeoModelExpand(ResourceLocation modelPath, ResourceLocation texturePath, ResourceLocation animationsPath) {
+		this.modelPath = modelPath.withSuffix(MODEL_SUFFIX);
+		this.texturePath = texturePath.withSuffix(TEXTURE_SUFFIX);
+		this.animationsPath = animationsPath.withSuffix(ANIMATIONS_SUFFIX);
 	}
 
 	public static ResourceLocation model(ResourceLocation path) {
-		return path.withPrefix("geo/").withSuffix(".geo.json");
+		return path.withPrefix("geo/");
 	}
 
 	public static ResourceLocation texturePath(ResourceLocation path) {
-		return path.withPrefix("textures/geo/").withSuffix(".png");
+		return path.withPrefix("textures/geo/");
 	}
 
 	public static ResourceLocation animationsPath(ResourceLocation path) {
-		return path.withPrefix("animations/").withSuffix(".animation.json");
+		return path.withPrefix("animations/");
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public abstract class BasicGeoModel<T extends GeoAnimatable> extends GeoModel<T>
 
 	@NotNull
 	protected ResourceLocation getDefaultModelResource() {
-		return model(GoldenBoughsLib.modRl("item/default"));
+		return ITEM_DEFAULT_MODEL;
 	}
 
 	@Override

@@ -1,12 +1,12 @@
 package architecture.goldenboughs_lib.client.model.item;
 
-import architecture.goldenboughs_lib.client.model.BasicGeoModel;
+import architecture.goldenboughs_lib.client.model.GeoModelExpand;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 
 public class GuiGeoItemModel<T extends GeoAnimatable> extends GeoItemModel<T> {
-	private static final ResourceLocation MODELLED_PATH = BasicGeoModel.model(GoldenBoughsLib.modRl("item/gui_item_model"));
+	private static final ResourceLocation MODELLED_PATH = GeoModelExpand.model(GoldenBoughsLib.modRl("item/gui_item_model")).withPrefix(MODEL_SUFFIX);
 	private final ResourceLocation resourceLocation;
 
 	public GuiGeoItemModel(ResourceLocation path) {

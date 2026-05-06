@@ -22,15 +22,6 @@ import java.util.Map;
 @EventBusSubscriber(modid = GoldenBoughsLib.ID)
 public final class EntityAttributeRegistry {
 	/**
-	 * 注册实体属性
-	 */
-	@SubscribeEvent
-	public static void entityAttributeCreation(EntityAttributeCreationEvent event) {
-		event.put(LibEntityTypes.STAFF_CORPSE.get(), Mob.createMobAttributes().build());
-	}
-
-	// TODO 重写编写
-	/**
 	 * 分级到血量倍数的映射表
 	 */
 	private static final Map<LcLevel, Double> LEVEL_MAP = Map.of(
@@ -41,6 +32,7 @@ public final class EntityAttributeRegistry {
 		LcLevel.ALEPH, 2.0
 	);
 
+	// TODO 重写编写
 	/**
 	 * 实体类型到等级的映射表（直接从CapabilityRegistry复制，避免事件时序问题）
 	 * 用于maxHealthMultiples(1.0)时直接读取等级，无需调用LcLevelUtil.getLevel()
@@ -85,6 +77,14 @@ public final class EntityAttributeRegistry {
 		ENTITY_LEVEL.put(EntityType.BOGGED, LcLevel.TETH);
 		ENTITY_LEVEL.put(EntityType.BLAZE, LcLevel.TETH);
 		ENTITY_LEVEL.put(EntityType.SLIME, LcLevel.TETH);
+	}
+
+	/**
+	 * 注册实体属性
+	 */
+	@SubscribeEvent
+	public static void entityAttributeCreation(EntityAttributeCreationEvent event) {
+		event.put(LibEntityTypes.STAFF_CORPSE.get(), Mob.createMobAttributes().build());
 	}
 
 	/**

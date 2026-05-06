@@ -17,14 +17,14 @@ public interface IStateChangeableMob {
 		return getSelf().getEntityData().get(get_DATA_STATUS_STATUS());
 	}
 
+	default void setStage(int stage) {
+		getSelf().getEntityData().set(get_DATA_STATUS_STATUS(), stage);
+	}
+
 	EntityDataAccessor<Integer> get_DATA_STATUS_STATUS();
 
 	private Entity getSelf() {
 		return (Entity) this;
-	}
-
-	default void setStage(int stage) {
-		getSelf().getEntityData().set(get_DATA_STATUS_STATUS(), stage);
 	}
 
 	default void syncStatus(int status) {
