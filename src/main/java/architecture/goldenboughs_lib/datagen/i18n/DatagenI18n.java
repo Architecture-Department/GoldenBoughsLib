@@ -39,7 +39,7 @@ public abstract class DatagenI18n extends LanguageProvider {
 	protected abstract void addTranslations();
 
 	protected void addPackDescription(String a, String description) {
-		add("pack." + a + "description", description);
+		add("pack." + a + ".description", description);
 	}
 
 	protected void addItemList(Map<Supplier<? extends Item>, String> map) {
