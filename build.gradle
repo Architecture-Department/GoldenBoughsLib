@@ -23,9 +23,9 @@ base {
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
-	interfaceInjectionData.from "interfaces.json"
 	interfaceInjectionData {
-		publish file("interfaces.json")
+		from "src/main/resources/META-INF/interfaces.json"
+		publish file("src/main/resources/META-INF/interfaces.json")
 	}
 
 	version = project.neo_version
