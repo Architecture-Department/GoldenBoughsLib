@@ -15,7 +15,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-public final class LibDataComponents {
+public final class LibDataComponentTypes {
 	public static final DeferredRegister<DataComponentType<?>> REGISTRY = GoldenBoughsLib.modRegister(BuiltInRegistries.DATA_COMPONENT_TYPE);
 
 	public static final Supplier<DataComponentType<LcDamageType.Component>> LC_DAMAGE_TYPE = register("lobotomy_corporation_damage_type",
@@ -51,7 +51,7 @@ public final class LibDataComponents {
 	}
 
 	private static <B extends DataComponentType<?>> DeferredHolder<DataComponentType<?>, B> register(String name, Supplier<? extends B> builder) {
-		return LibDataComponents.REGISTRY.register("data_components." + name, builder);
+		return LibDataComponentTypes.REGISTRY.register("data_components." + name, builder);
 	}
 
 	private static Supplier<DataComponentType<String>> recordString(String name, boolean isCacheEncoding) {

@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.util;
 import architecture.goldenboughs_lib.api.LcDamageType;
 import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType;
 import architecture.goldenboughs_lib.init.LibCapabilitys;
-import architecture.goldenboughs_lib.init.LibDataComponents;
+import architecture.goldenboughs_lib.init.LibDataComponentTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -41,8 +41,8 @@ public final class LcDamageTypeUtil {
 
 	@NotNull
 	public static Set<LcDamageType> getCanCauseLcDamageTypes(ItemStack itemStack) {
-		if (itemStack.has(LibDataComponents.LC_DAMAGE_TYPE)) {
-			LcDamageType.Component component = itemStack.get(LibDataComponents.LC_DAMAGE_TYPE);
+		if (itemStack.has(LibDataComponentTypes.LC_DAMAGE_TYPE)) {
+			LcDamageType.Component component = itemStack.get(LibDataComponentTypes.LC_DAMAGE_TYPE);
 			return component == null ? Set.of() : component.canCauseLcDamageTypes();
 		}
 		if (itemStack.getItem() instanceof IItemLcDamageType iItemLcDamageType) {

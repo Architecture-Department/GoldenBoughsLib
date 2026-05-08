@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api.capability.item;
 
 import architecture.goldenboughs_lib.common.components.ItemVirtueUsageReq;
-import architecture.goldenboughs_lib.init.LibDataComponents;
+import architecture.goldenboughs_lib.init.LibDataComponentTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -9,7 +9,7 @@ import net.minecraft.world.level.Level;
 /**
  * 带有需求的物品 如果不满足要求则触发
  * <p>
- * 一般捆绑{@link ItemVirtueUsageReq}或{@link LibDataComponents#ITEM_VIRTUE_USAGE_REQ}
+ * 一般捆绑{@link ItemVirtueUsageReq}或{@link LibDataComponentTypes#ITEM_VIRTUE_USAGE_REQ}
  */
 public interface IItemUsageReq {
 	/**

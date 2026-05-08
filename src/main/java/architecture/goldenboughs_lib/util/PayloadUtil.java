@@ -9,18 +9,18 @@ public final class PayloadUtil {
 	/**
 	 * 发送玩家数据包（服务端到客户端）
 	 */
-	public static void sendToClient(ServerPlayer serverPlayer, CustomPacketPayload customPacketPayload) {
-		PacketDistributor.sendToPlayer(serverPlayer, customPacketPayload);
+	public static void sendToPlayerClient(ServerPlayer serverPlayer, CustomPacketPayload customPacketPayload, CustomPacketPayload... customPacketPayloads) {
+		PacketDistributor.sendToPlayer(serverPlayer, customPacketPayload, customPacketPayloads);
 	}
 
 	/**
 	 * 发送玩家数据包（客户端到服务端）
 	 */
-	public static void sendToServer(CustomPacketPayload customPacketPayload) {
-		PacketDistributor.sendToServer(customPacketPayload);
+	public static void sendToPlayerServer(CustomPacketPayload customPacketPayload, CustomPacketPayload... customPacketPayloads) {
+		PacketDistributor.sendToServer(customPacketPayload, customPacketPayloads);
 	}
 
-	public static void sendToPlayersTrackingEntityAndSelf(Entity entity, CustomPacketPayload customPacketPayload) {
-		PacketDistributor.sendToPlayersTrackingEntityAndSelf(entity, customPacketPayload);
+	public static void sendToPlayersTrackingEntityAndSelf(Entity entity, CustomPacketPayload customPacketPayload, CustomPacketPayload... customPacketPayloads) {
+		PacketDistributor.sendToPlayersTrackingEntityAndSelf(entity, customPacketPayload, customPacketPayloads);
 	}
 }

@@ -33,7 +33,7 @@ public record PlayerDamagePayload(
 	}
 
 	public static void send(ServerPlayer player, LcDamageType lcDamageType, float newDamage) {
-		PayloadUtil.sendToClient(player, new PlayerDamagePayload(lcDamageType, newDamage));
+		PayloadUtil.sendToPlayerClient(player, new PlayerDamagePayload(lcDamageType, newDamage));
 	}
 
 	@Override

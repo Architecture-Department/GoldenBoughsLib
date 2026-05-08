@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.api.world.item;
 
 import architecture.goldenboughs_lib.api.virtue.VirtueRating;
 import architecture.goldenboughs_lib.common.components.ItemVirtueUsageReq;
-import architecture.goldenboughs_lib.init.LibDataComponents;
+import architecture.goldenboughs_lib.init.LibDataComponentTypes;
 import net.minecraft.world.item.Item;
 
 /**
@@ -11,8 +11,8 @@ import net.minecraft.world.item.Item;
 public interface IEgoItem {
 	static Item.Properties add(Item.Properties properties, IEgoWeaponItem.Builder<?> builder) {
 		return properties
-			.component(LibDataComponents.ITEM_VIRTUE_USAGE_REQ, builder.virtueUsageReqBuilder.build())
-			.component(LibDataComponents.IS_RESTRAIN, false)
+			.component(LibDataComponentTypes.ITEM_VIRTUE_USAGE_REQ, builder.virtueUsageReqBuilder.build())
+			.component(LibDataComponentTypes.IS_RESTRAIN, false)
 			.stacksTo(1);
 	}
 

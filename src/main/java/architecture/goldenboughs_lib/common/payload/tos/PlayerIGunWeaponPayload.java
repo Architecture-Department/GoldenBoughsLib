@@ -54,7 +54,7 @@ public record PlayerIGunWeaponPayload(
 	}
 
 	public static void send(InteractionHand usedItemHand, boolean sim, boolean shoot) {
-		PayloadUtil.sendToServer(new PlayerIGunWeaponPayload(usedItemHand, sim, shoot));
+		PayloadUtil.sendToPlayerServer(new PlayerIGunWeaponPayload(usedItemHand, sim, shoot));
 	}
 
 	/**

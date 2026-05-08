@@ -4,7 +4,7 @@ import architecture.goldenboughs_lib.api.virtue.VirtueRating;
 import architecture.goldenboughs_lib.api.virtue.VirtueType;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
 import architecture.goldenboughs_lib.init.LibAttributes;
-import architecture.goldenboughs_lib.init.LibDataComponents;
+import architecture.goldenboughs_lib.init.LibDataComponentTypes;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.MapCodec;
@@ -260,7 +260,7 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 				return;
 			}
 
-			properties.component(LibDataComponents.ITEM_VIRTUE_USAGE_REQ, builder.build());
+			properties.component(LibDataComponentTypes.ITEM_VIRTUE_USAGE_REQ, builder.build());
 		}
 
 		/**

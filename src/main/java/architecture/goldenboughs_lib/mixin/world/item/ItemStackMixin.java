@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.mixin.world.item;
 
 import architecture.goldenboughs_lib.event.client.AddItemDataComponentTooltipEvent;
-import architecture.goldenboughs_lib.init.LibDataComponents;
+import architecture.goldenboughs_lib.init.LibDataComponentTypes;
 import com.llamalad7.mixinextras.expression.Definition;
 import com.llamalad7.mixinextras.expression.Expression;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
@@ -63,7 +63,7 @@ public abstract class ItemStackMixin implements DataComponentHolder, MutableData
 		@Local(argsOnly = true) TooltipFlag tooltipFlag
 	) {
 		// 添加物品使用要求
-		addToTooltip(LibDataComponents.ITEM_VIRTUE_USAGE_REQ, tooltipContext, instance, tooltipFlag);
+		addToTooltip(LibDataComponentTypes.ITEM_VIRTUE_USAGE_REQ, tooltipContext, instance, tooltipFlag);
 		return original;
 	}
 }

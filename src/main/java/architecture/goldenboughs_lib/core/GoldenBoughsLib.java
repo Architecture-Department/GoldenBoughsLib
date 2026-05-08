@@ -32,7 +32,7 @@ public final class GoldenBoughsLib {
 		LibAttributes.REGISTRY.register(eventBus);
 		LibAttachments.REGISTRY.register(eventBus);
 		LibParticleTypes.REGISTRY.register(eventBus);
-		LibDataComponents.REGISTRY.register(eventBus);
+		LibDataComponentTypes.REGISTRY.register(eventBus);
 		LibEntityTypes.REGISTRY.register(eventBus);
 		LibAbsorptionShieldsRegistry.init();
 	}

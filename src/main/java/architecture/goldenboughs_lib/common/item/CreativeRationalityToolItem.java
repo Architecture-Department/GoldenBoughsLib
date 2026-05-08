@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.common.item;
 
-import architecture.goldenboughs_lib.init.LibDataComponents;
+import architecture.goldenboughs_lib.init.LibDataComponentTypes;
 import architecture.goldenboughs_lib.util.RationalityUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class CreativeRationalityToolItem extends Item {
 	public CreativeRationalityToolItem(Properties properties) {
-		super(properties.component(LibDataComponents.MODE_BOOLEAN, false));
+		super(properties.component(LibDataComponentTypes.MODE_BOOLEAN, false));
 	}
 
 	@Override
@@ -29,7 +29,7 @@ public class CreativeRationalityToolItem extends Item {
 		}
 
 		if (playerEntity.isShiftKeyDown()) {
-			itemStackInHand.set(LibDataComponents.MODE_BOOLEAN, Boolean.FALSE.equals(itemStackInHand.get(LibDataComponents.MODE_BOOLEAN)));
+			itemStackInHand.set(LibDataComponentTypes.MODE_BOOLEAN, Boolean.FALSE.equals(itemStackInHand.get(LibDataComponentTypes.MODE_BOOLEAN)));
 			return InteractionResultHolder.success(itemStackInHand);
 		}
 
@@ -37,7 +37,7 @@ public class CreativeRationalityToolItem extends Item {
 			return InteractionResultHolder.fail(itemStackInHand);
 		}
 
-		RationalityUtil.modifyValue(playerEntity, Boolean.TRUE == itemStackInHand.get(LibDataComponents.MODE_BOOLEAN) ? -1 : 1, false);
+		RationalityUtil.modifyValue(playerEntity, Boolean.TRUE == itemStackInHand.get(LibDataComponentTypes.MODE_BOOLEAN) ? -1 : 1, false);
 		return InteractionResultHolder.success(itemStackInHand);
 	}
 
