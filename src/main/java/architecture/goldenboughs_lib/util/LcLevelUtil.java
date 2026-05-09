@@ -31,6 +31,7 @@ public final class LcLevelUtil {
 	public static final Map<EntityType<?>, @Nullable LcLevel> ENTITY_TYPE_LEVEL = new HashMap<>();
 
 	public static <T extends Entity> void lcLevel(LcLevel lcLevel, DeferredHolder<EntityType<?>, EntityType<T>> holder) {
+		//noinspection RedundantCast,unchecked
 		(switch (lcLevel) {
 			case ZAYIN -> CapabilityRegistry.ENTITY_ZAYIN;
 			case TETH -> CapabilityRegistry.ENTITY_TETH;

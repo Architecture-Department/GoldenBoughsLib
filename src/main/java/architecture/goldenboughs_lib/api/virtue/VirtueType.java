@@ -82,6 +82,7 @@ public enum VirtueType implements ColourText, StringRepresentable {
 
 	@Nullable
 	public <T extends AbstractVirtue> Holder<AttachmentType<T>> getAttachmentTypeHolder() {
+		//noinspection RedundantCast,unchecked
 		return (Holder<AttachmentType<T>>) (Object) attachmentTypeHolder;
 	}
 
