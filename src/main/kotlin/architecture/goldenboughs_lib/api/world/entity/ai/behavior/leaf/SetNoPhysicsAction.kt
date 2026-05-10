@@ -12,7 +12,7 @@ class SetNoPhysicsAction(
 	val mob: Mob,
 	val isNoPhysics: Boolean
 ) : BTNode() {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		this.mob.noPhysics = this.isNoPhysics
 		return BTStatus.SUCCESS
 	}

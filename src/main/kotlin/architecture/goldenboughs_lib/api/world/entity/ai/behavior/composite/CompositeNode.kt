@@ -11,5 +11,5 @@ abstract class CompositeNode : BTNode() {
 	var children: MutableList<BTNode> = ArrayList()
 		protected set
 
-	abstract override fun execute(): BTStatus
+	abstract override fun execute(): BTStatus?
 }

@@ -25,8 +25,8 @@ class WeightNode : CompositeNode() {
 		this.currentChild = EntityUtil.getRandomByWeightInt(children, weights)
 	}
 
-	override fun execute(): BTStatus {
-		return this.currentChild!!.execute()
+	override fun execute(): BTStatus? {
+		return this.currentChild?.execute()
 	}
 
 	override fun cleanup() {

@@ -8,7 +8,7 @@ class TimeControlNode(
 ) : DecorationNode(child) {
 	var tick: Int = 0
 
-	override fun execute(): BTStatus {
+    override fun execute(): BTStatus? {
 		if (tick >= duration) {
 			return BTStatus.SUCCESS
 		}

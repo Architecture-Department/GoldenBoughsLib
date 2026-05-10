@@ -14,7 +14,7 @@ import net.minecraft.world.entity.Mob
 abstract class ShootAction<T : Mob>(
 	protected val mob: T
 ) : BTNode() {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		val target = mob.target ?: return BTStatus.FAILURE
 		this.shoot(target)
 		return BTStatus.SUCCESS

@@ -23,7 +23,7 @@ class RandomStrollAction(
 		this.setFlags(EnumSet.of(Flag.MOVE))
 	}
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		if (++this.interval > _interval) {
 			return BTStatus.SUCCESS
 		}

@@ -29,7 +29,7 @@ class SequenceNode : CompositeNode() {
 		return this
 	}
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		while (currentIndex < children.size) {
 			val child = children[currentIndex]
 

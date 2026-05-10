@@ -12,7 +12,7 @@ class ConditionNode(
 	private val condition: ConditionBT,
 	child: BTNode
 ) : DecorationNode(child) {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		if (!condition.check()) {
 			return BTStatus.FAILURE
 		}
@@ -26,6 +26,7 @@ class ConditionNode(
 		return child.status
 	}
 
-	override var description: String? = condition.desc
-		get() = super.description ?: condition.desc
+	override fun getDescription(): String? {
+		return super.getDescription() ?: condition.desc
+	}
 }

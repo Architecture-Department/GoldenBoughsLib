@@ -37,7 +37,7 @@ class Blackboard {
 	/**
 	 * 存在值
 	 */
-	fun <V> containsValue(key: KeyType<V>, valuePredicate: Predicate<V>): Boolean {
+	fun <V> containsValue(key: KeyType<V>, valuePredicate: Predicate<V>): Boolean where V : Any {
 		val value = this.get<V>(key)
 		return valuePredicate.test(value)
 	}
@@ -45,7 +45,7 @@ class Blackboard {
 	/**
 	 * 获取值
 	 */
-	operator fun <V> get(key: KeyType<V>): V {
+	operator fun <V> get(key: KeyType<V>): V where V : Any {
 		return (this.data[key] as? V) ?: throw NullPointerException("Blackboard value is null")
 	}
 
@@ -75,7 +75,7 @@ class Blackboard {
 		val key: KeyType<V>,
 		val valueSupplier: Supplier<V>
 	) : BTNode() where V : Any {
-		override fun execute(): BTStatus {
+		override fun execute(): BTStatus? {
 			holder.blackboard.put(key, valueSupplier.get())
 			return BTStatus.SUCCESS
 		}
@@ -85,7 +85,7 @@ class Blackboard {
 		val holder: IBlackboardHolder,
 		val key: KeyType<V>
 	) : BTNode() where V : Any {
-		override fun execute(): BTStatus {
+		override fun execute(): BTStatus? {
 			holder.blackboard.remove(key)
 			return BTStatus.SUCCESS
 		}
@@ -102,14 +102,14 @@ class Blackboard {
 		/**
 		 * 不存在键的条件
 		 */
-		fun <V> notContainsKey(holder: IBlackboardHolder, key: KeyType<V>): ConditionBT {
+		fun <V> notContainsKey(holder: IBlackboardHolder, key: KeyType<V>): ConditionBT where V : Any {
 			return ConditionBT.not(containsKey<V>(holder, key))
 		}
 
 		/**
 		 * 存在键的条件
 		 */
-		fun <V> containsKey(holder: IBlackboardHolder, key: KeyType<V>): ConditionBT {
+		fun <V> containsKey(holder: IBlackboardHolder, key: KeyType<V>): ConditionBT where V : Any {
 			return ContainsKey(holder, key)
 		}
 

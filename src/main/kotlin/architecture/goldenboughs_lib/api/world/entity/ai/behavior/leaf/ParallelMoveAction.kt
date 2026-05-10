@@ -17,7 +17,7 @@ class ParallelMoveAction(
 ) : BTNode() {
 	val component: DashComponent = DashComponent(mob)
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		if (mob.target == null) {
 			return BTStatus.FAILURE
 		}

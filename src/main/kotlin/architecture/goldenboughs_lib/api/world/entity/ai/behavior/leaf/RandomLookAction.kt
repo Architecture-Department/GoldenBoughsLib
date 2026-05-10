@@ -19,7 +19,7 @@ class RandomLookAction(val mob: Mob) : BTNode() {
 		pos = mob.eyePosition.add(sphere(1f, mob.getRandom().nextFloat() * 6.28f, Math.PI.toFloat() * 0.5f))
 	}
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		if (pos != null) {
 			mob.lookAt(EntityAnchorArgument.Anchor.EYES, pos!!)
 			mob.getLookControl().setLookAt(pos!!)

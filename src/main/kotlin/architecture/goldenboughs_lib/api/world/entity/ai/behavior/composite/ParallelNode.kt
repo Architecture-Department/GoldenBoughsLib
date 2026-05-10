@@ -46,7 +46,7 @@ class ParallelNode(
 		return this
 	}
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		var successCount = 0
 		var failureCount = 0
 		var runningCount = 0

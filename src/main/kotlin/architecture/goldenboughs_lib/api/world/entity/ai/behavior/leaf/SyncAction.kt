@@ -17,7 +17,7 @@ class SyncAction<T>(
 	val data: EntityDataAccessor<T>,
 	val dataSupplier: Supplier<T>
 ) : BTNode() where T : Any {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		mob.getEntityData().set(data, dataSupplier.get())
 		return BTStatus.SUCCESS
 	}

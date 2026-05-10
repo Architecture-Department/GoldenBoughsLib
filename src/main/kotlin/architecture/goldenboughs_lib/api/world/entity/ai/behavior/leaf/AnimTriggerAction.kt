@@ -13,7 +13,7 @@ class AnimTriggerAction(
 	val controllerName: String,
 	val animationName: String
 ) : BTNode() {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		return BTStatus.SUCCESS
 	}
 

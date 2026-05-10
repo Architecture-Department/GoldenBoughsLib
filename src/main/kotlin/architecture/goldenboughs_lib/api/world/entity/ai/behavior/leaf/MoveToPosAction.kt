@@ -30,7 +30,7 @@ class MoveToPosAction(
 		return this
 	}
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		if (mob.getNavigation().isDone) {
 			mob.getNavigation().moveTo(targetX, targetY, targetZ, speed)
 		}

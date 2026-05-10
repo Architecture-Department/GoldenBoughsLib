@@ -12,7 +12,7 @@ class RepeatUntilNode(
 	val targetStatus: BTStatus,
 	child: BTNode
 ) : DecorationNode(child) {
-	override fun execute(): BTStatus {
+    override fun execute(): BTStatus? {
 		this.child.tryStart()
 		val status = this.child.execute()
 		if (status == targetStatus) {

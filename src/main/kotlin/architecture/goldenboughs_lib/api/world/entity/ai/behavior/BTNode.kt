@@ -11,7 +11,11 @@ abstract class BTNode : Goal() {
 	var status: BTStatus = BTStatus.READY
 	protected var context: BehaviorTreeContext? = null
 
-	var description: String? = null
+	private final var description: String? = null
+
+	fun getDescription(): String? {
+		return description
+	}
 
 	fun tryStart() {
 		if (this.isReady) {

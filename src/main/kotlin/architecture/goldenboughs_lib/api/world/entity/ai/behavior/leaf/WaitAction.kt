@@ -11,7 +11,7 @@ class WaitAction(var waitTicks: Int) : BTNode() {
 	var currentTicks: Int = 0
 		protected set
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		if (++currentTicks >= waitTicks) {
 			return BTStatus.SUCCESS
 		}

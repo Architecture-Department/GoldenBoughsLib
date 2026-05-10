@@ -11,7 +11,7 @@ import net.minecraft.world.entity.Mob
 class LookAtTargetAction(
 	val mob: Mob
 ) : BTNode() {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		mob.target ?: return BTStatus.FAILURE
 
 		mob.lookAt(mob.target!!, 90f, 85f)

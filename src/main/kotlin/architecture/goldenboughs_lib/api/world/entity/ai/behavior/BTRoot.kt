@@ -24,7 +24,7 @@ abstract class BTRoot<T : Mob>(protected var mob: T) : BTNode() {
 		if (this.child == null) {
 			this.child = this.createBehaviorTree()
 		}
-		child!!.start()
+		child?.start()
 	}
 
 	/**
@@ -33,15 +33,15 @@ abstract class BTRoot<T : Mob>(protected var mob: T) : BTNode() {
 	protected abstract fun createBehaviorTree(): BTNode
 
 	override fun tick() {
-		child!!.tick()
+		child?.tick()
 	}
 
 	override fun stop() {
 		super.stop()
-		child!!.stop()
+		child?.stop()
 	}
 
-	override fun execute(): BTStatus {
-		return child!!.execute()
+	override fun execute(): BTStatus? {
+		return child?.execute()
 	}
 }

@@ -16,7 +16,7 @@ class SetAttributeAction(
 	val value: Double
 ) :
 	BTNode() {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		this.living.getAttribute(this.attributeHolder)!!.baseValue = this.value
 		return BTStatus.SUCCESS
 	}

@@ -10,7 +10,7 @@ import architecture.goldenboughs_lib.api.world.entity.ai.behavior.condition.Cond
  * 当条件满足时返回 SUCCESS，否则返回 FAILURE
  */
 class ConditionAction(val condition: ConditionBT) : BTNode() {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		if (condition.check()) {
 			return BTStatus.SUCCESS
 		}

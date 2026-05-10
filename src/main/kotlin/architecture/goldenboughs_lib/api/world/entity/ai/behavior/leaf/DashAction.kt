@@ -21,7 +21,7 @@ class DashAction(val mob: Mob, var speed: Float) : BTNode() {
 		targetPos = mob.position().add(mob.forward.normalize().scale(200.0))
 	}
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		this.component.uniformMove(speed)
 		if (targetPos != null) {
 			this.mob.getLookControl().setLookAt(targetPos!!)

@@ -12,7 +12,7 @@ import java.util.*
  * 仅用于临时迁移或测试目的
  */
 class GoalWrapper(private val goal: Goal) : BTNode() {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 //        if (!goal.canUse()) {
 //            return BTStatus.FAILURE;
 //        }

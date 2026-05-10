@@ -30,7 +30,7 @@ class MoveToTargetAction(
 	 *
 	 * FAILURE：任务失败
 	 */
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		val target = mob.target ?: return BTStatus.FAILURE
 
 		if (--this.findInterval <= 0) {

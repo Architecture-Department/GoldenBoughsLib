@@ -14,7 +14,7 @@ class JumpAttackAction @JvmOverloads constructor(
 	val horizonPower: Float,
 	val jumpAdditionSpeed: Float = 0f
 ) : BTNode() {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		if (this.mob.target == null) {
 			return BTStatus.FAILURE
 		}

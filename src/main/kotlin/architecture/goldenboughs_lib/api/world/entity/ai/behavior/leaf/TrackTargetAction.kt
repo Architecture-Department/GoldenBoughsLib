@@ -26,7 +26,7 @@ class TrackTargetAction @JvmOverloads constructor(
 		currentVelocity = Vec3.ZERO
 	}
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		val target = this.mob.target
 		if (target == null || !target.isAlive) {
 			return BTStatus.FAILURE

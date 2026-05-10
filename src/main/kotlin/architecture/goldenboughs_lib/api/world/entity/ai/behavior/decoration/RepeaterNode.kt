@@ -17,7 +17,7 @@ class RepeaterNode(
 
 	var currentCount: Int = 0
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		while (currentCount < repeatCount) {
 			child.tryStart()
 

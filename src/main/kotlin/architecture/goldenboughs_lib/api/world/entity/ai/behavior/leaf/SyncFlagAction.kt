@@ -16,7 +16,7 @@ class SyncFlagAction<T : ISharedFlagControllerHolder>(
 	protected val sharedFlag: SharedFlagController.SharedFlag,
 	protected val isEnable: Boolean
 ) : BTNode() {
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		return BTStatus.SUCCESS
 	}
 

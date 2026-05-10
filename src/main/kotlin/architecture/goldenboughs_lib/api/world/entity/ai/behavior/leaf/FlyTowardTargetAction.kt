@@ -16,7 +16,7 @@ class FlyTowardTargetAction @JvmOverloads constructor(
 ) : BTNode() {
 	val component: DashComponent = DashComponent(mob)
 
-	override fun execute(): BTStatus {
+	override fun execute(): BTStatus? {
 		val target = mob.target ?: return BTStatus.FAILURE
 		val dir = target.position().subtract(mob.position()).add(0.0, offsetY.toDouble(), 0.0)
 		component.direction = dir
