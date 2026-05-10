@@ -45,14 +45,14 @@ object LcLevelUtil {
 	 * 如果有，则尝试从能力系统中获取如果获取的是null那就返回null
 	 */
 	@JvmStatic
-	fun getLevel(entity: Entity): LcLevel? {
-		val capability = getLevelCapability(entity)
+	fun Entity.getLevel(): LcLevel? {
+		val capability = getLevelCapability()
 		return if (capability == null) LcLevel.ZAYIN else capability.getLcLevel()
 	}
 
 	@JvmStatic
-	fun getLevelCapability(entity: Entity): IEntityLcLevel? {
-		return entity.getCapability(LibCapabilitys.LcLevel.LC_LEVEL_ENTITY)
+	fun Entity.getLevelCapability(): IEntityLcLevel? {
+		return getCapability(LibCapabilitys.LcLevel.LC_LEVEL_ENTITY)
 	}
 
 	/**
