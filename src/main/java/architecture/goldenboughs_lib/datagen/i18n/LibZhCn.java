@@ -139,11 +139,11 @@ public final class LibZhCn extends DatagenI18n {
 		add(ItemVirtueUsageReq.INTERVAL, "至少：%s，至多：%s");
 		add(ItemVirtueUsageReq.NOT_TO_EXCEED, "至多：%s");
 		add(ItemVirtueUsageReq.NOT_LOWER_THAN, "至少：%s");
-		add(VirtueType.FORTITUDE.getTooltipName(), "勇气");
-		add(VirtueType.PRUDENCE.getTooltipName(), "谨慎");
-		add(VirtueType.TEMPERANCE.getTooltipName(), "自律");
-		add(VirtueType.JUSTICE.getTooltipName(), "正义");
-		add(VirtueType.COMPOSITE.getTooltipName(), "综合");
+		add(VirtueType.FORTITUDE.tooltipName, "勇气");
+		add(VirtueType.PRUDENCE.tooltipName, "谨慎");
+		add(VirtueType.TEMPERANCE.tooltipName, "自律");
+		add(VirtueType.JUSTICE.tooltipName, "正义");
+		add(VirtueType.COMPOSITE.tooltipName, "综合");
 		//endregion
 	}
 }

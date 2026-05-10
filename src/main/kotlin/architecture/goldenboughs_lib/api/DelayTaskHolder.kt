@@ -164,7 +164,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 		 * 运行任务类，isRemoved为true时将在下一刻移除该任务
 		 */
 		@AllOpe
-		class BaseTask(
+		open class BaseTask(
 			protected val resultRun: ResultRun,
 			protected val removedRun: RemovedRun?,
 			protected val maxTick: Int,

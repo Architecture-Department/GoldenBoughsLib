@@ -86,13 +86,13 @@ class UUIDFilterUtil {
 	}
 
 	fun removeEntityBlacks(vararg entitys: EntityAccess): UUIDFilterUtil {
-		listOf<EntityAccess>(*entitys)
+		listOf(*entitys)
 			.forEach(Consumer { entity: EntityAccess -> blacklist.remove(entity.uuid) })
 		return this
 	}
 
 	fun removeEntityWhites(vararg entitys: EntityAccess): UUIDFilterUtil {
-		listOf<EntityAccess>(*entitys)
+		listOf(*entitys)
 			.forEach(Consumer { entity: EntityAccess -> whitelist.remove(entity.uuid) })
 		return this
 	}

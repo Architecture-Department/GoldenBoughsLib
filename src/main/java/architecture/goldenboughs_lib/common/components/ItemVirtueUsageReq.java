@@ -80,7 +80,7 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 	}
 
 	private static Component getParameterComponent(boolean detailed, int value) {
-		return detailed ? Component.literal(String.valueOf(value)) : Component.translatable(VirtueRating.getRating(value).getName());
+		return detailed ? Component.literal(String.valueOf(value)) : Component.translatable(VirtueRating.getRating(value).getVirtueName());
 	}
 
 	@Override
@@ -92,7 +92,7 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 		tooltipAdder.accept(Component.translatable(USE_CONDITION).withColor(0xAAAAAA));
 
 		boolean detailed = player != null && (player.isCreative() && tooltipFlag.hasShiftDown() || player.getAttributeValue(LibAttributes.INTELLIGENCE_DEPARTMENT_ACTIVATION) >= 1);
-		for (VirtueType type : VirtueType.values()) {
+		for (VirtueType type : VirtueType.getEntries()) {
 			Component component = analysisUsageReq(type, detailed);
 			if (component == null) {
 				continue;
@@ -111,7 +111,7 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 			return null;
 		}
 
-		MutableComponent mutableComponent = Component.translatable(virtueType.getTooltipName());
+		MutableComponent mutableComponent = Component.translatable(virtueType.tooltipName);
 
 		if (virtueType == VirtueType.COMPOSITE) {
 			isDetailed = false;
@@ -144,7 +144,7 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 		int size = list.size();
 		UsageReq lastUsageReq = list.getLast();
 		int lastValue = lastUsageReq.value;
-		Object object = isDetailed ? lastValue : VirtueRating.getRating(lastValue).getName();
+		Object object = isDetailed ? lastValue : VirtueRating.getRating(lastValue).getVirtueName();
 		UsageReq.Type type = lastUsageReq.type;
 
 		// 检查非法的使用需求类型组合
@@ -168,7 +168,7 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 			// 处理区间范围的情况
 			if (type != UsageReq.Type.NOT_LOWER_THAN) {
 				int value = list.get(1).value;
-				Object object1 = isDetailed ? value : VirtueRating.getRating(value).getName();
+				Object object1 = isDetailed ? value : VirtueRating.getRating(value).getVirtueName();
 				component = Component.translatable(INTERVAL, object, object1);
 				return component.withColor(0xAAAAAA);
 			}
@@ -178,7 +178,7 @@ public record ItemVirtueUsageReq(List<UsageReq> fortitude, List<UsageReq> pruden
 		component = Component.translatable(REQUIREMENT);
 		for (UsageReq usageReq : list) {
 			int value = usageReq.value;
-			Object object1 = isDetailed ? value : VirtueRating.getRating(value).getName();
+			Object object1 = isDetailed ? value : VirtueRating.getRating(value).getVirtueName();
 			component.append(Component.literal(" " + object1));
 		}
 		return component.withColor(0xAAAAAA);

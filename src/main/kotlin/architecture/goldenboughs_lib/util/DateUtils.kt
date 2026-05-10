@@ -56,9 +56,9 @@ object DateUtils {
 	@JvmStatic
 	fun isWithinDayTime(start: Int, end: Int, dayTime: Int): Boolean {
 		if (start > end) {
-			return dayTime >= start || dayTime <= end
+			return dayTime !in (end + 1)..<start
 		}
-		return dayTime >= start && dayTime <= end
+		return dayTime in start..end
 	}
 
 	@JvmStatic
