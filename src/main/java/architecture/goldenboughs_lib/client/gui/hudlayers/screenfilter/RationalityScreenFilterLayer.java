@@ -64,7 +64,7 @@ public class RationalityScreenFilterLayer extends BasicHudLayer {
 	@Override
 	public void init(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
 		super.init(guiGraphics, deltaTracker);
-		float maxValue = RationalityUtil.getMaxValue(this.getPlayer());
+		float maxValue = RationalityUtil.getMaxRationalityValue(this.getPlayer());
 		float minValue = -maxValue - maxValue / 3;
 		if (minValue != this.minValue) {
 			this.minValue = minValue;
@@ -72,7 +72,7 @@ public class RationalityScreenFilterLayer extends BasicHudLayer {
 
 		float deltaTime = deltaTracker.getRealtimeDeltaTicks();
 
-		float newCurrentValue = RationalityUtil.getValue(this.getPlayer()) - maxValue / 3;
+		float newCurrentValue = RationalityUtil.getRationalityValue(this.getPlayer()) - maxValue / 3;
 		if (newCurrentValue != this.currentValue) {
 			this.currentValue = newCurrentValue;
 		}

@@ -132,7 +132,7 @@ public final class LcDamageEventExecutes {
 			MobEffectInstance effect = attackedEntity.getEffect(entry.effect());
 
 			if (effect == null) continue;
-			if (lcDamageType != null && !lcDamageType.getDamageTypeResourceKey().location().equals(entry.damageTypeTag())) {
+			if (lcDamageType != null && !lcDamageType.getDamageType().location().equals(entry.damageTypeTag())) {
 				continue;
 			}
 

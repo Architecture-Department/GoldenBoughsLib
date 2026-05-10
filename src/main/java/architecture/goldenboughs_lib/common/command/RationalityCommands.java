@@ -41,7 +41,7 @@ public class RationalityCommands {
 				.then(Commands.literal("reset")
 					.executes(context -> {
 						ServerPlayer player = EntityArgument.getPlayer(context, "target");
-						RationalityUtil.setValue(player, 0, false);
+						RationalityUtil.setRationalityValue(player, 0, false);
 						RationalityUtil.setBaseMaxValue(player, (float) LibAttributes.MAX_RATIONALITY.value().getDefaultValue());
 						RationalityUtil.setBaseNaturalRecoveryRate(player, (float) LibAttributes.RATIONALITY_NATURAL_RECOVERY_WAIT_TIME.value().getDefaultValue());
 						RationalityUtil.setBaseRationalityRecoveryAmount(player, (float) LibAttributes.RATIONALITY_RECOVERY_AMOUNT.value().getDefaultValue());
@@ -65,7 +65,7 @@ public class RationalityCommands {
 			ServerPlayer player = EntityArgument.getPlayer(context, "target");
 			float value = 0;
 			switch (processType) {
-				case VALUE -> RationalityUtil.setValue(player, 0, false);
+				case VALUE -> RationalityUtil.setRationalityValue(player, 0, false);
 				case MAX_VALUE ->
 					RationalityUtil.setBaseMaxValue(player, value = (float) LibAttributes.MAX_RATIONALITY.value().getDefaultValue());
 				case NATURAL_RECOVERY_RATE ->
@@ -101,16 +101,16 @@ public class RationalityCommands {
 			switch (processType) {
 				case VALUE -> {
 					if (isSet) {
-						RationalityUtil.setValue(player, value, false);
+						RationalityUtil.setRationalityValue(player, value, false);
 					} else {
-						value = RationalityUtil.getValue(player);
+						value = RationalityUtil.getRationalityValue(player);
 					}
 				}
 				case MAX_VALUE -> {
 					if (isSet) {
 						RationalityUtil.setBaseMaxValue(player, value);
 					} else {
-						value = RationalityUtil.getMaxValue(player);
+						value = RationalityUtil.getMaxRationalityValue(player);
 					}
 				}
 				case NATURAL_RECOVERY_RATE -> {

@@ -20,14 +20,14 @@ public final class RationalityEventExecutes {
 			return;
 		}
 
-		float value = RationalityUtil.getValue(player);
-		if (value < 0 || value >= RationalityUtil.getMaxValue(player)) {
+		float value = RationalityUtil.getRationalityValue(player);
+		if (value < 0 || value >= RationalityUtil.getMaxRationalityValue(player)) {
 			return;
 		}
 
 		float recoveryAmount = RationalityUtil.getRationalityRecoveryAmount(player);
 		if (recoveryAmount > 0) {
-			RationalityUtil.modifyValue(player, recoveryAmount, true);
+			RationalityUtil.modifyRationalityValue(player, recoveryAmount, true);
 		}
 
 		float naturalRecoveryRate = RationalityUtil.getNaturalRecoveryRate(player);

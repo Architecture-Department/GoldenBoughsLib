@@ -24,6 +24,6 @@ public enum BlockLcLevel implements IBlockComponentProvider {
 		if (level == null) {
 			return;
 		}
-		tooltip.add(1, Component.literal(level.getName().toUpperCase()).withColor(level.getColourValue()));
+		tooltip.add(1, Component.literal(level.getLevelName().toUpperCase()).withColor(level.getColourValue()));
 	}
 }

@@ -46,12 +46,12 @@ public class RationalityBarLayer extends StatusBarLayer {
 
 	@Override
 	protected float getMaxValueFromSource() {
-		return RationalityUtil.getMaxValue(this.player);
+		return RationalityUtil.getMaxRationalityValue(this.player);
 	}
 
 	@Override
 	protected float getCurrentValueFromSource() {
-		return RationalityUtil.getValue(this.player);
+		return RationalityUtil.getRationalityValue(this.player);
 	}
 
 	@Override

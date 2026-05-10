@@ -25,7 +25,7 @@ public enum EntityLcLevel implements IEntityComponentProvider {
 		if (level == null) {
 			return;
 		}
-		iTooltip.add(1, Component.literal(level.getName().toUpperCase()).withColor(level.getColourValue()));
+		iTooltip.add(1, Component.literal(level.getLevelName().toUpperCase()).withColor(level.getColourValue()));
 	}
 
 	@Override

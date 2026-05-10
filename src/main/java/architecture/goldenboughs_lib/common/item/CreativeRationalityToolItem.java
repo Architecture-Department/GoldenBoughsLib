@@ -37,7 +37,7 @@ public class CreativeRationalityToolItem extends Item {
 			return InteractionResultHolder.fail(itemStackInHand);
 		}
 
-		RationalityUtil.modifyValue(playerEntity, Boolean.TRUE == itemStackInHand.get(LibDataComponentTypes.MODE_BOOLEAN) ? -1 : 1, false);
+		RationalityUtil.modifyRationalityValue(playerEntity, Boolean.TRUE == itemStackInHand.get(LibDataComponentTypes.MODE_BOOLEAN) ? -1 : 1, false);
 		return InteractionResultHolder.success(itemStackInHand);
 	}
 
@@ -45,7 +45,7 @@ public class CreativeRationalityToolItem extends Item {
 	public void inventoryTick(@NotNull ItemStack itemStack, @NotNull Level world, @NotNull Entity entity, int slotIndex, boolean isCurrentlySelected) {
 		super.inventoryTick(itemStack, world, entity, slotIndex, isCurrentlySelected);
 		if (entity instanceof Player player && !world.isClientSide() && isCurrentlySelected) {
-			displayRationalityValue("当前的理智值为：" + RationalityUtil.getValue(player));
+			displayRationalityValue("当前的理智值为：" + RationalityUtil.getRationalityValue(player));
 		}
 	}
 

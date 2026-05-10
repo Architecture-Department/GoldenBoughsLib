@@ -31,7 +31,7 @@ public final class ItemTooltipEvents {
 		String upperCase;
 		int colourValue;
 		if (lcLevel != null) {
-			upperCase = lcLevel.getName().toUpperCase();
+			upperCase = lcLevel.getLevelName().toUpperCase();
 			colourValue = lcLevel.getColourValue();
 		} else {
 			upperCase = "???";

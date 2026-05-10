@@ -186,7 +186,7 @@ public final class LivingEntityEvents {
 			if (attackedEntity instanceof Player player &&
 				(lcDamageType == LcDamageType.SPIRIT || lcDamageType == LcDamageType.EROSION)
 			) {
-				RationalityUtil.modifyValue(player, event.getOriginalDamage(), true);
+				RationalityUtil.modifyRationalityValue(player, event.getOriginalDamage(), true);
 				ParticleUtil.createDamageTextParticles(player, event.getOriginalDamage(), true, true);
 			}
 
@@ -204,7 +204,7 @@ public final class LivingEntityEvents {
 		if (event.getNewDamage() > 0) {
 			// 修改理智
 			if (attackedEntity instanceof Player player && (lcDamageType == LcDamageType.SPIRIT || lcDamageType == LcDamageType.EROSION)) {
-				RationalityUtil.modifyValue(player, -event.getNewDamage(), true, lcDamageType == LcDamageType.SPIRIT);
+				RationalityUtil.modifyRationalityValue(player, -event.getNewDamage(), true, lcDamageType == LcDamageType.SPIRIT);
 				if (lcDamageType == LcDamageType.SPIRIT) {
 					event.getContainer().setPostAttackInvulnerabilityTicks(0);
 					event.setNewDamage(0);
