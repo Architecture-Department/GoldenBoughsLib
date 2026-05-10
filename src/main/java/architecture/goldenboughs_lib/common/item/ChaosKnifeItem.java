@@ -28,7 +28,7 @@ public class ChaosKnifeItem extends SwordItem implements IMeleeEgoWeaponItem, II
 	private static final LcDamageType.Component DEFAULT_COMPONENT = new LcDamageType.Component(LcDamageType.PHYSICS, LcDamageType.values());
 
 	public ChaosKnifeItem(Properties itemProperties, Builder builder) {
-		super(new SimpleTier(BlockTags.INCORRECT_FOR_IRON_TOOL, 0, builder.attackSpeed, builder.weaponDamage, 5, Ingredient::of),
+		super(new SimpleTier(BlockTags.INCORRECT_FOR_IRON_TOOL, 0, builder.getAttackSpeed(), builder.getWeaponDamage(), 5, Ingredient::of),
 			itemProperties.component(LibDataComponentTypes.LC_DAMAGE_TYPE.get(),
 				new LcDamageType.Component(LcDamageType.PHYSICS, LcDamageType.values())));
 	}
