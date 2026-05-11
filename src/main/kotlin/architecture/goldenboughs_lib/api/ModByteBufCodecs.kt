@@ -16,7 +16,7 @@ object ModByteBufCodecs {
 				return entry.apply(key.decode(buf), value.decode(buf))
 			}
 
-			@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+			@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "TYPE_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 			override fun encode(buf: B, pair: T) {
 				key.encode(buf, pair.key)
 				value.encode(buf, pair.value)

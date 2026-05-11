@@ -231,8 +231,8 @@ public abstract class FontMixin implements IFontExtension, IFont {
 					boolean flag = style.isBold();
 					FontSet fontset = getFontSet(style.getFont());
 					GlyphInfo glyphinfo = fontset.getGlyphInfo(i3, filterFishyGlyphs);
-					modStringRenderOutput.setX(afloat[adjustColor(0)] + (float) l * glyphinfo.getShadowOffset());
-					modStringRenderOutput.setY(y + (float) i1 * glyphinfo.getShadowOffset());
+					modStringRenderOutput.x = afloat[adjustColor(0)] + (float) l * glyphinfo.getShadowOffset();
+					modStringRenderOutput.y = y + (float) i1 * glyphinfo.getShadowOffset();
 					afloat[adjustColor(0)] += glyphinfo.getAdvance(flag);
 					return modStringRenderOutput.accept(i2, style.withColor(i), i3);
 				});
