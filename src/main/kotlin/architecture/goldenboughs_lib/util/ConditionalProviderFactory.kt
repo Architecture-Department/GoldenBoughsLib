@@ -1,6 +1,5 @@
 package architecture.goldenboughs_lib.util
 
-import com.mojang.datafixers.util.Pair
 import java.util.function.Function
 import java.util.function.Predicate
 
@@ -13,19 +12,19 @@ object ConditionalProviderFactory {
 	@JvmStatic
 	fun <T, I> getProvider(
 		defaultValue: T?,
-		conditions: MutableList<Pair<Predicate<I>, T?>>
+		conditions: List<Pair<Predicate<I>, T?>>
 	): Function<I, T?> {
-		return Function { entitypatch: I ->
+		return Function { entityPatch: I ->
 			if (conditions.isEmpty()) {
 				return@Function defaultValue
 			}
 			for (condition in conditions) {
-				val predicate = condition.getFirst()
-				if (predicate == null || !predicate.test(entitypatch)) {
+				val predicate = condition.first
+				if (!predicate.test(entityPatch)) {
 					continue
 				}
 
-				val second = condition.getSecond() ?: continue
+				val second = condition.second ?: continue
 
 				return@Function second as T
 			}

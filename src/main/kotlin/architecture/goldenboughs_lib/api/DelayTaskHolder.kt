@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api
 
 import architecture.goldenboughs_lib.core.Lib
-import architecture.goldenboughs_lib.init.LibAttachments
+import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.EquipmentSlot
@@ -272,7 +272,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 	companion object {
 		@JvmStatic
 		fun of(attachmentHolder: AttachmentHolder): DelayTaskHolder {
-			return attachmentHolder.getData(LibAttachments.DELAY_TASK_HOLDER)
+			return attachmentHolder.getData(LibAttachmentTypes.DELAY_TASK_HOLDER)
 		}
 
 		@JvmStatic

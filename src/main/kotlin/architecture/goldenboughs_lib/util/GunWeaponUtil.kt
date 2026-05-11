@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.util
 
 import architecture.goldenboughs_lib.api.world.item.IGunWeapon
-import architecture.goldenboughs_lib.init.LibAttachments
+import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import architecture.goldenboughs_lib.init.LibAttributes
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.LivingEntity
@@ -36,8 +36,8 @@ object GunWeaponUtil {
 	 */
 	@JvmStatic
 	fun isAttack(player: Player, isHandUsed: Boolean): Boolean {
-		return if (isHandUsed) player.getData<Boolean>(LibAttachments.IS_GUN_ATTACK_MAIN_HAND)
-		else player.getData<Boolean>(LibAttachments.IS_GUN_ATTACK_OFF_HAND)
+		return if (isHandUsed) player.getData<Boolean>(LibAttachmentTypes.IS_GUN_ATTACK_MAIN_HAND)
+		else player.getData<Boolean>(LibAttachmentTypes.IS_GUN_ATTACK_OFF_HAND)
 	}
 
 	/**
@@ -62,7 +62,7 @@ object GunWeaponUtil {
 	@JvmStatic
 	fun setIsAttack(player: Player, isAttack: Boolean, isHandUsed: Boolean) {
 		player.setData<Boolean?>(
-			if (isHandUsed) LibAttachments.IS_GUN_ATTACK_MAIN_HAND else LibAttachments.IS_GUN_ATTACK_OFF_HAND,
+			if (isHandUsed) LibAttachmentTypes.IS_GUN_ATTACK_MAIN_HAND else LibAttachmentTypes.IS_GUN_ATTACK_OFF_HAND,
 			isAttack
 		)
 	}
@@ -88,7 +88,7 @@ object GunWeaponUtil {
 	 */
 	@JvmStatic
 	fun getChargeUpValue(player: Player, isHandUsed: Boolean): Int {
-		return player.getData(if (isHandUsed) LibAttachments.GUN_CHARGE_UP_TICK_MAIN_HAND else LibAttachments.GUN_CHARGE_UP_TICK_OFF_HAND)
+		return player.getData(if (isHandUsed) LibAttachmentTypes.GUN_CHARGE_UP_TICK_MAIN_HAND else LibAttachmentTypes.GUN_CHARGE_UP_TICK_OFF_HAND)
 	}
 
 	/**
@@ -113,7 +113,7 @@ object GunWeaponUtil {
 	@JvmStatic
 	fun setChargeUpValue(player: Player, newValue: Int, isHandUsed: Boolean) {
 		player.setData<Int?>(
-			if (isHandUsed) LibAttachments.GUN_CHARGE_UP_TICK_MAIN_HAND else LibAttachments.GUN_CHARGE_UP_TICK_OFF_HAND,
+			if (isHandUsed) LibAttachmentTypes.GUN_CHARGE_UP_TICK_MAIN_HAND else LibAttachmentTypes.GUN_CHARGE_UP_TICK_OFF_HAND,
 			max(0, min(newValue, getMaxChargeUpValue(player, isHandUsed)))
 		)
 	}

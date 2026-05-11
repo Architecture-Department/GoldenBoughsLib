@@ -33,11 +33,12 @@ object Lib {
 		LibItems.REGISTRY.register(modBus)
 		LibMobEffects.REGISTRY.register(modBus)
 		LibAttributes.REGISTRY.register(modBus)
-		LibAttachments.REGISTRY.register(modBus)
+		LibAttachmentTypes.REGISTRY.register(modBus)
 		LibParticleTypes.REGISTRY.register(modBus)
 		LibDataComponentTypes.REGISTRY.register(modBus)
 		LibEntityTypes.REGISTRY.register(modBus)
 		LibAbsorptionShieldsRegistry.init()
+		LibSoundEvents.REGISTRY.register(modBus)
 	}
 
 	@SubscribeEvent

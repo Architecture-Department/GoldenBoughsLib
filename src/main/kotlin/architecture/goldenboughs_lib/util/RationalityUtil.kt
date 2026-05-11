@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.util
 
 import architecture.goldenboughs_lib.core.LibEventHooks
-import architecture.goldenboughs_lib.init.LibAttachments
+import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import architecture.goldenboughs_lib.init.LibAttributes
 import net.minecraft.world.entity.player.Player
 
@@ -71,7 +71,7 @@ object RationalityUtil {
 
 		if (oldValue != newValue) {
 			setData(
-				LibAttachments.RATIONALITY,
+				LibAttachmentTypes.RATIONALITY,
 				Math.clamp(newValue, -maxRationalityValue, maxRationalityValue)
 			)
 		}
@@ -92,7 +92,7 @@ object RationalityUtil {
 	@JvmStatic
 	fun Player.getRationalityValue(): Float {
 		val maxRationalityValue = getMaxRationalityValue()
-		return Math.clamp(getData(LibAttachments.RATIONALITY), -maxRationalityValue, maxRationalityValue)
+		return Math.clamp(getData(LibAttachmentTypes.RATIONALITY), -maxRationalityValue, maxRationalityValue)
 	}
 
 	/**
@@ -151,7 +151,7 @@ object RationalityUtil {
 	 */
 	@JvmStatic
 	fun Player.getPauseRecoveryTick(): Int {
-		return getData(LibAttachments.RATIONALITY_PAUSE_RECOVERY_TICK)
+		return getData(LibAttachmentTypes.RATIONALITY_PAUSE_RECOVERY_TICK)
 	}
 
 	/**
@@ -159,6 +159,6 @@ object RationalityUtil {
 	 */
 	@JvmStatic
 	fun Player.setRecoveryTick(value: Int) {
-		setData(LibAttachments.RATIONALITY_PAUSE_RECOVERY_TICK, value)
+		setData(LibAttachmentTypes.RATIONALITY_PAUSE_RECOVERY_TICK, value)
 	}
 }

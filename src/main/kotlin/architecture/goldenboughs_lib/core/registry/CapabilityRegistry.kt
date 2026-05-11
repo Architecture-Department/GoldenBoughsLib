@@ -150,8 +150,7 @@ object CapabilityRegistry {
 	@JvmStatic
 	fun itemLevel(event: RegisterCapabilitiesEvent, lcLevel: IItemLcLevel, vararg items: ItemLike) {
 		event.registerItem(
-			LibCapabilitys.LcLevel.LC_LEVEL_ITEM,
-			{ stack: ItemStack, ctx: Void -> lcLevel }, *items
+			LibCapabilitys.LcLevel.LC_LEVEL_ITEM, { stack: ItemStack, ctx: Void -> lcLevel }, *items
 		)
 	}
 
@@ -222,84 +221,56 @@ object CapabilityRegistry {
 	fun registerLowest(event: RegisterCapabilitiesEvent) {
 		for (item in BuiltInRegistries.ITEM) {
 			registerItem(
-				event,
-				item,
-				IItemLcDamageType::class.java,
-				LibCapabilitys.LC_DAMAGE_TYPE_ITEM
+				event, item, IItemLcDamageType::class.java, LibCapabilitys.LC_DAMAGE_TYPE_ITEM
 			)
 			registerItem(
-				event,
-				item,
-				IItemUsageReq::class.java,
-				LibCapabilitys.USAGE_REQ_ITEM
+				event, item, IItemUsageReq::class.java, LibCapabilitys.USAGE_REQ_ITEM
 			)
 			registerItem(
-				event,
-				item,
-				IItemLcLevel::class.java,
-				LibCapabilitys.LcLevel.LC_LEVEL_ITEM
+				event, item, IItemLcLevel::class.java, LibCapabilitys.LcLevel.LC_LEVEL_ITEM
 			)
 		}
 
 		for (entityType in BuiltInRegistries.ENTITY_TYPE) {
 			registerEntity(
-				event,
-				entityType,
-				IEntityLcLevel::class.java,
-				LibCapabilitys.LcLevel.LC_LEVEL_ENTITY
+				event, entityType, IEntityLcLevel::class.java, LibCapabilitys.LcLevel.LC_LEVEL_ENTITY
 			)
 		}
 
 		for (blockEntityType in BuiltInRegistries.BLOCK_ENTITY_TYPE) {
 			registerBlockEntity(
-				event,
-				blockEntityType,
-				IBlockLcLevel::class.java,
-				LibCapabilitys.LcLevel.LC_LEVEL_BLOCK
+				event, blockEntityType, IBlockLcLevel::class.java, LibCapabilitys.LcLevel.LC_LEVEL_BLOCK
 			)
 		}
 
 		for (block in BuiltInRegistries.BLOCK) {
 			registerBlock(
-				event,
-				block,
-				IBlockLcLevel::class.java,
-				LibCapabilitys.LcLevel.LC_LEVEL_BLOCK
+				event, block, IBlockLcLevel::class.java, LibCapabilitys.LcLevel.LC_LEVEL_BLOCK
 			)
 		}
 	}
 
 	fun <T, C> registerItem(
-		event: RegisterCapabilitiesEvent,
-		item: Item,
-		capabilityClass: Class<T>,
-		capability: ItemCapability<T, C>
+		event: RegisterCapabilitiesEvent, item: Item, capabilityClass: Class<T>, capability: ItemCapability<T?, C?>
 	) {
 		if (!capabilityClass.isInstance(item) || event.isItemRegistered(capability, item)) {
 			return
 		}
-		event.registerItem<T, C>(
-			capability,
-			{ stack: ItemStack, ctx: C -> capabilityClass.cast(item) },
-			item
+		event.registerItem(
+			capability, { stack: ItemStack, ctx: C -> capabilityClass.cast(item) }, item
 		)
 	}
 
 	fun <T, C> registerBlock(
-		event: RegisterCapabilitiesEvent,
-		block: Block,
-		capabilityClass: Class<T>,
-		capability: BlockCapability<T, C>
+		event: RegisterCapabilitiesEvent, block: Block, capabilityClass: Class<T>, capability: BlockCapability<T?, C?>
 	) {
 		if (!capabilityClass.isInstance(block) || event.isBlockRegistered(capability, block)) {
 			return
 		}
-		event.registerBlock<T, C>(
-			capability,
-			{ level: Level, blockPos: BlockPos, blockState: BlockState, blockEntity: BlockEntity?, c: C ->
+		event.registerBlock(
+			capability, { level: Level, blockPos: BlockPos, blockState: BlockState, blockEntity: BlockEntity?, c: C ->
 				capabilityClass.cast(block)
-			},
-			block
+			}, block
 		)
 	}
 
@@ -307,11 +278,10 @@ object CapabilityRegistry {
 		event: RegisterCapabilitiesEvent,
 		block: BlockEntityType<*>,
 		capabilityClass: Class<T>,
-		capability: BlockCapability<T, C>
+		capability: BlockCapability<T?, C?>
 	) {
 		event.registerBlockEntity(
-			capability,
-			block
+			capability, block
 		) { blockEntity: Any, c: C -> if (capabilityClass.isInstance(blockEntity)) capabilityClass.cast(blockEntity) else null }
 	}
 
@@ -319,14 +289,13 @@ object CapabilityRegistry {
 		event: RegisterCapabilitiesEvent,
 		entityType: EntityType<*>,
 		capabilityClass: Class<T>,
-		capability: EntityCapability<T, C>
+		capability: EntityCapability<T?, C?>
 	) {
 		if (event.isEntityRegistered(capability, entityType)) {
 			return
 		}
 		event.registerEntity(
-			capability,
-			entityType
+			capability, entityType
 		) { entity: Any, ctx: C -> if (capabilityClass.isInstance(entity)) capabilityClass.cast(entity) else null }
 	}
 }

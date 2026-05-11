@@ -4,7 +4,7 @@ import architecture.goldenboughs_lib.api.virtue.VirtueFortitude
 import architecture.goldenboughs_lib.api.virtue.VirtueJustice
 import architecture.goldenboughs_lib.api.virtue.VirtuePrudence
 import architecture.goldenboughs_lib.api.virtue.VirtueTemperance
-import architecture.goldenboughs_lib.init.LibAttachments
+import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import net.minecraft.util.Mth
 import net.minecraft.world.entity.player.Player
 
@@ -40,7 +40,7 @@ object VirtueUtil {
 
 	@JvmStatic
 	fun Player.getJustice(): VirtueJustice {
-		return getData(LibAttachments.JUSTICE)
+		return getData(LibAttachmentTypes.JUSTICE)
 	}
 
 	@JvmStatic
@@ -50,7 +50,7 @@ object VirtueUtil {
 
 	@JvmStatic
 	fun Player.getTemperance(): VirtueTemperance {
-		return getData(LibAttachments.TEMPERANCE)
+		return getData(LibAttachmentTypes.TEMPERANCE)
 	}
 
 	@JvmStatic
@@ -60,7 +60,7 @@ object VirtueUtil {
 
 	@JvmStatic
 	fun Player.getPrudence(): VirtuePrudence {
-		return getData(LibAttachments.PRUDENCE)
+		return getData(LibAttachmentTypes.PRUDENCE)
 	}
 
 	@JvmStatic
@@ -70,6 +70,6 @@ object VirtueUtil {
 
 	@JvmStatic
 	fun Player.getFortitude(): VirtueFortitude {
-		return getData(LibAttachments.FORTITUDE)
+		return getData(LibAttachmentTypes.FORTITUDE)
 	}
 }

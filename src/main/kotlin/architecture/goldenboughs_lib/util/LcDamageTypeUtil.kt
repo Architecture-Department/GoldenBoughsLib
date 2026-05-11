@@ -12,38 +12,36 @@ object LcDamageTypeUtil {
 	 * 获取伤害物品
 	 */
 	@JvmStatic
-	fun getDamageItemStack(damageSource: DamageSource): ItemStack? {
-		return damageSource.weaponItem
+	fun DamageSource.getDamageItemStack(): ItemStack? {
+		return weaponItem
 	}
 
 	@JvmStatic
-	fun getLcDamageType(itemStack: ItemStack): LcDamageType? {
-		val colorDamageTypeItem = getLcDamageTypeCapability(itemStack)
-		if (colorDamageTypeItem != null) {
-			return colorDamageTypeItem.getLcDamageType(itemStack)
-		}
+	fun ItemStack.getLcDamageType(): LcDamageType? {
+		val colorDamageTypeItem = getLcDamageTypeCapability()
+		colorDamageTypeItem?.let { return it.getLcDamageType(this) }
 
-		(itemStack.item as? IItemLcDamageType)?.run {
-			return getLcDamageType(itemStack)
+		(item as? IItemLcDamageType)?.let {
+			return it.getLcDamageType(this)
 		}
 
 		return LcDamageType.PHYSICS
 	}
 
 	@JvmStatic
-	fun getLcDamageTypeCapability(itemStack: ItemStack): IItemLcDamageType? {
-		return itemStack.getCapability<IItemLcDamageType?>(LibCapabilitys.LC_DAMAGE_TYPE_ITEM)
+	fun ItemStack.getLcDamageTypeCapability(): IItemLcDamageType? {
+		return getCapability(LibCapabilitys.LC_DAMAGE_TYPE_ITEM)
 	}
 
 	@JvmStatic
-	fun getCanCauseLcDamageTypes(itemStack: ItemStack): Set<LcDamageType?> {
-		if (itemStack.has(LibDataComponentTypes.LC_DAMAGE_TYPE)) {
-			val component = itemStack.get(LibDataComponentTypes.LC_DAMAGE_TYPE)
+	fun ItemStack.getCanCauseLcDamageTypes(): Set<LcDamageType> {
+		if (has(LibDataComponentTypes.LC_DAMAGE_TYPE)) {
+			val component = get(LibDataComponentTypes.LC_DAMAGE_TYPE)
 			return component?.canCauseLcDamageTypes ?: mutableSetOf()
 		}
 
-		(itemStack.item as? IItemLcDamageType)?.run {
-			return getCanCauseLcDamageTypes(itemStack)
+		(item as? IItemLcDamageType)?.let {
+			return it.getCanCauseLcDamageTypes(this)
 		}
 
 		return mutableSetOf()

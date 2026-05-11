@@ -14,7 +14,7 @@ abstract class ShieldBarLayer(
 	protected val texture: ResourceLocation,
 	protected val bottomTexture: ResourceLocation,
 	protected val lightTexture: ResourceLocation,
-	protected val absorptionEffect: Holder<MobEffect?>
+	protected val absorptionEffect: Holder<MobEffect>
 ) : StatusBarLayer(
 	HorizontalStatusBar(
 		93, 11,
@@ -45,7 +45,7 @@ abstract class ShieldBarLayer(
 	override val currentValueFromSource: Float
 		get() {
 			var shieldAmount = 0.0f
-			for (entry in LibAbsorptionShieldsRegistry.getAll()) {
+			for (entry in LibAbsorptionShieldsRegistry.shields) {
 				if (entry.effect == absorptionEffect) shieldAmount = player?.getData(entry.attachment.get()) ?: 0.0f
 			}
 			return shieldAmount

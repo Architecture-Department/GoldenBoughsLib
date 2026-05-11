@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.api.virtue
 
 import architecture.goldenboughs_lib.api.ColourText
 import architecture.goldenboughs_lib.core.Lib
-import architecture.goldenboughs_lib.init.LibAttachments
+import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import architecture.goldenboughs_lib.util.ColorUtil.rgbColor
 import com.mojang.serialization.Codec
 import io.netty.buffer.ByteBuf
@@ -31,7 +31,7 @@ enum class VirtueType(
 	FORTITUDE(
 		0,
 		"fortitude",
-		LibAttachments.FORTITUDE,
+		LibAttachmentTypes.FORTITUDE,
 		Lib.modRlText("tooltip.fortitude"),
 		"#ff0000"
 	),
@@ -42,7 +42,7 @@ enum class VirtueType(
 	PRUDENCE(
 		1,
 		"prudence",
-		LibAttachments.PRUDENCE,
+		LibAttachmentTypes.PRUDENCE,
 		Lib.modRlText("tooltip.prudence"),
 		"#ffffff"
 	),
@@ -53,7 +53,7 @@ enum class VirtueType(
 	TEMPERANCE(
 		2,
 		"temperance",
-		LibAttachments.TEMPERANCE,
+		LibAttachmentTypes.TEMPERANCE,
 		Lib.modRlText("tooltip.temperance"),
 		"#8a2be2"
 	),
@@ -64,7 +64,7 @@ enum class VirtueType(
 	JUSTICE(
 		3,
 		"justice",
-		LibAttachments.JUSTICE,
+		LibAttachmentTypes.JUSTICE,
 		Lib.modRlText("tooltip.justice"),
 		"#00ffff"
 	),

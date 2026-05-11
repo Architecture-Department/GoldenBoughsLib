@@ -13,7 +13,7 @@ import java.util.function.Function
 // TODO 等新系统
 @AllOpe
 class ChopFlavorLayer : BasicHudLayer() {
-	private var chopFlavorBarProvider: Function<ItemStack, IChopFlavorBar>? = null
+	private var chopFlavorBarProvider: Function<ItemStack, IChopFlavorBar?>? = null
 	private var activateBar: IChopFlavorBar? = null
 	private var mainHandItemStack: ItemStack = ItemStack.EMPTY
 
@@ -27,10 +27,9 @@ class ChopFlavorLayer : BasicHudLayer() {
 	override fun init(guiGraphics: GuiGraphics, deltaTracker: DeltaTracker) {
 		super.init(guiGraphics, deltaTracker)
 		val mainHandItem = player?.mainHandItem ?: ItemStack.EMPTY
-		if (mainHandItem != mainHandItemStack) {
-			activateBar = chopFlavorBarProvider!!.apply(mainHandItem)
-			mainHandItemStack = mainHandItem
-		}
+		if (mainHandItem == mainHandItemStack) return
+		activateBar = chopFlavorBarProvider?.apply(mainHandItem)
+		mainHandItemStack = mainHandItem
 	}
 
 	override fun sizeChange(newScreenWidth: Int, newScreenHeight: Int) {

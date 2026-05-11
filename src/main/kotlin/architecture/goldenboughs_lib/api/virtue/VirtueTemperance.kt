@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api.virtue
 
 import architecture.goldenboughs_lib.core.Lib
-import architecture.goldenboughs_lib.init.LibAttachments
+import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import architecture.goldenboughs_lib.init.LibAttributes
 import net.minecraft.core.HolderLookup
 import net.minecraft.nbt.CompoundTag
@@ -40,7 +40,7 @@ class VirtueTemperance(
 
 
 	override fun syncData() {
-		player.syncData(LibAttachments.TEMPERANCE)
+		player.syncData(LibAttachmentTypes.TEMPERANCE)
 	}
 
 	override fun updateTrigger() {

@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.api
 import architecture.goldenboughs_lib.client.LibFontIcon
 import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibAttributes
-import architecture.goldenboughs_lib.init.LibDamageSources.createDamage
+import architecture.goldenboughs_lib.init.LibDamageSources.Companion.createDamage
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibDamageTypeTags
 import architecture.goldenboughs_lib.util.ColorUtil
