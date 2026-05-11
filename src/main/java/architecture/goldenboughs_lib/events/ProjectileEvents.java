@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.events;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.util.PiercingUtil;
 import architecture.goldenboughs_lib.util.PiercingUtil.PierceData;
 import net.minecraft.world.damagesource.DamageSource;
@@ -18,7 +18,7 @@ import java.util.List;
  * 弹射物事件监听器
  * 自动处理带有穿透标签的弹射物
  */
-@EventBusSubscriber(modid = GoldenBoughsLib.ID)
+@EventBusSubscriber(modid = Lib.ID)
 public final class ProjectileEvents {
 
 	/**

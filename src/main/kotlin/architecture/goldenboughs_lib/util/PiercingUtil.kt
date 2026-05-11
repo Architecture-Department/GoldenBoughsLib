@@ -350,7 +350,7 @@ object PiercingUtil {
 	 */
 	@JvmStatic
 	fun hasPiercingTag(projectile: Projectile): Boolean {
-		return projectile.getPersistentData().contains(PIERCING_CONFIG_KEY)
+		return projectile.persistentData.contains(PIERCING_CONFIG_KEY)
 	}
 
 	/**
@@ -361,7 +361,7 @@ object PiercingUtil {
 	 */
 	@JvmStatic
 	fun updatePiercingProgress(projectile: Projectile, data: PierceData) {
-		val nbt = projectile.getPersistentData()
+		val nbt = projectile.persistentData
 		if (nbt.contains(PIERCING_CONFIG_KEY)) {
 			val piercingNbt = nbt.getCompound(PIERCING_CONFIG_KEY)
 			piercingNbt.putInt("CurrentPierceCount", data.currentPierceCount)
@@ -385,7 +385,7 @@ object PiercingUtil {
 	fun restorePiercingProgress(projectile: Projectile): PierceData? {
 		val config = getPiercingConfig(projectile) ?: return null
 
-		val nbt = projectile.getPersistentData()
+		val nbt = projectile.persistentData
 		val piercingNbt = nbt.getCompound(PIERCING_CONFIG_KEY)
 
 		// 恢复进度
@@ -413,7 +413,7 @@ object PiercingUtil {
 	 */
 	@JvmStatic
 	fun getPiercingConfig(projectile: Projectile): PierceData? {
-		val nbt = projectile.getPersistentData()
+		val nbt = projectile.persistentData
 		if (!nbt.contains(PIERCING_CONFIG_KEY)) {
 			return null
 		}
@@ -453,7 +453,7 @@ object PiercingUtil {
 	 */
 	@JvmStatic
 	fun addPiercingTag(projectile: Projectile, config: PierceData) {
-		val nbt = projectile.getPersistentData()
+		val nbt = projectile.persistentData
 		val piercingNbt = CompoundTag()
 
 		// 保存配置

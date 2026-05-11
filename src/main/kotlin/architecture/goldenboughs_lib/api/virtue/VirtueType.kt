@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api.virtue
 
 import architecture.goldenboughs_lib.api.ColourText
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibAttachments
 import architecture.goldenboughs_lib.util.ColorUtil.rgbColor
 import com.mojang.serialization.Codec
@@ -32,7 +32,7 @@ enum class VirtueType(
 		0,
 		"fortitude",
 		LibAttachments.FORTITUDE,
-		GoldenBoughsLib.modRlText("tooltip.fortitude"),
+		Lib.modRlText("tooltip.fortitude"),
 		"#ff0000"
 	),
 
@@ -43,7 +43,7 @@ enum class VirtueType(
 		1,
 		"prudence",
 		LibAttachments.PRUDENCE,
-		GoldenBoughsLib.modRlText("tooltip.prudence"),
+		Lib.modRlText("tooltip.prudence"),
 		"#ffffff"
 	),
 
@@ -54,7 +54,7 @@ enum class VirtueType(
 		2,
 		"temperance",
 		LibAttachments.TEMPERANCE,
-		GoldenBoughsLib.modRlText("tooltip.temperance"),
+		Lib.modRlText("tooltip.temperance"),
 		"#8a2be2"
 	),
 
@@ -65,7 +65,7 @@ enum class VirtueType(
 		3,
 		"justice",
 		LibAttachments.JUSTICE,
-		GoldenBoughsLib.modRlText("tooltip.justice"),
+		Lib.modRlText("tooltip.justice"),
 		"#00ffff"
 	),
 
@@ -76,7 +76,7 @@ enum class VirtueType(
 		4,
 		"composite",
 		null,
-		GoldenBoughsLib.modRlText("tooltip.composite_rating"),
+		Lib.modRlText("tooltip.composite_rating"),
 		null
 	);
 
@@ -87,7 +87,7 @@ enum class VirtueType(
 	override val colourValue: Int = colour?.run { rgbColor(colour) } ?: 0
 
 	override fun getSerializedName(): String {
-		return GoldenBoughsLib.ID + "." + this.colourName
+		return Lib.ID + "." + this.colourName
 	}
 
 	fun <T : AbstractVirtue> getAttachmentTypeHolder(): Holder<AttachmentType<T>> {

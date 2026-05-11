@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.datagen.tag;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.init.LibDamageTypes;
 import architecture.goldenboughs_lib.init.tag.LibDamageTypeTags;
 import net.minecraft.core.HolderLookup;
@@ -18,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 @SuppressWarnings("unchecked")
 public final class LibDatagenDamageTypeTag extends DamageTypeTagsProvider {
 	public LibDatagenDamageTypeTag(final PackOutput output, final CompletableFuture<HolderLookup.Provider> lookupProvider, final ExistingFileHelper existingFileHelper) {
-		super(output, lookupProvider, GoldenBoughsLib.ID, existingFileHelper);
+		super(output, lookupProvider, Lib.ID, existingFileHelper);
 	}
 
 	@Override
@@ -95,6 +95,6 @@ public final class LibDatagenDamageTypeTag extends DamageTypeTagsProvider {
 	@Contract(pure = true)
 	@Override
 	public @NotNull String getName() {
-		return GoldenBoughsLib.NAME + " Damage Type Tags";
+		return Lib.NAME + " Damage Type Tags";
 	}
 }

@@ -9,7 +9,7 @@ import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType
 import architecture.goldenboughs_lib.api.capability.item.IItemLcLevel
 import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq
 import architecture.goldenboughs_lib.api.capability.item.ItemLcLevel
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibCapabilitys
 import architecture.goldenboughs_lib.init.LibItems
 import architecture.goldenboughs_lib.util.LcLevelUtil
@@ -36,7 +36,7 @@ import java.util.function.Supplier
 /**
  * 注册能力
  */
-@EventBusSubscriber(modid = GoldenBoughsLib.ID)
+@EventBusSubscriber(modid = Lib.ID)
 object CapabilityRegistry {
 	@JvmField
 	val ITEM_ZAYIN: MutableList<ItemLike> = ArrayList()
@@ -127,7 +127,6 @@ object CapabilityRegistry {
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	@JvmStatic
 	fun registerHighest(event: RegisterCapabilitiesEvent) {
 		itemLevel(event, LcLevel.ZAYIN, ITEM_ZAYIN)
 		itemLevel(event, LcLevel.TETH, ITEM_TETH)
@@ -220,7 +219,6 @@ object CapabilityRegistry {
 	}
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)
-	@JvmStatic
 	fun registerLowest(event: RegisterCapabilitiesEvent) {
 		for (item in BuiltInRegistries.ITEM) {
 			registerItem(

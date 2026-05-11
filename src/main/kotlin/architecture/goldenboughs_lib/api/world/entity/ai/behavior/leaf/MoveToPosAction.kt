@@ -20,7 +20,7 @@ class MoveToPosAction(
 	private var targetZ = 0.0
 
 	init {
-		setFlags(EnumSet.of(Flag.MOVE))
+		flags = EnumSet.of(Flag.MOVE)
 	}
 
 	fun setTarget(x: Double, y: Double, z: Double): MoveToPosAction {

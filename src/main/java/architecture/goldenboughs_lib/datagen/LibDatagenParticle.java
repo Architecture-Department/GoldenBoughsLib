@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.datagen;
 
 import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.init.LibParticleTypes;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.data.PackOutput;
@@ -25,12 +25,12 @@ public final class LibDatagenParticle extends ParticleDescriptionProvider {
 	}
 
 	private <T extends ParticleType<?>> void sprite(Supplier<T> type, String name) {
-		sprite(type.get(), GoldenBoughsLib.modRl(name));
+		sprite(type.get(), Lib.modRl(name));
 	}
 
 	private <T extends ParticleType<?>> void sprite(Supplier<T> type, String... names) {
 		spriteSet(type.get(), Arrays.stream(names)
-			.map(GoldenBoughsLib::modRl)
+			.map(Lib::modRl)
 			.collect(Collectors.toList()));
 	}
 }

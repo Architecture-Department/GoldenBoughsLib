@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.model.item
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import net.minecraft.resources.ResourceLocation
 import software.bernie.geckolib.animatable.GeoAnimatable
 
@@ -29,6 +29,6 @@ class GuiGeoItemModel<T : GeoAnimatable> : GeoItemModel<T> {
 
 	companion object {
 		private val MODELLED_PATH: ResourceLocation =
-			model(GoldenBoughsLib.modRl("item/gui_item_model")).withPrefix(MODEL_SUFFIX)
+			model(Lib.modRl("item/gui_item_model")).withPrefix(MODEL_SUFFIX)
 	}
 }

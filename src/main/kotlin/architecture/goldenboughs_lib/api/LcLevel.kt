@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.util.ColorUtil
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
@@ -38,7 +38,7 @@ enum class LcLevel(
 
 	@Contract(pure = true)
 	override fun getSerializedName(): String {
-		return GoldenBoughsLib.modRlText(this.levelName)
+		return Lib.modRlText(this.levelName)
 	}
 
 	companion object {

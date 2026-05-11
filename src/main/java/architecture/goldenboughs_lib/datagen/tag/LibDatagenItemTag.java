@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.datagen.tag;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.init.tag.LibItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -18,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 
 public final class LibDatagenItemTag extends ItemTagsProvider {
 	public LibDatagenItemTag(final PackOutput output, final CompletableFuture<HolderLookup.Provider> lookupProvider, final CompletableFuture<TagLookup<Block>> blockTags, final ExistingFileHelper existingFileHelper) {
-		super(output, lookupProvider, blockTags, GoldenBoughsLib.ID, existingFileHelper);
+		super(output, lookupProvider, blockTags, Lib.ID, existingFileHelper);
 	}
 
 	@Override

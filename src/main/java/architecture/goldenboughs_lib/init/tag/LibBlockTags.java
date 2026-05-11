@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.init.tag;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Block;
 public final class LibBlockTags {
 
 	private static TagKey<Block> createTag(String name) {
-		return createTag(GoldenBoughsLib.modRl(name));
+		return createTag(Lib.modRl(name));
 	}
 
 	private static TagKey<Block> createTag(ResourceLocation location) {

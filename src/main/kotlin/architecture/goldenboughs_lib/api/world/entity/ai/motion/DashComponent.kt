@@ -84,7 +84,7 @@ class DashComponent(var owner: Entity) {
 	 */
 	fun setPredictDirection(target: Entity) {
 		direction =
-			target.position().add(0.0, 1.0, 0.0).add(target.getKnownMovement().scale(10.0)).subtract(owner.position())
+			target.position().add(0.0, 1.0, 0.0).add(target.knownMovement.scale(10.0)).subtract(owner.position())
 	}
 
 	fun lookAtDirection() {

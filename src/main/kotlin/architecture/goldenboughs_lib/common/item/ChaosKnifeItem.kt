@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.common.item
 import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType
 import architecture.goldenboughs_lib.api.world.item.IMeleeEgoWeaponItem
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.InteractionHand
@@ -55,7 +55,7 @@ class ChaosKnifeItem(itemProperties: Properties, builder: IMeleeEgoWeaponItem.Bu
 
 	companion object {
 		@JvmField
-		val KEY: String = GoldenBoughsLib.ID + ".item_tooltip.geo_describe.damage_type"
+		val KEY: String = Lib.ID + ".item_tooltip.geo_describe.damage_type"
 
 		@JvmStatic
 		private val DEFAULT_COMPONENT = LcDamageType.Component(LcDamageType.PHYSICS, *LcDamageType.values())

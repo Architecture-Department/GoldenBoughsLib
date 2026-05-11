@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.datagen;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.core.registry.client.LibItemPropertyRenderersRegistrar;
 import architecture.goldenboughs_lib.init.LibItems;
 import architecture.goldenboughs_lib.mixed.client.IModelBuilder;
@@ -35,7 +35,7 @@ public final class LibDatagenItemModel extends ItemModelProvider {
 	 * @param existingFileHelper 已存在文件助手，用于检查资源是否存在
 	 */
 	public LibDatagenItemModel(PackOutput output, ExistingFileHelper existingFileHelper) {
-		super(output, GoldenBoughsLib.ID, existingFileHelper);
+		super(output, Lib.ID, existingFileHelper);
 	}
 
 	@Override
@@ -238,6 +238,6 @@ public final class LibDatagenItemModel extends ItemModelProvider {
 	 * @return 模型文件
 	 */
 	public ModelFile customModelFile(String name) {
-		return new ModelFile.UncheckedModelFile(GoldenBoughsLib.modRl(name));
+		return new ModelFile.UncheckedModelFile(Lib.modRl(name));
 	}
 }

@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.common.payload.tos
 
 import architecture.goldenboughs_lib.api.payload.ToServerPayload
 import architecture.goldenboughs_lib.api.world.item.IGunWeapon
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.util.PayloadUtil.sendToPlayerServer
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
@@ -85,7 +85,7 @@ data class PlayerIGunWeaponPayload(
 	companion object {
 		@JvmField
 		val TYPE: CustomPacketPayload.Type<PlayerIGunWeaponPayload> =
-			CustomPacketPayload.Type(GoldenBoughsLib.modRl("player_gun_weapon_payload"))
+			CustomPacketPayload.Type(Lib.modRl("player_gun_weapon_payload"))
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<ByteBuf, PlayerIGunWeaponPayload> =

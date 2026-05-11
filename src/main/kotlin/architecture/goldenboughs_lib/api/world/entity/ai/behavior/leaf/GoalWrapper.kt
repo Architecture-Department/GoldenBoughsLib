@@ -47,6 +47,6 @@ class GoalWrapper(private val goal: Goal) : BTNode() {
 	}
 
 	override fun setFlags(flagSet: EnumSet<Flag>) {
-		goal.setFlags(flagSet)
+		goal.flags = flagSet
 	}
 }

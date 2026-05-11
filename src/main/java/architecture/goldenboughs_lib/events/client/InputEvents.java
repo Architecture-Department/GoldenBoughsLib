@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.events.client;
 
 import architecture.goldenboughs_lib.api.world.item.IGunWeapon;
 import architecture.goldenboughs_lib.api.world.item.IPlayerItemAttackClick;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.eventexecute.client.InputEventExecute;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -16,7 +16,7 @@ import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
-@EventBusSubscriber(modid = GoldenBoughsLib.ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Lib.ID, value = Dist.CLIENT)
 public final class InputEvents {
 
 	@SubscribeEvent

@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.init;
 import architecture.goldenboughs_lib.api.world.item.IMeleeEgoWeaponItem;
 import architecture.goldenboughs_lib.common.item.ChaosKnifeItem;
 import architecture.goldenboughs_lib.common.item.CreativeRationalityToolItem;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Function;
 
 public final class LibItems {
-	public static final DeferredRegister.Items REGISTRY = DeferredRegister.createItems(GoldenBoughsLib.ID);
+	public static final DeferredRegister.Items REGISTRY = DeferredRegister.createItems(Lib.ID);
 
 	public static final DeferredItem<Item> CREATIVE_RATIONALITY_TOOL = register(
 		"creative_rationality_tool", "理智控制器", CreativeRationalityToolItem::new);

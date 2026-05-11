@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.common.payload.toc
 
 import architecture.goldenboughs_lib.api.payload.ToClientPayload
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.mixin.geckolib.AnimationControllerAccessorMixin
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
@@ -48,7 +48,7 @@ data class GeckolibAnimationSynchroPayload(
 	companion object {
 		@JvmField
 		val TYPE: CustomPacketPayload.Type<GeckolibAnimationSynchroPayload> =
-			CustomPacketPayload.Type<GeckolibAnimationSynchroPayload>(GoldenBoughsLib.modRl("curio_animation_synchro"))
+			CustomPacketPayload.Type<GeckolibAnimationSynchroPayload>(Lib.modRl("curio_animation_synchro"))
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<ByteBuf, GeckolibAnimationSynchroPayload> =

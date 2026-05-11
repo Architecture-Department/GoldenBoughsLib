@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferBuilder
 import com.mojang.blaze3d.vertex.DefaultVertexFormat
@@ -22,7 +22,7 @@ object LibParticleRenderTypes {
 		}
 
 		override fun toString(): String {
-			return GoldenBoughsLib.modRlText("LOBOTOMY_CORPORATION_DAMAGE_ICON_PARTICLE")
+			return Lib.modRlText("LOBOTOMY_CORPORATION_DAMAGE_ICON_PARTICLE")
 		}
 	}
 
@@ -37,7 +37,7 @@ object LibParticleRenderTypes {
 		}
 
 		override fun toString(): String {
-			return GoldenBoughsLib.modRlText("TEXT_PARTICLE")
+			return Lib.modRlText("TEXT_PARTICLE")
 		}
 	}
 
@@ -53,7 +53,7 @@ object LibParticleRenderTypes {
 		}
 
 		override fun toString(): String {
-			return GoldenBoughsLib.modRlText("TEXT_PARTICLE_THROUGH")
+			return Lib.modRlText("TEXT_PARTICLE_THROUGH")
 		}
 	}
 
@@ -68,7 +68,7 @@ object LibParticleRenderTypes {
 		}
 
 		override fun toString(): String {
-			return GoldenBoughsLib.modRlText("MAGIC_CIRCLE_PARTICLE")
+			return Lib.modRlText("MAGIC_CIRCLE_PARTICLE")
 		}
 
 		override fun isTranslucent(): Boolean {

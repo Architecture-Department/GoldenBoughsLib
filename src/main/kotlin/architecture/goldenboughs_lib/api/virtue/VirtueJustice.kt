@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.virtue
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibAttributes
 import net.minecraft.core.HolderLookup
 import net.minecraft.nbt.CompoundTag
@@ -134,6 +134,6 @@ final class VirtueJustice(
 		const val VANILLA_FLYING_SPEED: Float = 0.05f
 
 		@JvmField
-		val AMPLITUDE_ID = GoldenBoughsLib.modRl("justice_amplitude")
+		val AMPLITUDE_ID = Lib.modRl("justice_amplitude")
 	}
 }

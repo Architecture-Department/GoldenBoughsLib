@@ -3,10 +3,12 @@ package architecture.goldenboughs_lib.events;
 import architecture.goldenboughs_lib.api.DelayTaskHolder;
 import architecture.goldenboughs_lib.api.LcDamageType;
 import architecture.goldenboughs_lib.api.LcLevel;
+import architecture.goldenboughs_lib.common.entiy.corpse.StaffCorpse;
 import architecture.goldenboughs_lib.common.payload.toc.PlayerDamagePayload;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.eventexecute.LcDamageEventExecutes;
 import architecture.goldenboughs_lib.init.LibAttachments;
+import architecture.goldenboughs_lib.init.LibEntityTypes;
 import architecture.goldenboughs_lib.util.GunWeaponUtil;
 import architecture.goldenboughs_lib.util.LcLevelUtil;
 import architecture.goldenboughs_lib.util.ParticleUtil;
@@ -38,7 +40,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import static net.minecraft.world.effect.MobEffects.MOVEMENT_SLOWDOWN;
 
-@EventBusSubscriber(modid = GoldenBoughsLib.ID)
+@EventBusSubscriber(modid = Lib.ID)
 public final class LivingEntityEvents {
 	/**
 	 * 恢复事件
@@ -51,6 +53,28 @@ public final class LivingEntityEvents {
 		if (amount > 0) {
 			ParticleUtil.createDamageTextParticles(entity, ParticleUtil.getText(amount), false, true);
 		}
+	}
+
+	@SubscribeEvent
+	public static void livingDeath(LivingDeathEvent event) {
+		if (!(event.getEntity() instanceof ServerPlayer serverPlayer)) {
+			return;
+		}
+		StaffCorpse staffCorpse = new StaffCorpse(LibEntityTypes.STAFF_CORPSE.get(), serverPlayer.level());
+		staffCorpse.setOwnerUuid(serverPlayer.getUUID());
+		staffCorpse.setOwnerName(serverPlayer.getDisplayName().getString());
+		boolean onFace = serverPlayer.getRandom().nextBoolean();
+		staffCorpse.setOnFace(onFace);
+		staffCorpse.setPos(serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ());
+		if (onFace) {
+			staffCorpse.setYRot(serverPlayer.getYRot());
+
+		} else {
+			staffCorpse.setYRot(-serverPlayer.getYRot());
+		}
+		staffCorpse.setYHeadRot(staffCorpse.getYRot());
+		staffCorpse.setYBodyRot(staffCorpse.getYRot());
+		serverPlayer.level().addFreshEntity(staffCorpse);
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)

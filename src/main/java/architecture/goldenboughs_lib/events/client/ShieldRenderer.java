@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.events.client;
 
 import architecture.goldenboughs_lib.client.model.ShieldSphereMesh;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 
 public class ShieldRenderer {
-	private static final ResourceLocation SHIELD_TEXTURE = GoldenBoughsLib.modRl("textures/entity/shield.png");
+	private static final ResourceLocation SHIELD_TEXTURE = Lib.modRl("textures/entity/shield.png");
 	private static final ShieldSphereMesh SPHERE_MESH = new ShieldSphereMesh();
 
 	private static final RenderType SHIELD_RENDER_TYPE = RenderType.create(

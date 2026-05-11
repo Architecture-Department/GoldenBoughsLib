@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.linkage.jade
 
 import architecture.goldenboughs_lib.api.LcDamageType
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import net.minecraft.core.Holder
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
@@ -36,19 +36,19 @@ enum class LivingEntityVulnerable : IEntityComponentProvider {
 
 	companion object {
 		@JvmField
-		val ATTRIBUTE_DESCRIPTION_KEY: String = GoldenBoughsLib.modRlText("entity.attribute_description")
+		val ATTRIBUTE_DESCRIPTION_KEY: String = Lib.modRlText("entity.attribute_description")
 
 		@JvmField
-		val PHYSICS_KEY: String = GoldenBoughsLib.modRlText("entity.attribute_description.physics")
+		val PHYSICS_KEY: String = Lib.modRlText("entity.attribute_description.physics")
 
 		@JvmField
-		val SPIRIT_KEY: String = GoldenBoughsLib.modRlText("entity.attribute_description.spirit")
+		val SPIRIT_KEY: String = Lib.modRlText("entity.attribute_description.spirit")
 
 		@JvmField
-		val EROSION_KEY: String = GoldenBoughsLib.modRlText("entity.attribute_description.erosion")
+		val EROSION_KEY: String = Lib.modRlText("entity.attribute_description.erosion")
 
 		@JvmField
-		val THE_SOUL_KEY: String = GoldenBoughsLib.modRlText("entity.attribute_description.the_soul")
+		val THE_SOUL_KEY: String = Lib.modRlText("entity.attribute_description.the_soul")
 
 		@JvmStatic
 		private fun add(
@@ -59,7 +59,7 @@ enum class LivingEntityVulnerable : IEntityComponentProvider {
 			entity: LivingEntity,
 			elements: IElementHelper
 		) {
-			iTooltip.add(elements.sprite(GoldenBoughsLib.modRl(spriteRl), 8, 8))
+			iTooltip.add(elements.sprite(Lib.modRl(spriteRl), 8, 8))
 			val vulnerable: Holder<Attribute> = damageType.vulnerable
 			val text =
 				if (hasAttribute(entity, vulnerable)) entity.getAttributeValue(vulnerable) else vulnerable.value().defaultValue

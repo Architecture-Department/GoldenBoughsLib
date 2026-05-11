@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.core.registry
 
 import architecture.goldenboughs_lib.api.LcLevel
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibAttributes
 import architecture.goldenboughs_lib.init.LibEntityTypes
 import net.minecraft.core.Holder
@@ -20,7 +20,7 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent
 import java.util.function.Consumer
 
-@EventBusSubscriber(modid = GoldenBoughsLib.ID)
+@EventBusSubscriber(modid = Lib.ID)
 object EntityAttributeRegistry {
 	/**
 	 * 分级到血量倍数的映射表

@@ -20,7 +20,7 @@ class RandomStrollAction(
 	protected var interval: Int = 0
 
 	init {
-		this.setFlags(EnumSet.of(Flag.MOVE))
+		this.flags = EnumSet.of(Flag.MOVE)
 	}
 
 	override fun execute(): BTStatus? {

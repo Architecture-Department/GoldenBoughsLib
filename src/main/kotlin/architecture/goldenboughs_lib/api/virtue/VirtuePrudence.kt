@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.virtue
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibAttributes
 import net.minecraft.core.HolderLookup
 import net.minecraft.nbt.CompoundTag
@@ -62,6 +62,6 @@ final class VirtuePrudence(
 
 	companion object {
 		@JvmField
-		val AMPLITUDE_ID = GoldenBoughsLib.modRl("justice_amplitude")
+		val AMPLITUDE_ID = Lib.modRl("justice_amplitude")
 	}
 }

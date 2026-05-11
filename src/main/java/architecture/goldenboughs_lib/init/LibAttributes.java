@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.init;
 import architecture.goldenboughs_lib.common.attribute.BasicAttribute;
 import architecture.goldenboughs_lib.common.attribute.MaxAttribute;
 import architecture.goldenboughs_lib.common.attribute.MinAttribute;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -17,7 +17,7 @@ import java.util.function.Function;
 
 
 public final class LibAttributes {
-	public static final DeferredRegister<Attribute> REGISTRY = GoldenBoughsLib.modRegister(BuiltInRegistries.ATTRIBUTE);
+	public static final DeferredRegister<Attribute> REGISTRY = Lib.modRegister(BuiltInRegistries.ATTRIBUTE);
 
 	public static final double PHYSICS_VULNERABLE_DEFAULT_VALUE = 1.0;
 	public static final double SPIRIT_VULNERABLE_DEFAULT_VALUE = 1.0;
@@ -179,7 +179,7 @@ public final class LibAttributes {
 	}
 
 	private static @NotNull String descriptionId(String name) {
-		return GoldenBoughsLib.ID + ".attribute.name." + name;
+		return Lib.ID + ".attribute.name." + name;
 	}
 
 	private static @NotNull DeferredHolder<Attribute, BasicAttribute> register(

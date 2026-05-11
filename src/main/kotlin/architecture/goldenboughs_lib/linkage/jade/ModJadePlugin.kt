@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.linkage.jade
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.LivingEntity
@@ -23,12 +23,12 @@ class ModJadePlugin : IWailaPlugin {
 
 	companion object {
 		@JvmField
-		val ENTITY_LC_LEVEL: ResourceLocation = GoldenBoughsLib.modRl("entity_lobotomy_corporation_level")
+		val ENTITY_LC_LEVEL: ResourceLocation = Lib.modRl("entity_lobotomy_corporation_level")
 
 		@JvmField
-		val BLOCK_LC_LEVEL: ResourceLocation = GoldenBoughsLib.modRl("block_lobotomy_corporation_level")
+		val BLOCK_LC_LEVEL: ResourceLocation = Lib.modRl("block_lobotomy_corporation_level")
 
 		@JvmField
-		val ENTITY_LC_VULNERABLE: ResourceLocation = GoldenBoughsLib.modRl("entity_lobotomy_corporation_vulnerable")
+		val ENTITY_LC_VULNERABLE: ResourceLocation = Lib.modRl("entity_lobotomy_corporation_vulnerable")
 	}
 }

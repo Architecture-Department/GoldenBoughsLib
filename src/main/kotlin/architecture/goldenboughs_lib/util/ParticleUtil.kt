@@ -181,7 +181,7 @@ object ParticleUtil {
 	) {
 		(entity.level() as? ServerLevel)?.apply {
 			val pos = entity.position()
-			val aabb = entity.getHitbox()
+			val aabb = entity.hitbox
 			val xOffset = (aabb.maxX - aabb.minX) / 2
 			val yOffset = (aabb.maxY - aabb.minY) / 2
 			val zOffset = (aabb.maxZ - aabb.minZ) / 2

@@ -184,7 +184,7 @@ class RoughAndFineArmorRenderer<T>(model: GeoModel<T>) : GeoArmorRenderer<T>(mod
 			(this.fineRightArm != null || this.fineLeftArm != null)
 		) {
 			val player = entity as AbstractClientPlayer
-			this.isFine = player.getSkin().model() == PlayerSkin.Model.SLIM
+			this.isFine = player.skin.model() == PlayerSkin.Model.SLIM
 		}
 	}
 

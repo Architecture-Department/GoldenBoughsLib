@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.datagen.i18n;
 
 import architecture.goldenboughs_lib.config.LibConfigUtil;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.datagen.LibDatagenSoundDefinitionsProvider;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentType;
@@ -27,7 +27,7 @@ public abstract class DatagenI18n extends LanguageProvider {
 	}
 
 	public static @NotNull String getFormattedKey(String... key) {
-		StringBuilder builder = new StringBuilder(GoldenBoughsLib.ID);
+		StringBuilder builder = new StringBuilder(Lib.ID);
 		builder.append(".commands");
 		for (String s : key) {
 			builder.append(".").append(s);

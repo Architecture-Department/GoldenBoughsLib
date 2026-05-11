@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.init;
 
 import architecture.goldenboughs_lib.api.LcDamageType;
 import architecture.goldenboughs_lib.common.components.ItemVirtueUsageReq;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 public final class LibDataComponentTypes {
-	public static final DeferredRegister<DataComponentType<?>> REGISTRY = GoldenBoughsLib.modRegister(BuiltInRegistries.DATA_COMPONENT_TYPE);
+	public static final DeferredRegister<DataComponentType<?>> REGISTRY = Lib.modRegister(BuiltInRegistries.DATA_COMPONENT_TYPE);
 
 	public static final Supplier<DataComponentType<LcDamageType.Component>> LC_DAMAGE_TYPE = register("lobotomy_corporation_damage_type",
 		LcDamageType.Component.CODEC, LcDamageType.Component.STREAM_CODEC, true);

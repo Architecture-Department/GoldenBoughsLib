@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.init;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -82,7 +82,7 @@ public final class LibDamageTypes {
 	 * 创建伤害类型
 	 */
 	private static @NotNull ResourceKey<DamageType> register(final String name) {
-		return ResourceKey.create(Registries.DAMAGE_TYPE, GoldenBoughsLib.modRl(name));
+		return ResourceKey.create(Registries.DAMAGE_TYPE, Lib.modRl(name));
 	}
 
 	private static Holder.@NotNull Reference<DamageType> register(

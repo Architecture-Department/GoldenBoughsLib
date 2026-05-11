@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.init.tag;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -30,7 +30,7 @@ public final class LibDamageTypeTags {
 	public static final TagKey<DamageType> BYPASS_LC = createTag("bypass_lobotomy_corporation_damage");
 
 	private static @NotNull TagKey<DamageType> createTag(String name) {
-		return createTag(GoldenBoughsLib.modRl(name));
+		return createTag(Lib.modRl(name));
 	}
 
 	private static @NotNull TagKey<DamageType> createTag(ResourceLocation location) {

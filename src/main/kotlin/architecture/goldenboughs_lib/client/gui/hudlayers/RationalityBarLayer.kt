@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.client.gui.hudlayers
 
 import architecture.goldenboughs_lib.client.gui.widget.HorizontalStatusBar
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.util.RationalityUtil.getMaxRationalityValue
 import architecture.goldenboughs_lib.util.RationalityUtil.getRationalityValue
 import net.minecraft.client.DeltaTracker
@@ -93,36 +93,36 @@ class RationalityBarLayer : StatusBarLayer(
 	companion object {
 		// 默认
 		@JvmField
-		val DEFAULT_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality")
+		val DEFAULT_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality")
 
 		@JvmField
-		val DEFAULT_BOTTOM_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality_bottom")
+		val DEFAULT_BOTTOM_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality_bottom")
 
 		@JvmField
-		val DEFAULT_LIGHT_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality_light")
+		val DEFAULT_LIGHT_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality_light")
 
 		// 低理智
 		@JvmField
-		val LOW_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality_low")
+		val LOW_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality_low")
 
 		@JvmField
-		val LOW_BOTTOM_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality_low_bottom")
+		val LOW_BOTTOM_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality_low_bottom")
 
 		@JvmField
-		val LOW_LIGHT_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality_low_light")
+		val LOW_LIGHT_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality_low_light")
 
 		// 动态
 		@JvmField
-		val LOW_DYNAMIC_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality_low_dynamic")
+		val LOW_DYNAMIC_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality_low_dynamic")
 
 		// 高理智
 		@JvmField
-		val TALL_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality_tall")
+		val TALL_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality_tall")
 
 		@JvmField
-		val TALL_BOTTOM_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality_tall_bottom")
+		val TALL_BOTTOM_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality_tall_bottom")
 
 		@JvmField
-		val TALL_LIGHT_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/rationality/rationality_tall_light")
+		val TALL_LIGHT_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/rationality/rationality_tall_light")
 	}
 }

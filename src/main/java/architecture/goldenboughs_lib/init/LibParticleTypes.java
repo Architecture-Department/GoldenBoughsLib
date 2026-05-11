@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.init;
 import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle;
 import architecture.goldenboughs_lib.client.particle.text.DamageTextParticle;
 import architecture.goldenboughs_lib.client.particle.text.TextParticleOptions;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
@@ -21,7 +21,7 @@ import java.util.function.Supplier;
  * 粒子类型
  */
 public final class LibParticleTypes {
-	public static final DeferredRegister<ParticleType<?>> REGISTRY = GoldenBoughsLib.modRegister(BuiltInRegistries.PARTICLE_TYPE);
+	public static final DeferredRegister<ParticleType<?>> REGISTRY = Lib.modRegister(BuiltInRegistries.PARTICLE_TYPE);
 
 	public static final Supplier<ParticleType<TextParticleOptions>> TEXT = register(
 		"text", true, TextParticleOptions.CODEC, TextParticleOptions.STREAM_CODEC);

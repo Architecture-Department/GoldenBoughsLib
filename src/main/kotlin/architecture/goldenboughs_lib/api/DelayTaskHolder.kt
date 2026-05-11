@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibAttachments
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.InteractionHand
@@ -40,7 +40,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 	 * 通过该方法添加的任务会在对应槽位的物品更替时移除
 	 */
 	fun addTask(slot: EquipmentSlot, task: ITask) {
-		addTask(GoldenBoughsLib.modRl(slot.getName()), task)
+		addTask(Lib.modRl(slot.getName()), task)
 	}
 
 	fun addTask(id: ResourceLocation, task: ITask) {
@@ -62,7 +62,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 	 * 通过该方法添加的任务会在对应槽位的物品更替时移除
 	 */
 	fun addTask(slot: EquipmentSlot, name: String, task: ITask) {
-		addTask(GoldenBoughsLib.modRl(slot.getName() + "." + name), task)
+		addTask(Lib.modRl(slot.getName() + "." + name), task)
 	}
 
 	/**
@@ -102,7 +102,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 		if (!containsTask(slot, name)) {
 			return
 		}
-		removeTask(GoldenBoughsLib.modRl(slot.getName() + "." + name))
+		removeTask(Lib.modRl(slot.getName() + "." + name))
 	}
 
 	fun removeTask(id: ResourceLocation) {
@@ -117,7 +117,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 	}
 
 	fun containsTask(slot: EquipmentSlot, name: String): Boolean {
-		return runList.containsKey(GoldenBoughsLib.modRl(slot.getName() + "." + name))
+		return runList.containsKey(Lib.modRl(slot.getName() + "." + name))
 	}
 
 	/**

@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.datagen;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn;
 import architecture.goldenboughs_lib.datagen.tag.LibDatagenBlockTag;
 import architecture.goldenboughs_lib.datagen.tag.LibDatagenDamageTypeTag;
@@ -23,7 +23,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * 数据生成主类
  */
-@EventBusSubscriber(modid = GoldenBoughsLib.ID)
+@EventBusSubscriber(modid = Lib.ID)
 public final class Datagen {
 	@SubscribeEvent
 	public static void gatherData(@NotNull GatherDataEvent event) {

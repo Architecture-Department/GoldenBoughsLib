@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api
 
 import architecture.goldenboughs_lib.client.LibFontIcon
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibAttributes
 import architecture.goldenboughs_lib.init.LibDamageSources.createDamage
 import architecture.goldenboughs_lib.init.LibDamageTypes
@@ -144,7 +144,7 @@ enum class LcDamageType(
 
 	@Contract(pure = true)
 	override fun getSerializedName(): String {
-		return GoldenBoughsLib.modRlText(damageName)
+		return Lib.modRlText(damageName)
 	}
 
 	companion object {

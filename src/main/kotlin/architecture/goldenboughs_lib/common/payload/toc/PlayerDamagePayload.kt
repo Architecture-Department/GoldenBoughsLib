@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.common.payload.toc
 import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.api.payload.ToClientPayload
 import architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter.LcDamageScreenFilterLayer
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.util.PayloadUtil.sendToPlayerClient
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
@@ -34,7 +34,7 @@ data class PlayerDamagePayload(
 	companion object {
 		@JvmField
 		val TYPE: CustomPacketPayload.Type<PlayerDamagePayload> =
-			CustomPacketPayload.Type(GoldenBoughsLib.modRl("player_damage_payload"))
+			CustomPacketPayload.Type(Lib.modRl("player_damage_payload"))
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<ByteBuf, PlayerDamagePayload> =

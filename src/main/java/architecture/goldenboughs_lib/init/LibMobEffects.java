@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.init;
 
 import architecture.goldenboughs_lib.api.LcDamageType;
 import architecture.goldenboughs_lib.common.mobeffect.MobEffectExpand;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,7 +17,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public final class LibMobEffects {
-	public static final DeferredRegister<MobEffect> REGISTRY = GoldenBoughsLib.modRegister(BuiltInRegistries.MOB_EFFECT);
+	public static final DeferredRegister<MobEffect> REGISTRY = Lib.modRegister(BuiltInRegistries.MOB_EFFECT);
 
 	public static final Holder<MobEffect> PHYSIC_ABSORPTION_SHIELD = register("physic_absorption_shield", "物理吸收护盾",
 		MobEffectExpand::new, MobEffectCategory.BENEFICIAL, LcDamageType.PHYSICS.getColourValue());
@@ -49,7 +49,7 @@ public final class LibMobEffects {
 	private static <T extends MobEffect> DeferredHolder<MobEffect, T> register(String name, String zhCnText, Supplier<T> supplier, BiFunction<T, ResourceLocation, MobEffect> function) {
 		return register(name, zhCnText, () -> {
 			T apply = supplier.get();
-			function.apply(apply, GoldenBoughsLib.modRl(name));
+			function.apply(apply, Lib.modRl(name));
 			return apply;
 		});
 	}
@@ -65,7 +65,7 @@ public final class LibMobEffects {
 	private static <T extends MobEffect> DeferredHolder<MobEffect, T> register(String name, String zhCnText, BiFunction<MobEffectCategory, Integer, T> biFunction, MobEffectCategory category, int color, BiFunction<T, ResourceLocation, MobEffect> function) {
 		return register(name, zhCnText, () -> {
 			T apply = biFunction.apply(category, color);
-			function.apply(apply, GoldenBoughsLib.modRl(name));
+			function.apply(apply, Lib.modRl(name));
 			return apply;
 		});
 	}

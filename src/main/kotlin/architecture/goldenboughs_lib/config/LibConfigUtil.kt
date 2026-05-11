@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.config
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import net.neoforged.neoforge.common.ModConfigSpec
 import org.apache.commons.lang3.tuple.Pair
 import java.util.function.Function
@@ -23,14 +23,14 @@ abstract class LibConfigUtil {
 		@JvmStatic
 		fun getTranslation(vararg keys: String): String {
 			if (keys.isEmpty()) {
-				return GoldenBoughsLib.ID + ".config"
+				return Lib.ID + ".config"
 			}
 			val builder = StringBuilder()
 			for (key in keys) {
 				builder.append(".")
 				builder.append(key)
 			}
-			return GoldenBoughsLib.ID + ".config" + builder
+			return Lib.ID + ".config" + builder
 		}
 
 		protected fun ModConfigSpec.Builder.define(

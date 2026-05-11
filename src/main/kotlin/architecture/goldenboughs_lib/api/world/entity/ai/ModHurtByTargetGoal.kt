@@ -46,7 +46,7 @@ class ModHurtByTargetGoal(
 	 * 创建目标选择器
 	 */
 	init {
-		this.setFlags(EnumSet.of(Flag.TARGET))
+		this.flags = EnumSet.of(Flag.TARGET)
 	}
 
 	override fun canUse(): Boolean {
@@ -71,7 +71,7 @@ class ModHurtByTargetGoal(
 	override fun start() {
 		val attacker = this.mob.lastHurtByMob
 		if (attacker != null) {
-			this.mob.setTarget(attacker)
+			this.mob.target = attacker
 			this.targetMob = this.mob.target
 			this.lastHurtTimestamp = this.mob.lastHurtByMobTimestamp
 		}
@@ -98,7 +98,7 @@ class ModHurtByTargetGoal(
 	}
 
 	protected fun alertOther(mob: Mob, target: LivingEntity) {
-		mob.setTarget(target)
+		mob.target = target
 	}
 
 	protected val nearbyMobs: MutableList<Mob>
@@ -151,7 +151,7 @@ class ModHurtByTargetGoal(
 	 */
 	protected fun isOwnerConditionMet(nearbyMob: Mob): Boolean {
 		if (this.mob is TamableAnimal && nearbyMob is TamableAnimal) {
-			return (mob as TamableAnimal).getOwner() === nearbyMob.getOwner()
+			return (mob as TamableAnimal).owner === nearbyMob.owner
 		}
 		return true
 	}

@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.init;
 
 import architecture.goldenboughs_lib.api.LcLevel;
 import architecture.goldenboughs_lib.common.entiy.corpse.StaffCorpse;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn;
 import architecture.goldenboughs_lib.util.LcLevelUtil;
 import net.minecraft.core.registries.Registries;
@@ -15,7 +15,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
 
 public class LibEntityTypes {
-	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, GoldenBoughsLib.ID);
+	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, Lib.ID);
 
 	public static final DeferredHolder<EntityType<?>, EntityType<StaffCorpse>> STAFF_CORPSE = register(
 		"staff_corpse",

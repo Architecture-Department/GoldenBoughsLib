@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.api.virtue.network.codec;
+package architecture.goldenboughs_lib.api.network.codec;
 
 import net.minecraft.network.codec.StreamCodec;
 import org.jetbrains.annotations.NotNull;

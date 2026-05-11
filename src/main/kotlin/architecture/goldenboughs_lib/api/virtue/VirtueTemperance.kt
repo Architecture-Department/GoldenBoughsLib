@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.virtue
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibAttachments
 import architecture.goldenboughs_lib.init.LibAttributes
 import net.minecraft.core.HolderLookup
@@ -84,7 +84,7 @@ class VirtueTemperance(
 
 	companion object {
 		@JvmField
-		val AMPLITUDE_ID: ResourceLocation = GoldenBoughsLib.modRl("temperance_amplitude")
+		val AMPLITUDE_ID: ResourceLocation = Lib.modRl("temperance_amplitude")
 		const val BLOCK_BREAK_SPEED: Double = 0.02
 		const val ATTACK_KNOCKBACK_SPEED: Double = 0.015
 	}

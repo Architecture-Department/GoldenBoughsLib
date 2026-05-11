@@ -5,7 +5,7 @@ import architecture.goldenboughs_lib.api.virtue.VirtueFortitude;
 import architecture.goldenboughs_lib.api.virtue.VirtueJustice;
 import architecture.goldenboughs_lib.api.virtue.VirtuePrudence;
 import architecture.goldenboughs_lib.api.virtue.VirtueTemperance;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import com.mojang.serialization.Codec;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.world.entity.Entity;
@@ -22,7 +22,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public final class LibAttachments {
-	public static final DeferredRegister<AttachmentType<?>> REGISTRY = GoldenBoughsLib.modRegister(NeoForgeRegistries.ATTACHMENT_TYPES);
+	public static final DeferredRegister<AttachmentType<?>> REGISTRY = Lib.modRegister(NeoForgeRegistries.ATTACHMENT_TYPES);
 
 	public static final DeferredHolder<AttachmentType<?>, AttachmentType<DelayTaskHolder>> DELAY_TASK_HOLDER = register("delay_task_holder",
 		AttachmentType.builder(DelayTaskHolder::new));

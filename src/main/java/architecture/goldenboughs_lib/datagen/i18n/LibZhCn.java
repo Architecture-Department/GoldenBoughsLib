@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.datagen.i18n;
 import architecture.goldenboughs_lib.api.virtue.VirtueType;
 import architecture.goldenboughs_lib.common.command.RationalityCommands;
 import architecture.goldenboughs_lib.common.components.ItemVirtueUsageReq;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.init.LibDamageTypes;
 import architecture.goldenboughs_lib.init.tag.LibItemTags;
 import architecture.goldenboughs_lib.linkage.jade.LivingEntityVulnerable;
@@ -31,7 +31,7 @@ public final class LibZhCn extends DatagenI18n {
 	private static final Map<String, String> MAP = new HashMap<>();
 
 	public LibZhCn(final PackOutput output) {
-		super(output, GoldenBoughsLib.ID, "zh_cn");
+		super(output, Lib.ID, "zh_cn");
 	}
 
 	public static void addI18nText(String zhCn, String key) {
@@ -72,7 +72,7 @@ public final class LibZhCn extends DatagenI18n {
 
 	@Override
 	protected void addTranslations() {
-		addPackDescription(GoldenBoughsLib.ID, "金枝");
+		addPackDescription(Lib.ID, "金枝");
 		addMobEffectList(MOB_EFFECT);
 		addAttributeList(ATTRIBUTE);
 		addSoundEventList(SOUND_EVENT);

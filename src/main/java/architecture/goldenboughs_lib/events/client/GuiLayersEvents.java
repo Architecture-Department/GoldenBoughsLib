@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.events.client;
 
 import architecture.goldenboughs_lib.client.LibGuiLayers;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.util.GunWeaponUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -11,7 +11,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 
-@EventBusSubscriber(modid = GoldenBoughsLib.ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Lib.ID, value = Dist.CLIENT)
 public final class GuiLayersEvents {
 	@SubscribeEvent
 	public static void renderGuiLayerEventPre(RenderGuiLayerEvent.Pre event) {

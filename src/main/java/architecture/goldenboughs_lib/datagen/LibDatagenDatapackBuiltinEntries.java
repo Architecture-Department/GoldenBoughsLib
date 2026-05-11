@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.datagen;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.data.PackOutput;
@@ -15,6 +15,6 @@ import java.util.concurrent.CompletableFuture;
 public final class LibDatagenDatapackBuiltinEntries extends DatapackBuiltinEntriesProvider {
 
 	public LibDatagenDatapackBuiltinEntries(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, RegistrySetBuilder datapackEntriesBuilder) {
-		super(output, registries, datapackEntriesBuilder, Set.of(GoldenBoughsLib.ID));
+		super(output, registries, datapackEntriesBuilder, Set.of(Lib.ID));
 	}
 }

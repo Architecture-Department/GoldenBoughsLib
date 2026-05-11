@@ -27,33 +27,33 @@ class LeftBarLayer : CompositeHudLayer() {
 			this.newHealthBarLayer
 		) {
 			!this.minecraft.options.hideGui &&
-				LibConfig.CLIENT.enableNewHealthBar.get() && this.player != null && !getPlayerThrow().isSpectator() && !getPlayerThrow().isCreative()
+				LibConfig.CLIENT.enableNewHealthBar.get() && this.player != null && !getPlayerThrow().isSpectator && !getPlayerThrow().isCreative
 		}
 		addLayer(
 			this.rationalityBarLayer
-		) { !this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator() }
+		) { !this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator }
 		addLayer(
 			this.physicShieldLayer
 		) {
-			!this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator() && !getPlayerThrow().isCreative() &&
+			!this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator && !getPlayerThrow().isCreative &&
 				getPlayerThrow().hasEffect(LibMobEffects.PHYSIC_ABSORPTION_SHIELD)
 		}
 		addLayer(
 			this.spiritShieldLayer
 		) {
-			!this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator() && !getPlayerThrow().isCreative() &&
+			!this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator && !getPlayerThrow().isCreative &&
 				getPlayerThrow().hasEffect(LibMobEffects.SPIRIT_ABSORPTION_SHIELD)
 		}
 		addLayer(
 			this.erosionShieldLayer
 		) {
-			!this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator() && !getPlayerThrow().isCreative() &&
+			!this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator && !getPlayerThrow().isCreative &&
 				getPlayerThrow().hasEffect(LibMobEffects.EROSION_ABSORPTION_SHIELD)
 		}
 		addLayer(
 			this.soulShieldLayer
 		) {
-			!this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator() && !getPlayerThrow().isCreative() &&
+			!this.minecraft.options.hideGui && this.player != null && !getPlayerThrow().isSpectator && !getPlayerThrow().isCreative &&
 				getPlayerThrow().hasEffect(LibMobEffects.SOUL_ABSORPTION_SHIELD)
 		}
 	}
@@ -71,7 +71,7 @@ class LeftBarLayer : CompositeHudLayer() {
 	override fun renderSubLayer(guiGraphics: GuiGraphics, deltaTracker: DeltaTracker) {
 		val pose = guiGraphics.pose()
 		pose.pushPose()
-		if (this.player?.isCreative() ?: false) {
+		if (this.player?.isCreative ?: false) {
 			pose.translate(0f, 5f, 0f)
 		} else if (!LibConfig.CLIENT.enableNewHealthBar.get()) {
 			pose.translate(0f, -10f, 0f)

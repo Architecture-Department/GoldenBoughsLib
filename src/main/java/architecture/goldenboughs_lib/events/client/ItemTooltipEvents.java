@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.events.client;
 
 import architecture.goldenboughs_lib.api.LcLevel;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.util.LcLevelUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 物品提示/描述处理
  */
-@EventBusSubscriber(modid = GoldenBoughsLib.ID)
+@EventBusSubscriber(modid = Lib.ID)
 public final class ItemTooltipEvents {
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)

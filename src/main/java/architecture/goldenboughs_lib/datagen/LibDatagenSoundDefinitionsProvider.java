@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.datagen;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class LibDatagenSoundDefinitionsProvider extends SoundDefinitionsProvider {
 	public LibDatagenSoundDefinitionsProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-		super(output, GoldenBoughsLib.ID, existingFileHelper);
+		super(output, Lib.ID, existingFileHelper);
 	}
 
 	public static @NotNull String getSubtitle(SoundEvent soundEvent) {

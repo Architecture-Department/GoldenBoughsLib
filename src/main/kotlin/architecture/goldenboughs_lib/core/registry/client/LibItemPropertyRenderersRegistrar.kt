@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.core.registry.client
 
 import architecture.goldenboughs_lib.api.LcDamageType
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import architecture.goldenboughs_lib.init.LibItems
 import net.minecraft.client.multiplayer.ClientLevel
@@ -22,13 +22,13 @@ import kotlin.arrayOf
 /**
  * 物品渲染附加
  */
-@EventBusSubscriber(modid = GoldenBoughsLib.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = Lib.ID, value = [Dist.CLIENT])
 object LibItemPropertyRenderersRegistrar {
 	@JvmField
-	val MODE_BOOLEAN: ResourceLocation = GoldenBoughsLib.modRl("current_lobotomy.mode_boolean")
+	val MODE_BOOLEAN: ResourceLocation = Lib.modRl("current_lobotomy.mode_boolean")
 
 	@JvmField
-	val CURRENT_LC_DAMAGE_TYPE: ResourceLocation = GoldenBoughsLib.modRl("current_lobotomy.corporation_damage_type")
+	val CURRENT_LC_DAMAGE_TYPE: ResourceLocation = Lib.modRl("current_lobotomy.corporation_damage_type")
 
 	@JvmField
 	val PROPERTY_MODE_BOOLEAN: ClampedItemPropertyFunction =
@@ -40,7 +40,6 @@ object LibItemPropertyRenderersRegistrar {
 	 * 注册物品渲染附加
 	 */
 	@SubscribeEvent
-	@JvmStatic
 	fun onClientSetup(event: FMLClientSetupEvent) {
 		event.enqueueWork {
 			createProperties(LibItems.CREATIVE_RATIONALITY_TOOL.asItem(), MODE_BOOLEAN, PROPERTY_MODE_BOOLEAN)

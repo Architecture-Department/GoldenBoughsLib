@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.virtue
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import net.minecraft.util.StringRepresentable
 import org.jetbrains.annotations.Contract
 import java.util.*
@@ -23,7 +23,7 @@ enum class VirtueRating(
 
 	@Contract(pure = true)
 	override fun getSerializedName(): String {
-		return GoldenBoughsLib.ID + "." + this.virtueName.lowercase(Locale.getDefault())
+		return Lib.ID + "." + this.virtueName.lowercase(Locale.getDefault())
 	}
 
 	companion object {

@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.client.gui.hudlayers
 
 import architecture.goldenboughs_lib.client.gui.widget.HorizontalStatusBar
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.util.TextUtil.formatNumberPlaces
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.Gui
@@ -126,42 +126,42 @@ class NewHealthBarLayer : StatusBarLayer(
 
 	companion object {
 		@JvmField
-		val LIGHT_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/light")
+		val LIGHT_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/light")
 
 		// 伤害吸收
 		@JvmField
-		val ABSORBING_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/absorbing")
+		val ABSORBING_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/absorbing")
 
 		@JvmField
-		val ABSORBING_LIGHT_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/absorbing_light")
+		val ABSORBING_LIGHT_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/absorbing_light")
 
 		// 冰冻
 		@JvmField
-		val FROZEN_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/frozen")
+		val FROZEN_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/frozen")
 
 		@JvmField
-		val FROZEN_BOTTOM_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/frozen_bottom")
+		val FROZEN_BOTTOM_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/frozen_bottom")
 
 		// 正常
 		@JvmField
-		val FULL_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/full")
+		val FULL_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/full")
 
 		@JvmField
-		val FULL_BOTTOM_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/full_bottom")
+		val FULL_BOTTOM_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/full_bottom")
 
 		// 凋零
 		@JvmField
-		val WITHERED_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/withered")
+		val WITHERED_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/withered")
 
 		@JvmField
-		val WITHERED_BOTTOM_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/withered_bottom")
+		val WITHERED_BOTTOM_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/withered_bottom")
 
 		// 中毒
 		@JvmField
-		val POISIONED_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/poisioned")
+		val POISIONED_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/poisioned")
 
 		@JvmField
-		val POISIONED_BOTTOM_TEXTURE: ResourceLocation = GoldenBoughsLib.modRl("hud_bar/health/poisioned_bottom")
+		val POISIONED_BOTTOM_TEXTURE: ResourceLocation = Lib.modRl("hud_bar/health/poisioned_bottom")
 
 	}
 }

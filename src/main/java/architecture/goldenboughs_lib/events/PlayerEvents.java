@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.events;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.eventexecute.RationalityEventExecutes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -12,7 +12,7 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 /**
  * 玩家相关事件
  */
-@EventBusSubscriber(modid = GoldenBoughsLib.ID)
+@EventBusSubscriber(modid = Lib.ID)
 public final class PlayerEvents {
 
 	@SubscribeEvent

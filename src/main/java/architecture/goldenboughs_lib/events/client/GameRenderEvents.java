@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.events.client;
 
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Camera;
 import net.minecraft.client.DeltaTracker;
@@ -12,7 +12,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
 
-@EventBusSubscriber(modid = GoldenBoughsLib.ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Lib.ID, value = Dist.CLIENT)
 public final class GameRenderEvents {
 
 	@SubscribeEvent

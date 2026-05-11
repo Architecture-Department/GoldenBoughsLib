@@ -7,7 +7,7 @@ import architecture.goldenboughs_lib.common.payload.LivingEntityAttackStrengthTi
 import architecture.goldenboughs_lib.common.payload.toc.GeckolibAnimationSynchroPayload
 import architecture.goldenboughs_lib.common.payload.toc.PlayerDamagePayload
 import architecture.goldenboughs_lib.common.payload.tos.PlayerIGunWeaponPayload
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
@@ -17,7 +17,7 @@ import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent
 import net.neoforged.neoforge.network.handling.DirectionalPayloadHandler
 import net.neoforged.neoforge.network.registration.PayloadRegistrar
 
-@EventBusSubscriber(modid = GoldenBoughsLib.ID)
+@EventBusSubscriber(modid = Lib.ID)
 object PayloadRegistry {
 	@SubscribeEvent
 	fun register(event: RegisterPayloadHandlersEvent) {
@@ -47,7 +47,7 @@ object PayloadRegistry {
 			PlayerIGunWeaponPayload.TYPE,
 			PlayerIGunWeaponPayload.STREAM_CODEC
 		)
-		GoldenBoughsLib.LOGGER.info("Registering payloads finish")
+		Lib.LOGGER.info("Registering payloads finish")
 	}
 
 	private fun <T : ToServerAndClientPayload> playToServerAndClient(

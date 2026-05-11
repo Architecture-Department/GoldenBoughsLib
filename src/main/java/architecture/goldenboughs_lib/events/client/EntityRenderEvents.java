@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.events.client;
 
 import architecture.goldenboughs_lib.client.renderer.StaffCorpseRenderer;
-import architecture.goldenboughs_lib.core.GoldenBoughsLib;
+import architecture.goldenboughs_lib.core.Lib;
 import architecture.goldenboughs_lib.eventexecute.client.EntityRenderEventExecute;
 import architecture.goldenboughs_lib.init.LibEntityTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,7 +19,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RenderLivingEvent;
 import net.neoforged.neoforge.client.event.RenderPlayerEvent;
 
-@EventBusSubscriber(modid = GoldenBoughsLib.ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Lib.ID, value = Dist.CLIENT)
 public final class EntityRenderEvents {
 	@SubscribeEvent
 	public static void onRenderPlayerEventPre(RenderPlayerEvent.Pre event) {

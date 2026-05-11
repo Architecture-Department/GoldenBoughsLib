@@ -1,13 +1,11 @@
 package architecture.goldenboughs_lib.common.entiy.corpse
 
-import architecture.goldenboughs_lib.init.LibEntityTypes
 import net.minecraft.Util
 import net.minecraft.core.Direction
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.network.syncher.SynchedEntityData
-import net.minecraft.server.level.ServerPlayer
 import net.minecraft.tags.DamageTypeTags
 import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.damagesource.DamageTypes
@@ -15,12 +13,8 @@ import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.Mob
 import net.minecraft.world.level.Level
 import net.minecraft.world.phys.AABB
-import net.neoforged.bus.api.SubscribeEvent
-import net.neoforged.fml.common.EventBusSubscriber
-import net.neoforged.neoforge.event.entity.living.LivingDeathEvent
 import java.util.*
 
-@EventBusSubscriber
 class StaffCorpse(
 	type: EntityType<out Mob>,
 	level: Level
@@ -123,22 +117,5 @@ class StaffCorpse(
 			SynchedEntityData.defineId(StaffCorpse::class.java, EntityDataSerializers.STRING)
 		private val ON_FACE: EntityDataAccessor<Boolean> =
 			SynchedEntityData.defineId(StaffCorpse::class.java, EntityDataSerializers.BOOLEAN)
-
-		@SubscribeEvent
-		fun livingDeath(event: LivingDeathEvent) {
-			if (event.entity !is ServerPlayer) return
-			val serverPlayer = event.entity
-
-			val staffCorpse = StaffCorpse(LibEntityTypes.STAFF_CORPSE.get(), serverPlayer.level())
-			staffCorpse.ownerUuid = serverPlayer.getUUID()
-			staffCorpse.ownerName = serverPlayer.displayName?.string ?: ""
-			val onFace: Boolean = serverPlayer.getRandom().nextBoolean()
-			staffCorpse.isOnFace = onFace
-			staffCorpse.setPos(serverPlayer.x, serverPlayer.y, serverPlayer.z)
-			staffCorpse.yRot = if (onFace) serverPlayer.yRot else -serverPlayer.yRot
-			staffCorpse.setYHeadRot(staffCorpse.yRot)
-			staffCorpse.setYBodyRot(staffCorpse.yRot)
-			serverPlayer.level().addFreshEntity(staffCorpse)
-		}
 	}
 }

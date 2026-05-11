@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.client.model
 
 import architecture.goldenboughs_lib.api.AllOpe
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import net.minecraft.resources.ResourceLocation
 import software.bernie.geckolib.animatable.GeoAnimatable
 import software.bernie.geckolib.cache.GeckoLibCache
@@ -31,7 +31,7 @@ class GeoModelExpand<T : GeoAnimatable>(
 	}
 
 	protected val defaultModelResource: ResourceLocation =
-		model(GoldenBoughsLib.modRl("item/default")).withSuffix(MODEL_SUFFIX)
+		model(Lib.modRl("item/default")).withSuffix(MODEL_SUFFIX)
 
 	companion object {
 		const val MODEL_SUFFIX: String = ".geo.json"

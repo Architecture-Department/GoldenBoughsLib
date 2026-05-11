@@ -31,7 +31,7 @@ class ModMeleeAttackGoal(
 	private var failedPathFindingPenalty = 0
 
 	init {
-		this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK))
+		this.flags = EnumSet.of(Flag.MOVE, Flag.LOOK)
 	}
 
 	override fun canUse(): Boolean {
@@ -77,7 +77,7 @@ class ModMeleeAttackGoal(
 
 	override fun start() {
 		this.mob.getNavigation().moveTo(this.path, this.speedModifier)
-		this.mob.setAggressive(true)
+		this.mob.isAggressive = true
 		this.ticksUntilNextPathRecalculation = 0
 		this.ticksUntilNextAttack = 0
 	}
@@ -85,10 +85,10 @@ class ModMeleeAttackGoal(
 	override fun stop() {
 		val livingEntity = this.mob.target
 		if (!EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(livingEntity)) {
-			this.mob.setTarget(null)
+			this.mob.target = null
 		}
 
-		this.mob.setAggressive(false)
+		this.mob.isAggressive = false
 		this.mob.getNavigation().stop()
 	}
 

@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.core.registry.client
 import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle
 import architecture.goldenboughs_lib.client.particle.text.DamageTextParticle
 import architecture.goldenboughs_lib.client.particle.text.TextParticleProvider
-import architecture.goldenboughs_lib.core.GoldenBoughsLib
+import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibParticleTypes
 import net.minecraft.client.particle.ParticleEngine
 import net.minecraft.client.particle.SpriteSet
@@ -12,10 +12,9 @@ import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent
 
-@EventBusSubscriber(modid = GoldenBoughsLib.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = Lib.ID, value = [Dist.CLIENT])
 object ParticleProvidersRegistry {
 	@SubscribeEvent
-	@JvmStatic
 	fun registry(event: RegisterParticleProvidersEvent) {
 		event.registerSpecial(LibParticleTypes.TEXT.get(), TextParticleProvider())
 		event.registerSpecial(

@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.particle.text
 
-import architecture.goldenboughs_lib.api.virtue.network.codec.CompositeStreamCodecBuilder
+import architecture.goldenboughs_lib.api.network.codec.CompositeStreamCodecBuilder
 import architecture.goldenboughs_lib.init.LibParticleTypes
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
