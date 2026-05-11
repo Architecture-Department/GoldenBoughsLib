@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.events.client;
 
-import architecture.goldenboughs_lib.common.entiy.corpse.client.StaffCorpseRenderer;
+import architecture.goldenboughs_lib.client.renderer.StaffCorpseRenderer;
 import architecture.goldenboughs_lib.core.GoldenBoughsLib;
 import architecture.goldenboughs_lib.eventexecute.client.EntityRenderEventExecute;
 import architecture.goldenboughs_lib.init.LibEntityTypes;

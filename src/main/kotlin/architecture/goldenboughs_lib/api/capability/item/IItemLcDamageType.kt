@@ -20,7 +20,7 @@ interface IItemLcDamageType {
 	/**
 	 * 获取可以造成的伤害类型 一般用于描述
 	 */
-	fun getCanCauseLcDamageTypes(stack: ItemStack): MutableSet<LcDamageType> {
+	fun getCanCauseLcDamageTypes(stack: ItemStack): Set<LcDamageType> {
 		return mutableSetOf()
 	}
 }

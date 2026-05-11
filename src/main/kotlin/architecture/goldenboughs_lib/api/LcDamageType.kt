@@ -149,19 +149,19 @@ enum class LcDamageType(
 
 	companion object {
 		@JvmField
-		val CODEC: Codec<LcDamageType> = StringRepresentable.fromEnum<LcDamageType> { entries.toTypedArray() }
+		val CODEC: Codec<LcDamageType> = StringRepresentable.fromEnum { entries.toTypedArray() }
 			.validate { result: LcDamageType -> DataResult.success(result) }
 
 		@JvmField
-		val STREAM_CODEC: StreamCodec<ByteBuf, LcDamageType> = ByteBufCodecs.idMapper<LcDamageType>(
-			ByIdMap.continuous<LcDamageType>(
+		val STREAM_CODEC: StreamCodec<ByteBuf, LcDamageType> = ByteBufCodecs.idMapper(
+			ByIdMap.continuous(
 				LcDamageType::index, entries.toTypedArray(), ByIdMap.OutOfBoundsStrategy.WRAP
 			), LcDamageType::index
 		)
 
 		@JvmStatic
-		fun byName(name: String): LcDamageType {
-			return Arrays.stream<LcDamageType>(entries.toTypedArray()).filter { d -> d.damageName == name }.findFirst()
+		fun byName(name: String): LcDamageType? {
+			return Arrays.stream(entries.toTypedArray()).filter { d -> d.damageName == name }.findFirst()
 				.orElse(null)
 		}
 
@@ -187,7 +187,10 @@ enum class LcDamageType(
 	}
 
 	@JvmRecord
-	data class Component(val lcDamageType: LcDamageType?, val canCauseLcDamageTypes: Set<LcDamageType>) {
+	data class Component(
+		val lcDamageType: LcDamageType?,
+		val canCauseLcDamageTypes: Set<LcDamageType>
+	) {
 		constructor(lcDamageType: LcDamageType) : this(lcDamageType, mutableSetOf<LcDamageType>(lcDamageType))
 
 		constructor(lcDamageType: LcDamageType, vararg canCauseLcDamageTypes: LcDamageType) : this(

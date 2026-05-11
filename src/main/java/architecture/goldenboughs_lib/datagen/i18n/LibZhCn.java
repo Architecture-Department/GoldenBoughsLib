@@ -90,18 +90,18 @@ public final class LibZhCn extends DatagenI18n {
 		add(LivingEntityVulnerable.THE_SOUL_KEY, "灵魂易伤");
 
 		//region 命令
-		add(getFormattedKey(RationalityCommands.SET_KEY, RationalityCommands.ProcessType.VALUE.getName()), "已设置%s的理智值为：%d");
-		add(getFormattedKey(RationalityCommands.SET_KEY, RationalityCommands.ProcessType.MAX_VALUE.getName()), "已设置%s的最大理智基础值为：%d");
-		add(getFormattedKey(RationalityCommands.SET_KEY, RationalityCommands.ProcessType.NATURAL_RECOVERY_RATE.getName()), "已设置%s的基础理智值理智值自然恢复等待时间为：20*%d Tick");
-		add(getFormattedKey(RationalityCommands.SET_KEY, RationalityCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.getName()), "已设置%s的基础理智恢复为：每次%d");
-		add(getFormattedKey(RationalityCommands.GET_KEY, RationalityCommands.ProcessType.VALUE.getName()), "%s的理智值为：%d");
-		add(getFormattedKey(RationalityCommands.GET_KEY, RationalityCommands.ProcessType.MAX_VALUE.getName()), "%s的最大理智值为：%d");
-		add(getFormattedKey(RationalityCommands.GET_KEY, RationalityCommands.ProcessType.NATURAL_RECOVERY_RATE.getName()), "%s的理智值理智值自然恢复等待时间为：20*%d Tick");
-		add(getFormattedKey(RationalityCommands.GET_KEY, RationalityCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.getName()), "%s的理智值自然恢复量为：每次%d点");
-		add(getFormattedKey(RationalityCommands.RESET_KEY, RationalityCommands.ProcessType.VALUE.getName()), "已重置%s的理智值为：%d");
-		add(getFormattedKey(RationalityCommands.RESET_KEY, RationalityCommands.ProcessType.MAX_VALUE.getName()), "已重置%s的最大理智基础值为：%d");
-		add(getFormattedKey(RationalityCommands.RESET_KEY, RationalityCommands.ProcessType.NATURAL_RECOVERY_RATE.getName()), "已重置%s的基础理智值理智值自然恢复等待时间为：20*%dTick");
-		add(getFormattedKey(RationalityCommands.RESET_KEY, RationalityCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.getName()), "已重置%s的基础理智值自然恢复量为：每次%d点");
+		add(getFormattedKey(RationalityCommands.SET_KEY, RationalityCommands.ProcessType.VALUE.typeName), "已设置%s的理智值为：%d");
+		add(getFormattedKey(RationalityCommands.SET_KEY, RationalityCommands.ProcessType.MAX_VALUE.typeName), "已设置%s的最大理智基础值为：%d");
+		add(getFormattedKey(RationalityCommands.SET_KEY, RationalityCommands.ProcessType.NATURAL_RECOVERY_RATE.typeName), "已设置%s的基础理智值理智值自然恢复等待时间为：20*%d Tick");
+		add(getFormattedKey(RationalityCommands.SET_KEY, RationalityCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.typeName), "已设置%s的基础理智恢复为：每次%d");
+		add(getFormattedKey(RationalityCommands.GET_KEY, RationalityCommands.ProcessType.VALUE.typeName), "%s的理智值为：%d");
+		add(getFormattedKey(RationalityCommands.GET_KEY, RationalityCommands.ProcessType.MAX_VALUE.typeName), "%s的最大理智值为：%d");
+		add(getFormattedKey(RationalityCommands.GET_KEY, RationalityCommands.ProcessType.NATURAL_RECOVERY_RATE.typeName), "%s的理智值理智值自然恢复等待时间为：20*%d Tick");
+		add(getFormattedKey(RationalityCommands.GET_KEY, RationalityCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.typeName), "%s的理智值自然恢复量为：每次%d点");
+		add(getFormattedKey(RationalityCommands.RESET_KEY, RationalityCommands.ProcessType.VALUE.typeName), "已重置%s的理智值为：%d");
+		add(getFormattedKey(RationalityCommands.RESET_KEY, RationalityCommands.ProcessType.MAX_VALUE.typeName), "已重置%s的最大理智基础值为：%d");
+		add(getFormattedKey(RationalityCommands.RESET_KEY, RationalityCommands.ProcessType.NATURAL_RECOVERY_RATE.typeName), "已重置%s的基础理智值理智值自然恢复等待时间为：20*%dTick");
+		add(getFormattedKey(RationalityCommands.RESET_KEY, RationalityCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.typeName), "已重置%s的基础理智值自然恢复量为：每次%d点");
 		add(getFormattedKey(RationalityCommands.RESET_KEY), "已重置%s的理智");
 		//endregion
 

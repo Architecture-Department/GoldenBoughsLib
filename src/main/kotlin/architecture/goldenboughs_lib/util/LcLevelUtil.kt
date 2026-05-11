@@ -24,7 +24,7 @@ object LcLevelUtil {
 	// 仅内部开发使用
 	@ApiStatus.Internal
 	@JvmField
-	val ENTITY_TYPE_LEVEL: MutableMap<EntityType<*>, LcLevel> = HashMap()
+	val ENTITY_TYPE_LEVEL: MutableMap<EntityType<*>, LcLevel?> = HashMap()
 
 	@JvmStatic
 	fun <T : Entity> lcLevel(lcLevel: LcLevel, holder: DeferredHolder<EntityType<*>, EntityType<T>>) {
