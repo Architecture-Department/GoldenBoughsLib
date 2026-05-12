@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.datagen.i18n
 
 import architecture.goldenboughs_lib.api.virtue.VirtueType
 import architecture.goldenboughs_lib.common.command.RationalityCommands
-import architecture.goldenboughs_lib.common.components.ItemVirtueUsageReq
+import architecture.goldenboughs_lib.common.data_component.ItemVirtueUsageReq
 import architecture.goldenboughs_lib.config.LibConfig
 import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibDamageTypes

@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.api.world.item
 
 import architecture.goldenboughs_lib.api.AllOpe
 import architecture.goldenboughs_lib.api.virtue.VirtueRating
-import architecture.goldenboughs_lib.common.components.ItemVirtueUsageReq
+import architecture.goldenboughs_lib.common.data_component.ItemVirtueUsageReq
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import net.minecraft.world.item.Item
 

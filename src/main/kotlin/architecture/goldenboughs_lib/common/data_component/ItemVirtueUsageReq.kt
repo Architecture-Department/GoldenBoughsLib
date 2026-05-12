@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.common.components
+package architecture.goldenboughs_lib.common.data_component
 
 import architecture.goldenboughs_lib.api.virtue.VirtueRating
 import architecture.goldenboughs_lib.api.virtue.VirtueRating.Companion.getRating

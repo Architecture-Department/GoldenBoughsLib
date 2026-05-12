@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.init
 
 import architecture.goldenboughs_lib.api.LcDamageType
-import architecture.goldenboughs_lib.common.components.ItemVirtueUsageReq
+import architecture.goldenboughs_lib.common.data_component.ItemVirtueUsageReq
 import architecture.goldenboughs_lib.core.Lib.modRegister
 import com.mojang.serialization.Codec
 import net.minecraft.core.component.DataComponentType
