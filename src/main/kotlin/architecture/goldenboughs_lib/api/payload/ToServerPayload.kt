@@ -5,18 +5,14 @@ import net.minecraft.server.level.ServerPlayer
 import net.neoforged.neoforge.network.handling.IPayloadContext
 
 interface ToServerPayload : ToServerAndClientPayload {
-	override fun work(context: IPayloadContext) {
-		val player = context.player()
-		if (player !is ServerPlayer) return
-		work(player)
+
+	fun work(context: IPayloadContext, player: ServerPlayer)
+
+	override fun toServer(context: IPayloadContext, player: ServerPlayer) {
+		work(context, player)
 	}
 
-	fun work(player: ServerPlayer)
-
-	override fun toServer(serverPlayer: ServerPlayer) {
-		work(serverPlayer)
-	}
-
-	override fun toClient(clientPlayer: AbstractClientPlayer) {
+	override fun toClient(context: IPayloadContext, player: AbstractClientPlayer) {
+		throw IllegalStateException("This payload cannot be sent to the client")
 	}
 }

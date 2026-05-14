@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.mixin.world;
 
 import architecture.goldenboughs_lib.api.LcDamageType;
 import architecture.goldenboughs_lib.api.LcLevel;
-import architecture.goldenboughs_lib.mixed.IDamageSource;
+import architecture.goldenboughs_lib.mixed.IDamageSourceLib;
 import architecture.goldenboughs_lib.util.LcDamageTypeUtil;
 import architecture.goldenboughs_lib.util.LcLevelUtil;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
  * @author 尽
  */
 @Mixin(DamageSource.class)
-public abstract class DamageSourceMixin implements IDamageSource {
+public abstract class DamageSourceMixin implements IDamageSourceLib {
 	@Unique
 	@Nullable
 	private LcDamageType goldenboughs_lib$lcDamageType;

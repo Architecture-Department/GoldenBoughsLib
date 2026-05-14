@@ -23,39 +23,34 @@ object PayloadRegistry {
 	fun register(event: RegisterPayloadHandlersEvent) {
 		val registrar = event.registrar("1.0")
 		// 接收来自服务端和客户端的数据 发送到 客户端和服务端
-		playToServerAndClient(
-			registrar,
+		registrar.playToServerAndClient(
 			LivingEntityAttackStrengthTickerPayload.TYPE,
 			LivingEntityAttackStrengthTickerPayload.STREAM_CODEC
 		)
 
 		// 接收来自服务端的数据 发送到 客户端
-		playToClient(
-			registrar,
+		registrar.playToClient(
 			PlayerDamagePayload.TYPE,
 			PlayerDamagePayload.STREAM_CODEC
 		)
-		playToClient(
-			registrar,
+		registrar.playToClient(
 			GeckolibAnimationSynchroPayload.TYPE,
 			GeckolibAnimationSynchroPayload.STREAM_CODEC
 		)
 
 		// 接收来自客户端的数据 发送到 服务端
-		playToServer(
-			registrar,
+		registrar.playToServer(
 			PlayerIGunWeaponPayload.TYPE,
 			PlayerIGunWeaponPayload.STREAM_CODEC
 		)
 		Lib.LOGGER.info("Registering payloads finish")
 	}
 
-	private fun <T : ToServerAndClientPayload> playToServerAndClient(
-		registrar: PayloadRegistrar,
+	fun <T : ToServerAndClientPayload> PayloadRegistrar.playToServerAndClient(
 		type: CustomPacketPayload.Type<T>,
 		reader: StreamCodec<in RegistryFriendlyByteBuf, T>
 	): PayloadRegistrar {
-		return registrar.playBidirectional(
+		return playBidirectional(
 			type, reader,
 			DirectionalPayloadHandler(
 				ToServerAndClientPayload::handle,
@@ -64,24 +59,22 @@ object PayloadRegistry {
 		)
 	}
 
-	private fun <T : ToServerPayload> playToServer(
-		registrar: PayloadRegistrar,
+	fun <T : ToServerPayload> PayloadRegistrar.playToServer(
 		type: CustomPacketPayload.Type<T>,
 		reader: StreamCodec<in RegistryFriendlyByteBuf, T>
 	): PayloadRegistrar {
-		return registrar.playToServer<T>(
+		return playToServer(
 			type,
 			reader,
 			ToServerPayload::handle
 		)
 	}
 
-	private fun <T : ToClientPayload> playToClient(
-		registrar: PayloadRegistrar,
+	fun <T : ToClientPayload> PayloadRegistrar.playToClient(
 		type: CustomPacketPayload.Type<T>,
 		reader: StreamCodec<in RegistryFriendlyByteBuf, T>
 	): PayloadRegistrar {
-		return registrar.playToClient<T>(
+		return playToClient(
 			type,
 			reader,
 			ToClientPayload::handle

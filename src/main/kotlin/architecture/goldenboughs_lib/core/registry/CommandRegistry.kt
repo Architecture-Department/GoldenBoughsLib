@@ -14,6 +14,6 @@ object CommandRegistry {
 	@SubscribeEvent
 	fun registry(event: RegisterCommandsEvent) {
 		val dispatcher = event.dispatcher
-		RationalityCommands.processRationality(dispatcher)
+		RationalityCommands.registry(dispatcher)
 	}
 }

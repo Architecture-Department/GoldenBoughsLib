@@ -10,6 +10,7 @@ import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
+import net.neoforged.neoforge.network.handling.IPayloadContext
 
 @JvmRecord
 data class LivingEntityAttackStrengthTickerPayload(
@@ -19,7 +20,7 @@ data class LivingEntityAttackStrengthTickerPayload(
 		return TYPE
 	}
 
-	override fun toServer(serverPlayer: ServerPlayer) {
+	override fun toServer(context: IPayloadContext, serverPlayer: ServerPlayer) {
 		to(serverPlayer)
 	}
 
@@ -27,7 +28,7 @@ data class LivingEntityAttackStrengthTickerPayload(
 		(player as LivingEntityAccessorMixin).`goldenboughs_lib$setAttackStrengthTicker`(this.attackStrengthTicker)
 	}
 
-	override fun toClient(clientPlayer: AbstractClientPlayer) {
+	override fun toClient(context: IPayloadContext, clientPlayer: AbstractClientPlayer) {
 		to(clientPlayer)
 	}
 

@@ -1,23 +1,20 @@
 {
 	"net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer": [
-		"architecture/goldenboughs_lib/mixed/client/IBlockEntityWithoutLevelRenderer"
+		"architecture/goldenboughs_lib/mixed/client/IBlockEntityWithoutLevelRendererLib"
 	],
 	"net/minecraft/client/gui/Font": [
-		"architecture/goldenboughs_lib/mixed/client/IFont"
+		"architecture/goldenboughs_lib/mixed/client/IFontLib"
 	],
 	"net/minecraft/client/KeyMapping": [
-		"architecture/goldenboughs_lib/mixed/client/IKeyMapping"
+		"architecture/goldenboughs_lib/mixed/client/IKeyMappingLib"
 	],
 	"net/minecraft/world/damagesource/DamageSource": [
-		"architecture/goldenboughs_lib/mixed/IDamageSource"
-	],
-	"net/neoforged/neoforge/event/entity/living/LivingDamageEvent$Post": [
-		"architecture/goldenboughs_lib/mixed/ILivingDamageEvent$Post"
+		"architecture/goldenboughs_lib/mixed/IDamageSourceLib"
 	],
 	"net/minecraft/world/entity/LivingEntity": [
-		"architecture/goldenboughs_lib/mixed/ILivingEntity"
+		"architecture/goldenboughs_lib/mixed/ILivingEntityLib"
 	],
 	"net/minecraft/world/entity/player/Player": [
-		"architecture/goldenboughs_lib/mixed/IPlayer"
+		"architecture/goldenboughs_lib/mixed/IPlayerLib"
 	]
 }

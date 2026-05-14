@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.mixin.client.world;
 
-import architecture.goldenboughs_lib.mixed.client.IBlockEntityWithoutLevelRenderer;
+import architecture.goldenboughs_lib.mixed.client.IBlockEntityWithoutLevelRendererLib;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
@@ -53,7 +53,7 @@ public abstract class ItemRendererMixin {
 		int combinedOverlay,
 		Operation<Void> original
 	) {
-		if (instance instanceof IBlockEntityWithoutLevelRenderer renderer) {
+		if (instance instanceof IBlockEntityWithoutLevelRendererLib renderer) {
 			renderer.goldenboughs_lib$renderByItem(goldenboughs_lib$sourceLivingEntity, itemStack, displayContext, poseStack, bufferSource, combinedLight, combinedOverlay);
 			return;
 		}

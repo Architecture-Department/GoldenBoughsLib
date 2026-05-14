@@ -8,7 +8,7 @@ import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.ItemDisplayContext
 import net.minecraft.world.item.ItemStack
 
-interface IBlockEntityWithoutLevelRenderer {
+interface IBlockEntityWithoutLevelRendererLib {
 	fun `goldenboughs_lib$renderByItem`(
 		sourceLivingEntity: LivingEntity,
 		stack: ItemStack,
@@ -27,7 +27,7 @@ interface IBlockEntityWithoutLevelRenderer {
 
 	companion object {
 		@JvmStatic
-		fun of(obj: BlockEntityWithoutLevelRenderer): IBlockEntityWithoutLevelRenderer {
+		fun of(obj: BlockEntityWithoutLevelRenderer): IBlockEntityWithoutLevelRendererLib {
 			return obj
 		}
 	}

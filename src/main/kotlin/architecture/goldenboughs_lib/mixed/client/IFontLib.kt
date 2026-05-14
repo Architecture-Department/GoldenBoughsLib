@@ -10,7 +10,7 @@ import org.joml.Matrix4f
 /**
  * 字体渲染扩展接口，提供额外的字体绘制功能
  */
-interface IFont {
+interface IFontLib {
 	/**
 	 * 批量绘制文本（字符串版本）
 	 *
@@ -266,7 +266,7 @@ interface IFont {
 
 	companion object {
 		@JvmStatic
-		fun of(obj: Font): IFont {
+		fun of(obj: Font): IFontLib {
 			return obj
 		}
 	}

@@ -11,6 +11,7 @@ import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
+import net.neoforged.neoforge.network.handling.IPayloadContext
 import java.util.*
 
 @JvmRecord
@@ -27,7 +28,7 @@ data class PlayerDamagePayload(
 		return TYPE
 	}
 
-	override fun work(player: Player) {
+	override fun work(context: IPayloadContext, player: Player) {
 		LcDamageScreenFilterLayer.INSTANCE.addFilter(this.lcDamageType.orElse(null))
 	}
 

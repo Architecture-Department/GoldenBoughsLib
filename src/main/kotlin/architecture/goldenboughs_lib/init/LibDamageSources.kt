@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Contract
  * 伤害来源
  * 
  * 
- * 关于四色伤害的使用推荐直接使用[architecture.goldenboughs_lib.mixed.IDamageSource] 中的方法
+ * 关于四色伤害的使用推荐直接使用[architecture.goldenboughs_lib.mixed.IDamageSourceLib] 中的方法
  */
 class LibDamageSources(registry: RegistryAccess) : DamageSources(registry) {
 	private val physics: DamageSource = source(LibDamageTypes.PHYSICS)

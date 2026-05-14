@@ -2,6 +2,7 @@ package architecture.goldenboughs_lib.common.command
 
 import architecture.goldenboughs_lib.datagen.i18n.DatagenI18n
 import architecture.goldenboughs_lib.init.LibAttributes
+import architecture.goldenboughs_lib.util.CommandUtil.getTargetPlayer
 import architecture.goldenboughs_lib.util.RationalityUtil.getMaxRationalityValue
 import architecture.goldenboughs_lib.util.RationalityUtil.getNaturalRecoveryRate
 import architecture.goldenboughs_lib.util.RationalityUtil.getRationalityRecoveryAmount
@@ -19,7 +20,6 @@ import net.minecraft.commands.CommandSourceStack
 import net.minecraft.commands.Commands
 import net.minecraft.commands.arguments.EntityArgument
 import net.minecraft.network.chat.Component
-import net.minecraft.server.level.ServerPlayer
 
 object RationalityCommands {
 
@@ -41,10 +41,10 @@ object RationalityCommands {
 	val ARG: FloatArgumentType = FloatArgumentType.floatArg()
 
 	@JvmStatic
-	fun processRationality(dispatcher: CommandDispatcher<CommandSourceStack>) {
+	fun registry(dispatcher: CommandDispatcher<CommandSourceStack>) {
 		dispatcher.register(
 			Commands.literal("rationality")
-				.requires { source: CommandSourceStack -> source.hasPermission(2) }
+				.requires { it.hasPermission(2) }
 				.then(
 					Commands.argument("target", EntityArgument.player())
 						.then(
@@ -63,8 +63,8 @@ object RationalityCommands {
 						)
 						.then(
 							Commands.literal("reset")
-								.executes { context: CommandContext<CommandSourceStack> ->
-									val player = getTargetPlayer(context)
+								.executes {
+									val player = getTargetPlayer(it)
 									player.setRationalityValue(0f, false)
 									setBaseMaxValue(
 										player,
@@ -78,7 +78,7 @@ object RationalityCommands {
 									player.setBaseRationalityRecoveryAmount(
 										LibAttributes.RATIONALITY_RECOVERY_AMOUNT.value().defaultValue.toFloat()
 									)
-									context.getSource().sendSuccess({
+									it.getSource().sendSuccess({
 										Component.translatable(
 											DatagenI18n.getFormattedKey(RESET_KEY), player.name
 										)
@@ -135,7 +135,7 @@ object RationalityCommands {
 
 		var literal = Commands.literal(name)
 		literal = if (isSet) literal.then(
-			Commands.argument<Float>("value", ARG).executes(logic(processType, true, name))
+			Commands.argument("value", ARG).executes(logic(processType, true, name))
 		) else literal.executes(
 			logic(processType, false, name)
 		)
@@ -195,11 +195,6 @@ object RationalityCommands {
 			1
 		}
 	}
-
-	@Suppress("CheckedExceptionsKotlin")
-	@JvmStatic
-	private fun getTargetPlayer(context: CommandContext<CommandSourceStack>): ServerPlayer =
-		EntityArgument.getPlayer(context, "target")
 
 	enum class ProcessType(@JvmField val typeName: String) {
 		VALUE("value"),

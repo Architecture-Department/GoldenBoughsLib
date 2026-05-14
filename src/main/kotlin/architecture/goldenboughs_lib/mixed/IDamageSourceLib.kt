@@ -6,7 +6,7 @@ import architecture.goldenboughs_lib.api.NoMixinException
 import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.item.ItemStack
 
-interface IDamageSource {
+interface IDamageSourceLib {
 	/**
 	 * 设置武器物品
 	 *
@@ -54,7 +54,7 @@ interface IDamageSource {
 
 	companion object {
 		@JvmStatic
-		fun of(obj: DamageSource): IDamageSource {
+		fun of(obj: DamageSource): IDamageSourceLib {
 			return obj
 		}
 	}

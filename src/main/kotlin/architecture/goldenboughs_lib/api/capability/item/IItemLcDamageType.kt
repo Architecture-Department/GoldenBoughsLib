@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack
  * 该类主要针对物品的近战攻击
  *
  *
- * 如果你可以直接返回[net.minecraft.world.damagesource.DamageSource]请使用[architecture.goldenboughs_lib.mixed.IDamageSource.`goldenboughs_lib$setLcDamageType`]
+ * 如果你可以直接返回[net.minecraft.world.damagesource.DamageSource]请使用[architecture.goldenboughs_lib.mixed.IDamageSourceLib.`goldenboughs_lib$setLcDamageType`]
  */
 @AllOpe
 interface IItemLcDamageType {

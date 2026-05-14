@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.mixin.client;
 
 import architecture.goldenboughs_lib.client.gui.ModStringRenderOutput;
-import architecture.goldenboughs_lib.mixed.client.IFont;
+import architecture.goldenboughs_lib.mixed.client.IFontLib;
 import com.mojang.blaze3d.font.GlyphInfo;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.gui.Font;
@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(Font.class)
-public abstract class FontMixin implements IFontExtension, IFont {
+public abstract class FontMixin implements IFontExtension, IFontLib {
 
 	@Shadow
 	@Final

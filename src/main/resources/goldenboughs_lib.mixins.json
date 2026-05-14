@@ -12,6 +12,7 @@
 		"world.CombatRulesMixin",
 		"world.DamageContainerMixin",
 		"world.DamageSourceMixin",
+		"world.entity.Entity",
 		"world.entity.LivingDamageEvent$PostMixin",
 		"world.entity.LivingEntityAccessorMixin",
 		"world.entity.LivingEntityMixin",

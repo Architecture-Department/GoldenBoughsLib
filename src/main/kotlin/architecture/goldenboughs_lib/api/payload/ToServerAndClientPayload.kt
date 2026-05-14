@@ -4,24 +4,25 @@ import net.minecraft.client.player.AbstractClientPlayer
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.server.level.ServerPlayer
 import net.neoforged.neoforge.network.handling.IPayloadContext
-import java.util.function.Function
 
 interface ToServerAndClientPayload : CustomPacketPayload {
 	fun handle(context: IPayloadContext) {
 		context.enqueueWork { work(context) }
-			.exceptionally(Function { e: Throwable -> null })
+			.exceptionally { e -> null }
 	}
 
 	fun work(context: IPayloadContext) {
 		val player = context.player()
 		if (player is AbstractClientPlayer) {
-			toClient(player)
+			toClient(context, player)
 		} else if (player is ServerPlayer) {
-			toServer(player)
+			toServer(context, player)
 		}
 	}
 
-	fun toServer(serverPlayer: ServerPlayer)
+	fun toServer(context: IPayloadContext, player: ServerPlayer) {
+	}
 
-	fun toClient(clientPlayer: AbstractClientPlayer)
+	fun toClient(context: IPayloadContext, player: AbstractClientPlayer) {
+	}
 }

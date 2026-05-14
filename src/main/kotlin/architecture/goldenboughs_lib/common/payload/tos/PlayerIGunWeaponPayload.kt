@@ -10,6 +10,7 @@ import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
+import net.neoforged.neoforge.network.handling.IPayloadContext
 
 // TODO 替换成史诗战斗的控制系统
 @JvmRecord
@@ -47,7 +48,7 @@ data class PlayerIGunWeaponPayload(
 	/**
 	 * 发送到服务端
 	 */
-	override fun work(player: ServerPlayer) {
+	override fun work(context: IPayloadContext, player: ServerPlayer) {
 		val hand = this.hand
 		val itemStack = player.getItemInHand(hand)
 		val item = itemStack.item
