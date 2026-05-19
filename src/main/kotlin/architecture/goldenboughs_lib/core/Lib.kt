@@ -30,15 +30,15 @@ object Lib {
 		val modBus = MOD_BUS
 
 		LibConfig.init(modContainer)
-		LibItems.REGISTRY.register(modBus)
-		LibMobEffects.REGISTRY.register(modBus)
-		LibAttributes.REGISTRY.register(modBus)
-		LibAttachmentTypes.REGISTRY.register(modBus)
 		LibParticleTypes.REGISTRY.register(modBus)
+		LibAttachmentTypes.REGISTRY.register(modBus)
+		LibMobEffects.REGISTRY.register(modBus)
+		LibSoundEvents.REGISTRY.register(modBus)
 		LibDataComponentTypes.REGISTRY.register(modBus)
+		LibAttributes.REGISTRY.register(modBus)
+		LibItems.REGISTRY.register(modBus)
 		LibEntityTypes.REGISTRY.register(modBus)
 		LibAbsorptionShieldsRegistry.init()
-		LibSoundEvents.REGISTRY.register(modBus)
 	}
 
 	@SubscribeEvent
