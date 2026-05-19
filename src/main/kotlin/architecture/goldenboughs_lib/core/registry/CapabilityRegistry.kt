@@ -204,7 +204,7 @@ object CapabilityRegistry {
 			LcLevelUtil.ENTITY_TYPE_LEVEL[entityType] = lcLevel
 			event.registerEntity(
 				LibCapabilitys.LcLevel.LC_LEVEL_ENTITY, entityType
-			) { stack: Any, ctx: Void ->
+			) { stack: Any?, ctx: Void? ->
 				when (lcLevel) {
 					LcLevel.ZAYIN -> EntityLcLevel.ZAYIN
 					LcLevel.TETH -> EntityLcLevel.TETH
