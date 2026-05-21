@@ -150,7 +150,7 @@ object CapabilityRegistry {
 	@JvmStatic
 	fun itemLevel(event: RegisterCapabilitiesEvent, lcLevel: IItemLcLevel, vararg items: ItemLike) {
 		event.registerItem(
-			LibCapabilitys.LcLevel.LC_LEVEL_ITEM, { stack: ItemStack, ctx: Void -> lcLevel }, *items
+			LibCapabilitys.LcLevel.LC_LEVEL_ITEM, { stack: ItemStack, _ -> lcLevel }, *items
 		)
 	}
 
@@ -160,7 +160,7 @@ object CapabilityRegistry {
 			return
 		}
 		event.registerItem(
-			LibCapabilitys.LcLevel.LC_LEVEL_ITEM, { stack: ItemStack, ctx: Void ->
+			LibCapabilitys.LcLevel.LC_LEVEL_ITEM, { stack: ItemStack, _ ->
 				when (lcLevel) {
 					LcLevel.ZAYIN -> ItemLcLevel.ZAYIN
 					LcLevel.TETH -> ItemLcLevel.TETH
@@ -180,7 +180,7 @@ object CapabilityRegistry {
 		}
 		event.registerBlock(
 			LibCapabilitys.LcLevel.LC_LEVEL_BLOCK,
-			{ level: Level, blockPos: BlockPos, blockState: BlockState, blockEntity: BlockEntity?, c: Void ->
+			{ level: Level, blockPos: BlockPos, blockState: BlockState, blockEntity: BlockEntity?, _ ->
 				when (lcLevel) {
 					LcLevel.ZAYIN -> BlockLcLevel.ZAYIN
 					LcLevel.TETH -> BlockLcLevel.TETH
