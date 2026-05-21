@@ -15,11 +15,9 @@ import java.util.function.BiFunction
 @AllOpe
 class GeoItemRenderProvider<T> @JvmOverloads constructor(
 	@JvmField protected final val defaultModel: GeoModel<T>,
-	@JvmField protected final val guiModel: GeoModel<T>,
-	private val rendererFunction: BiFunction<GeoModel<T>, GeoModel<T>, GeoItemRenderer<T>> =
-		{ model: GeoModel<T>, guiModel: GeoModel<T> ->
-			GeoItemRendererExpand<T>(model, guiModel)
-		}
+	@JvmField protected final val guiModel: GeoModel<T>?,
+	private val rendererFunction: BiFunction<GeoModel<T>, GeoModel<T>?, GeoItemRenderer<T>> =
+		{ model, guiModel -> GeoItemRendererExpand(model, guiModel) }
 ) : GeoRenderProvider where T : Item, T : GeoItem {
 	private var renderer: GeoItemRenderer<T>? = null
 
