@@ -20,7 +20,7 @@ public abstract class BlockEntityWithoutLevelRendererMixin implements IBlockEnti
 	private @Nullable LivingEntity goldenboughs_lib$sourceLivingEntity;
 
 	@Override
-	public void goldenboughs_lib$renderByItem(LivingEntity sourceLivingEntity, ItemStack stack, ItemDisplayContext displayContext, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
+	public void goldenboughs_lib$renderByItem(@Nullable LivingEntity sourceLivingEntity, ItemStack stack, ItemDisplayContext displayContext, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
 		goldenboughs_lib$sourceLivingEntity = sourceLivingEntity;
 
 		if (GeoRenderProvider.of(stack).getGeoItemRenderer() instanceof GeoItemRendererExpand<?> renderer) {

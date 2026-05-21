@@ -29,6 +29,6 @@ class GuiGeoItemModel<T : GeoAnimatable> : GeoItemModel<T> {
 
 	companion object {
 		private val MODELLED_PATH: ResourceLocation =
-			model(Lib.modRl("item/gui_item_model")).withPrefix(MODEL_SUFFIX)
+			model(Lib.modRl("item/gui_item_model").withSuffix(MODEL_SUFFIX))
 	}
 }

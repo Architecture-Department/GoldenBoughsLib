@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack
 
 interface IBlockEntityWithoutLevelRendererLib {
 	fun `goldenboughs_lib$renderByItem`(
-		sourceLivingEntity: LivingEntity,
+		sourceLivingEntity: LivingEntity?,
 		stack: ItemStack,
 		displayContext: ItemDisplayContext,
 		poseStack: PoseStack,
@@ -21,7 +21,7 @@ interface IBlockEntityWithoutLevelRendererLib {
 		throw NoMixinException()
 	}
 
-	fun `goldenboughs_lib$getSourceLivingEntity`(): LivingEntity {
+	fun `goldenboughs_lib$getSourceLivingEntity`(): LivingEntity? {
 		throw NoMixinException()
 	}
 

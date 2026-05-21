@@ -29,7 +29,7 @@ class GeoItemRendererExpand<T>(
 	}
 
 	fun renderByItem(
-		livingEntity: LivingEntity,
+		livingEntity: LivingEntity?,
 		itemStack: ItemStack,
 		displayContext: ItemDisplayContext,
 		poseStack: PoseStack,

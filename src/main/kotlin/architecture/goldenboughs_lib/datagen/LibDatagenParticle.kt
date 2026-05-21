@@ -8,18 +8,14 @@ import net.minecraft.core.particles.ParticleType
 import net.minecraft.data.PackOutput
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import net.neoforged.neoforge.common.data.ParticleDescriptionProvider
-import java.util.*
 import java.util.function.Supplier
-import java.util.stream.Collectors
 
 class LibDatagenParticle(output: PackOutput, fileHelper: ExistingFileHelper) :
 	ParticleDescriptionProvider(output, fileHelper) {
 	override fun addDescriptions() {
 		sprite(
 			LibParticleTypes.LC_DAMAGE_ICON,
-			*Arrays.stream(LcDamageIconParticle.Type.values())
-				.map(LcDamageIconParticle.Type::texturePl)
-				.toArray() as Array<String>
+			*LcDamageIconParticle.Type.entries.map { it.texturePl }.toTypedArray()
 		)
 	}
 
@@ -28,10 +24,6 @@ class LibDatagenParticle(output: PackOutput, fileHelper: ExistingFileHelper) :
 	}
 
 	private fun <T : ParticleType<*>> sprite(type: Supplier<T>, vararg names: String) {
-		spriteSet(
-			type.get(), Arrays.stream(names)
-				.map(Lib::modRl)
-				.collect(Collectors.toList())
-		)
+		spriteSet(type.get(), names.map { Lib.modRl(it) })
 	}
 }
