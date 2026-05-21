@@ -1,6 +1,5 @@
 package architecture.goldenboughs_lib.util
 
-import architecture.goldenboughs_lib.util.ColorUtil.colorValue
 import net.minecraft.network.chat.TextColor
 import kotlin.math.max
 import kotlin.math.min
