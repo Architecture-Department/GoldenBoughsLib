@@ -9,7 +9,7 @@ class GeoEntityModel<T : GeoAnimatable>(
 	textureName: ResourceLocation,
 	animationsName: ResourceLocation
 ) : GeoModelExpand<T>(
-	model(getPath(modelPath)),
+	modelPath(getPath(modelPath)),
 	texturePath(getPath(textureName)),
 	animationsPath(getPath(animationsName))
 ) {

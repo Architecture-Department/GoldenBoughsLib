@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.util
+package architecture.goldenboughs_lib.util.world.item
 
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack

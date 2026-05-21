@@ -10,7 +10,7 @@ class GeoCurioModel<T>(
 	textureName: ResourceLocation,
 	animationsName: ResourceLocation
 ) : GeoModelExpand<T>(
-	model(getPath(modelPath)),
+	modelPath(getPath(modelPath)),
 	texturePath(getPath(textureName)),
 	animationsPath(getPath(animationsName))
 ) where T : Item, T : GeoAnimatable {

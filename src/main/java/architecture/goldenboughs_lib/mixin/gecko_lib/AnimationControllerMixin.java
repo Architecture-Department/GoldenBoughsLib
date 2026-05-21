@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.mixin.geckolib;
+package architecture.goldenboughs_lib.mixin.gecko_lib;
 
 import architecture.goldenboughs_lib.mixed.geckolib.IAnimationController;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;

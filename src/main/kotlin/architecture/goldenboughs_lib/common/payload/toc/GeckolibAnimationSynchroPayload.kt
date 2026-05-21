@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.common.payload.toc
 
 import architecture.goldenboughs_lib.api.payload.ToClientPayload
 import architecture.goldenboughs_lib.core.Lib
-import architecture.goldenboughs_lib.mixin.geckolib.AnimationControllerAccessorMixin
+import architecture.goldenboughs_lib.mixin.gecko_lib.AnimationControllerAccessor
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
@@ -37,7 +37,7 @@ data class GeckolibAnimationSynchroPayload(
 			val animationControllers = managerForId.getAnimationControllers()
 			val controller: AnimationController<GeoAnimatable>? = animationControllers[this.controllerName]
 			controller?.setAnimation(
-				(controller as AnimationControllerAccessorMixin).`goldenboughs_lib$getTriggerableAnimations`()[this.animName]
+				(controller as AnimationControllerAccessor<*>).`goldenboughs_lib$getTriggerableAnimations`()[this.animName]
 			)
 		}
 	}

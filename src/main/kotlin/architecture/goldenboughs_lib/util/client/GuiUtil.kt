@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.util
+package architecture.goldenboughs_lib.util.client
 
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.*

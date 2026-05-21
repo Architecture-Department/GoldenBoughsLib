@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.util
+package architecture.goldenboughs_lib.util.world.entity
 
 import net.minecraft.world.phys.Vec3
 import java.util.concurrent.ThreadLocalRandom

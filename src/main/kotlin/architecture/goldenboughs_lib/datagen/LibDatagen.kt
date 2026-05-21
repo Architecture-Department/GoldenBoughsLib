@@ -18,7 +18,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent
  * 数据生成主类
  */
 @EventBusSubscriber(modid = Lib.ID)
-object Datagen {
+object LibDatagen {
 	@SubscribeEvent
 	fun gatherData(event: GatherDataEvent) {
 		val generator = event.generator

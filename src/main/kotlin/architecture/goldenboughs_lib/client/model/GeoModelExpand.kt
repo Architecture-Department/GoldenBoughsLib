@@ -13,9 +13,11 @@ class GeoModelExpand<T : GeoAnimatable>(
 	texturePath: ResourceLocation,
 	animationsPath: ResourceLocation
 ) : GeoModel<T>() {
-	val modelPath: ResourceLocation = modelPath.withSuffix(MODEL_SUFFIX)
-	val texturePath: ResourceLocation = texturePath.withSuffix(TEXTURE_SUFFIX)
-	val animationsPath: ResourceLocation = animationsPath.withSuffix(ANIMATIONS_SUFFIX)
+	val modelPath: ResourceLocation = modelPath.withSuffix(".geo.json")
+	val texturePath: ResourceLocation = texturePath.withSuffix(".png")
+	val animationsPath: ResourceLocation = animationsPath.withSuffix(".animation.json")
+
+	protected val defaultModelResource: ResourceLocation = Lib.modRl("geo/item/default.geo.json")
 
 	override fun getModelResource(animatable: T?): ResourceLocation =
 		if (GeckoLibCache.getBakedModels()[this.modelPath] == null) this.defaultModelResource
@@ -25,16 +27,9 @@ class GeoModelExpand<T : GeoAnimatable>(
 
 	override fun getAnimationResource(animatable: T): ResourceLocation = animationsPath
 
-	protected val defaultModelResource: ResourceLocation =
-		model(Lib.modRl("item/default")).withSuffix(MODEL_SUFFIX)
-
 	companion object {
-		const val MODEL_SUFFIX: String = ".geo.json"
-		const val TEXTURE_SUFFIX: String = ".png"
-		const val ANIMATIONS_SUFFIX: String = ".animation.json"
-
 		@JvmStatic
-		fun model(path: ResourceLocation): ResourceLocation = path.withPrefix("geo/")
+		fun modelPath(path: ResourceLocation): ResourceLocation = path.withPrefix("geo/")
 
 		@JvmStatic
 		fun texturePath(path: ResourceLocation): ResourceLocation = path.withPrefix("textures/geo/")

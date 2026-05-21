@@ -10,12 +10,12 @@ class ModGeoArmorModel<T : GeoAnimatable>(
 	textureName: ResourceLocation,
 	animationsName: ResourceLocation
 ) : GeoModelExpand<T>(
-	model(getPath(modelPath)), texturePath(getPath(textureName)), animationsPath(getPath(animationsName))
+	modelPath(getPath(modelPath)), texturePath(getPath(textureName)), animationsPath(getPath(animationsName))
 ) {
 	constructor(pathName: ResourceLocation) : this(pathName, pathName, pathName)
 
 	override val defaultModelResource: ResourceLocation =
-		model(Lib.modRl("armor/default")).withSuffix(MODEL_SUFFIX)
+		modelPath(Lib.modRl("armor/default.geo.json"))
 
 	companion object {
 		@JvmStatic

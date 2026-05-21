@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api.world.entity.ai.behavior.composite
 
 import architecture.goldenboughs_lib.api.world.entity.ai.behavior.BTNode
-import architecture.goldenboughs_lib.util.EntityUtil
+import architecture.goldenboughs_lib.util.world.entity.EntityUtil
 
 
 /**

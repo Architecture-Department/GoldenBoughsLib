@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.util
+package architecture.goldenboughs_lib.util.world.item
 
 import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceLocation

@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api.world.item
 
 import architecture.goldenboughs_lib.api.AllOpe
-import architecture.goldenboughs_lib.util.ItemBuilderUtil.addAttributeModifier
+import architecture.goldenboughs_lib.util.world.item.ItemBuilderUtil.addAttributeModifier
 import net.minecraft.world.entity.EquipmentSlotGroup
 import net.minecraft.world.entity.ai.attributes.AttributeModifier
 import net.minecraft.world.entity.ai.attributes.Attributes

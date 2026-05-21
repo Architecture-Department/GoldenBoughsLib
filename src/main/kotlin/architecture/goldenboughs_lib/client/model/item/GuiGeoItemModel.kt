@@ -5,10 +5,10 @@ import net.minecraft.resources.ResourceLocation
 import software.bernie.geckolib.animatable.GeoAnimatable
 
 class GuiGeoItemModel<T : GeoAnimatable> : GeoItemModel<T> {
-	private val resourceLocation: ResourceLocation
+	private val texturesRl: ResourceLocation
 
 	constructor(path: ResourceLocation) : super(path) {
-		this.resourceLocation = path.withPrefix("textures/item/").withSuffix(".png")
+		this.texturesRl = path.withPrefix("textures/item/").withSuffix(".png")
 	}
 
 	constructor(modelPath: ResourceLocation, textureName: ResourceLocation, animationsName: ResourceLocation) : super(
@@ -16,7 +16,7 @@ class GuiGeoItemModel<T : GeoAnimatable> : GeoItemModel<T> {
 		textureName,
 		animationsName
 	) {
-		this.resourceLocation = textureName.withPrefix("textures/item/").withSuffix(".png")
+		this.texturesRl = textureName.withPrefix("textures/item/").withSuffix(".png")
 	}
 
 	override fun getModelResource(animatable: T?): ResourceLocation {
@@ -24,11 +24,10 @@ class GuiGeoItemModel<T : GeoAnimatable> : GeoItemModel<T> {
 	}
 
 	override fun getTextureResource(animatable: T?): ResourceLocation {
-		return resourceLocation
+		return texturesRl
 	}
 
 	companion object {
-		private val MODELLED_PATH: ResourceLocation =
-			model(Lib.modRl("item/gui_item_model").withSuffix(MODEL_SUFFIX))
+		private val MODELLED_PATH: ResourceLocation = Lib.modRl("geo/item/gui_item_model.geo.json")
 	}
 }

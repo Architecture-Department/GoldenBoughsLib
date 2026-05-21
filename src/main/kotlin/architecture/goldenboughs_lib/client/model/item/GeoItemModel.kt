@@ -6,12 +6,12 @@ import software.bernie.geckolib.animatable.GeoAnimatable
 
 class GeoItemModel<T : GeoAnimatable>(
 	modelPath: ResourceLocation,
-	textureName: ResourceLocation,
-	animationsName: ResourceLocation
+	texturePath: ResourceLocation,
+	animationsPath: ResourceLocation
 ) : GeoModelExpand<T>(
-	model(getPath(modelPath)),
-	texturePath(getPath(textureName)),
-	animationsPath(getPath(animationsName))
+	modelPath(getPath(modelPath)),
+	texturePath(getPath(texturePath)),
+	animationsPath(getPath(animationsPath))
 ) {
 	constructor(pathName: ResourceLocation) : this(pathName, pathName, pathName)
 

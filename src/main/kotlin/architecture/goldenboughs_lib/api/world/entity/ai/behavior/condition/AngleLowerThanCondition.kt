@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.entity.ai.behavior.condition
 
-import architecture.goldenboughs_lib.util.EntityUtil.angleBetween
+import architecture.goldenboughs_lib.util.world.entity.EntityUtil.angleBetween
 import net.minecraft.world.entity.Mob
 
 /**

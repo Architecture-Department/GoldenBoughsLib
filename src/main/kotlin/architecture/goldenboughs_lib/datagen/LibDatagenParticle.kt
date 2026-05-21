@@ -1,7 +1,6 @@
 package architecture.goldenboughs_lib.datagen
 
 import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle
-import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.core.Lib.modRl
 import architecture.goldenboughs_lib.init.LibParticleTypes
 import net.minecraft.core.particles.ParticleType
@@ -24,6 +23,6 @@ class LibDatagenParticle(output: PackOutput, fileHelper: ExistingFileHelper) :
 	}
 
 	private fun <T : ParticleType<*>> sprite(type: Supplier<T>, vararg names: String) {
-		spriteSet(type.get(), names.map { Lib.modRl(it) })
+		spriteSet(type.get(), names.map { modRl(it) })
 	}
 }

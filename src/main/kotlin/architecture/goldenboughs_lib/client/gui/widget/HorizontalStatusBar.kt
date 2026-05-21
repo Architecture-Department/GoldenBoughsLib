@@ -1,8 +1,8 @@
 package architecture.goldenboughs_lib.client.gui.widget
 
 import architecture.goldenboughs_lib.api.AllOpe
-import architecture.goldenboughs_lib.util.GuiUtil.blitSprite
-import architecture.goldenboughs_lib.util.GuiUtil.fill
+import architecture.goldenboughs_lib.util.client.GuiUtil.blitSprite
+import architecture.goldenboughs_lib.util.client.GuiUtil.fill
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.AbstractWidget
 import net.minecraft.client.gui.narration.NarrationElementOutput
