@@ -296,7 +296,7 @@ object LivingEntityEvents {
 //      ParticleUtil.createDamageTextParticles(entity, damageType, lcDamageType, newDamage, false, false);
 //    }
 		if (entity is ServerPlayer) {
-			PlayerDamagePayload.send(entity, lcDamageType!!, newDamage)
+			PlayerDamagePayload.send(entity, lcDamageType, newDamage)
 		}
 	}
 

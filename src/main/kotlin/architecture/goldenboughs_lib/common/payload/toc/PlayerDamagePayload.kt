@@ -19,7 +19,7 @@ data class PlayerDamagePayload(
 	@JvmField val lcDamageType: Optional<LcDamageType>,
 	@JvmField val damage: Float
 ) : ToClientPayload {
-	constructor(lcDamageType: LcDamageType, damage: Float) : this(
+	constructor(lcDamageType: LcDamageType?, damage: Float) : this(
 		Optional.ofNullable(lcDamageType),
 		damage
 	)
@@ -48,7 +48,7 @@ data class PlayerDamagePayload(
 			)
 
 		@JvmStatic
-		fun send(player: ServerPlayer, lcDamageType: LcDamageType, newDamage: Float) {
+		fun send(player: ServerPlayer, lcDamageType: LcDamageType?, newDamage: Float) {
 			sendToPlayerClient(player, PlayerDamagePayload(lcDamageType, newDamage))
 		}
 	}
