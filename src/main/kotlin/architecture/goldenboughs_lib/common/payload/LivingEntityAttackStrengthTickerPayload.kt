@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.common.payload
 
 import architecture.goldenboughs_lib.api.payload.ToServerAndClientPayload
 import architecture.goldenboughs_lib.core.Lib
-import architecture.goldenboughs_lib.mixin.world.entity.LivingEntityAccessorMixin
+import architecture.goldenboughs_lib.util.setAttackStrengthTicker
 import io.netty.buffer.ByteBuf
 import net.minecraft.client.player.AbstractClientPlayer
 import net.minecraft.network.codec.ByteBufCodecs
@@ -25,7 +25,7 @@ data class LivingEntityAttackStrengthTickerPayload(
 	}
 
 	fun to(player: Player) {
-		(player as LivingEntityAccessorMixin).`goldenboughs_lib$setAttackStrengthTicker`(this.attackStrengthTicker)
+		player.setAttackStrengthTicker(this.attackStrengthTicker)
 	}
 
 	override fun toClient(context: IPayloadContext, clientPlayer: AbstractClientPlayer) {

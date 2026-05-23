@@ -68,12 +68,6 @@ public abstract class AnimationControllerMixin<T extends GeoAnimatable> implemen
 		original.call(instance, snapshot, goldenboughs_lib$getStringBoneSnapshotMap(stringBoneSnapshotMap, instance));
 	}
 
-//	@WrapOperation(method = "createInitialQueues", at = @At(value = "INVOKE", target = "Ljava/util/Map;put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"))
-//	public <V, K> V goldenboughs_lib$createInitialQueues(Map<?, ?> instance, K k, V v, Operation<BoneAnimationQueue> original) {
-//		//noinspection unchecked
-//		return goldenboughs_lib$isInfluence((String) k) ? (V) original.call(instance, k, v) : null;
-//	}
-
 	@Inject(method = "process", at = @At("HEAD"))
 	public void goldenboughs_lib$process(GeoModel<T> model, AnimationState<T> state, Map<String, GeoBone> bones, Map<String, BoneSnapshot> snapshots, double seekTime, boolean crashWhenCantFindBone, CallbackInfo ci) {
 		goldenboughs_lib$bones.clear();

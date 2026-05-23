@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.client.renderlayer
 
 import architecture.goldenboughs_lib.api.AllOpe
 import architecture.goldenboughs_lib.client.LibRenderTypes
-import architecture.goldenboughs_lib.util.LibUtils.getTextureLight
+import architecture.goldenboughs_lib.util.LibUtil.getTextureLight
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import net.minecraft.client.renderer.LightTexture

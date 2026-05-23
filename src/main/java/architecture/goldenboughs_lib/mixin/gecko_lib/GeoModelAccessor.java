@@ -7,9 +7,9 @@ import software.bernie.geckolib.model.GeoModel;
 
 @Mixin(GeoModel.class)
 public interface GeoModelAccessor {
-	@Accessor("currentModel")
-	BakedGeoModel goldenboughs_lib$getCurrentModel();
+	@Accessor
+	BakedGeoModel getCurrentModel();
 
-	@Accessor("currentModel")
-	void goldenboughs_lib$setCurrentModel(BakedGeoModel model);
+	@Accessor
+	void setCurrentModel(BakedGeoModel model);
 }

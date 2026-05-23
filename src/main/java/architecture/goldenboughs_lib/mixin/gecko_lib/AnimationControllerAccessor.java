@@ -19,6 +19,6 @@ public interface AnimationControllerAccessor<T extends GeoAnimatable> {
 	@Accessor
 	void setIsJustStarting(boolean isJustStarting);
 
-	@Accessor("triggerableAnimations")
-	Map<String, RawAnimation> goldenboughs_lib$getTriggerableAnimations();
+	@Accessor
+	Map<String, RawAnimation> getTriggerableAnimations();
 }

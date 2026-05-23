@@ -11,12 +11,12 @@ import javax.annotation.Nullable;
 
 @Mixin(LivingEntity.class)
 public interface LivingEntityAccessorMixin {
-	@Accessor("attackStrengthTicker")
-	int goldenboughs_lib$getAttackStrengthTicker();
+	@Accessor
+	int getAttackStrengthTicker();
 
-	@Accessor("attackStrengthTicker")
-	void goldenboughs_lib$setAttackStrengthTicker(int attackStrengthTicker);
+	@Accessor
+	void setAttackStrengthTicker(int attackStrengthTicker);
 
-	@Invoker("onEffectUpdated")
-	void goldenboughs_lib$onEffectUpdated(MobEffectInstance effectInstance, boolean forced, @Nullable Entity entity);
+	@Invoker
+	void callOnEffectUpdated(MobEffectInstance effectInstance, boolean forced, @Nullable Entity entity);
 }
