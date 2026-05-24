@@ -4,7 +4,6 @@ import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.neoforged.fml.loading.FMLEnvironment
 
-
 object LibUtil {
 	@JvmStatic
 	fun isClientSingleplayer(): Boolean =
@@ -18,7 +17,17 @@ object LibUtil {
 
 	@JvmStatic
 	fun getTextureLight(path: String): ResourceLocation {
-		return ResourceLocation.parse(path.substring(0, path.lastIndexOf(".png")) + "_glowmask.png")
+		return rlOf(path.substring(0, path.lastIndexOf(".png")) + "_glowmask.png")
+	}
+
+	@JvmStatic
+	fun rlOf(namespace: String, path: String): ResourceLocation {
+		return ResourceLocation.fromNamespaceAndPath(namespace, path)
+	}
+
+	@JvmStatic
+	fun rlOf(location: String): ResourceLocation {
+		return ResourceLocation.parse(location)
 	}
 }
 

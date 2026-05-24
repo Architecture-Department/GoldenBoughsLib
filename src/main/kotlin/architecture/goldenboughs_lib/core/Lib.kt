@@ -2,6 +2,7 @@ package architecture.goldenboughs_lib.core
 
 import architecture.goldenboughs_lib.config.LibConfig
 import architecture.goldenboughs_lib.init.*
+import architecture.goldenboughs_lib.util.LibUtil.rlOf
 import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
@@ -49,7 +50,7 @@ object Lib {
 	@JvmStatic
 	@Contract("_ -> new")
 	fun modRl(name: String): ResourceLocation {
-		return ResourceLocation.fromNamespaceAndPath(ID, name)
+		return rlOf(ID, name)
 	}
 
 	@JvmStatic

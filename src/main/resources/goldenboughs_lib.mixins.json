@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"client.ModelBuilderMixin",
-		"client.ModelFileAccessorMixin",
+		"client.ModelFileAccessor",
+		"client.ModelProviderAccessor",
 		"gecko_lib.AnimatableManager$ControllerRegistrarMixin",
 		"gecko_lib.AnimatableManagerAccessor",
 		"gecko_lib.AnimationControllerAccessor",
