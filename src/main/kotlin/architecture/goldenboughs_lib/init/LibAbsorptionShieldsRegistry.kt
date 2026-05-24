@@ -27,7 +27,7 @@ object LibAbsorptionShieldsRegistry {
 	@JvmField
 	val shields: MutableList<ShieldEntry> = arrayListOf()
 
-	fun init() {
+	fun register() {
 		register(
 			LibMobEffects.PHYSIC_ABSORPTION_SHIELD,
 			LibDamageTypes.PHYSICS.location(),

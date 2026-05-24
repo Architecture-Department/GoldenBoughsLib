@@ -30,7 +30,7 @@ object Lib {
 		val modContainer = LOADING_CONTEXT.activeContainer
 		val modBus = MOD_BUS
 
-		LibConfig.init(modContainer)
+		LibConfig.register(modContainer)
 		LibParticleTypes.REGISTRY.register(modBus)
 		LibAttachmentTypes.REGISTRY.register(modBus)
 		LibMobEffects.REGISTRY.register(modBus)
@@ -39,7 +39,7 @@ object Lib {
 		LibAttributes.REGISTRY.register(modBus)
 		LibItems.REGISTRY.register(modBus)
 		LibEntityTypes.REGISTRY.register(modBus)
-		LibAbsorptionShieldsRegistry.init()
+		LibAbsorptionShieldsRegistry.register()
 	}
 
 	@SubscribeEvent

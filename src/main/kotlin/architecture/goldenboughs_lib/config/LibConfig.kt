@@ -42,7 +42,7 @@ object LibConfig : LibConfigUtil() {
 	}
 
 	@JvmStatic
-	fun init(modContainer: ModContainer) {
+	fun register(modContainer: ModContainer) {
 		Lib.LOGGER.info("Initialize the ${Lib.NAME} config files")
 		modContainer.registerConfig(ModConfig.Type.COMMON, COMMON_SPEC)
 		modContainer.registerConfig(ModConfig.Type.SERVER, SERVER_SPEC)
