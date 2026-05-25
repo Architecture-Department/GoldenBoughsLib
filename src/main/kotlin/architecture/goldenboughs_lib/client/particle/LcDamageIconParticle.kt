@@ -20,7 +20,6 @@ import net.minecraft.network.codec.StreamCodec
 import net.minecraft.world.damagesource.DamageType
 import net.neoforged.neoforge.common.Tags
 import java.util.*
-import java.util.function.Function
 
 @AllOpe
 class LcDamageIconParticle(
@@ -130,14 +129,14 @@ class LcDamageIconParticle(
 		companion object {
 			@JvmField
 			val CODEC: MapCodec<Options> =
-				RecordCodecBuilder.mapCodec(Function { thisOptionsInstance: RecordCodecBuilder.Instance<Options> ->
-					thisOptionsInstance.group(
+				RecordCodecBuilder.mapCodec {
+					it.group(
 						DamageType.CODEC.optionalFieldOf("damageType").forGetter(Options::damageType),
 						LcDamageType.CODEC.optionalFieldOf("lcDamageType").forGetter(Options::lcDamageType),
 						Codec.BOOL.fieldOf("isRationality").forGetter(Options::isRationality),
 						Codec.BOOL.fieldOf("isHeal").forGetter(Options::isHeal)
-					).apply(thisOptionsInstance, ::Options)
-				})
+					).apply(it, ::Options)
+				}
 
 			@JvmField
 			val STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, Options> =

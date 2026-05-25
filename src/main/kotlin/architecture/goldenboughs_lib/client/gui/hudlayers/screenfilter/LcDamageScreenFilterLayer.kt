@@ -9,6 +9,7 @@ import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.Mth
 import java.util.Map
+import architecture.goldenboughs_lib.core.LibConstants
 
 class LcDamageScreenFilterLayer : BasicHudLayer() {
 	private val rationalityFilters: MutableSet<Filter> = LinkedHashSet(4)
@@ -95,16 +96,16 @@ class LcDamageScreenFilterLayer : BasicHudLayer() {
 
 	companion object {
 		@JvmField
-		val PHYSICS: ResourceLocation = Lib.modRl("textures/gui/filter/physics.png")
+		val PHYSICS: ResourceLocation = LibConstants.modRl("textures/gui/filter/physics.png")
 
 		@JvmField
-		val SPIRIT: ResourceLocation = Lib.modRl("textures/gui/filter/spirit.png")
+		val SPIRIT: ResourceLocation = LibConstants.modRl("textures/gui/filter/spirit.png")
 
 		@JvmField
-		val EROSION: ResourceLocation = Lib.modRl("textures/gui/filter/erosion.png")
+		val EROSION: ResourceLocation = LibConstants.modRl("textures/gui/filter/erosion.png")
 
 		@JvmField
-		val THE_SOUL: ResourceLocation = Lib.modRl("textures/gui/filter/the_soul.png")
+		val THE_SOUL: ResourceLocation = LibConstants.modRl("textures/gui/filter/the_soul.png")
 
 		@JvmField
 		val INSTANCE: LcDamageScreenFilterLayer = LcDamageScreenFilterLayer()

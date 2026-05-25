@@ -7,11 +7,12 @@ import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.event.entity.player.PlayerEvent
 import net.neoforged.neoforge.event.tick.PlayerTickEvent
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 玩家相关事件
  */
-@EventBusSubscriber(modid = Lib.ID)
+@EventBusSubscriber(modid = LibConstants.ID)
 object PlayerEvents {
 	@SubscribeEvent
 	fun tickPre(event: PlayerTickEvent.Pre) {

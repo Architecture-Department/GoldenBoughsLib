@@ -19,8 +19,9 @@ import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent
 import java.util.function.Consumer
+import architecture.goldenboughs_lib.core.LibConstants
 
-@EventBusSubscriber(modid = Lib.ID)
+@EventBusSubscriber(modid = LibConstants.ID)
 object EntityAttributeRegistry {
 	/**
 	 * 分级到血量倍数的映射表

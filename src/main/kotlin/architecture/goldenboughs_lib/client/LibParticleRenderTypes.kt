@@ -10,6 +10,7 @@ import net.minecraft.client.particle.ParticleRenderType
 import net.minecraft.client.renderer.GameRenderer
 import net.minecraft.client.renderer.texture.TextureAtlas
 import net.minecraft.client.renderer.texture.TextureManager
+import architecture.goldenboughs_lib.core.LibConstants
 
 object LibParticleRenderTypes {
 	@JvmField
@@ -22,7 +23,7 @@ object LibParticleRenderTypes {
 		}
 
 		override fun toString(): String {
-			return Lib.modRlText("LOBOTOMY_CORPORATION_DAMAGE_ICON_PARTICLE")
+			return LibConstants.modRlText("LOBOTOMY_CORPORATION_DAMAGE_ICON_PARTICLE")
 		}
 	}
 
@@ -37,7 +38,7 @@ object LibParticleRenderTypes {
 		}
 
 		override fun toString(): String {
-			return Lib.modRlText("TEXT_PARTICLE")
+			return LibConstants.modRlText("TEXT_PARTICLE")
 		}
 	}
 
@@ -53,7 +54,7 @@ object LibParticleRenderTypes {
 		}
 
 		override fun toString(): String {
-			return Lib.modRlText("TEXT_PARTICLE_THROUGH")
+			return LibConstants.modRlText("TEXT_PARTICLE_THROUGH")
 		}
 	}
 
@@ -68,7 +69,7 @@ object LibParticleRenderTypes {
 		}
 
 		override fun toString(): String {
-			return Lib.modRlText("MAGIC_CIRCLE_PARTICLE")
+			return LibConstants.modRlText("MAGIC_CIRCLE_PARTICLE")
 		}
 
 		override fun isTranslucent(): Boolean {

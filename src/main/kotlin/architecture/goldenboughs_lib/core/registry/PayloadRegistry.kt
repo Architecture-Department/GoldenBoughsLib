@@ -16,8 +16,9 @@ import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent
 import net.neoforged.neoforge.network.handling.DirectionalPayloadHandler
 import net.neoforged.neoforge.network.registration.PayloadRegistrar
+import architecture.goldenboughs_lib.core.LibConstants
 
-@EventBusSubscriber(modid = Lib.ID)
+@EventBusSubscriber(modid = LibConstants.ID)
 object PayloadRegistry {
 	@SubscribeEvent
 	fun register(event: RegisterPayloadHandlersEvent) {
@@ -43,7 +44,7 @@ object PayloadRegistry {
 			PlayerIGunWeaponPayload.TYPE,
 			PlayerIGunWeaponPayload.STREAM_CODEC
 		)
-		Lib.LOGGER.info("Registering payloads finish")
+		LibConstants.LOGGER.info("Registering payloads finish")
 	}
 
 	fun <T : ToServerAndClientPayload> PayloadRegistrar.playToServerAndClient(

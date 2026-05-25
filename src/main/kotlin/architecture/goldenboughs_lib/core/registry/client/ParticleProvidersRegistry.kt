@@ -11,8 +11,9 @@ import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent
+import architecture.goldenboughs_lib.core.LibConstants
 
-@EventBusSubscriber(modid = Lib.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object ParticleProvidersRegistry {
 	@SubscribeEvent
 	fun registry(event: RegisterParticleProvidersEvent) {

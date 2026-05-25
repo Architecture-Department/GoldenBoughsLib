@@ -10,9 +10,10 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory
 import thedarkcolour.kotlinforforge.neoforge.forge.LOADING_CONTEXT
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
+import architecture.goldenboughs_lib.core.LibConstants
 
-@Mod(value = Lib.ID, dist = [Dist.CLIENT])
-@EventBusSubscriber(modid = Lib.ID, value = [Dist.CLIENT])
+@Mod(value = LibConstants.ID, dist = [Dist.CLIENT])
+@EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object LibClient {
 	init {
 		val modContainer = LOADING_CONTEXT.activeContainer
@@ -26,7 +27,7 @@ object LibClient {
 
 	@SubscribeEvent
 	fun onClientSetup(event: FMLClientSetupEvent) {
-		Lib.LOGGER.info("HELLO FROM CLIENT SETUP")
-		Lib.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().user.name)
+		LibConstants.LOGGER.info("HELLO FROM CLIENT SETUP")
+		LibConstants.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().user.name)
 	}
 }

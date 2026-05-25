@@ -13,8 +13,9 @@ import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.EntityRenderersEvent
 import net.neoforged.neoforge.client.event.RenderLivingEvent
 import net.neoforged.neoforge.client.event.RenderPlayerEvent
+import architecture.goldenboughs_lib.core.LibConstants
 
-@EventBusSubscriber(modid = Lib.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object EntityRenderEvents {
 	@SubscribeEvent
 	fun onRenderPlayerEventPre(event: RenderPlayerEvent.Pre) {

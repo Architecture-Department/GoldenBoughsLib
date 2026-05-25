@@ -7,11 +7,8 @@ import architecture.goldenboughs_lib.init.LibDamageSources.Companion.createDamag
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibDamageTypeTags
 import architecture.goldenboughs_lib.util.ColorUtil
-import com.google.common.collect.Lists
-import com.google.common.collect.Sets
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
-import com.mojang.serialization.codecs.RecordCodecBuilder
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.Holder
 import net.minecraft.core.RegistryAccess
@@ -28,6 +25,7 @@ import net.minecraft.world.entity.ai.attributes.Attribute
 import net.minecraft.world.level.Level
 import org.jetbrains.annotations.Contract
 import java.util.*
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 脑叶伤害类型
@@ -144,13 +142,13 @@ enum class LcDamageType(
 
 	@Contract(pure = true)
 	override fun getSerializedName(): String {
-		return Lib.modRlText(damageName)
+		return LibConstants.modRlText(damageName)
 	}
 
 	companion object {
 		@JvmField
 		val CODEC: Codec<LcDamageType> = StringRepresentable.fromEnum { entries.toTypedArray() }
-			.validate { result: LcDamageType -> DataResult.success(result) }
+			.validate { DataResult.success(it) }
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<ByteBuf, LcDamageType> = ByteBufCodecs.idMapper(
@@ -161,8 +159,7 @@ enum class LcDamageType(
 
 		@JvmStatic
 		fun byName(name: String): LcDamageType? {
-			return Arrays.stream(entries.toTypedArray()).filter { d -> d.damageName == name }.findFirst()
-				.orElse(null)
+			return Arrays.stream(entries.toTypedArray()).filter { it.damageName == name }.findFirst().orElse(null)
 		}
 
 		/**
@@ -183,44 +180,6 @@ enum class LcDamageType(
 				// 默认为物理伤害
 				else -> PHYSICS
 			}
-		}
-	}
-
-	@JvmRecord
-	data class Component(
-		val lcDamageType: LcDamageType?,
-		val canCauseLcDamageTypes: Set<LcDamageType>
-	) {
-		constructor(lcDamageType: LcDamageType) : this(lcDamageType, mutableSetOf<LcDamageType>(lcDamageType))
-
-		constructor(lcDamageType: LcDamageType, vararg canCauseLcDamageTypes: LcDamageType) : this(
-			lcDamageType, mutableSetOf(*canCauseLcDamageTypes)
-		)
-
-		companion object {
-			@JvmField
-			val SET_CODEC: Codec<Set<LcDamageType>> = Codec.list(LcDamageType.CODEC)
-				.xmap(Sets::newHashSet, Lists::newArrayList)
-
-			@JvmField
-			val CODEC: Codec<Component> = RecordCodecBuilder.create { instance ->
-				instance.group(
-					LcDamageType.CODEC.fieldOf("lc_damage_type").forGetter(Component::lcDamageType),
-					SET_CODEC.fieldOf("can_cause_lc_damage_types").forGetter(Component::canCauseLcDamageTypes)
-				).apply(instance, ::Component)
-			}
-
-			@JvmField
-			val SET_STREAM_CODEC: StreamCodec<ByteBuf, Set<LcDamageType>> = ByteBufCodecs.collection(
-				::HashSet, LcDamageType.STREAM_CODEC
-			)
-
-			@JvmField
-			val STREAM_CODEC: StreamCodec<ByteBuf, Component> = StreamCodec.composite(
-				LcDamageType.STREAM_CODEC, Component::lcDamageType,
-				SET_STREAM_CODEC, Component::canCauseLcDamageTypes,
-				::Component
-			)
 		}
 	}
 }

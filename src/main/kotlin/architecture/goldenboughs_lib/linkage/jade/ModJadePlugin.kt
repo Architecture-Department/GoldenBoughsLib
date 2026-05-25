@@ -9,6 +9,7 @@ import snownee.jade.api.IWailaClientRegistration
 import snownee.jade.api.IWailaCommonRegistration
 import snownee.jade.api.IWailaPlugin
 import snownee.jade.api.WailaPlugin
+import architecture.goldenboughs_lib.core.LibConstants
 
 @WailaPlugin
 class ModJadePlugin : IWailaPlugin {
@@ -23,12 +24,12 @@ class ModJadePlugin : IWailaPlugin {
 
 	companion object {
 		@JvmField
-		val ENTITY_LC_LEVEL: ResourceLocation = Lib.modRl("entity_lobotomy_corporation_level")
+		val ENTITY_LC_LEVEL: ResourceLocation = LibConstants.modRl("entity_lobotomy_corporation_level")
 
 		@JvmField
-		val BLOCK_LC_LEVEL: ResourceLocation = Lib.modRl("block_lobotomy_corporation_level")
+		val BLOCK_LC_LEVEL: ResourceLocation = LibConstants.modRl("block_lobotomy_corporation_level")
 
 		@JvmField
-		val ENTITY_LC_VULNERABLE: ResourceLocation = Lib.modRl("entity_lobotomy_corporation_vulnerable")
+		val ENTITY_LC_VULNERABLE: ResourceLocation = LibConstants.modRl("entity_lobotomy_corporation_vulnerable")
 	}
 }

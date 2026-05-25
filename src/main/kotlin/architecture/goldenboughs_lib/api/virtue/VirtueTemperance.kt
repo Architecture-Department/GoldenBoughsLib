@@ -12,6 +12,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier
 import net.minecraft.world.entity.ai.attributes.Attributes
 import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.attachment.IAttachmentHolder
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 自律
@@ -84,7 +85,7 @@ class VirtueTemperance(
 
 	companion object {
 		@JvmField
-		val AMPLITUDE_ID: ResourceLocation = Lib.modRl("temperance_amplitude")
+		val AMPLITUDE_ID: ResourceLocation = LibConstants.modRl("temperance_amplitude")
 		const val BLOCK_BREAK_SPEED: Double = 0.02
 		const val ATTACK_KNOCKBACK_SPEED: Double = 0.015
 	}

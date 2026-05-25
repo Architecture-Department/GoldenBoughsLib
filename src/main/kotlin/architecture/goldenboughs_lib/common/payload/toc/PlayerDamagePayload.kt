@@ -13,6 +13,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.network.handling.IPayloadContext
 import java.util.*
+import architecture.goldenboughs_lib.core.LibConstants
 
 @JvmRecord
 data class PlayerDamagePayload(
@@ -35,7 +36,7 @@ data class PlayerDamagePayload(
 	companion object {
 		@JvmField
 		val TYPE: CustomPacketPayload.Type<PlayerDamagePayload> =
-			CustomPacketPayload.Type(Lib.modRl("player_damage_payload"))
+			CustomPacketPayload.Type(LibConstants.modRl("player_damage_payload"))
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<ByteBuf, PlayerDamagePayload> =

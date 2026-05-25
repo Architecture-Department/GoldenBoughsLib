@@ -9,10 +9,11 @@ import net.minecraft.world.item.Item
 import net.neoforged.neoforge.registries.DeferredItem
 import net.neoforged.neoforge.registries.DeferredRegister
 import java.util.function.Function
+import architecture.goldenboughs_lib.core.LibConstants
 
 object LibItems {
 	@JvmField
-	val REGISTRY: DeferredRegister.Items = DeferredRegister.createItems(Lib.ID)
+	val REGISTRY: DeferredRegister.Items = DeferredRegister.createItems(LibConstants.ID)
 
 	@JvmField
 	val CREATIVE_RATIONALITY_TOOL: DeferredItem<Item> = register(

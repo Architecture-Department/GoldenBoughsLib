@@ -11,6 +11,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.network.handling.IPayloadContext
+import architecture.goldenboughs_lib.core.LibConstants
 
 @JvmRecord
 data class LivingEntityAttackStrengthTickerPayload(
@@ -35,7 +36,7 @@ data class LivingEntityAttackStrengthTickerPayload(
 	companion object {
 		@JvmField
 		val TYPE: CustomPacketPayload.Type<LivingEntityAttackStrengthTickerPayload> =
-			CustomPacketPayload.Type(Lib.modRl("living_entity_attack_strength_ticker_payload"))
+			CustomPacketPayload.Type(LibConstants.modRl("living_entity_attack_strength_ticker_payload"))
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<ByteBuf, LivingEntityAttackStrengthTickerPayload> =

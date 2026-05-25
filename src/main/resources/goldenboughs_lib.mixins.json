@@ -34,7 +34,11 @@
 	"client": [
 		"client.FontMixin",
 		"client.GuiMixin",
+		"client.ItemModelShaperMixin",
+		"client.ItemRendererMixin",
 		"client.KeyMappingMixin",
+		"client.ModelManagerAccessor",
+		"client.RegistryAwareItemModelShaperMixin",
 		"client.world.BlockEntityWithoutLevelRendererMixin",
 		"client.world.ItemRendererMixin"
 	]

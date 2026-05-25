@@ -8,6 +8,7 @@ import net.minecraft.world.entity.EquipmentSlot
 import net.neoforged.neoforge.attachment.AttachmentHolder
 import net.neoforged.neoforge.attachment.IAttachmentHolder
 import java.util.stream.Collectors
+import architecture.goldenboughs_lib.core.LibConstants
 
 // TODO 提供饰品栏移除
 class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
@@ -40,7 +41,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 	 * 通过该方法添加的任务会在对应槽位的物品更替时移除
 	 */
 	fun addTask(slot: EquipmentSlot, task: ITask) {
-		addTask(Lib.modRl(slot.getName()), task)
+		addTask(LibConstants.modRl(slot.getName()), task)
 	}
 
 	fun addTask(id: ResourceLocation, task: ITask) {
@@ -62,7 +63,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 	 * 通过该方法添加的任务会在对应槽位的物品更替时移除
 	 */
 	fun addTask(slot: EquipmentSlot, name: String, task: ITask) {
-		addTask(Lib.modRl(slot.getName() + "." + name), task)
+		addTask(LibConstants.modRl(slot.getName() + "." + name), task)
 	}
 
 	/**
@@ -102,7 +103,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 		if (!containsTask(slot, name)) {
 			return
 		}
-		removeTask(Lib.modRl(slot.getName() + "." + name))
+		removeTask(LibConstants.modRl(slot.getName() + "." + name))
 	}
 
 	fun removeTask(id: ResourceLocation) {
@@ -117,7 +118,7 @@ class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {
 	}
 
 	fun containsTask(slot: EquipmentSlot, name: String): Boolean {
-		return runList.containsKey(Lib.modRl(slot.getName() + "." + name))
+		return runList.containsKey(LibConstants.modRl(slot.getName() + "." + name))
 	}
 
 	/**

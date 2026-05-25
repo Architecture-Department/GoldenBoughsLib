@@ -5,7 +5,7 @@ import architecture.goldenboughs_lib.api.virtue.VirtueFortitude
 import architecture.goldenboughs_lib.api.virtue.VirtueJustice
 import architecture.goldenboughs_lib.api.virtue.VirtuePrudence
 import architecture.goldenboughs_lib.api.virtue.VirtueTemperance
-import architecture.goldenboughs_lib.core.Lib.modRegister
+import architecture.goldenboughs_lib.core.LibConstants.modRegister
 import com.mojang.serialization.Codec
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.world.entity.Entity
@@ -18,11 +18,12 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries
 import org.jetbrains.annotations.Contract
 import java.util.function.Function
 import java.util.function.Supplier
+import architecture.goldenboughs_lib.core.LibConstants
 
 object LibAttachmentTypes {
 	@JvmField
 	val REGISTRY: DeferredRegister<AttachmentType<*>> =
-		modRegister(NeoForgeRegistries.ATTACHMENT_TYPES)
+		LibConstants.modRegister(NeoForgeRegistries.ATTACHMENT_TYPES)
 
 	@JvmField
 	val DELAY_TASK_HOLDER: DeferredHolder<AttachmentType<*>, AttachmentType<DelayTaskHolder>> = register(

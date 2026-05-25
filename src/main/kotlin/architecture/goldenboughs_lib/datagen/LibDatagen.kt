@@ -13,11 +13,12 @@ import net.minecraft.core.registries.Registries
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.data.event.GatherDataEvent
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 数据生成主类
  */
-@EventBusSubscriber(modid = Lib.ID)
+@EventBusSubscriber(modid = LibConstants.ID)
 object LibDatagen {
 	@SubscribeEvent
 	fun gatherData(event: GatherDataEvent) {

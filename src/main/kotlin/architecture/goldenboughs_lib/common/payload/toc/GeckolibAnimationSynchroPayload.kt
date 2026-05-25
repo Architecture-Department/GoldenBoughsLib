@@ -13,6 +13,7 @@ import software.bernie.geckolib.animatable.GeoAnimatable
 import software.bernie.geckolib.animation.AnimatableManager
 import software.bernie.geckolib.animation.AnimationController
 import software.bernie.geckolib.util.GeckoLibUtil
+import architecture.goldenboughs_lib.core.LibConstants
 
 @JvmRecord
 data class GeckolibAnimationSynchroPayload(
@@ -49,7 +50,7 @@ data class GeckolibAnimationSynchroPayload(
 	companion object {
 		@JvmField
 		val TYPE: CustomPacketPayload.Type<GeckolibAnimationSynchroPayload> =
-			CustomPacketPayload.Type<GeckolibAnimationSynchroPayload>(Lib.modRl("curio_animation_synchro"))
+			CustomPacketPayload.Type<GeckolibAnimationSynchroPayload>(LibConstants.modRl("curio_animation_synchro"))
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<ByteBuf, GeckolibAnimationSynchroPayload> =

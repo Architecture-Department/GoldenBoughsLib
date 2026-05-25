@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider
 import net.neoforged.neoforge.client.model.generators.ModelFile
+import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
 import java.util.*
 import kotlin.math.min
@@ -21,11 +22,28 @@ object DatagenItemModelUtil {
 	 * @param pathPrefix 模型路径前缀
 	 */
 	@JvmStatic
-	fun ItemModelProvider.withExistingParent(registry: DeferredRegister.Items, pathPrefix: String) {
-		registry.entries.stream().map { it.id }.forEach { itemId: ResourceLocation ->
-			IModelBuilder.of(this.withExistingParent(itemId.path, "item/generated"))
-				.`goldenboughs_lib$getTexture`()["layer0"] = itemId.withPrefix(pathPrefix).toString()
+	fun ItemModelProvider.withExistingParent(pathPrefix: String, registry: DeferredRegister.Items) {
+		withExistingParent(pathPrefix, registry.entries)
+	}
+
+	@JvmStatic
+	fun ItemModelProvider.withExistingParent(pathPrefix: String, vararg items: DeferredHolder<Item, out Item>) {
+		items.forEach {
+			withExistingParent(it.id.withPrefix(pathPrefix), "item/generated")
 		}
+	}
+
+	@JvmStatic
+	fun ItemModelProvider.withExistingParent(pathPrefix: String, items: Collection<DeferredHolder<Item, out Item>>) {
+		items.stream().map { it.id }.forEach {
+			withExistingParent(it.withPrefix(pathPrefix), "item/generated")
+		}
+	}
+
+	@JvmStatic
+	fun ItemModelProvider.withExistingParent(location: ResourceLocation, parent: String) {
+		IModelBuilder.of(withExistingParent(location.path, parent))
+			.`goldenboughs_lib$getTexture`()["layer0"] = location.toString()
 	}
 
 	/**

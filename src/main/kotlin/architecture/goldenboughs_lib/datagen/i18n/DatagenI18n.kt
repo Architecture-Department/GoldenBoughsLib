@@ -17,6 +17,7 @@ import net.minecraft.world.item.Item
 import net.neoforged.neoforge.common.ModConfigSpec
 import net.neoforged.neoforge.common.data.LanguageProvider
 import java.util.function.Supplier
+import architecture.goldenboughs_lib.core.LibConstants
 
 abstract class DatagenI18n(
 	output: PackOutput,
@@ -109,7 +110,7 @@ abstract class DatagenI18n(
 	companion object {
 		@JvmStatic
 		fun getFormattedKey(vararg key: String): String {
-			val builder = StringBuilder(Lib.ID)
+			val builder = StringBuilder(LibConstants.ID)
 			builder.append(".commands")
 			for (s in key) {
 				builder.append(".").append(s)

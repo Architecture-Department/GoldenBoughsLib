@@ -3,6 +3,7 @@ package architecture.goldenboughs_lib.client.model.item
 import architecture.goldenboughs_lib.core.Lib
 import net.minecraft.resources.ResourceLocation
 import software.bernie.geckolib.animatable.GeoAnimatable
+import architecture.goldenboughs_lib.core.LibConstants
 
 class GuiGeoItemModel<T : GeoAnimatable> : GeoItemModel<T> {
 	private val texturesRl: ResourceLocation
@@ -28,6 +29,6 @@ class GuiGeoItemModel<T : GeoAnimatable> : GeoItemModel<T> {
 	}
 
 	companion object {
-		private val MODELLED_PATH: ResourceLocation = Lib.modRl("geo/item/gui_item_model.geo.json")
+		private val MODELLED_PATH: ResourceLocation = LibConstants.modRl("geo/item/gui_item_model.geo.json")
 	}
 }

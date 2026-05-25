@@ -1,11 +1,12 @@
 package architecture.goldenboughs_lib.init.tag
 
-import architecture.goldenboughs_lib.core.Lib.modRl
+import architecture.goldenboughs_lib.core.LibConstants.modRl
 import architecture.goldenboughs_lib.util.LibUtil.rlOf
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.damagesource.DamageType
+import architecture.goldenboughs_lib.core.LibConstants
 
 object LibDamageTypeTags {
 	/**
@@ -39,7 +40,7 @@ object LibDamageTypeTags {
 	val BYPASS_LC: TagKey<DamageType> = createTag("bypass_lobotomy_corporation_damage")
 
 	private fun createTag(name: String): TagKey<DamageType> {
-		return createTag(modRl(name))
+		return createTag(LibConstants.modRl(name))
 	}
 
 	private fun createTag(location: ResourceLocation): TagKey<DamageType> {

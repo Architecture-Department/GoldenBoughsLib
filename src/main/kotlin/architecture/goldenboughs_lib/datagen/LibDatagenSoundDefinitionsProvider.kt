@@ -7,11 +7,12 @@ import net.minecraft.sounds.SoundEvent
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import net.neoforged.neoforge.common.data.SoundDefinition
 import net.neoforged.neoforge.common.data.SoundDefinitionsProvider
+import architecture.goldenboughs_lib.core.LibConstants
 
 class LibDatagenSoundDefinitionsProvider(
 	output: PackOutput,
 	existingFileHelper: ExistingFileHelper
-) : SoundDefinitionsProvider(output, Lib.ID, existingFileHelper) {
+) : SoundDefinitionsProvider(output, LibConstants.ID, existingFileHelper) {
 	override fun registerSounds() {
 	}
 

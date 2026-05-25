@@ -11,6 +11,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.neoforged.neoforge.network.handling.IPayloadContext
+import architecture.goldenboughs_lib.core.LibConstants
 
 // TODO 替换成史诗战斗的控制系统
 @JvmRecord
@@ -86,7 +87,7 @@ data class PlayerIGunWeaponPayload(
 	companion object {
 		@JvmField
 		val TYPE: CustomPacketPayload.Type<PlayerIGunWeaponPayload> =
-			CustomPacketPayload.Type(Lib.modRl("player_gun_weapon_payload"))
+			CustomPacketPayload.Type(LibConstants.modRl("player_gun_weapon_payload"))
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<ByteBuf, PlayerIGunWeaponPayload> =

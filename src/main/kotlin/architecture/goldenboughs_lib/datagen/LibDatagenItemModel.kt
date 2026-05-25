@@ -9,6 +9,7 @@ import net.minecraft.data.PackOutput
 import net.minecraft.world.item.Item
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider
 import net.neoforged.neoforge.common.data.ExistingFileHelper
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 物品模型数据生成器
@@ -20,7 +21,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper
 class LibDatagenItemModel(
 	output: PackOutput,
 	existingFileHelper: ExistingFileHelper
-) : ItemModelProvider(output, Lib.ID, existingFileHelper) {
+) : ItemModelProvider(output, LibConstants.ID, existingFileHelper) {
 	override fun registerModels() {
 		creativeRationalityTool(LibItems.CREATIVE_RATIONALITY_TOOL.get())
 		chaosSword(LibItems.CHAOS_SWORD.get())

@@ -25,6 +25,7 @@ import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.item.component.TooltipProvider
 import java.util.function.Consumer
 import java.util.function.Function
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 物品四色属性能力使用要求提示
@@ -807,31 +808,31 @@ data class ItemVirtueUsageReq(
 		 * 使用条件
 		 */
 		@JvmField
-		val USE_CONDITION: String = Lib.modRlText("tooltip.use_condition")
+		val USE_CONDITION: String = LibConstants.modRlText("tooltip.use_condition")
 
 		/**
 		 * 需求
 		 */
 		@JvmField
-		val REQUIREMENT: String = Lib.modRlText("tooltip.requirement")
+		val REQUIREMENT: String = LibConstants.modRlText("tooltip.requirement")
 
 		/**
 		 * 区间
 		 */
 		@JvmField
-		val INTERVAL: String = Lib.modRlText("tooltip.interval")
+		val INTERVAL: String = LibConstants.modRlText("tooltip.interval")
 
 		/**
 		 * 不超过
 		 */
 		@JvmField
-		val NOT_TO_EXCEED: String = Lib.modRlText("tooltip.not_to_exceed")
+		val NOT_TO_EXCEED: String = LibConstants.modRlText("tooltip.not_to_exceed")
 
 		/**
 		 * 不低于
 		 */
 		@JvmField
-		val NOT_LOWER_THAN: String = Lib.modRlText("tooltip.not_lower_than")
+		val NOT_LOWER_THAN: String = LibConstants.modRlText("tooltip.not_lower_than")
 
 		@JvmField
 		val LIST_STREAM_CODEC: StreamCodec<ByteBuf, List<UsageReq>> = UsageReq.STREAM_CODEC.apply(ByteBufCodecs.list())

@@ -13,12 +13,13 @@ import net.neoforged.bus.api.EventPriority
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.event.tick.EntityTickEvent
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 弹射物事件监听器
  * 自动处理带有穿透标签的弹射物
  */
-@EventBusSubscriber(modid = Lib.ID)
+@EventBusSubscriber(modid = LibConstants.ID)
 object ProjectileEvents {
 	/**
 	 * 监听弹射物 tick 事件，自动应用穿透逻辑

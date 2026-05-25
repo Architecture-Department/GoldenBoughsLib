@@ -1,8 +1,8 @@
 package architecture.goldenboughs_lib.init
 
-import architecture.goldenboughs_lib.api.LcDamageType
+import architecture.goldenboughs_lib.common.command.LcDamageTypeDataComponent
 import architecture.goldenboughs_lib.common.data_component.ItemVirtueUsageReq
-import architecture.goldenboughs_lib.core.Lib.modRegister
+import architecture.goldenboughs_lib.core.LibConstants.modRegister
 import com.mojang.serialization.Codec
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.BuiltInRegistries
@@ -13,15 +13,16 @@ import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
 import java.util.function.Supplier
 import java.util.function.UnaryOperator
+import architecture.goldenboughs_lib.core.LibConstants
 
 object LibDataComponentTypes {
 	@JvmField
 	val REGISTRY: DeferredRegister<DataComponentType<*>> =
-		modRegister(BuiltInRegistries.DATA_COMPONENT_TYPE)
+		LibConstants.modRegister(BuiltInRegistries.DATA_COMPONENT_TYPE)
 
 	@JvmField
-	val LC_DAMAGE_TYPE: Supplier<DataComponentType<LcDamageType.Component>> = register(
-		"lobotomy_corporation_damage_type", LcDamageType.Component.CODEC, LcDamageType.Component.STREAM_CODEC, true
+	val LC_DAMAGE_TYPE: Supplier<DataComponentType<LcDamageTypeDataComponent>> = register(
+		"lobotomy_corporation_damage_type", LcDamageTypeDataComponent.CODEC, LcDamageTypeDataComponent.STREAM_CODEC, true
 	)
 
 	@JvmField

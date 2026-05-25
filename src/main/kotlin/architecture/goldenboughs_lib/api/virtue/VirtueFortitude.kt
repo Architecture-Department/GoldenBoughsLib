@@ -11,6 +11,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier
 import net.minecraft.world.entity.ai.attributes.Attributes
 import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.attachment.IAttachmentHolder
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 勇气
@@ -60,6 +61,6 @@ final class VirtueFortitude(
 
 	companion object {
 		@JvmField
-		val AMPLITUDE_ID: ResourceLocation = Lib.modRl("fortitude_amplitude")
+		val AMPLITUDE_ID: ResourceLocation = LibConstants.modRl("fortitude_amplitude")
 	}
 }

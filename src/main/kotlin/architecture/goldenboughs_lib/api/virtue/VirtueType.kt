@@ -14,6 +14,7 @@ import net.minecraft.util.StringRepresentable
 import net.neoforged.neoforge.attachment.AttachmentType
 import java.util.function.IntFunction
 import java.util.function.Supplier
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 心核四德 简称 四德
@@ -32,7 +33,7 @@ enum class VirtueType(
 		0,
 		"fortitude",
 		LibAttachmentTypes.FORTITUDE,
-		Lib.modRlText("tooltip.fortitude"),
+		LibConstants.modRlText("tooltip.fortitude"),
 		"#ff0000"
 	),
 
@@ -43,7 +44,7 @@ enum class VirtueType(
 		1,
 		"prudence",
 		LibAttachmentTypes.PRUDENCE,
-		Lib.modRlText("tooltip.prudence"),
+		LibConstants.modRlText("tooltip.prudence"),
 		"#ffffff"
 	),
 
@@ -54,7 +55,7 @@ enum class VirtueType(
 		2,
 		"temperance",
 		LibAttachmentTypes.TEMPERANCE,
-		Lib.modRlText("tooltip.temperance"),
+		LibConstants.modRlText("tooltip.temperance"),
 		"#8a2be2"
 	),
 
@@ -65,7 +66,7 @@ enum class VirtueType(
 		3,
 		"justice",
 		LibAttachmentTypes.JUSTICE,
-		Lib.modRlText("tooltip.justice"),
+		LibConstants.modRlText("tooltip.justice"),
 		"#00ffff"
 	),
 
@@ -76,7 +77,7 @@ enum class VirtueType(
 		4,
 		"composite",
 		null,
-		Lib.modRlText("tooltip.composite_rating"),
+		LibConstants.modRlText("tooltip.composite_rating"),
 		null
 	);
 
@@ -87,7 +88,7 @@ enum class VirtueType(
 	override val colourValue: Int = colour?.run { rgbColor(colour) } ?: 0
 
 	override fun getSerializedName(): String {
-		return Lib.ID + "." + this.colourName
+		return LibConstants.ID + "." + this.colourName
 	}
 
 	fun <T : AbstractVirtue> getAttachmentTypeHolder(): Holder<AttachmentType<T>> {

@@ -1,11 +1,12 @@
 package architecture.goldenboughs_lib.init.tag
 
-import architecture.goldenboughs_lib.core.Lib.modRl
+import architecture.goldenboughs_lib.core.LibConstants.modRl
 import architecture.goldenboughs_lib.util.LibUtil.rlOf
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.ItemTags
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
+import architecture.goldenboughs_lib.core.LibConstants
 
 object LibItemTags {
 	/**
@@ -15,7 +16,7 @@ object LibItemTags {
 	val EGO: TagKey<Item?> = createTag("ego")
 
 	private fun createTag(name: String): TagKey<Item?> {
-		return createTag(modRl(name))
+		return createTag(LibConstants.modRl(name))
 	}
 
 	private fun createTag(location: ResourceLocation): TagKey<Item?> {

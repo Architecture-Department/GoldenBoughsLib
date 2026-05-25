@@ -18,6 +18,7 @@ import net.minecraft.util.Mth
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
+import architecture.goldenboughs_lib.core.LibConstants
 
 class RationalityScreenFilterLayer : BasicHudLayer() {
 	private val rationalityFilters: Array<Filter> = arrayOf(
@@ -141,13 +142,13 @@ class RationalityScreenFilterLayer : BasicHudLayer() {
 
 	companion object {
 		@JvmField
-		val RATIONALITY: ResourceLocation = Lib.modRl("textures/gui/filter/rationality.png")
+		val RATIONALITY: ResourceLocation = LibConstants.modRl("textures/gui/filter/rationality.png")
 
 		@JvmField
-		val RATIONALITY1: ResourceLocation = Lib.modRl("textures/gui/filter/rationality1.png")
+		val RATIONALITY1: ResourceLocation = LibConstants.modRl("textures/gui/filter/rationality1.png")
 
 		@JvmField
-		val RATIONALITY2: ResourceLocation = Lib.modRl("textures/gui/filter/rationality2.png")
+		val RATIONALITY2: ResourceLocation = LibConstants.modRl("textures/gui/filter/rationality2.png")
 
 		@JvmField
 		val INSTANCE: RationalityScreenFilterLayer = RationalityScreenFilterLayer()

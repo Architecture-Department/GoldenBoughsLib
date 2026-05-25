@@ -4,6 +4,7 @@ import architecture.goldenboughs_lib.core.Lib
 import net.neoforged.neoforge.common.ModConfigSpec
 import org.apache.commons.lang3.tuple.Pair
 import java.util.function.Function
+import architecture.goldenboughs_lib.core.LibConstants
 
 abstract class LibConfigUtil {
 	companion object {
@@ -23,14 +24,14 @@ abstract class LibConfigUtil {
 		@JvmStatic
 		fun getTranslation(vararg keys: String): String {
 			if (keys.isEmpty()) {
-				return Lib.ID + ".config"
+				return LibConstants.ID + ".config"
 			}
 			val builder = StringBuilder()
 			for (key in keys) {
 				builder.append(".")
 				builder.append(key)
 			}
-			return Lib.ID + ".config" + builder
+			return LibConstants.ID + ".config" + builder
 		}
 
 		protected fun ModConfigSpec.Builder.define(

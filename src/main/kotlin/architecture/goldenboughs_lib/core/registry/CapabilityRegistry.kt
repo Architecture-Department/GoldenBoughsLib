@@ -32,11 +32,12 @@ import net.neoforged.neoforge.capabilities.EntityCapability
 import net.neoforged.neoforge.capabilities.ItemCapability
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent
 import java.util.function.Supplier
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 注册能力
  */
-@EventBusSubscriber(modid = Lib.ID)
+@EventBusSubscriber(modid = LibConstants.ID)
 object CapabilityRegistry {
 	@JvmField
 	val ITEM_ZAYIN: MutableList<ItemLike> = ArrayList()

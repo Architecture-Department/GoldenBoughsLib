@@ -21,7 +21,7 @@ import net.minecraft.commands.Commands
 import net.minecraft.commands.arguments.EntityArgument
 import net.minecraft.network.chat.Component
 
-object RationalityCommands {
+object RationalityDataCommands {
 
 	const val SET_KEY: String = "set_rationality"
 	const val GET_KEY: String = "get_rationality"

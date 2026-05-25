@@ -3,6 +3,7 @@ package architecture.goldenboughs_lib.common.item
 import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType
 import architecture.goldenboughs_lib.api.world.item.IMeleeEgoWeaponItem
+import architecture.goldenboughs_lib.common.command.LcDamageTypeDataComponent
 import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import net.minecraft.tags.BlockTags
@@ -14,6 +15,7 @@ import net.minecraft.world.item.SwordItem
 import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.level.Level
 import net.neoforged.neoforge.common.SimpleTier
+import architecture.goldenboughs_lib.core.LibConstants
 
 /** 混沌刀 */
 class ChaosKnifeItem(itemProperties: Properties, builder: IMeleeEgoWeaponItem.Builder) : SwordItem(
@@ -26,7 +28,7 @@ class ChaosKnifeItem(itemProperties: Properties, builder: IMeleeEgoWeaponItem.Bu
 	) { Ingredient.of() },
 	itemProperties.component(
 		LibDataComponentTypes.LC_DAMAGE_TYPE.get(),
-		LcDamageType.Component(LcDamageType.PHYSICS, *LcDamageType.values())
+		LcDamageTypeDataComponent(LcDamageType.PHYSICS, *LcDamageType.entries.toTypedArray())
 	)
 ), IMeleeEgoWeaponItem, IItemLcDamageType {
 	override fun use(
@@ -37,10 +39,10 @@ class ChaosKnifeItem(itemProperties: Properties, builder: IMeleeEgoWeaponItem.Bu
 		val itemStackInHand = playerEntity.getItemInHand(handUsed)
 		itemStackInHand.update(
 			LibDataComponentTypes.LC_DAMAGE_TYPE, DEFAULT_COMPONENT
-		) { damageType: LcDamageType.Component ->
+		) { damageType: LcDamageTypeDataComponent ->
 			val values: Array<LcDamageType> = LcDamageType.entries.toTypedArray()
 			val i = damageType.lcDamageType!!.index + 1
-			LcDamageType.Component(values[if (i >= values.size) 0 else i], *LcDamageType.values())
+			LcDamageTypeDataComponent(values[if (i >= values.size) 0 else i], *LcDamageType.entries.toTypedArray())
 		}
 		return InteractionResultHolder.success(itemStackInHand)
 	}
@@ -55,12 +57,13 @@ class ChaosKnifeItem(itemProperties: Properties, builder: IMeleeEgoWeaponItem.Bu
 
 	companion object {
 		@JvmField
-		val KEY: String = Lib.ID + ".item_tooltip.geo_describe.damage_type"
+		val KEY: String = "${LibConstants.ID}.item_tooltip.geo_describe.damage_type"
 
 		@JvmStatic
-		private val DEFAULT_COMPONENT = LcDamageType.Component(LcDamageType.PHYSICS, *LcDamageType.values())
+		private val DEFAULT_COMPONENT =
+			LcDamageTypeDataComponent(LcDamageType.PHYSICS, *LcDamageType.entries.toTypedArray())
 
-		private fun getComponent(stack: ItemStack): LcDamageType.Component {
+		private fun getComponent(stack: ItemStack): LcDamageTypeDataComponent {
 			return stack.getOrDefault(LibDataComponentTypes.LC_DAMAGE_TYPE, DEFAULT_COMPONENT)
 		}
 	}

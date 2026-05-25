@@ -15,8 +15,9 @@ import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers
+import architecture.goldenboughs_lib.core.LibConstants
 
-@EventBusSubscriber(modid = Lib.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object GuiLayerRegistry {
 	@SubscribeEvent
 	fun register(event: RegisterGuiLayersEvent) {

@@ -3,7 +3,7 @@
 package architecture.goldenboughs_lib.events.client
 
 import architecture.goldenboughs_lib.client.model.ShieldSphereMesh
-import architecture.goldenboughs_lib.core.Lib.modRl
+import architecture.goldenboughs_lib.core.LibConstants.modRl
 import architecture.goldenboughs_lib.init.LibAbsorptionShieldsRegistry
 import com.mojang.blaze3d.vertex.DefaultVertexFormat
 import com.mojang.blaze3d.vertex.PoseStack
@@ -13,9 +13,10 @@ import net.minecraft.client.renderer.RenderStateShard
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.world.entity.LivingEntity
 import kotlin.math.max
+import architecture.goldenboughs_lib.core.LibConstants
 
 object ShieldRenderer {
-	private val SHIELD_TEXTURE = modRl("textures/entity/shield.png")
+	private val SHIELD_TEXTURE = LibConstants.modRl("textures/entity/shield.png")
 	private val SPHERE_MESH = ShieldSphereMesh()
 
 	private val SHIELD_RENDER_TYPE: RenderType = RenderType.create(

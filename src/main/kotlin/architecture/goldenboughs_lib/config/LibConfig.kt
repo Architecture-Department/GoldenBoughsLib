@@ -8,8 +8,9 @@ import net.neoforged.fml.config.ModConfig
 import net.neoforged.fml.event.config.ModConfigEvent.Loading
 import net.neoforged.fml.event.config.ModConfigEvent.Reloading
 import net.neoforged.neoforge.common.ModConfigSpec
+import architecture.goldenboughs_lib.core.LibConstants
 
-@EventBusSubscriber(modid = Lib.ID)
+@EventBusSubscriber(modid = LibConstants.ID)
 object LibConfig : LibConfigUtil() {
 	@JvmField
 	val COMMON: LibCommonConfig
@@ -43,7 +44,7 @@ object LibConfig : LibConfigUtil() {
 
 	@JvmStatic
 	fun register(modContainer: ModContainer) {
-		Lib.LOGGER.info("Initialize the ${Lib.NAME} config files")
+		LibConstants.LOGGER.info("Initialize the ${LibConstants.NAME} config files")
 		modContainer.registerConfig(ModConfig.Type.COMMON, COMMON_SPEC)
 		modContainer.registerConfig(ModConfig.Type.SERVER, SERVER_SPEC)
 		modContainer.registerConfig(ModConfig.Type.CLIENT, CLIENT_SPEC)
@@ -51,11 +52,11 @@ object LibConfig : LibConfigUtil() {
 
 	@SubscribeEvent
 	fun onLoad(configEvent: Loading) {
-		Lib.LOGGER.info("Loaded ${Lib.NAME} config file ${configEvent.config.fileName}")
+		LibConstants.LOGGER.info("Loaded ${LibConstants.NAME} config file ${configEvent.config.fileName}")
 	}
 
 	@SubscribeEvent
 	fun onFileChange(configEvent: Reloading) {
-		Lib.LOGGER.info("${Lib.NAME} config just got changed on the file system!")
+		LibConstants.LOGGER.info("${LibConstants.NAME} config just got changed on the file system!")
 	}
 }

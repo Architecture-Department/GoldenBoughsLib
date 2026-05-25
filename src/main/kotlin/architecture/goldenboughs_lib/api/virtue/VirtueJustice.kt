@@ -11,6 +11,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes
 import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.attachment.IAttachmentHolder
 import net.neoforged.neoforge.common.NeoForgeMod
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 正义
@@ -134,6 +135,6 @@ final class VirtueJustice(
 		const val VANILLA_FLYING_SPEED: Float = 0.05f
 
 		@JvmField
-		val AMPLITUDE_ID = Lib.modRl("justice_amplitude")
+		val AMPLITUDE_ID = LibConstants.modRl("justice_amplitude")
 	}
 }

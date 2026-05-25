@@ -3,8 +3,7 @@ package architecture.goldenboughs_lib.init
 import architecture.goldenboughs_lib.common.attribute.BasicAttribute
 import architecture.goldenboughs_lib.common.attribute.MaxAttribute
 import architecture.goldenboughs_lib.common.attribute.MinAttribute
-import architecture.goldenboughs_lib.core.Lib
-import architecture.goldenboughs_lib.core.Lib.modRegister
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.world.entity.ai.attributes.Attribute
@@ -17,7 +16,7 @@ import java.util.function.Supplier
 
 object LibAttributes {
 	@JvmField
-	val REGISTRY: DeferredRegister<Attribute> = modRegister(BuiltInRegistries.ATTRIBUTE)
+	val REGISTRY: DeferredRegister<Attribute> = LibConstants.modRegister(BuiltInRegistries.ATTRIBUTE)
 
 	const val PHYSICS_VULNERABLE_DEFAULT_VALUE: Double = 1.0
 	const val SPIRIT_VULNERABLE_DEFAULT_VALUE: Double = 1.0
@@ -249,7 +248,7 @@ object LibAttributes {
 	}
 
 	private fun descriptionId(name: String): String {
-		return Lib.ID + ".attribute.name." + name
+		return LibConstants.ID + ".attribute.name." + name
 	}
 
 	private fun register(

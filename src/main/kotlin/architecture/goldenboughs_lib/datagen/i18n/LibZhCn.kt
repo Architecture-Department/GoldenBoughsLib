@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.datagen.i18n
 
 import architecture.goldenboughs_lib.api.virtue.VirtueType
-import architecture.goldenboughs_lib.common.command.RationalityCommands
+import architecture.goldenboughs_lib.common.command.RationalityDataCommands
 import architecture.goldenboughs_lib.common.data_component.ItemVirtueUsageReq
 import architecture.goldenboughs_lib.config.LibConfig
 import architecture.goldenboughs_lib.core.Lib
@@ -18,11 +18,12 @@ import net.minecraft.world.item.Item
 import net.neoforged.fml.loading.FMLEnvironment
 import org.jetbrains.annotations.ApiStatus
 import java.util.function.Supplier
+import architecture.goldenboughs_lib.core.LibConstants
 
 @ApiStatus.Internal
-class LibZhCn(output: PackOutput) : DatagenI18n(output, Lib.ID, "zh_cn") {
+class LibZhCn(output: PackOutput) : DatagenI18n(output, LibConstants.ID, "zh_cn") {
 	override fun addTranslations() {
-		addPackDescription(Lib.ID, "金枝")
+		addPackDescription(LibConstants.ID, "金枝")
 		addMobEffectList(MOB_EFFECT)
 		addAttributeList(ATTRIBUTE)
 		addSoundEventList(SOUND_EVENT)
@@ -42,77 +43,77 @@ class LibZhCn(output: PackOutput) : DatagenI18n(output, Lib.ID, "zh_cn") {
 		//region 命令
 		add(
 			getFormattedKey(
-				RationalityCommands.SET_KEY,
-				RationalityCommands.ProcessType.VALUE.typeName
+				RationalityDataCommands.SET_KEY,
+				RationalityDataCommands.ProcessType.VALUE.typeName
 			), "已设置%s的理智值为：%d"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.SET_KEY,
-				RationalityCommands.ProcessType.MAX_VALUE.typeName
+				RationalityDataCommands.SET_KEY,
+				RationalityDataCommands.ProcessType.MAX_VALUE.typeName
 			), "已设置%s的最大理智基础值为：%d"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.SET_KEY,
-				RationalityCommands.ProcessType.NATURAL_RECOVERY_RATE.typeName
+				RationalityDataCommands.SET_KEY,
+				RationalityDataCommands.ProcessType.NATURAL_RECOVERY_RATE.typeName
 			), "已设置%s的基础理智值理智值自然恢复等待时间为：20*%d Tick"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.SET_KEY,
-				RationalityCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.typeName
+				RationalityDataCommands.SET_KEY,
+				RationalityDataCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.typeName
 			), "已设置%s的基础理智恢复为：每次%d"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.GET_KEY,
-				RationalityCommands.ProcessType.VALUE.typeName
+				RationalityDataCommands.GET_KEY,
+				RationalityDataCommands.ProcessType.VALUE.typeName
 			), "%s的理智值为：%d"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.GET_KEY,
-				RationalityCommands.ProcessType.MAX_VALUE.typeName
+				RationalityDataCommands.GET_KEY,
+				RationalityDataCommands.ProcessType.MAX_VALUE.typeName
 			), "%s的最大理智值为：%d"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.GET_KEY,
-				RationalityCommands.ProcessType.NATURAL_RECOVERY_RATE.typeName
+				RationalityDataCommands.GET_KEY,
+				RationalityDataCommands.ProcessType.NATURAL_RECOVERY_RATE.typeName
 			), "%s的理智值理智值自然恢复等待时间为：20*%d Tick"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.GET_KEY,
-				RationalityCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.typeName
+				RationalityDataCommands.GET_KEY,
+				RationalityDataCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.typeName
 			), "%s的理智值自然恢复量为：每次%d点"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.RESET_KEY,
-				RationalityCommands.ProcessType.VALUE.typeName
+				RationalityDataCommands.RESET_KEY,
+				RationalityDataCommands.ProcessType.VALUE.typeName
 			), "已重置%s的理智值为：%d"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.RESET_KEY,
-				RationalityCommands.ProcessType.MAX_VALUE.typeName
+				RationalityDataCommands.RESET_KEY,
+				RationalityDataCommands.ProcessType.MAX_VALUE.typeName
 			), "已重置%s的最大理智基础值为：%d"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.RESET_KEY,
-				RationalityCommands.ProcessType.NATURAL_RECOVERY_RATE.typeName
+				RationalityDataCommands.RESET_KEY,
+				RationalityDataCommands.ProcessType.NATURAL_RECOVERY_RATE.typeName
 			), "已重置%s的基础理智值理智值自然恢复等待时间为：20*%dTick"
 		)
 		add(
 			getFormattedKey(
-				RationalityCommands.RESET_KEY,
-				RationalityCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.typeName
+				RationalityDataCommands.RESET_KEY,
+				RationalityDataCommands.ProcessType.RATIONALITY_RECOVERY_AMOUNT.typeName
 			), "已重置%s的基础理智值自然恢复量为：每次%d点"
 		)
-		add(getFormattedKey(RationalityCommands.RESET_KEY), "已重置%s的理智")
+		add(getFormattedKey(RationalityDataCommands.RESET_KEY), "已重置%s的理智")
 
 		//endregion
 

@@ -36,8 +36,9 @@ import net.neoforged.neoforge.event.entity.living.*
 import net.neoforged.neoforge.event.tick.EntityTickEvent
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.math.abs
+import architecture.goldenboughs_lib.core.LibConstants
 
-@EventBusSubscriber(modid = Lib.ID)
+@EventBusSubscriber(modid = LibConstants.ID)
 object LivingEntityEvents {
 	/**
 	 * 恢复事件

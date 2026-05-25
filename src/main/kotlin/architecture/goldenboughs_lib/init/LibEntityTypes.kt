@@ -12,10 +12,11 @@ import net.minecraft.world.entity.MobCategory
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
 import java.util.function.Supplier
+import architecture.goldenboughs_lib.core.LibConstants
 
 object LibEntityTypes {
 	@JvmField
-	val REGISTRY: DeferredRegister<EntityType<*>> = DeferredRegister.create(Registries.ENTITY_TYPE, Lib.ID)
+	val REGISTRY: DeferredRegister<EntityType<*>> = DeferredRegister.create(Registries.ENTITY_TYPE, LibConstants.ID)
 
 	@JvmField
 	val STAFF_CORPSE: DeferredHolder<EntityType<*>, EntityType<StaffCorpse>> = register<StaffCorpse>(

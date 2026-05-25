@@ -12,12 +12,13 @@ import net.neoforged.neoforge.common.Tags
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import org.jetbrains.annotations.Contract
 import java.util.concurrent.CompletableFuture
+import architecture.goldenboughs_lib.core.LibConstants
 
 class LibDatagenDamageTypeTag(
 	output: PackOutput,
 	lookupProvider: CompletableFuture<HolderLookup.Provider>,
 	existingFileHelper: ExistingFileHelper
-) : DamageTypeTagsProvider(output, lookupProvider, Lib.ID, existingFileHelper) {
+) : DamageTypeTagsProvider(output, lookupProvider, LibConstants.ID, existingFileHelper) {
 	override fun addTags(provider: HolderLookup.Provider) {
 		// 物理伤害
 		tag(LibDamageTypeTags.PHYSICS).add(
@@ -90,6 +91,6 @@ class LibDatagenDamageTypeTag(
 
 	@Contract(pure = true)
 	override fun getName(): String {
-		return Lib.NAME + " Damage Type Tags"
+		return LibConstants.NAME + " Damage Type Tags"
 	}
 }

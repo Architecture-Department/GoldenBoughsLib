@@ -11,6 +11,7 @@ import net.minecraft.util.ByIdMap
 import net.minecraft.util.StringRepresentable
 import org.jetbrains.annotations.Contract
 import java.util.*
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 脑叶等级
@@ -38,7 +39,7 @@ enum class LcLevel(
 
 	@Contract(pure = true)
 	override fun getSerializedName(): String {
-		return Lib.modRlText(this.levelName)
+		return LibConstants.modRlText(this.levelName)
 	}
 
 	companion object {

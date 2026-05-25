@@ -3,24 +3,25 @@ package architecture.goldenboughs_lib.init
 import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle
 import architecture.goldenboughs_lib.client.particle.text.DamageTextParticle
 import architecture.goldenboughs_lib.client.particle.text.TextParticleOptions
-import architecture.goldenboughs_lib.core.Lib.modRegister
+import architecture.goldenboughs_lib.common.particle.SpecialParticleType
+import architecture.goldenboughs_lib.core.LibConstants.modRegister
 import com.mojang.serialization.MapCodec
 import net.minecraft.core.particles.ParticleOptions
 import net.minecraft.core.particles.ParticleType
-import net.minecraft.core.particles.SimpleParticleType
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.StreamCodec
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
 import java.util.function.Supplier
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 粒子类型
  */
 object LibParticleTypes {
 	@JvmField
-	val REGISTRY: DeferredRegister<ParticleType<*>> = modRegister(BuiltInRegistries.PARTICLE_TYPE)
+	val REGISTRY: DeferredRegister<ParticleType<*>> = LibConstants.modRegister(BuiltInRegistries.PARTICLE_TYPE)
 
 	@JvmField
 	val TEXT: Supplier<ParticleType<TextParticleOptions>> = register(
@@ -50,25 +51,5 @@ object LibParticleTypes {
 		id: String, particleType: Supplier<O>
 	): DeferredHolder<ParticleType<*>, O> {
 		return REGISTRY.register(id, particleType)
-	}
-
-	private fun registerSimpleParticle(
-		id: String, overrideLimiter: Boolean
-	): DeferredHolder<ParticleType<*>, SimpleParticleType> {
-		return register(id) { SimpleParticleType(overrideLimiter) }
-	}
-
-	class SpecialParticleType<T : ParticleOptions>(
-		overrideLimiter: Boolean,
-		private val codec: MapCodec<T>,
-		private val streamCodec: StreamCodec<in RegistryFriendlyByteBuf, T>
-	) : ParticleType<T>(overrideLimiter) {
-		override fun codec(): MapCodec<T> {
-			return codec
-		}
-
-		override fun streamCodec(): StreamCodec<in RegistryFriendlyByteBuf, T> {
-			return streamCodec
-		}
 	}
 }

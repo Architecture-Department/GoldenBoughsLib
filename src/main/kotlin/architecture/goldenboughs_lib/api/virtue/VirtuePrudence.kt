@@ -9,6 +9,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance
 import net.minecraft.world.entity.ai.attributes.AttributeModifier
 import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.attachment.IAttachmentHolder
+import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 谨慎
@@ -62,6 +63,6 @@ final class VirtuePrudence(
 
 	companion object {
 		@JvmField
-		val AMPLITUDE_ID = Lib.modRl("justice_amplitude")
+		val AMPLITUDE_ID = LibConstants.modRl("justice_amplitude")
 	}
 }
