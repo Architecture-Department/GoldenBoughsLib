@@ -6,7 +6,6 @@ import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.damagesource.DamageType
-import architecture.goldenboughs_lib.core.LibConstants
 
 object LibDamageTypeTags {
 	/**
@@ -40,7 +39,7 @@ object LibDamageTypeTags {
 	val BYPASS_LC: TagKey<DamageType> = createTag("bypass_lobotomy_corporation_damage")
 
 	private fun createTag(name: String): TagKey<DamageType> {
-		return createTag(LibConstants.modRl(name))
+		return createTag(modRl(name))
 	}
 
 	private fun createTag(location: ResourceLocation): TagKey<DamageType> {

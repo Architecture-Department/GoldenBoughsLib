@@ -14,14 +14,13 @@ import net.minecraft.network.codec.StreamCodec
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
 import java.util.function.Supplier
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 粒子类型
  */
 object LibParticleTypes {
 	@JvmField
-	val REGISTRY: DeferredRegister<ParticleType<*>> = LibConstants.modRegister(BuiltInRegistries.PARTICLE_TYPE)
+	val REGISTRY: DeferredRegister<ParticleType<*>> = modRegister(BuiltInRegistries.PARTICLE_TYPE)
 
 	@JvmField
 	val TEXT: Supplier<ParticleType<TextParticleOptions>> = register(

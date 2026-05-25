@@ -18,12 +18,11 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries
 import org.jetbrains.annotations.Contract
 import java.util.function.Function
 import java.util.function.Supplier
-import architecture.goldenboughs_lib.core.LibConstants
 
 object LibAttachmentTypes {
 	@JvmField
 	val REGISTRY: DeferredRegister<AttachmentType<*>> =
-		LibConstants.modRegister(NeoForgeRegistries.ATTACHMENT_TYPES)
+		modRegister(NeoForgeRegistries.ATTACHMENT_TYPES)
 
 	@JvmField
 	val DELAY_TASK_HOLDER: DeferredHolder<AttachmentType<*>, AttachmentType<DelayTaskHolder>> = register(

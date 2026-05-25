@@ -11,7 +11,6 @@ import architecture.goldenboughs_lib.core.LibConstants.modRl
 import net.neoforged.neoforge.capabilities.BlockCapability
 import net.neoforged.neoforge.capabilities.EntityCapability
 import net.neoforged.neoforge.capabilities.ItemCapability
-import architecture.goldenboughs_lib.core.LibConstants
 
 object LibCapabilitys {
 	/**
@@ -42,14 +41,14 @@ object LibCapabilitys {
 	}
 
 	private inline fun <reified T> registerItemCapability(name: String): ItemCapability<T?, Void?> {
-		return ItemCapability.createVoid(LibConstants.modRl(name), T::class.java)
+		return ItemCapability.createVoid(modRl(name), T::class.java)
 	}
 
 	private inline fun <reified T> registerBlockCapability(name: String): BlockCapability<T?, Void?> {
-		return BlockCapability.createVoid(LibConstants.modRl(name), T::class.java)
+		return BlockCapability.createVoid(modRl(name), T::class.java)
 	}
 
 	private inline fun <reified T> registerEntityCapability(name: String): EntityCapability<T?, Void?> {
-		return EntityCapability.createVoid(LibConstants.modRl(name), T::class.java)
+		return EntityCapability.createVoid(modRl(name), T::class.java)
 	}
 }

@@ -15,11 +15,10 @@ import net.neoforged.neoforge.registries.DeferredRegister
 import java.util.function.BiFunction
 import java.util.function.Function
 import java.util.function.Supplier
-import architecture.goldenboughs_lib.core.LibConstants
 
 object LibMobEffects {
 	@JvmField
-	val REGISTRY: DeferredRegister<MobEffect> = LibConstants.modRegister(BuiltInRegistries.MOB_EFFECT)
+	val REGISTRY: DeferredRegister<MobEffect> = modRegister(BuiltInRegistries.MOB_EFFECT)
 
 	@JvmField
 	val PHYSIC_ABSORPTION_SHIELD: Holder<MobEffect> = register(
@@ -90,7 +89,7 @@ object LibMobEffects {
 	): DeferredHolder<MobEffect, T> {
 		return register(name, zhCnText) {
 			val apply = supplier.get()
-			function.apply(apply, LibConstants.modRl(name))
+			function.apply(apply, modRl(name))
 			apply
 		}
 	}
@@ -120,7 +119,7 @@ object LibMobEffects {
 	): DeferredHolder<MobEffect, T> {
 		return register(name, zhCnText) {
 			val apply = biFunction.apply(category, color)
-			function.apply(apply, LibConstants.modRl(name))
+			function.apply(apply, modRl(name))
 			apply
 		}
 	}

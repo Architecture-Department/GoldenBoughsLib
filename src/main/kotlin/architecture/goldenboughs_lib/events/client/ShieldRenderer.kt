@@ -13,10 +13,9 @@ import net.minecraft.client.renderer.RenderStateShard
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.world.entity.LivingEntity
 import kotlin.math.max
-import architecture.goldenboughs_lib.core.LibConstants
 
 object ShieldRenderer {
-	private val SHIELD_TEXTURE = LibConstants.modRl("textures/entity/shield.png")
+	private val SHIELD_TEXTURE = modRl("textures/entity/shield.png")
 	private val SPHERE_MESH = ShieldSphereMesh()
 
 	private val SHIELD_RENDER_TYPE: RenderType = RenderType.create(

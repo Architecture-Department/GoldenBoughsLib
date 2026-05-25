@@ -9,7 +9,6 @@ import net.minecraft.world.damagesource.DamageEffects
 import net.minecraft.world.damagesource.DamageScaling
 import net.minecraft.world.damagesource.DamageType
 import net.minecraft.world.damagesource.DeathMessageType
-import architecture.goldenboughs_lib.core.LibConstants
 
 object LibDamageTypes {
 	/**
@@ -162,7 +161,7 @@ object LibDamageTypes {
 	 * 创建伤害类型
 	 */
 	private fun register(name: String): ResourceKey<DamageType> {
-		return ResourceKey.create(Registries.DAMAGE_TYPE, LibConstants.modRl(name))
+		return ResourceKey.create(Registries.DAMAGE_TYPE, modRl(name))
 	}
 
 	private fun register(

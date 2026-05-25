@@ -13,12 +13,11 @@ import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
 import java.util.function.Supplier
 import java.util.function.UnaryOperator
-import architecture.goldenboughs_lib.core.LibConstants
 
 object LibDataComponentTypes {
 	@JvmField
 	val REGISTRY: DeferredRegister<DataComponentType<*>> =
-		LibConstants.modRegister(BuiltInRegistries.DATA_COMPONENT_TYPE)
+		modRegister(BuiltInRegistries.DATA_COMPONENT_TYPE)
 
 	@JvmField
 	val LC_DAMAGE_TYPE: Supplier<DataComponentType<LcDamageTypeDataComponent>> = register(

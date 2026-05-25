@@ -7,7 +7,6 @@ import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.sounds.SoundEvent
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
-import architecture.goldenboughs_lib.core.LibConstants
 
 object LibSoundEvents {
 
@@ -17,7 +16,7 @@ object LibSoundEvents {
 	private fun registerForHolder(
 		id: String, zhName: String, location: String
 	): DeferredHolder<SoundEvent, SoundEvent> {
-		val register = REGISTRY.register(id) { -> SoundEvent.createVariableRangeEvent(LibConstants.modRl(location)) }
+		val register = REGISTRY.register(id) { -> SoundEvent.createVariableRangeEvent(modRl(location)) }
 		LibZhCn.addI18nSoundEventText(zhName, register)
 		return register
 	}
