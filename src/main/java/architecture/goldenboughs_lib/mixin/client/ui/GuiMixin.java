@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.mixin.client;
+package architecture.goldenboughs_lib.mixin.client.ui;
 
 import architecture.goldenboughs_lib.util.GunWeaponUtil;
 import com.llamalad7.mixinextras.expression.Definition;

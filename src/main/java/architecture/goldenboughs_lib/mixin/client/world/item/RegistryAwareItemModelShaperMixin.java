@@ -1,6 +1,7 @@
-package architecture.goldenboughs_lib.mixin.client;
+package architecture.goldenboughs_lib.mixin.client.world.item;
 
 import architecture.goldenboughs_lib.mixed.client.IItemModelShaper;
+import architecture.goldenboughs_lib.mixin.client.ModelManagerAccessor;
 import com.google.common.collect.Maps;
 import net.minecraft.client.renderer.ItemModelShaper;
 import net.minecraft.client.resources.model.BakedModel;
@@ -41,7 +42,7 @@ public abstract class RegistryAwareItemModelShaperMixin extends ItemModelShaper 
 	private void goldenboughs_lib$rebuildCache(CallbackInfo ci) {
 		final ModelManager manager = this.getModelManager();
 		for (var e : goldenboughs_lib$guiLocations.entrySet()) {
-			goldenboughs_lib$guiModels.put(e.getKey(), manager.getModel(e.getValue()));
+			goldenboughs_lib$guiModels.put(e.getKey(), ((ModelManagerAccessor) manager).getBakedRegistry().get(e.getValue()));
 		}
 	}
 

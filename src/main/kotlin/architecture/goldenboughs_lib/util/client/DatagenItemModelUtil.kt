@@ -19,24 +19,38 @@ object DatagenItemModelUtil {
 	 * 遍历所有注册的物品条目并为其创建基础的generated模型
 	 *
 	 * @param registry   物品注册表
-	 * @param pathPrefix 模型路径前缀
 	 */
 	@JvmStatic
-	fun ItemModelProvider.withExistingParent(pathPrefix: String, registry: DeferredRegister.Items) {
-		withExistingParent(pathPrefix, registry.entries)
+	@JvmOverloads
+	fun ItemModelProvider.withExistingParent(
+		pathPrefix: String = "",
+		pathSuffix: String = "",
+		registry: DeferredRegister.Items
+	) {
+		withExistingParent(pathPrefix, pathSuffix, registry.entries)
 	}
 
 	@JvmStatic
-	fun ItemModelProvider.withExistingParent(pathPrefix: String, vararg items: DeferredHolder<Item, out Item>) {
+	@JvmOverloads
+	fun ItemModelProvider.withExistingParent(
+		pathPrefix: String = "",
+		pathSuffix: String = "",
+		vararg items: DeferredHolder<Item, out Item>
+	) {
 		items.forEach {
-			withExistingParent(it.id.withPrefix(pathPrefix), "item/generated")
+			withExistingParent(it.id.withPrefix(pathPrefix).withSuffix(pathSuffix), "item/generated")
 		}
 	}
 
 	@JvmStatic
-	fun ItemModelProvider.withExistingParent(pathPrefix: String, items: Collection<DeferredHolder<Item, out Item>>) {
+	@JvmOverloads
+	fun ItemModelProvider.withExistingParent(
+		pathPrefix: String = "",
+		pathSuffix: String = "",
+		items: Collection<DeferredHolder<Item, out Item>>
+	) {
 		items.stream().map { it.id }.forEach {
-			withExistingParent(it.withPrefix(pathPrefix), "item/generated")
+			withExistingParent(it.withPrefix(pathPrefix).withSuffix(pathSuffix), "item/generated")
 		}
 	}
 

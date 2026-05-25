@@ -22,6 +22,16 @@
 		"world.entity.PlayerMixin",
 		"world.item.ItemStackMixin"
 	],
+	"client": [
+		"client.FontMixin",
+		"client.KeyMappingMixin",
+		"client.ModelManagerAccessor",
+		"client.ui.GuiMixin",
+		"client.world.BlockEntityWithoutLevelRendererMixin",
+		"client.world.item.ItemModelShaperMixin",
+		"client.world.item.ItemRendererMixin",
+		"client.world.item.RegistryAwareItemModelShaperMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	},
@@ -30,16 +40,5 @@
 	},
 	"mixinextras": {
 		"minVersion": "0.5.0"
-	},
-	"client": [
-		"client.FontMixin",
-		"client.GuiMixin",
-		"client.ItemModelShaperMixin",
-		"client.ItemRendererMixin",
-		"client.KeyMappingMixin",
-		"client.ModelManagerAccessor",
-		"client.RegistryAwareItemModelShaperMixin",
-		"client.world.BlockEntityWithoutLevelRendererMixin",
-		"client.world.ItemRendererMixin"
-	]
+	}
 }
