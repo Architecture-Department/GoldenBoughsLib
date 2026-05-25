@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.util.client
+package architecture.goldenboughs_lib.util.datagen
 
 import architecture.goldenboughs_lib.mixin.client.ModelProviderAccessor
 import net.minecraft.resources.ResourceLocation

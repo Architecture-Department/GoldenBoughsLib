@@ -1,7 +1,7 @@
-package architecture.goldenboughs_lib.util.client
+package architecture.goldenboughs_lib.util.datagen
 
 import architecture.goldenboughs_lib.mixed.client.IModelBuilder
-import architecture.goldenboughs_lib.util.LibUtil.rlOf
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
@@ -13,7 +13,7 @@ import net.neoforged.neoforge.registries.DeferredRegister
 import java.util.*
 import kotlin.math.min
 
-object DatagenItemModelUtil {
+object ItemModelUtil {
 	/**
 	 * 为所有物品生成模型
 	 * 遍历所有注册的物品条目并为其创建基础的generated模型
@@ -25,9 +25,11 @@ object DatagenItemModelUtil {
 	fun ItemModelProvider.withExistingParent(
 		pathPrefix: String = "",
 		pathSuffix: String = "",
+		filePrefix: String = "",
+		fileSuffix: String = "",
 		registry: DeferredRegister.Items
 	) {
-		withExistingParent(pathPrefix, pathSuffix, registry.entries)
+		withExistingParent(pathPrefix, pathSuffix, filePrefix, fileSuffix, registry.entries)
 	}
 
 	@JvmStatic
@@ -35,10 +37,12 @@ object DatagenItemModelUtil {
 	fun ItemModelProvider.withExistingParent(
 		pathPrefix: String = "",
 		pathSuffix: String = "",
+		filePrefix: String = "",
+		fileSuffix: String = "",
 		vararg items: DeferredHolder<Item, out Item>
 	) {
 		items.forEach {
-			withExistingParent(it.id.withPrefix(pathPrefix).withSuffix(pathSuffix), "item/generated")
+			withExistingParent(it.id, pathPrefix, pathSuffix, filePrefix, fileSuffix, "item/generated")
 		}
 	}
 
@@ -47,17 +51,45 @@ object DatagenItemModelUtil {
 	fun ItemModelProvider.withExistingParent(
 		pathPrefix: String = "",
 		pathSuffix: String = "",
+		filePrefix: String = "",
+		fileSuffix: String = "",
 		items: Collection<DeferredHolder<Item, out Item>>
 	) {
 		items.stream().map { it.id }.forEach {
-			withExistingParent(it.withPrefix(pathPrefix).withSuffix(pathSuffix), "item/generated")
+			withExistingParent(it, pathPrefix, pathSuffix, filePrefix, fileSuffix, "item/generated")
 		}
 	}
 
 	@JvmStatic
-	fun ItemModelProvider.withExistingParent(location: ResourceLocation, parent: String) {
-		IModelBuilder.of(withExistingParent(location.path, parent))
-			.`goldenboughs_lib$getTexture`()["layer0"] = location.toString()
+	@JvmOverloads
+	fun ItemModelProvider.withExistingParent(
+		pathPrefix: String = "",
+		pathSuffix: String = "",
+		filePrefix: String = "",
+		fileSuffix: String = "",
+		item: Item
+	) {
+		withExistingParent(
+			BuiltInRegistries.ITEM.getKey(item),
+			pathPrefix,
+			pathSuffix,
+			filePrefix,
+			fileSuffix,
+			"item/generated"
+		)
+	}
+
+	@JvmStatic
+	fun ItemModelProvider.withExistingParent(
+		location: ResourceLocation,
+		pathPrefix: String = "",
+		pathSuffix: String = "",
+		filePrefix: String = "",
+		fileSuffix: String = "",
+		parent: String
+	) {
+		IModelBuilder.of(withExistingParent(filePrefix + location.path + fileSuffix, parent))
+			.`goldenboughs_lib$getTexture`()["layer0"] = location.withPrefix(pathPrefix).withSuffix(pathSuffix).toString()
 	}
 
 	/**
@@ -135,7 +167,7 @@ object DatagenItemModelUtil {
 	fun ItemModelProvider.createModelItem(item: Item, parent: ModelFile): ItemModelBuilder {
 		val resourceLocation = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item))
 		return getBuilder(item.toString()).parent(parent).texture(
-			"layer0", rlOf(
+			"layer0", LibUtil.rlOf(
 				resourceLocation.namespace, "item/" + resourceLocation.path
 			)
 		)
@@ -146,7 +178,7 @@ object DatagenItemModelUtil {
 	 */
 	@JvmStatic
 	fun ItemModelProvider.geoItem(item: Item) {
-		getBuilder(item.toString()).parent(ModelFile.UncheckedModelFile(rlOf("builtin/entity")))
+		getBuilder(item.toString()).parent(ModelFile.UncheckedModelFile(LibUtil.rlOf("builtin/entity")))
 	}
 
 	/**
@@ -171,8 +203,8 @@ object DatagenItemModelUtil {
 	@JvmStatic
 	fun ItemModelProvider.basicItem(item: ResourceLocation, name: String): ItemModelBuilder {
 		return getBuilder(item.toString()).parent(
-			uncheckedModelFile(rlOf(item.namespace, "models/item/$name"))
-		).texture("layer0", rlOf(item.namespace, "item/" + item.path))
+			uncheckedModelFile(LibUtil.rlOf(item.namespace, "models/item/$name"))
+		).texture("layer0", LibUtil.rlOf(item.namespace, "item/" + item.path))
 	}
 
 	@JvmStatic
@@ -193,7 +225,7 @@ object DatagenItemModelUtil {
 
 		val actualParent = parent ?: ModelFile.UncheckedModelFile("item/generated")
 		val modelBuilder = getBuilder(item.toString()).parent(actualParent)
-			.texture("layer0", rlOf(itemModId, itemRl))
+			.texture("layer0", LibUtil.rlOf(itemModId, itemRl))
 
 		var index = 0
 		for ((key, value) in textures) {
@@ -202,7 +234,7 @@ object DatagenItemModelUtil {
 				.predicate(predicates[min(index, predicates.size - 1)], key).end()
 
 			getBuilder(overrideModelRl.toString()).parent(actualParent)
-				.texture("layer0", rlOf(itemModId, "${itemRl}_$value"))
+				.texture("layer0", LibUtil.rlOf(itemModId, "${itemRl}_$value"))
 			index++
 		}
 	}

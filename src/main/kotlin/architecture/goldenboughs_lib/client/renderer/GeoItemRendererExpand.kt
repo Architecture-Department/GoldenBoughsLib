@@ -18,14 +18,9 @@ import software.bernie.geckolib.renderer.layer.BlockAndItemGeoLayer
 @AllOpe
 class GeoItemRendererExpand<T>(
 	model: GeoModel<T>,
-	@JvmField protected final val guiModel: GeoModel<T>?
 ) : GeoItemRenderer<T>(model) where T : Item, T : GeoAnimatable {
 	init {
 		addRenderLayer(BlockAndItemGeoLayer(this))
-	}
-
-	override fun getGeoModel(): GeoModel<T> {
-		return if (this.guiModel != null && this.renderPerspective == ItemDisplayContext.GUI) this.guiModel else this.model
 	}
 
 	fun renderByItem(

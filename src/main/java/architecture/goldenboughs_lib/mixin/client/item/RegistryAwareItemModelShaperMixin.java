@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.mixin.client.world.item;
+package architecture.goldenboughs_lib.mixin.client.item;
 
 import architecture.goldenboughs_lib.mixed.client.IItemModelShaper;
 import architecture.goldenboughs_lib.mixin.client.ModelManagerAccessor;
@@ -33,9 +33,9 @@ public abstract class RegistryAwareItemModelShaperMixin extends ItemModelShaper 
 
 	@Inject(method = "register", at = @At("HEAD"))
 	private void goldenboughs_lib$register(Item item, ModelResourceLocation location, CallbackInfo ci) {
-		ModelResourceLocation mrl = new ModelResourceLocation(location.id().withSuffix("_gui"), location.variant());
+		ModelResourceLocation mrl = ModelResourceLocation.standalone(location.id().withPrefix("gui/"));
 		goldenboughs_lib$guiLocations.put(item, mrl);
-		goldenboughs_lib$guiModels.put(item, getModelManager().getModel(mrl));
+		goldenboughs_lib$guiModels.put(item, ((ModelManagerAccessor) getModelManager()).getBakedRegistry().get(mrl));
 	}
 
 	@Inject(method = "rebuildCache", at = @At("HEAD"))

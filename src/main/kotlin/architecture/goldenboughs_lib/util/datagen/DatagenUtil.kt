@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.util
+package architecture.goldenboughs_lib.util.datagen
 
 import net.minecraft.data.DataProvider
 import net.neoforged.neoforge.data.event.GatherDataEvent

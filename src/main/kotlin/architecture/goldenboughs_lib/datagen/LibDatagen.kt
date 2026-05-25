@@ -1,19 +1,18 @@
 package architecture.goldenboughs_lib.datagen
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
 import architecture.goldenboughs_lib.datagen.tag.LibDatagenBlockTag
 import architecture.goldenboughs_lib.datagen.tag.LibDatagenDamageTypeTag
 import architecture.goldenboughs_lib.datagen.tag.LibDatagenItemTag
 import architecture.goldenboughs_lib.init.LibDamageTypes
-import architecture.goldenboughs_lib.util.buildClient
-import architecture.goldenboughs_lib.util.buildServer
+import architecture.goldenboughs_lib.util.datagen.buildClient
+import architecture.goldenboughs_lib.util.datagen.buildServer
 import net.minecraft.core.RegistrySetBuilder
 import net.minecraft.core.registries.Registries
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.data.event.GatherDataEvent
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 数据生成主类

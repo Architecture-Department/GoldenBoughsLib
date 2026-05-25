@@ -7,7 +7,7 @@ import software.bernie.geckolib.animatable.GeoItem
 import software.bernie.geckolib.animatable.client.GeoRenderProvider
 import software.bernie.geckolib.model.GeoModel
 import software.bernie.geckolib.renderer.GeoItemRenderer
-import java.util.function.BiFunction
+import java.util.function.Function
 
 /**
  * 物品渲染提供程序
@@ -15,15 +15,13 @@ import java.util.function.BiFunction
 @AllOpe
 class GeoItemRenderProvider<T> @JvmOverloads constructor(
 	@JvmField protected final val defaultModel: GeoModel<T>,
-	@JvmField protected final val guiModel: GeoModel<T>?,
-	private val rendererFunction: BiFunction<GeoModel<T>, GeoModel<T>?, GeoItemRenderer<T>> =
-		{ model, guiModel -> GeoItemRendererExpand(model, guiModel) }
+	private val rendererFunction: Function<GeoModel<T>, GeoItemRenderer<T>> = { GeoItemRendererExpand(it) }
 ) : GeoRenderProvider where T : Item, T : GeoItem {
 	private var renderer: GeoItemRenderer<T>? = null
 
 	override fun getGeoItemRenderer(): BlockEntityWithoutLevelRenderer? {
 		if (this.renderer == null) {
-			this.renderer = rendererFunction.apply(this.defaultModel, this.guiModel)
+			this.renderer = rendererFunction.apply(this.defaultModel)
 		}
 		return this.renderer
 	}

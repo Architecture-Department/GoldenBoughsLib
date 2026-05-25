@@ -26,11 +26,12 @@
 		"client.FontMixin",
 		"client.KeyMappingMixin",
 		"client.ModelManagerAccessor",
+		"client.item.ItemModelShaperMixin",
+		"client.item.ItemRendererMixin",
+		"client.item.RegistryAwareItemModelShaperMixin",
+		"client.ui.GuiGraphicsMixin",
 		"client.ui.GuiMixin",
-		"client.world.BlockEntityWithoutLevelRendererMixin",
-		"client.world.item.ItemModelShaperMixin",
-		"client.world.item.ItemRendererMixin",
-		"client.world.item.RegistryAwareItemModelShaperMixin"
+		"client.world.BlockEntityWithoutLevelRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

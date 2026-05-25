@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.mixin.client.world.item;
+package architecture.goldenboughs_lib.mixin.client.item;
 
 import architecture.goldenboughs_lib.mixed.client.IBlockEntityWithoutLevelRendererLib;
 import architecture.goldenboughs_lib.mixed.client.IItemModelShaper;
@@ -34,9 +34,7 @@ public abstract class ItemRendererMixin {
 		@Local(argsOnly = true) ItemStack itemStack,
 		@Local(argsOnly = true) ItemDisplayContext displayContext
 	) {
-		if (displayContext != ItemDisplayContext.GUI ||
-			itemStack.isEmpty()
-		) {
+		if (itemStack.isEmpty() || displayContext != ItemDisplayContext.GUI) {
 			return arg8;
 		}
 
@@ -44,6 +42,7 @@ public abstract class ItemRendererMixin {
 		if (bakedModel == null) {
 			return arg8;
 		}
+
 		return bakedModel;
 	}
 

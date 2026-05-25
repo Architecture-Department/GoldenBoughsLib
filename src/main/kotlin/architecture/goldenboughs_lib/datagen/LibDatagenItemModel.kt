@@ -1,15 +1,14 @@
 package architecture.goldenboughs_lib.datagen
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.core.registry.client.LibItemPropertyRenderersRegistrar
 import architecture.goldenboughs_lib.init.LibItems
-import architecture.goldenboughs_lib.util.client.DatagenItemModelUtil.createModelFile
-import architecture.goldenboughs_lib.util.client.DatagenItemModelUtil.getParent
+import architecture.goldenboughs_lib.util.datagen.ItemModelUtil.createModelFile
+import architecture.goldenboughs_lib.util.datagen.ItemModelUtil.getParent
 import net.minecraft.data.PackOutput
 import net.minecraft.world.item.Item
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider
 import net.neoforged.neoforge.common.data.ExistingFileHelper
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 物品模型数据生成器

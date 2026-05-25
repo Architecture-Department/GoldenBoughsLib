@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.mixin.client.world.item;
+package architecture.goldenboughs_lib.mixin.client.item;
 
 import architecture.goldenboughs_lib.mixed.client.IItemModelShaper;
 import net.minecraft.client.renderer.ItemModelShaper;
