@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 import javax.annotation.Nullable;
 
 @Mixin(LivingEntity.class)
-public interface LivingEntityAccessorMixin {
+public interface LivingEntityAccessor {
 	@Accessor
 	int getAttackStrengthTicker();
 

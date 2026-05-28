@@ -17,7 +17,7 @@
 		"world.DamageSourceMixin",
 		"world.entity.EntityMixin",
 		"world.entity.LivingDamageEvent$PostMixin",
-		"world.entity.LivingEntityAccessorMixin",
+		"world.entity.LivingEntityAccessor",
 		"world.entity.LivingEntityMixin",
 		"world.entity.PlayerMixin",
 		"world.item.ItemStackMixin"
