@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.core.registry
 
 import architecture.goldenboughs_lib.api.LcLevel
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttributes
 import architecture.goldenboughs_lib.init.LibEntityTypes
 import net.minecraft.core.Holder
@@ -19,7 +19,6 @@ import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent
 import java.util.function.Consumer
-import architecture.goldenboughs_lib.core.LibConstants
 
 @EventBusSubscriber(modid = LibConstants.ID)
 object EntityAttributeRegistry {

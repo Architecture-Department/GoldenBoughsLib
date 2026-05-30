@@ -1,12 +1,11 @@
 package architecture.goldenboughs_lib.events.client
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.minecraft.client.Minecraft
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.RenderLevelStageEvent
-import architecture.goldenboughs_lib.core.LibConstants
 
 @EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object GameRenderEvents {

@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.common.payload.toc
 
 import architecture.goldenboughs_lib.api.payload.ToClientPayload
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.getTriggerableAnimations
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
@@ -13,7 +13,6 @@ import software.bernie.geckolib.animatable.GeoAnimatable
 import software.bernie.geckolib.animation.AnimatableManager
 import software.bernie.geckolib.animation.AnimationController
 import software.bernie.geckolib.util.GeckoLibUtil
-import architecture.goldenboughs_lib.core.LibConstants
 
 @JvmRecord
 data class GeckolibAnimationSynchroPayload(

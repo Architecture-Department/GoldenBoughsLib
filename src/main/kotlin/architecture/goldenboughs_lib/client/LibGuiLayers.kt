@@ -1,6 +1,5 @@
 package architecture.goldenboughs_lib.client
 
-import architecture.goldenboughs_lib.core.Lib
 import architecture.goldenboughs_lib.core.LibConstants
 
 object LibGuiLayers {

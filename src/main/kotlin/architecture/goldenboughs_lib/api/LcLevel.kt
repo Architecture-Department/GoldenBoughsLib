@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.ColorUtil
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
@@ -11,7 +11,6 @@ import net.minecraft.util.ByIdMap
 import net.minecraft.util.StringRepresentable
 import org.jetbrains.annotations.Contract
 import java.util.*
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 脑叶等级

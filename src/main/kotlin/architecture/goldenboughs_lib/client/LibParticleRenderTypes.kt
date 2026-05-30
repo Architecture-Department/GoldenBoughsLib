@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferBuilder
 import com.mojang.blaze3d.vertex.DefaultVertexFormat
@@ -10,7 +10,6 @@ import net.minecraft.client.particle.ParticleRenderType
 import net.minecraft.client.renderer.GameRenderer
 import net.minecraft.client.renderer.texture.TextureAtlas
 import net.minecraft.client.renderer.texture.TextureManager
-import architecture.goldenboughs_lib.core.LibConstants
 
 object LibParticleRenderTypes {
 	@JvmField

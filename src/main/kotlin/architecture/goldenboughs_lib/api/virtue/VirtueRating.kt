@@ -1,10 +1,9 @@
 package architecture.goldenboughs_lib.api.virtue
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.minecraft.util.StringRepresentable
 import org.jetbrains.annotations.Contract
 import java.util.*
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 四德评级

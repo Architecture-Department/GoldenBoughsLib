@@ -4,7 +4,7 @@ import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.common.entiy.corpse.StaffCorpse
 import architecture.goldenboughs_lib.common.payload.toc.PlayerDamagePayload
 import architecture.goldenboughs_lib.config.LibConfig
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.eventexecute.LcDamageEventExecutes
 import architecture.goldenboughs_lib.init.LibAbsorptionShieldsRegistry
 import architecture.goldenboughs_lib.init.LibAttachmentTypes
@@ -36,7 +36,6 @@ import net.neoforged.neoforge.event.entity.living.*
 import net.neoforged.neoforge.event.tick.EntityTickEvent
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.math.abs
-import architecture.goldenboughs_lib.core.LibConstants
 
 @EventBusSubscriber(modid = LibConstants.ID)
 object LivingEntityEvents {

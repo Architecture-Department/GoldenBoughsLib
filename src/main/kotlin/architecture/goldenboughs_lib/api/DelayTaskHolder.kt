@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.InteractionHand
@@ -8,7 +8,6 @@ import net.minecraft.world.entity.EquipmentSlot
 import net.neoforged.neoforge.attachment.AttachmentHolder
 import net.neoforged.neoforge.attachment.IAttachmentHolder
 import java.util.stream.Collectors
-import architecture.goldenboughs_lib.core.LibConstants
 
 // TODO 提供饰品栏移除
 class DelayTaskHolder(val attachmentHolder: IAttachmentHolder) {

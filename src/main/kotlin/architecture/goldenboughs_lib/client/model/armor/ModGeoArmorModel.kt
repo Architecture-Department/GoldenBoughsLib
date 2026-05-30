@@ -1,10 +1,9 @@
 package architecture.goldenboughs_lib.client.model.armor
 
 import architecture.goldenboughs_lib.client.model.GeoModelExpand
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.minecraft.resources.ResourceLocation
 import software.bernie.geckolib.animatable.GeoAnimatable
-import architecture.goldenboughs_lib.core.LibConstants
 
 class ModGeoArmorModel<T : GeoAnimatable>(
 	modelPath: ResourceLocation,

@@ -2,14 +2,13 @@ package architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter
 
 import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.client.gui.hudlayers.BasicHudLayer
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import com.mojang.blaze3d.systems.RenderSystem
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.Mth
 import java.util.Map
-import architecture.goldenboughs_lib.core.LibConstants
 
 class LcDamageScreenFilterLayer : BasicHudLayer() {
 	private val rationalityFilters: MutableSet<Filter> = LinkedHashSet(4)

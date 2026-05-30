@@ -1,10 +1,9 @@
 package architecture.goldenboughs_lib.config
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.neoforged.neoforge.common.ModConfigSpec
 import org.apache.commons.lang3.tuple.Pair
 import java.util.function.Function
-import architecture.goldenboughs_lib.core.LibConstants
 
 abstract class LibConfigUtil {
 	companion object {

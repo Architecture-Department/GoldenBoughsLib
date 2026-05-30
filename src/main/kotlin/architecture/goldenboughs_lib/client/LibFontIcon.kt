@@ -1,12 +1,11 @@
 package architecture.goldenboughs_lib.client
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.chat.Style
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.StringRepresentable
-import architecture.goldenboughs_lib.core.LibConstants
 
 enum class LibFontIcon(
 	val index: Int,

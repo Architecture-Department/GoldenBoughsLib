@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.events.client
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.LcLevelUtil.getLevel
 import net.minecraft.network.chat.Component
 import net.neoforged.bus.api.EventPriority
@@ -9,7 +9,6 @@ import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.GatherEffectScreenTooltipsEvent
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent
 import java.util.*
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 物品提示/描述处理

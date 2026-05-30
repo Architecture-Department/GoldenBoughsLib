@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.common.payload.toc
 import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.api.payload.ToClientPayload
 import architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter.LcDamageScreenFilterLayer
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.PayloadUtil.sendToPlayerClient
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
@@ -13,7 +13,6 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.network.handling.IPayloadContext
 import java.util.*
-import architecture.goldenboughs_lib.core.LibConstants
 
 @JvmRecord
 data class PlayerDamagePayload(

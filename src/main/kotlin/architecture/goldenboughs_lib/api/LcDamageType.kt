@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api
 
 import architecture.goldenboughs_lib.client.LibFontIcon
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttributes
 import architecture.goldenboughs_lib.init.LibDamageSources.Companion.createDamage
 import architecture.goldenboughs_lib.init.LibDamageTypes
@@ -25,7 +25,6 @@ import net.minecraft.world.entity.ai.attributes.Attribute
 import net.minecraft.world.level.Level
 import org.jetbrains.annotations.Contract
 import java.util.*
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 脑叶伤害类型

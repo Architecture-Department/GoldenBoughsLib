@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.events.client
 
 import architecture.goldenboughs_lib.client.renderer.StaffCorpseRenderer
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.eventexecute.client.EntityRenderEventExecute
 import architecture.goldenboughs_lib.init.LibEntityTypes
 import net.minecraft.client.Minecraft
@@ -13,7 +13,6 @@ import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.EntityRenderersEvent
 import net.neoforged.neoforge.client.event.RenderLivingEvent
 import net.neoforged.neoforge.client.event.RenderPlayerEvent
-import architecture.goldenboughs_lib.core.LibConstants
 
 @EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object EntityRenderEvents {

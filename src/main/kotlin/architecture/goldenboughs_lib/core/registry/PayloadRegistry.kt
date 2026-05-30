@@ -7,7 +7,7 @@ import architecture.goldenboughs_lib.common.payload.LivingEntityAttackStrengthTi
 import architecture.goldenboughs_lib.common.payload.toc.GeckolibAnimationSynchroPayload
 import architecture.goldenboughs_lib.common.payload.toc.PlayerDamagePayload
 import architecture.goldenboughs_lib.common.payload.tos.PlayerIGunWeaponPayload
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
@@ -16,7 +16,6 @@ import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent
 import net.neoforged.neoforge.network.handling.DirectionalPayloadHandler
 import net.neoforged.neoforge.network.registration.PayloadRegistrar
-import architecture.goldenboughs_lib.core.LibConstants
 
 @EventBusSubscriber(modid = LibConstants.ID)
 object PayloadRegistry {

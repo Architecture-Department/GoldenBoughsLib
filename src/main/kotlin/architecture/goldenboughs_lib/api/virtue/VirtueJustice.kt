@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.virtue
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttributes
 import net.minecraft.core.HolderLookup
 import net.minecraft.nbt.CompoundTag
@@ -11,7 +11,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes
 import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.attachment.IAttachmentHolder
 import net.neoforged.neoforge.common.NeoForgeMod
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 正义

@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.config
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.ModContainer
 import net.neoforged.fml.common.EventBusSubscriber
@@ -8,7 +8,6 @@ import net.neoforged.fml.config.ModConfig
 import net.neoforged.fml.event.config.ModConfigEvent.Loading
 import net.neoforged.fml.event.config.ModConfigEvent.Reloading
 import net.neoforged.neoforge.common.ModConfigSpec
-import architecture.goldenboughs_lib.core.LibConstants
 
 @EventBusSubscriber(modid = LibConstants.ID)
 object LibConfig : LibConfigUtil() {

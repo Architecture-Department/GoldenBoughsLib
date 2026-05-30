@@ -1,11 +1,10 @@
 package architecture.goldenboughs_lib.core.registry
 
 import architecture.goldenboughs_lib.common.command.RationalityDataCommands
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.event.RegisterCommandsEvent
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 指令事件

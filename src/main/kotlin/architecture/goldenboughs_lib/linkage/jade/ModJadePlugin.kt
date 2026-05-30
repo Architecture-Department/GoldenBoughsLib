@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.linkage.jade
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.LivingEntity
@@ -9,7 +9,6 @@ import snownee.jade.api.IWailaClientRegistration
 import snownee.jade.api.IWailaCommonRegistration
 import snownee.jade.api.IWailaPlugin
 import snownee.jade.api.WailaPlugin
-import architecture.goldenboughs_lib.core.LibConstants
 
 @WailaPlugin
 class ModJadePlugin : IWailaPlugin {

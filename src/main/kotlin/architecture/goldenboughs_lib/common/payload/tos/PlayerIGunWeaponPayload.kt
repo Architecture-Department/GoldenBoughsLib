@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.common.payload.tos
 
 import architecture.goldenboughs_lib.api.payload.ToServerPayload
 import architecture.goldenboughs_lib.api.world.item.IGunWeapon
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.PayloadUtil.sendToPlayerServer
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
@@ -11,7 +11,6 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.neoforged.neoforge.network.handling.IPayloadContext
-import architecture.goldenboughs_lib.core.LibConstants
 
 // TODO 替换成史诗战斗的控制系统
 @JvmRecord

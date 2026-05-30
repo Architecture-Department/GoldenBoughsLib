@@ -4,7 +4,7 @@ package architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter
 
 import architecture.goldenboughs_lib.api.AllOpe
 import architecture.goldenboughs_lib.client.gui.hudlayers.BasicHudLayer
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.RationalityUtil.getMaxRationalityValue
 import architecture.goldenboughs_lib.util.RationalityUtil.getRationalityValue
 import com.mojang.blaze3d.systems.RenderSystem
@@ -18,7 +18,6 @@ import net.minecraft.util.Mth
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
-import architecture.goldenboughs_lib.core.LibConstants
 
 class RationalityScreenFilterLayer : BasicHudLayer() {
 	private val rationalityFilters: Array<Filter> = arrayOf(

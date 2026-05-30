@@ -1,14 +1,13 @@
 package architecture.goldenboughs_lib.client.gui.hudlayers
 
 import architecture.goldenboughs_lib.client.gui.widget.HorizontalStatusBar
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.RationalityUtil.getMaxRationalityValue
 import architecture.goldenboughs_lib.util.RationalityUtil.getRationalityValue
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.ImageWidget
 import net.minecraft.resources.ResourceLocation
-import architecture.goldenboughs_lib.core.LibConstants
 
 class RationalityBarLayer : StatusBarLayer(
 	HorizontalStatusBar(

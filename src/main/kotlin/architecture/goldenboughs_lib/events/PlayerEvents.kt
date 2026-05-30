@@ -1,13 +1,12 @@
 package architecture.goldenboughs_lib.events
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.eventexecute.RationalityEventExecutes
 import net.minecraft.server.level.ServerPlayer
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.event.entity.player.PlayerEvent
 import net.neoforged.neoforge.event.tick.PlayerTickEvent
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 玩家相关事件

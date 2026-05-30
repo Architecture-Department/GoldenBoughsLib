@@ -6,7 +6,7 @@ import architecture.goldenboughs_lib.client.gui.hudlayers.chop_flavor.ChopFlavor
 import architecture.goldenboughs_lib.client.gui.hudlayers.chop_flavor.ChopFlavorLayer.Companion.init
 import architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter.LcDamageScreenFilterLayer
 import architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter.RationalityScreenFilterLayer
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.LayeredDraw
@@ -15,7 +15,6 @@ import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers
-import architecture.goldenboughs_lib.core.LibConstants
 
 @EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object GuiLayerRegistry {

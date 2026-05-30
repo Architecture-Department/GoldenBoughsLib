@@ -10,7 +10,6 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory
 import thedarkcolour.kotlinforforge.neoforge.forge.LOADING_CONTEXT
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
-import architecture.goldenboughs_lib.core.LibConstants
 
 @Mod(value = LibConstants.ID, dist = [Dist.CLIENT])
 @EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])

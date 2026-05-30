@@ -1,12 +1,11 @@
 package architecture.goldenboughs_lib.client.model
 
 import architecture.goldenboughs_lib.api.AllOpe
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.minecraft.resources.ResourceLocation
 import software.bernie.geckolib.animatable.GeoAnimatable
 import software.bernie.geckolib.cache.GeckoLibCache
 import software.bernie.geckolib.model.GeoModel
-import architecture.goldenboughs_lib.core.LibConstants
 
 @AllOpe
 class GeoModelExpand<T : GeoAnimatable>(

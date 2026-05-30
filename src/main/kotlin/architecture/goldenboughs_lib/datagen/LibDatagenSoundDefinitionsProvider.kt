@@ -1,13 +1,12 @@
 package architecture.goldenboughs_lib.datagen
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import net.minecraft.data.PackOutput
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.sounds.SoundEvent
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import net.neoforged.neoforge.common.data.SoundDefinition
 import net.neoforged.neoforge.common.data.SoundDefinitionsProvider
-import architecture.goldenboughs_lib.core.LibConstants
 
 class LibDatagenSoundDefinitionsProvider(
 	output: PackOutput,

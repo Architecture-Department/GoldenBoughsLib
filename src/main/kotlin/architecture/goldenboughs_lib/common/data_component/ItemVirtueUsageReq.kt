@@ -3,7 +3,7 @@ package architecture.goldenboughs_lib.common.data_component
 import architecture.goldenboughs_lib.api.virtue.VirtueRating
 import architecture.goldenboughs_lib.api.virtue.VirtueRating.Companion.getRating
 import architecture.goldenboughs_lib.api.virtue.VirtueType
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttributes
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import com.mojang.serialization.Codec
@@ -25,7 +25,6 @@ import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.item.component.TooltipProvider
 import java.util.function.Consumer
 import java.util.function.Function
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 物品四色属性能力使用要求提示

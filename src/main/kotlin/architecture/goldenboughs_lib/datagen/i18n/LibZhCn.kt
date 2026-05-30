@@ -4,7 +4,7 @@ import architecture.goldenboughs_lib.api.virtue.VirtueType
 import architecture.goldenboughs_lib.common.command.RationalityDataCommands
 import architecture.goldenboughs_lib.common.data_component.ItemVirtueUsageReq
 import architecture.goldenboughs_lib.config.LibConfig
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibItemTags
 import architecture.goldenboughs_lib.linkage.jade.LivingEntityVulnerable
@@ -18,7 +18,6 @@ import net.minecraft.world.item.Item
 import net.neoforged.fml.loading.FMLEnvironment
 import org.jetbrains.annotations.ApiStatus
 import java.util.function.Supplier
-import architecture.goldenboughs_lib.core.LibConstants
 
 @ApiStatus.Internal
 class LibZhCn(output: PackOutput) : DatagenI18n(output, LibConstants.ID, "zh_cn") {

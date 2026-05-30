@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.datagen.tag
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibDamageTypeTags
 import net.minecraft.core.HolderLookup
@@ -12,7 +12,6 @@ import net.neoforged.neoforge.common.Tags
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import org.jetbrains.annotations.Contract
 import java.util.concurrent.CompletableFuture
-import architecture.goldenboughs_lib.core.LibConstants
 
 class LibDatagenDamageTypeTag(
 	output: PackOutput,

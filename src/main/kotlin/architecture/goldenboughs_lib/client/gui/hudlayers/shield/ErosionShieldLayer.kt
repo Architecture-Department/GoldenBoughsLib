@@ -1,8 +1,7 @@
 package architecture.goldenboughs_lib.client.gui.hudlayers.shield
 
-import architecture.goldenboughs_lib.core.Lib
-import architecture.goldenboughs_lib.init.LibMobEffects
 import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.init.LibMobEffects
 
 class ErosionShieldLayer : ShieldBarLayer(
 	LibConstants.modRl("hud_bar/shield/erosion_shield_bar"),

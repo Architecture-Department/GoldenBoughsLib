@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.common.payload
 
 import architecture.goldenboughs_lib.api.payload.ToServerAndClientPayload
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.setAttackStrengthTicker
 import io.netty.buffer.ByteBuf
 import net.minecraft.client.player.AbstractClientPlayer
@@ -11,7 +11,6 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.network.handling.IPayloadContext
-import architecture.goldenboughs_lib.core.LibConstants
 
 @JvmRecord
 data class LivingEntityAttackStrengthTickerPayload(

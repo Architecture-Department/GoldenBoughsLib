@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.events
 
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.PiercingUtil
 import architecture.goldenboughs_lib.util.PiercingUtil.hasPiercingTag
 import architecture.goldenboughs_lib.util.PiercingUtil.performPierceDetection
@@ -13,7 +13,6 @@ import net.neoforged.bus.api.EventPriority
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.event.tick.EntityTickEvent
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 弹射物事件监听器

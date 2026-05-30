@@ -9,7 +9,7 @@ import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType
 import architecture.goldenboughs_lib.api.capability.item.IItemLcLevel
 import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq
 import architecture.goldenboughs_lib.api.capability.item.ItemLcLevel
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibCapabilitys
 import architecture.goldenboughs_lib.init.LibItems
 import architecture.goldenboughs_lib.util.LcLevelUtil
@@ -32,7 +32,6 @@ import net.neoforged.neoforge.capabilities.EntityCapability
 import net.neoforged.neoforge.capabilities.ItemCapability
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent
 import java.util.function.Supplier
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 注册能力

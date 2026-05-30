@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.core.registry.client
 
 import architecture.goldenboughs_lib.api.LcDamageType
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import architecture.goldenboughs_lib.init.LibItems
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction
@@ -12,7 +12,6 @@ import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 物品渲染附加

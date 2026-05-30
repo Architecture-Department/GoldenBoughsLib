@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.client.gui.hudlayers
 
 import architecture.goldenboughs_lib.client.gui.widget.HorizontalStatusBar
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.TextUtil.formatNumberPlaces
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.Gui
@@ -10,7 +10,6 @@ import net.minecraft.client.gui.components.ImageWidget
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.resources.ResourceLocation
-import architecture.goldenboughs_lib.core.LibConstants
 
 class NewHealthBarLayer : StatusBarLayer(
 	HorizontalStatusBar(

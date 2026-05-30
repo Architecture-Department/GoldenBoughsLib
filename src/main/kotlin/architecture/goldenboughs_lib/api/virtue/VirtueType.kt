@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.api.virtue
 
 import architecture.goldenboughs_lib.api.ColourText
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import architecture.goldenboughs_lib.util.ColorUtil.rgbColor
 import com.mojang.serialization.Codec
@@ -14,7 +14,6 @@ import net.minecraft.util.StringRepresentable
 import net.neoforged.neoforge.attachment.AttachmentType
 import java.util.function.IntFunction
 import java.util.function.Supplier
-import architecture.goldenboughs_lib.core.LibConstants
 
 /**
  * 心核四德 简称 四德

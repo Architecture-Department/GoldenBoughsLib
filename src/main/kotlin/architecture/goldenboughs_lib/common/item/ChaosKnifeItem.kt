@@ -4,7 +4,7 @@ import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType
 import architecture.goldenboughs_lib.api.world.item.IMeleeEgoWeaponItem
 import architecture.goldenboughs_lib.common.command.LcDamageTypeDataComponent
-import architecture.goldenboughs_lib.core.Lib
+import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.InteractionHand
@@ -15,7 +15,6 @@ import net.minecraft.world.item.SwordItem
 import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.level.Level
 import net.neoforged.neoforge.common.SimpleTier
-import architecture.goldenboughs_lib.core.LibConstants
 
 /** 混沌刀 */
 class ChaosKnifeItem(itemProperties: Properties, builder: IMeleeEgoWeaponItem.Builder) : SwordItem(
