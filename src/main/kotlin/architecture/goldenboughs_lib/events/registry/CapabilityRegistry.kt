@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.core.registry
+package architecture.goldenboughs_lib.events.registry
 
 import architecture.goldenboughs_lib.api.LcLevel
 import architecture.goldenboughs_lib.api.capability.block.BlockLcLevel

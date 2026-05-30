@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.core.registry
+package architecture.goldenboughs_lib.events.registry
 
 import architecture.goldenboughs_lib.common.command.RationalityDataCommands
 import architecture.goldenboughs_lib.core.LibConstants

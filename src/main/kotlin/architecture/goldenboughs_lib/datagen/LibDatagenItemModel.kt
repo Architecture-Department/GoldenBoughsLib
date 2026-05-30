@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.datagen
 
 import architecture.goldenboughs_lib.core.LibConstants
-import architecture.goldenboughs_lib.core.registry.client.LibItemPropertyRenderersRegistrar
+import architecture.goldenboughs_lib.events.registry.client.LibItemPropertyRenderersRegistrar
 import architecture.goldenboughs_lib.init.LibItems
 import architecture.goldenboughs_lib.util.datagen.ItemModelUtil.createModelFile
 import architecture.goldenboughs_lib.util.datagen.ItemModelUtil.getParent

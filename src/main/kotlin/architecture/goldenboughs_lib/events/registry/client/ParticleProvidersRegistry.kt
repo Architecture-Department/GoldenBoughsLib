@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.core.registry.client
+package architecture.goldenboughs_lib.events.registry.client
 
 import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle
 import architecture.goldenboughs_lib.client.particle.text.DamageTextParticle

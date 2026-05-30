@@ -4,7 +4,7 @@ import architecture.goldenboughs_lib.api.LcLevel
 import architecture.goldenboughs_lib.api.capability.block.IBlockLcLevel
 import architecture.goldenboughs_lib.api.capability.entity.IEntityLcLevel
 import architecture.goldenboughs_lib.api.capability.item.IItemLcLevel
-import architecture.goldenboughs_lib.core.registry.CapabilityRegistry
+import architecture.goldenboughs_lib.events.registry.CapabilityRegistry
 import architecture.goldenboughs_lib.init.LibCapabilitys
 import net.minecraft.core.BlockPos
 import net.minecraft.world.entity.Entity
