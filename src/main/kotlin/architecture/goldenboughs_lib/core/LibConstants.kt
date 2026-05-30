@@ -1,15 +1,17 @@
 package architecture.goldenboughs_lib.core
 
 import architecture.goldenboughs_lib.util.LibUtil.rlOf
+import io.netty.buffer.ByteBuf
 import net.minecraft.core.Registry
+import net.minecraft.network.codec.ByteBufCodecs
+import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.world.item.Item
-import net.neoforged.neoforge.registries.DeferredItem
 import net.neoforged.neoforge.registries.DeferredRegister
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import org.jetbrains.annotations.Contract
+import java.util.*
 
 object LibConstants {
 	const val ID: String = "goldenboughs_lib"
@@ -18,9 +20,9 @@ object LibConstants {
 	@JvmField
 	val LOGGER: Logger = LogManager.getLogger(ID)
 
-	// 例如道具类的物品等没有特殊分类的物品，例如：安吉拉的图书馆
 	@JvmField
-	val EGO: MutableSet<DeferredItem<out Item>> = HashSet()
+	val OPTIONAL_RESOURCE_LOCATION_STREAM_CODEC: StreamCodec<ByteBuf, Optional<ResourceLocation>> =
+		ByteBufCodecs.optional(ResourceLocation.STREAM_CODEC)
 
 	@JvmStatic
 	@Contract("_ -> new")

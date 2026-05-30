@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.util
 
-import net.minecraft.client.Minecraft
+import architecture.goldenboughs_lib.util.client.ClientLibUtil
 import net.minecraft.resources.ResourceLocation
 import net.neoforged.fml.loading.FMLEnvironment
 
@@ -29,10 +29,4 @@ object LibUtil {
 	fun rlOf(location: String): ResourceLocation {
 		return ResourceLocation.parse(location)
 	}
-}
-
-// 分类以避免导致客户端类加载
-object ClientLibUtil {
-	@JvmStatic
-	fun isClientSingleplayer(): Boolean = Minecraft.getInstance().isSingleplayer()
 }
