@@ -1,8 +1,9 @@
-package architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter
+﻿package architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter
 
-import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.client.gui.hudlayers.BasicHudLayer
 import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
+import architecture.goldenboughs_lib.module.rationality.hud.RationalityScreenFilterLayer
 import com.mojang.blaze3d.systems.RenderSystem
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphics

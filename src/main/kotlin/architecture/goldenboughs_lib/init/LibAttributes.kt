@@ -1,10 +1,10 @@
-package architecture.goldenboughs_lib.init
+﻿package architecture.goldenboughs_lib.init
 
-import architecture.goldenboughs_lib.common.attribute.BasicAttribute
-import architecture.goldenboughs_lib.common.attribute.MaxAttribute
-import architecture.goldenboughs_lib.common.attribute.MinAttribute
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
+import architecture.goldenboughs_lib.module.lc_damage.attribute.BasicAttribute
+import architecture.goldenboughs_lib.module.lc_damage.attribute.MaxAttribute
+import architecture.goldenboughs_lib.module.lc_damage.attribute.MinAttribute
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.world.entity.ai.attributes.Attribute
 import net.minecraft.world.entity.ai.attributes.RangedAttribute

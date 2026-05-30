@@ -1,10 +1,10 @@
-package architecture.goldenboughs_lib.init
+﻿package architecture.goldenboughs_lib.init
 
-import architecture.goldenboughs_lib.api.LcLevel
-import architecture.goldenboughs_lib.common.entiy.corpse.StaffCorpse
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
-import architecture.goldenboughs_lib.util.LcLevelUtil
+import architecture.goldenboughs_lib.module.corpse.entity.StaffCorpse
+import architecture.goldenboughs_lib.module.lc_damage.api.LcLevel
+import architecture.goldenboughs_lib.module.lc_damage.util.LcLevelUtil
 import net.minecraft.core.registries.Registries
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType

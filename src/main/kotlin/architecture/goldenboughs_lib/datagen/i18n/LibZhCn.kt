@@ -1,14 +1,14 @@
-package architecture.goldenboughs_lib.datagen.i18n
+﻿package architecture.goldenboughs_lib.datagen.i18n
 
-import architecture.goldenboughs_lib.api.virtue.VirtueType
-import architecture.goldenboughs_lib.common.command.RationalityDataCommands
-import architecture.goldenboughs_lib.common.data_component.ItemVirtueUsageReq
 import architecture.goldenboughs_lib.config.LibConfig
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibItemTags
 import architecture.goldenboughs_lib.linkage.jade.LivingEntityVulnerable
 import architecture.goldenboughs_lib.linkage.jade.ModJadePlugin
+import architecture.goldenboughs_lib.module.rationality.command.RationalityDataCommands
+import architecture.goldenboughs_lib.module.virtue.api.VirtueType
+import architecture.goldenboughs_lib.module.virtue.data_component.ItemVirtueUsageReq
 import net.minecraft.data.PackOutput
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.world.effect.MobEffect

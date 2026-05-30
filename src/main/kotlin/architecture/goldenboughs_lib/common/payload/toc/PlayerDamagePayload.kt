@@ -1,9 +1,9 @@
-package architecture.goldenboughs_lib.common.payload.toc
+﻿package architecture.goldenboughs_lib.common.payload.toc
 
-import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.api.payload.ToClientPayload
 import architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter.LcDamageScreenFilterLayer
 import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
 import architecture.goldenboughs_lib.util.PayloadUtil.sendToPlayerClient
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.codec.ByteBufCodecs

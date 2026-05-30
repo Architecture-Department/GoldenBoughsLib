@@ -1,9 +1,9 @@
-package architecture.goldenboughs_lib.api.world.item
+﻿package architecture.goldenboughs_lib.api.world.item
 
 import architecture.goldenboughs_lib.api.AllOpe
-import architecture.goldenboughs_lib.api.LcDamageType
-import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType
 import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
+import architecture.goldenboughs_lib.module.lc_damage.capability.IItemLcDamageType
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.component.ItemAttributeModifiers
 

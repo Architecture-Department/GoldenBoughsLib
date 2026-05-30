@@ -1,6 +1,6 @@
-package architecture.goldenboughs_lib.linkage.jade
+﻿package architecture.goldenboughs_lib.linkage.jade
 
-import architecture.goldenboughs_lib.util.LcLevelUtil.getLevel
+import architecture.goldenboughs_lib.module.lc_damage.util.LcLevelUtil.getLevel
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import snownee.jade.api.BlockAccessor

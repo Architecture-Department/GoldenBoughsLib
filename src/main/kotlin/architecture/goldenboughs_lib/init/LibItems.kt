@@ -1,10 +1,10 @@
-package architecture.goldenboughs_lib.init
+﻿package architecture.goldenboughs_lib.init
 
 import architecture.goldenboughs_lib.api.world.item.IMeleeEgoWeaponItem
 import architecture.goldenboughs_lib.common.item.ChaosKnifeItem
-import architecture.goldenboughs_lib.common.item.CreativeRationalityToolItem
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
+import architecture.goldenboughs_lib.module.rationality.item.CreativeRationalityToolItem
 import net.minecraft.world.item.Item
 import net.neoforged.neoforge.registries.DeferredItem
 import net.neoforged.neoforge.registries.DeferredRegister

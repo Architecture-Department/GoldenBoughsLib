@@ -1,11 +1,11 @@
-package architecture.goldenboughs_lib.common.item
+﻿package architecture.goldenboughs_lib.common.item
 
-import architecture.goldenboughs_lib.api.LcDamageType
-import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType
 import architecture.goldenboughs_lib.api.world.item.IMeleeEgoWeaponItem
 import architecture.goldenboughs_lib.common.command.LcDamageTypeDataComponent
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
+import architecture.goldenboughs_lib.module.lc_damage.capability.IItemLcDamageType
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder

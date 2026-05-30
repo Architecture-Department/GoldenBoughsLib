@@ -1,4 +1,4 @@
-package architecture.goldenboughs_lib.api.capability.item
+﻿package architecture.goldenboughs_lib.api.capability.item
 
 import architecture.goldenboughs_lib.api.AllOpe
 import net.minecraft.world.entity.LivingEntity
@@ -9,7 +9,7 @@ import net.minecraft.world.level.Level
  * 带有需求的物品 如果不满足要求则触发
  * 
  * 
- * 一般捆绑[architecture.goldenboughs_lib.common.data_component.ItemVirtueUsageReq]或
+ * 一般捆绑[architecture.goldenboughs_lib.module.virtue.data_component.ItemVirtueUsageReq]或
  * [architecture.goldenboughs_lib.init.LibDataComponentTypes.ITEM_VIRTUE_USAGE_REQ]
  */
 @AllOpe

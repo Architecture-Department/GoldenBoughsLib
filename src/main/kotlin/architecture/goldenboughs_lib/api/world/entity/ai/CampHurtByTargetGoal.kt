@@ -1,6 +1,6 @@
-package architecture.goldenboughs_lib.api.world.entity.ai
+﻿package architecture.goldenboughs_lib.api.world.entity.ai
 
-import architecture.goldenboughs_lib.util.LcLevelUtil.getLevel
+import architecture.goldenboughs_lib.module.lc_damage.util.LcLevelUtil.getLevel
 import net.minecraft.world.entity.Mob
 import java.util.function.Predicate
 

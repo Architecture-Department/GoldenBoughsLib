@@ -1,7 +1,7 @@
-package architecture.goldenboughs_lib.events
+﻿package architecture.goldenboughs_lib.events
 
 import architecture.goldenboughs_lib.core.LibConstants
-import architecture.goldenboughs_lib.eventexecute.RationalityEventExecutes
+import architecture.goldenboughs_lib.module.rationality.event.RationalityEventExecutes
 import net.minecraft.server.level.ServerPlayer
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber

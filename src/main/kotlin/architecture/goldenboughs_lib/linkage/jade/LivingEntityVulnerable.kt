@@ -1,7 +1,7 @@
-package architecture.goldenboughs_lib.linkage.jade
+﻿package architecture.goldenboughs_lib.linkage.jade
 
-import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
 import net.minecraft.core.Holder
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation

@@ -1,8 +1,8 @@
-package architecture.goldenboughs_lib.datagen
+﻿package architecture.goldenboughs_lib.datagen
 
-import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle
 import architecture.goldenboughs_lib.core.LibConstants.modRl
 import architecture.goldenboughs_lib.init.LibParticleTypes
+import architecture.goldenboughs_lib.module.lc_damage.particle.LcDamageIconParticle
 import net.minecraft.core.particles.ParticleType
 import net.minecraft.data.PackOutput
 import net.neoforged.neoforge.common.data.ExistingFileHelper

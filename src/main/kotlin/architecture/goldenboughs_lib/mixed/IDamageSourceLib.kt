@@ -1,8 +1,8 @@
-package architecture.goldenboughs_lib.mixed
+﻿package architecture.goldenboughs_lib.mixed
 
-import architecture.goldenboughs_lib.api.LcDamageType
-import architecture.goldenboughs_lib.api.LcLevel
 import architecture.goldenboughs_lib.api.NoMixinException
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
+import architecture.goldenboughs_lib.module.lc_damage.api.LcLevel
 import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.item.ItemStack
 

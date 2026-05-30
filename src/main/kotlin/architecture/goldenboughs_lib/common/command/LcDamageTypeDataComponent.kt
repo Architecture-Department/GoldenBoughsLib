@@ -1,6 +1,6 @@
-package architecture.goldenboughs_lib.common.command
+﻿package architecture.goldenboughs_lib.common.command
 
-import architecture.goldenboughs_lib.api.LcDamageType
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
 import com.google.common.collect.Lists
 import com.google.common.collect.Sets
 import com.mojang.serialization.Codec

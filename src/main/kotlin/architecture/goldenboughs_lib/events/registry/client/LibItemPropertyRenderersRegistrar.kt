@@ -1,9 +1,9 @@
-package architecture.goldenboughs_lib.events.registry.client
+﻿package architecture.goldenboughs_lib.events.registry.client
 
-import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import architecture.goldenboughs_lib.init.LibItems
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction
 import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraft.resources.ResourceLocation

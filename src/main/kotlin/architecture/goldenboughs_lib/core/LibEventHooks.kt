@@ -1,6 +1,6 @@
-package architecture.goldenboughs_lib.core
+﻿package architecture.goldenboughs_lib.core
 
-import architecture.goldenboughs_lib.event.rationality.RationalityEvent.Modify
+import architecture.goldenboughs_lib.module.rationality.event.RationalityEvent.Modify
 import net.minecraft.world.entity.player.Player
 import net.neoforged.fml.ModLoader
 import java.util.Map

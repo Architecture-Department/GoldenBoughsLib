@@ -1,18 +1,12 @@
-package architecture.goldenboughs_lib.events.registry
+﻿package architecture.goldenboughs_lib.events.registry
 
-import architecture.goldenboughs_lib.api.LcLevel
-import architecture.goldenboughs_lib.api.capability.block.BlockLcLevel
-import architecture.goldenboughs_lib.api.capability.block.IBlockLcLevel
-import architecture.goldenboughs_lib.api.capability.entity.EntityLcLevel
-import architecture.goldenboughs_lib.api.capability.entity.IEntityLcLevel
-import architecture.goldenboughs_lib.api.capability.item.IItemLcDamageType
-import architecture.goldenboughs_lib.api.capability.item.IItemLcLevel
 import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq
-import architecture.goldenboughs_lib.api.capability.item.ItemLcLevel
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibCapabilitys
 import architecture.goldenboughs_lib.init.LibItems
-import architecture.goldenboughs_lib.util.LcLevelUtil
+import architecture.goldenboughs_lib.module.lc_damage.api.LcLevel
+import architecture.goldenboughs_lib.module.lc_damage.capability.*
+import architecture.goldenboughs_lib.module.lc_damage.util.LcLevelUtil
 import net.minecraft.core.BlockPos
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.world.entity.EntityType

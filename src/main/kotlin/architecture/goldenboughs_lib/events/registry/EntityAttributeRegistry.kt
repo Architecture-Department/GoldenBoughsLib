@@ -1,9 +1,9 @@
-package architecture.goldenboughs_lib.events.registry
+﻿package architecture.goldenboughs_lib.events.registry
 
-import architecture.goldenboughs_lib.api.LcLevel
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttributes
 import architecture.goldenboughs_lib.init.LibEntityTypes
+import architecture.goldenboughs_lib.module.lc_damage.api.LcLevel
 import net.minecraft.core.Holder
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.LivingEntity

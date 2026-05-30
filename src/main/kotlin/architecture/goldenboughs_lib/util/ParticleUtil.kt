@@ -1,11 +1,11 @@
-package architecture.goldenboughs_lib.util
+﻿package architecture.goldenboughs_lib.util
 
-import architecture.goldenboughs_lib.api.LcDamageType
 import architecture.goldenboughs_lib.client.LibFontIcon
-import architecture.goldenboughs_lib.client.particle.text.DamageTextParticle
 import architecture.goldenboughs_lib.client.particle.text.TextParticleAlignType
 import architecture.goldenboughs_lib.client.particle.text.TextParticleBuilder
 import architecture.goldenboughs_lib.client.particle.text.TextParticleStrokeType
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
+import architecture.goldenboughs_lib.module.lc_damage.particle.DamageTextParticle
 import net.minecraft.core.Holder
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent

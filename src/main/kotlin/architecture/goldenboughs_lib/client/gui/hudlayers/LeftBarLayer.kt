@@ -1,11 +1,12 @@
-package architecture.goldenboughs_lib.client.gui.hudlayers
+﻿package architecture.goldenboughs_lib.client.gui.hudlayers
 
-import architecture.goldenboughs_lib.client.gui.hudlayers.shield.ErosionShieldLayer
-import architecture.goldenboughs_lib.client.gui.hudlayers.shield.PhysicShieldLayer
-import architecture.goldenboughs_lib.client.gui.hudlayers.shield.SoulShieldLayer
-import architecture.goldenboughs_lib.client.gui.hudlayers.shield.SpiritShieldLayer
 import architecture.goldenboughs_lib.config.LibConfig
 import architecture.goldenboughs_lib.init.LibMobEffects
+import architecture.goldenboughs_lib.module.rationality.hud.RationalityBarLayer
+import architecture.goldenboughs_lib.module.shield.hud.ErosionShieldLayer
+import architecture.goldenboughs_lib.module.shield.hud.PhysicShieldLayer
+import architecture.goldenboughs_lib.module.shield.hud.SoulShieldLayer
+import architecture.goldenboughs_lib.module.shield.hud.SpiritShieldLayer
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphics
 

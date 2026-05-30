@@ -1,11 +1,11 @@
-package architecture.goldenboughs_lib.init
+﻿package architecture.goldenboughs_lib.init
 
 import architecture.goldenboughs_lib.api.DelayTaskHolder
-import architecture.goldenboughs_lib.api.virtue.VirtueFortitude
-import architecture.goldenboughs_lib.api.virtue.VirtueJustice
-import architecture.goldenboughs_lib.api.virtue.VirtuePrudence
-import architecture.goldenboughs_lib.api.virtue.VirtueTemperance
 import architecture.goldenboughs_lib.core.LibConstants.modRegister
+import architecture.goldenboughs_lib.module.virtue.api.VirtueFortitude
+import architecture.goldenboughs_lib.module.virtue.api.VirtueJustice
+import architecture.goldenboughs_lib.module.virtue.api.VirtuePrudence
+import architecture.goldenboughs_lib.module.virtue.api.VirtueTemperance
 import com.mojang.serialization.Codec
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.world.entity.Entity

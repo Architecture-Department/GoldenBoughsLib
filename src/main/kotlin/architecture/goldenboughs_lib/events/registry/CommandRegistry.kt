@@ -1,7 +1,7 @@
-package architecture.goldenboughs_lib.events.registry
+﻿package architecture.goldenboughs_lib.events.registry
 
-import architecture.goldenboughs_lib.common.command.RationalityDataCommands
 import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.module.rationality.command.RationalityDataCommands
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.event.RegisterCommandsEvent

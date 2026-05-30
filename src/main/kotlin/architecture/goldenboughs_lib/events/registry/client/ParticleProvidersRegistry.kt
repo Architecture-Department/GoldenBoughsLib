@@ -1,10 +1,10 @@
-package architecture.goldenboughs_lib.events.registry.client
+﻿package architecture.goldenboughs_lib.events.registry.client
 
-import architecture.goldenboughs_lib.client.particle.LcDamageIconParticle
-import architecture.goldenboughs_lib.client.particle.text.DamageTextParticle
 import architecture.goldenboughs_lib.client.particle.text.TextParticleProvider
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibParticleTypes
+import architecture.goldenboughs_lib.module.lc_damage.particle.DamageTextParticle
+import architecture.goldenboughs_lib.module.lc_damage.particle.LcDamageIconParticle
 import net.minecraft.client.particle.ParticleEngine
 import net.minecraft.client.particle.SpriteSet
 import net.neoforged.api.distmarker.Dist

@@ -1,7 +1,7 @@
-package architecture.goldenboughs_lib.events.client
+﻿package architecture.goldenboughs_lib.events.client
 
 import architecture.goldenboughs_lib.core.LibConstants
-import architecture.goldenboughs_lib.util.LcLevelUtil.getLevel
+import architecture.goldenboughs_lib.module.lc_damage.util.LcLevelUtil.getLevel
 import net.minecraft.network.chat.Component
 import net.neoforged.bus.api.EventPriority
 import net.neoforged.bus.api.SubscribeEvent

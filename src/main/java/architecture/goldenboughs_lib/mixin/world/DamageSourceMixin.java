@@ -1,10 +1,10 @@
 package architecture.goldenboughs_lib.mixin.world;
 
-import architecture.goldenboughs_lib.api.LcDamageType;
-import architecture.goldenboughs_lib.api.LcLevel;
 import architecture.goldenboughs_lib.mixed.IDamageSourceLib;
-import architecture.goldenboughs_lib.util.LcDamageTypeUtil;
-import architecture.goldenboughs_lib.util.LcLevelUtil;
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType;
+import architecture.goldenboughs_lib.module.lc_damage.api.LcLevel;
+import architecture.goldenboughs_lib.module.lc_damage.util.LcDamageTypeUtil;
+import architecture.goldenboughs_lib.module.lc_damage.util.LcLevelUtil;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.core.Holder;

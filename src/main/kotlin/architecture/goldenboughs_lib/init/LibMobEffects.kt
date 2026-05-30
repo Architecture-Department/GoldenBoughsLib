@@ -1,10 +1,10 @@
-package architecture.goldenboughs_lib.init
+﻿package architecture.goldenboughs_lib.init
 
-import architecture.goldenboughs_lib.api.LcDamageType
-import architecture.goldenboughs_lib.common.mobeffect.MobEffectExpand
 import architecture.goldenboughs_lib.core.LibConstants.modRegister
 import architecture.goldenboughs_lib.core.LibConstants.modRl
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
+import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
+import architecture.goldenboughs_lib.module.shield.mobeffect.MobEffectExpand
 import net.minecraft.core.Holder
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation

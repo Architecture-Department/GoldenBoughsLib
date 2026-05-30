@@ -1,12 +1,12 @@
-package architecture.goldenboughs_lib.events.registry.client
+﻿package architecture.goldenboughs_lib.events.registry.client
 
 import architecture.goldenboughs_lib.client.LibGuiLayers
 import architecture.goldenboughs_lib.client.gui.hudlayers.LeftBarLayer
 import architecture.goldenboughs_lib.client.gui.hudlayers.chop_flavor.ChopFlavorLayer
 import architecture.goldenboughs_lib.client.gui.hudlayers.chop_flavor.ChopFlavorLayer.Companion.init
 import architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter.LcDamageScreenFilterLayer
-import architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter.RationalityScreenFilterLayer
 import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.module.rationality.hud.RationalityScreenFilterLayer
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.LayeredDraw
