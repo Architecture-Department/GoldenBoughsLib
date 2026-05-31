@@ -1,7 +1,7 @@
 ﻿package architecture.goldenboughs_lib.events
 
 import architecture.goldenboughs_lib.common.payload.toc.PlayerDamagePayload
-import architecture.goldenboughs_lib.config.LibConfig
+import architecture.goldenboughs_lib.core.LibConfig
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAbsorptionShieldsRegistry
 import architecture.goldenboughs_lib.init.LibAttachmentTypes

@@ -2,7 +2,7 @@ package architecture.goldenboughs_lib.module.shield.hud
 
 import architecture.goldenboughs_lib.client.gui.hudlayers.StatusBarLayer
 import architecture.goldenboughs_lib.client.gui.widget.HorizontalStatusBar
-import architecture.goldenboughs_lib.config.LibConfig
+import architecture.goldenboughs_lib.core.LibConfig
 import architecture.goldenboughs_lib.init.LibAbsorptionShieldsRegistry
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphics

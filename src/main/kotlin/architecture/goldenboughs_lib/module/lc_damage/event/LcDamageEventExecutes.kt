@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.module.lc_damage.event
 
-import architecture.goldenboughs_lib.config.LibConfig
+import architecture.goldenboughs_lib.core.LibConfig
 import architecture.goldenboughs_lib.init.LibAbsorptionShieldsRegistry
 import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
 import architecture.goldenboughs_lib.module.lc_damage.api.LcLevel

@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.module.rationality.event
 
-import architecture.goldenboughs_lib.config.LibConfig
+import architecture.goldenboughs_lib.core.LibConfig
 import architecture.goldenboughs_lib.module.rationality.util.RationalityUtil.getMaxRationalityValue
 import architecture.goldenboughs_lib.module.rationality.util.RationalityUtil.getNaturalRecoveryRate
 import architecture.goldenboughs_lib.module.rationality.util.RationalityUtil.getPauseRecoveryTick

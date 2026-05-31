@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.client.gui.hudlayers
 
-import architecture.goldenboughs_lib.config.LibConfig
+import architecture.goldenboughs_lib.core.LibConfig
 import architecture.goldenboughs_lib.init.LibMobEffects
 import architecture.goldenboughs_lib.module.rationality.hud.RationalityBarLayer
 import architecture.goldenboughs_lib.module.shield.hud.ErosionShieldLayer

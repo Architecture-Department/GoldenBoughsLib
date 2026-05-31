@@ -1,6 +1,5 @@
 package architecture.goldenboughs_lib.core
 
-import architecture.goldenboughs_lib.config.LibConfig
 import architecture.goldenboughs_lib.core.LibConstants.LOGGER
 import architecture.goldenboughs_lib.init.*
 import net.neoforged.bus.api.SubscribeEvent

@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.init
 
-import architecture.goldenboughs_lib.config.LibConfig
+import architecture.goldenboughs_lib.core.LibConfig
 import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.sounds.SoundEvent

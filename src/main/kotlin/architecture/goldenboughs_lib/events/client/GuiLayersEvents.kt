@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.events.client
 
 import architecture.goldenboughs_lib.client.LibGuiLayers
-import architecture.goldenboughs_lib.config.LibConfig
+import architecture.goldenboughs_lib.core.LibConfig
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.GunWeaponUtil
 import net.minecraft.client.AttackIndicatorStatus

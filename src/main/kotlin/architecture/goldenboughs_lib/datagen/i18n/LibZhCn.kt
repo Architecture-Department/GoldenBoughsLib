@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.datagen.i18n
 
-import architecture.goldenboughs_lib.config.LibConfig
+import architecture.goldenboughs_lib.core.LibConfig
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibItemTags
@@ -117,10 +117,13 @@ class LibZhCn(output: PackOutput) : DatagenI18n(output, LibConstants.ID, "zh_cn"
 		//endregion
 
 		//region 配置
-		add(LibConfig.CLIENT.enableNewHealthBar, "是否开启新玩家生命条")
-		add(LibConfig.CLIENT.enableLcColorDamageFilter, "是否开启玩家遭受四色伤害滤镜")
-		add(LibConfig.CLIENT.enableLowRationalityFilter, "是否开启玩家低理智滤镜")
-		add(LibConfig.SERVER.enableNaturalRationalityRationality, "是否开启自然恢复理智值")
+		add(LibConfig.CLIENT.enableNewHealthBar, "玩家的新生命条")
+		add(LibConfig.CLIENT.enableLcColorDamageFilter, "玩家遭受四色伤害滤镜")
+		add(LibConfig.CLIENT.enableLowRationalityFilter, "玩家低理智滤镜")
+		add(LibConfig.SERVER.enableNaturalRationalityRationality, "自然恢复理智值")
+		add(LibConfig.SERVER.enableMultiShield, "四色护盾共存")
+		add(LibConfig.SERVER.enableShieldDamageImmunity, "护盾破盾免伤")
+		add(LibConfig.SERVER.shieldAdditionalValuePerLevel, "护盾每级增加的护盾值")
 
 		//endregion
 

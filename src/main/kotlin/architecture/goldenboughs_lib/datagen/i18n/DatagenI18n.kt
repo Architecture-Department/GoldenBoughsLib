@@ -1,6 +1,5 @@
 package architecture.goldenboughs_lib.datagen.i18n
 
-import architecture.goldenboughs_lib.config.LibConfigUtil.Companion.getTranslation
 import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.LibDatagenSoundDefinitionsProvider
 import net.minecraft.core.Holder
@@ -20,9 +19,9 @@ import java.util.function.Supplier
 
 abstract class DatagenI18n(
 	output: PackOutput,
-	modid: String,
+	val modId: String,
 	locale: String
-) : LanguageProvider(output, modid, locale) {
+) : LanguageProvider(output, modId, locale) {
 	abstract override fun addTranslations()
 
 	protected fun addPackDescription(a: String, description: String) {
@@ -72,13 +71,13 @@ abstract class DatagenI18n(
 	protected fun add(configValue: ModConfigSpec.ConfigValue<*>, value: String, tooltipValue: String) {
 		add(configValue, value)
 		add(
-			getTranslation(*configValue.path.toTypedArray() + ".tooltip", value),
+			getConfigTranslation(modId, *configValue.path.toTypedArray() + ".tooltip", value),
 			tooltipValue
 		)
 	}
 
 	protected fun add(configValue: ModConfigSpec.ConfigValue<*>, value: String) {
-		add(getTranslation(*configValue.path.toTypedArray()), value)
+		add(getConfigTranslation(modId, *configValue.path.toTypedArray()), value)
 	}
 
 	protected fun <T> add(dataComponentType: DataComponentType<T>, name: String) {
@@ -115,6 +114,19 @@ abstract class DatagenI18n(
 				builder.append(".").append(s)
 			}
 			return builder.toString()
+		}
+
+		@JvmStatic
+		fun getConfigTranslation(modId: String, vararg keys: String): String {
+			if (keys.isEmpty()) {
+				return "$modId.config"
+			}
+			val builder = StringBuilder()
+			for (key in keys) {
+				builder.append(".")
+				builder.append(key)
+			}
+			return "$modId.config$builder"
 		}
 	}
 }
