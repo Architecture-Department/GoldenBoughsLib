@@ -1,7 +1,5 @@
 package architecture.goldenboughs_lib.util
 
-import net.minecraft.util.Mth
-import org.joml.Vector3f
 import kotlin.math.sin
 
 /**
@@ -33,12 +31,4 @@ fun calculateSineCycle(minValue: Float, maxValue: Float, durationSeconds: Float,
  */
 fun mapSinToRange(min: Float, max: Float, sinValue: Float): Float {
 	return min + (1 + sinValue) * (max - min) / 2
-}
-
-fun lerp(delta: Vector3f, start: Vector3f, t: Float): Vector3f {
-	return Vector3f(
-		Mth.lerp(delta.x, start.x, t),
-		Mth.lerp(delta.y, start.y, t),
-		Mth.lerp(delta.z, start.z, t)
-	)
 }
