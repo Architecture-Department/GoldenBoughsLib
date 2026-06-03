@@ -12,7 +12,7 @@ import net.neoforged.neoforge.client.event.ModelEvent
 @EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object ModEvents {
 	@SubscribeEvent
-	fun registerAdditional(event: ModelEvent.RegisterAdditional) {
+	fun onRegisterAdditional(event: ModelEvent.RegisterAdditional) {
 		BuiltInRegistries.ITEM.forEach {
 			val key = BuiltInRegistries.ITEM.getKey(it)
 			val optional =

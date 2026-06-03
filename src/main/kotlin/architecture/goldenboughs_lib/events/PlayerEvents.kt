@@ -14,7 +14,7 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent
 @EventBusSubscriber(modid = LibConstants.ID)
 object PlayerEvents {
 	@SubscribeEvent
-	fun tickPre(event: PlayerTickEvent.Pre) {
+	fun onTickPre(event: PlayerTickEvent.Pre) {
 		val player = event.entity
 		if (player is ServerPlayer) {
 			RationalityEventExecutes.refreshRationalityValue(player)
@@ -25,13 +25,13 @@ object PlayerEvents {
 	 * 玩家重生或维度切换后
 	 */
 	@SubscribeEvent
-	fun reset(event: PlayerEvent.Clone) {
+	fun onReset(event: PlayerEvent.Clone) {
 	}
 
 	/**
 	 * 登录到世界-此时客户端玩家已创建
 	 */
 	@SubscribeEvent
-	fun loggedIn(event: PlayerEvent.PlayerLoggedInEvent) {
+	fun onLoggedIn(event: PlayerEvent.PlayerLoggedInEvent) {
 	}
 }

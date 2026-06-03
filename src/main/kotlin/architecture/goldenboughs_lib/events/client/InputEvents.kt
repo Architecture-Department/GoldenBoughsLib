@@ -27,7 +27,7 @@ object InputEvents {
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	fun interactionKeyMappingTriggered(event: InputEvent.InteractionKeyMappingTriggered) {
+	fun onInteractionKeyMappingTriggered(event: InputEvent.InteractionKeyMappingTriggered) {
 		val instance = Minecraft.getInstance()
 		if (instance.screen != null) {
 			return
@@ -67,7 +67,7 @@ object InputEvents {
 	 * 左键点击空（客户端）
 	 */
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	fun playerInteractEventLeftClickEmpty(event: PlayerInteractEvent.LeftClickEmpty) {
+	fun onPlayerInteractEventLeftClickEmpty(event: PlayerInteractEvent.LeftClickEmpty) {
 		val entity = event.entity
 		if (entity.isUsingItem && entity.getUseItem().item is IGunWeapon) {
 		}

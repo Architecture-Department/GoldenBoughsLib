@@ -43,7 +43,7 @@ object LivingEntityEvents {
 	 * 恢复事件
 	 */
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	fun entityHealEvent(event: LivingHealEvent) {
+	fun onEntityHeal(event: LivingHealEvent) {
 		val amount = event.amount
 		val entity = event.entity
 
@@ -53,7 +53,7 @@ object LivingEntityEvents {
 	}
 
 	@SubscribeEvent
-	fun livingDeath(event: LivingDeathEvent) {
+	fun onLivingDeath(event: LivingDeathEvent) {
 		val entity = event.entity
 		if (entity !is ServerPlayer) return
 
@@ -74,7 +74,7 @@ object LivingEntityEvents {
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	fun livingEquipmentChangeEvent(event: LivingEquipmentChangeEvent) {
+	fun onLivingEquipmentChange(event: LivingEquipmentChangeEvent) {
 		val entity = event.entity
 		val slot = event.slot
 
@@ -95,7 +95,7 @@ object LivingEntityEvents {
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	fun tickPre(event: EntityTickEvent.Pre) {
+	fun onTickPre(event: EntityTickEvent.Pre) {
 		val entity = event.entity
 		if (entity.isAlive) {
 			val timingRun = entity.getExistingDataOrNull(LibAttachmentTypes.DELAY_TASK_HOLDER)
@@ -104,7 +104,7 @@ object LivingEntityEvents {
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	fun livingSwapItemsEvent(event: LivingSwapItemsEvent.Hands) {
+	fun onLivingSwapItemsHands(event: LivingSwapItemsEvent.Hands) {
 		val livingEntity = event.entity
 		if (livingEntity.isAlive) {
 			val itemSwappedToMainHand = event.itemSwappedToMainHand
@@ -137,7 +137,7 @@ object LivingEntityEvents {
 	 * 即将受到伤害但还没处理
 	 */
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	fun livingIncomingDamageEvent(event: LivingIncomingDamageEvent) {
+	fun onLivingIncomingDamage(event: LivingIncomingDamageEvent) {
 		val entity = event.entity
 		if (entity.level() is ServerLevel) {
 			val damageSource = event.source
@@ -154,7 +154,7 @@ object LivingEntityEvents {
 	 * @param event 护甲受伤事件，包含伤害源、装备槽位和伤害信息，以及护盾获得
 	 */
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	fun armorHurtEvent(event: ArmorHurtEvent) {
+	fun onArmorHurt(event: ArmorHurtEvent) {
 		val damageSource = event.damageSource
 		val lcDamageType = damageSource.`goldenboughs_lib$getLcDamageType`()
 		val vulnerable: Holder<Attribute>? = lcDamageType?.vulnerable
@@ -184,7 +184,7 @@ object LivingEntityEvents {
 	 * 处理伤害效果
 	 */
 	@SubscribeEvent(priority = EventPriority.LOWEST)
-	fun dealingWithDamageEffects(event: LivingDamageEvent.Pre) {
+	fun onDealingWithDamageEffectsPre(event: LivingDamageEvent.Pre) {
 		val attackedEntity = event.entity
 		val damageSource = event.source
 		val sourceDirectEntity = damageSource.directEntity
@@ -244,7 +244,7 @@ object LivingEntityEvents {
 	 * 已应用伤害至实体事件
 	 */
 	@SubscribeEvent(priority = EventPriority.LOWEST)
-	fun appliedDamageToEntityEvent(event: LivingDamageEvent.Post) {
+	fun onAppliedDamageToEntityPost(event: LivingDamageEvent.Post) {
 		val entity = event.entity
 		val level = entity.level()
 
@@ -304,7 +304,7 @@ object LivingEntityEvents {
 	 * 效果获得事件
 	 */
 	@SubscribeEvent(priority = EventPriority.LOWEST)
-	fun effectApplyEvent(event: MobEffectEvent.Added) {
+	fun onEffectApply(event: MobEffectEvent.Added) {
 		val entity = event.entity
 		if (entity.level().isClientSide) return
 
@@ -344,6 +344,11 @@ object LivingEntityEvents {
 		clearAmount(event.entity, event.getEffectInstance()!!)
 	}
 
+	@SubscribeEvent(priority = EventPriority.LOWEST)
+	fun onEffectExpired(event: MobEffectEvent.Expired) {
+		clearAmount(event.entity, event.getEffectInstance()!!)
+	}
+
 	// 效果移除/过期：清除吸收值
 	private fun clearAmount(entity: LivingEntity, effect: MobEffectInstance) {
 		if (entity.level().isClientSide) return
@@ -353,10 +358,5 @@ object LivingEntityEvents {
 				break
 			}
 		}
-	}
-
-	@SubscribeEvent(priority = EventPriority.LOWEST)
-	fun onEffectExpired(event: MobEffectEvent.Expired) {
-		clearAmount(event.entity, event.getEffectInstance()!!)
 	}
 }

@@ -15,7 +15,7 @@ import net.neoforged.neoforge.client.gui.VanillaGuiLayers
 @EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object GuiLayersEvents {
 	@SubscribeEvent
-	fun renderGuiLayerEventPre(event: RenderGuiLayerEvent.Pre) {
+	fun onRenderGuiLayerEventPre(event: RenderGuiLayerEvent.Pre) {
 		val name = event.name
 		val instance = Minecraft.getInstance()
 
@@ -70,6 +70,6 @@ object GuiLayersEvents {
 	}
 
 	@SubscribeEvent
-	fun renderGuiLayerEventPost(event: RenderGuiLayerEvent.Post) {
+	fun onRenderGuiLayerEventPost(event: RenderGuiLayerEvent.Post) {
 	}
 }

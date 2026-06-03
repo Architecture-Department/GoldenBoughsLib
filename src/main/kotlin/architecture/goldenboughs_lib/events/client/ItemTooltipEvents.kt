@@ -16,7 +16,7 @@ import java.util.*
 @EventBusSubscriber(modid = LibConstants.ID)
 object ItemTooltipEvents {
 	@SubscribeEvent(priority = EventPriority.LOWEST)
-	fun itemTooltip(event: ItemTooltipEvent) {
+	fun onItemTooltip(event: ItemTooltipEvent) {
 		val itemStack = event.itemStack
 		val toolTip = event.toolTip
 		val size = toolTip.size
@@ -37,6 +37,6 @@ object ItemTooltipEvents {
 	}
 
 	@SubscribeEvent
-	fun gatherEffectScreenTooltipsEvent(event: GatherEffectScreenTooltipsEvent) {
+	fun onGatherEffectScreenTooltipsEvent(event: GatherEffectScreenTooltipsEvent) {
 	}
 }

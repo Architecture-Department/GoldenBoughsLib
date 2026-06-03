@@ -10,7 +10,7 @@ import net.neoforged.neoforge.client.event.RenderLevelStageEvent
 @EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
 object GameRenderEvents {
 	@SubscribeEvent
-	fun levelRender(event: RenderLevelStageEvent) {
+	fun onLevelRender(event: RenderLevelStageEvent) {
 		val stage = event.stage
 		val minecraft = Minecraft.getInstance()
 		val level = minecraft.level

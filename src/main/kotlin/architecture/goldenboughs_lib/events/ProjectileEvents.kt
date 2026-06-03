@@ -24,7 +24,7 @@ object ProjectileEvents {
 	 * 监听弹射物 tick 事件，自动应用穿透逻辑
 	 */
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	fun onProjectileTick(event: EntityTickEvent.Pre) {
+	fun onProjectileTickPre(event: EntityTickEvent.Pre) {
 		val entity = event.entity
 
 		// 只处理服务端的弹射物

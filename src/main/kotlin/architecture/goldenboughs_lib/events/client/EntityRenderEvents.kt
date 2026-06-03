@@ -27,7 +27,7 @@ object EntityRenderEvents {
 	}
 
 	@SubscribeEvent
-	fun renderLivingEventPost(event: RenderLivingEvent.Post<*, *>) {
+	fun onRenderLivingEventPost(event: RenderLivingEvent.Post<*, *>) {
 		val entity = event.entity
 		val poseStack = event.poseStack
 		val multiBufferSource = event.multiBufferSource
@@ -36,7 +36,7 @@ object EntityRenderEvents {
 	}
 
 	@SubscribeEvent
-	fun entityRenderersRegister(event: EntityRenderersEvent.RegisterRenderers) {
+	fun onEntityRenderersRegister(event: EntityRenderersEvent.RegisterRenderers) {
 		event.registerEntityRenderer(
 			LibEntityTypes.STAFF_CORPSE.get(),
 			::StaffCorpseRenderer
