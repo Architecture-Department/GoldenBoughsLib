@@ -1,9 +1,8 @@
 ﻿package architecture.goldenboughs_lib.module.lc_damage.api
 
 import architecture.goldenboughs_lib.api.ColourText
-
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.ColorUtil
+import architecture.goldenboughs_lib.util.LibUtil
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
 import io.netty.buffer.ByteBuf
@@ -40,7 +39,7 @@ enum class LcLevel(
 
 	@Contract(pure = true)
 	override fun getSerializedName(): String {
-		return LibConstants.modRlText(this.levelName)
+		return LibUtil.modRlText(this.levelName)
 	}
 
 	companion object {

@@ -1,7 +1,7 @@
 ﻿package architecture.goldenboughs_lib.events
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.module.rationality.event.RationalityEventExecutes
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.server.level.ServerPlayer
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
@@ -11,7 +11,7 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent
 /**
  * 玩家相关事件
  */
-@EventBusSubscriber(modid = LibConstants.ID)
+@EventBusSubscriber(modid = LibUtil.ID)
 object PlayerEvents {
 	@SubscribeEvent
 	fun onTickPre(event: PlayerTickEvent.Pre) {

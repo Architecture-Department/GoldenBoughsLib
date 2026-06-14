@@ -2,9 +2,9 @@
 
 import architecture.goldenboughs_lib.api.world.item.IMeleeEgoWeaponItem
 import architecture.goldenboughs_lib.common.item.ChaosKnifeItem
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
 import architecture.goldenboughs_lib.module.rationality.item.CreativeRationalityToolItem
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.world.item.Item
 import net.neoforged.neoforge.registries.DeferredItem
 import net.neoforged.neoforge.registries.DeferredRegister
@@ -12,7 +12,7 @@ import java.util.function.Function
 
 object LibItems {
 	@JvmField
-	val REGISTRY: DeferredRegister.Items = DeferredRegister.createItems(LibConstants.ID)
+	val REGISTRY: DeferredRegister.Items = DeferredRegister.createItems(LibUtil.ID)
 
 	@JvmField
 	val CREATIVE_RATIONALITY_TOOL: DeferredItem<Item> = register(

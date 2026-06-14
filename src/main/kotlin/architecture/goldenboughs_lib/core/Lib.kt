@@ -1,7 +1,8 @@
 package architecture.goldenboughs_lib.core
 
-import architecture.goldenboughs_lib.core.LibConstants.LOGGER
 import architecture.goldenboughs_lib.init.*
+import architecture.goldenboughs_lib.util.LibUtil
+import architecture.goldenboughs_lib.util.LibUtil.LOGGER
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.fml.common.Mod
@@ -9,7 +10,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent
 import thedarkcolour.kotlinforforge.neoforge.forge.LOADING_CONTEXT
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 
-@Mod(LibConstants.ID)
+@Mod(LibUtil.ID)
 @EventBusSubscriber
 object Lib {
 	init {

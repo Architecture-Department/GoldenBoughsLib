@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.common.payload
 
 import architecture.goldenboughs_lib.api.payload.ToServerAndClientPayload
-import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.util.LibUtil
 import architecture.goldenboughs_lib.util.setAttackStrengthTicker
 import io.netty.buffer.ByteBuf
 import net.minecraft.client.player.AbstractClientPlayer
@@ -35,7 +35,7 @@ data class LivingEntityAttackStrengthTickerPayload(
 	companion object {
 		@JvmField
 		val TYPE: CustomPacketPayload.Type<LivingEntityAttackStrengthTickerPayload> =
-			CustomPacketPayload.Type(LibConstants.modRl("living_entity_attack_strength_ticker_payload"))
+			CustomPacketPayload.Type(LibUtil.modRl("living_entity_attack_strength_ticker_payload"))
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<ByteBuf, LivingEntityAttackStrengthTickerPayload> =

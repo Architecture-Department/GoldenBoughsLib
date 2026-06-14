@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.client.model.armor
 
 import architecture.goldenboughs_lib.client.model.GeoModelExpand
-import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.resources.ResourceLocation
 import software.bernie.geckolib.animatable.GeoAnimatable
 
@@ -15,7 +15,7 @@ class ModGeoArmorModel<T : GeoAnimatable>(
 	constructor(pathName: ResourceLocation) : this(pathName, pathName, pathName)
 
 	override val defaultModelResource: ResourceLocation =
-		modelPath(LibConstants.modRl("armor/default.geo.json"))
+		modelPath(LibUtil.modRl("armor/default.geo.json"))
 
 	companion object {
 		@JvmStatic

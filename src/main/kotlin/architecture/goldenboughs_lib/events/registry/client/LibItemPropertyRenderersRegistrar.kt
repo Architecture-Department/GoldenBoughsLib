@@ -1,9 +1,9 @@
 ﻿package architecture.goldenboughs_lib.events.registry.client
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import architecture.goldenboughs_lib.init.LibItems
 import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction
 import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraft.resources.ResourceLocation
@@ -16,13 +16,13 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
 /**
  * 物品渲染附加
  */
-@EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = LibUtil.ID, value = [Dist.CLIENT])
 object LibItemPropertyRenderersRegistrar {
 	@JvmField
-	val MODE_BOOLEAN: ResourceLocation = LibConstants.modRl("current_lobotomy.mode_boolean")
+	val MODE_BOOLEAN: ResourceLocation = LibUtil.modRl("current_lobotomy.mode_boolean")
 
 	@JvmField
-	val CURRENT_LC_DAMAGE_TYPE: ResourceLocation = LibConstants.modRl("current_lobotomy.corporation_damage_type")
+	val CURRENT_LC_DAMAGE_TYPE: ResourceLocation = LibUtil.modRl("current_lobotomy.corporation_damage_type")
 
 	@JvmField
 	val PROPERTY_MODE_BOOLEAN: ClampedItemPropertyFunction =

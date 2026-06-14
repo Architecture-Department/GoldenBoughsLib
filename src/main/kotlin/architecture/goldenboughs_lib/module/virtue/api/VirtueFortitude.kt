@@ -1,7 +1,7 @@
 ﻿package architecture.goldenboughs_lib.module.virtue.api
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttributes
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.HolderLookup
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.RegistryFriendlyByteBuf
@@ -60,6 +60,6 @@ final class VirtueFortitude(
 
 	companion object {
 		@JvmField
-		val AMPLITUDE_ID: ResourceLocation = LibConstants.modRl("fortitude_amplitude")
+		val AMPLITUDE_ID: ResourceLocation = LibUtil.modRl("fortitude_amplitude")
 	}
 }

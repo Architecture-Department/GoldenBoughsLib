@@ -2,7 +2,6 @@
 
 import architecture.goldenboughs_lib.common.payload.toc.PlayerDamagePayload
 import architecture.goldenboughs_lib.core.LibConfig
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAbsorptionShieldsRegistry
 import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import architecture.goldenboughs_lib.init.LibEntityTypes
@@ -15,6 +14,7 @@ import architecture.goldenboughs_lib.module.rationality.util.RationalityUtil.mod
 import architecture.goldenboughs_lib.module.rationality.util.RationalityUtil.setRecoveryTick
 import architecture.goldenboughs_lib.util.GunWeaponUtil.resetChargeUp
 import architecture.goldenboughs_lib.util.GunWeaponUtil.setIsAttack
+import architecture.goldenboughs_lib.util.LibUtil
 import architecture.goldenboughs_lib.util.ParticleUtil.createDamageTextParticles
 import architecture.goldenboughs_lib.util.ParticleUtil.getText
 import net.minecraft.core.Holder
@@ -37,7 +37,7 @@ import net.neoforged.neoforge.event.tick.EntityTickEvent
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.math.abs
 
-@EventBusSubscriber(modid = LibConstants.ID)
+@EventBusSubscriber(modid = LibUtil.ID)
 object LivingEntityEvents {
 	/**
 	 * 恢复事件

@@ -1,8 +1,8 @@
 package architecture.goldenboughs_lib.init
 
-import architecture.goldenboughs_lib.core.LibConstants.modRegister
-import architecture.goldenboughs_lib.core.LibConstants.modRl
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
+import architecture.goldenboughs_lib.util.LibUtil.modRegister
+import architecture.goldenboughs_lib.util.LibUtil.modRl
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.sounds.SoundEvent
 import net.neoforged.neoforge.registries.DeferredHolder

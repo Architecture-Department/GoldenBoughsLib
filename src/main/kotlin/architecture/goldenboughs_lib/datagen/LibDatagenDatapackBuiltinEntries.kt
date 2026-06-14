@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.datagen
 
-import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.RegistrySetBuilder
 import net.minecraft.data.PackOutput
@@ -14,4 +14,4 @@ class LibDatagenDatapackBuiltinEntries(
 	output: PackOutput,
 	registries: CompletableFuture<HolderLookup.Provider>,
 	datapackEntriesBuilder: RegistrySetBuilder
-) : DatapackBuiltinEntriesProvider(output, registries, datapackEntriesBuilder, setOf(LibConstants.ID))
+) : DatapackBuiltinEntriesProvider(output, registries, datapackEntriesBuilder, setOf(LibUtil.ID))

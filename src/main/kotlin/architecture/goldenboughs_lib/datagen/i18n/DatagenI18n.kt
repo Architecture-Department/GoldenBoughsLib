@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.datagen.i18n
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.LibDatagenSoundDefinitionsProvider
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.Holder
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.data.PackOutput
@@ -108,7 +108,7 @@ abstract class DatagenI18n(
 	companion object {
 		@JvmStatic
 		fun getFormattedKey(vararg key: String): String {
-			val builder = StringBuilder(LibConstants.ID)
+			val builder = StringBuilder(LibUtil.ID)
 			builder.append(".commands")
 			for (s in key) {
 				builder.append(".").append(s)

@@ -1,10 +1,10 @@
 package architecture.goldenboughs_lib.config
 
 import architecture.goldenboughs_lib.api.BasicConfig
-import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.util.LibUtil
 import net.neoforged.neoforge.common.ModConfigSpec.*
 
-class LibServerConfig internal constructor(builder: Builder) : BasicConfig(LibConstants.ID, builder) {
+class LibServerConfig internal constructor(builder: Builder) : BasicConfig(LibUtil.ID, builder) {
 	//理智
 
 	/**

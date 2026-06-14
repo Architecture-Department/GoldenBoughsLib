@@ -1,8 +1,8 @@
 package architecture.goldenboughs_lib.datagen
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.events.registry.client.LibItemPropertyRenderersRegistrar
 import architecture.goldenboughs_lib.init.LibItems
+import architecture.goldenboughs_lib.util.LibUtil
 import architecture.goldenboughs_lib.util.datagen.ItemModelUtil.createModelFile
 import architecture.goldenboughs_lib.util.datagen.ItemModelUtil.getParent
 import net.minecraft.data.PackOutput
@@ -20,7 +20,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper
 class LibDatagenItemModel(
 	output: PackOutput,
 	existingFileHelper: ExistingFileHelper
-) : ItemModelProvider(output, LibConstants.ID, existingFileHelper) {
+) : ItemModelProvider(output, LibUtil.ID, existingFileHelper) {
 	override fun registerModels() {
 		creativeRationalityTool(LibItems.CREATIVE_RATIONALITY_TOOL.get())
 		chaosSword(LibItems.CHAOS_SWORD.get())

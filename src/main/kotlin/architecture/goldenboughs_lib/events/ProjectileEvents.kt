@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.events
 
-import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.util.LibUtil
 import architecture.goldenboughs_lib.util.PiercingUtil
 import architecture.goldenboughs_lib.util.PiercingUtil.hasPiercingTag
 import architecture.goldenboughs_lib.util.PiercingUtil.performPierceDetection
@@ -18,7 +18,7 @@ import net.neoforged.neoforge.event.tick.EntityTickEvent
  * 弹射物事件监听器
  * 自动处理带有穿透标签的弹射物
  */
-@EventBusSubscriber(modid = LibConstants.ID)
+@EventBusSubscriber(modid = LibUtil.ID)
 object ProjectileEvents {
 	/**
 	 * 监听弹射物 tick 事件，自动应用穿透逻辑

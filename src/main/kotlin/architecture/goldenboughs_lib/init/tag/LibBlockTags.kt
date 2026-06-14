@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.init.tag
 
-import architecture.goldenboughs_lib.core.LibConstants.modRl
+import architecture.goldenboughs_lib.util.LibUtil.modRl
 import architecture.goldenboughs_lib.util.LibUtil.rlOf
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.BlockTags

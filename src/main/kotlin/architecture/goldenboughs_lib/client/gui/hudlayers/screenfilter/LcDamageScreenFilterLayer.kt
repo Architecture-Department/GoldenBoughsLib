@@ -1,9 +1,9 @@
 ﻿package architecture.goldenboughs_lib.client.gui.hudlayers.screenfilter
 
 import architecture.goldenboughs_lib.client.gui.hudlayers.BasicHudLayer
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
 import architecture.goldenboughs_lib.module.rationality.hud.RationalityScreenFilterLayer
+import architecture.goldenboughs_lib.util.LibUtil
 import com.mojang.blaze3d.systems.RenderSystem
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphics
@@ -96,16 +96,16 @@ class LcDamageScreenFilterLayer : BasicHudLayer() {
 
 	companion object {
 		@JvmField
-		val PHYSICS: ResourceLocation = LibConstants.modRl("textures/gui/filter/physics.png")
+		val PHYSICS: ResourceLocation = LibUtil.modRl("textures/gui/filter/physics.png")
 
 		@JvmField
-		val SPIRIT: ResourceLocation = LibConstants.modRl("textures/gui/filter/spirit.png")
+		val SPIRIT: ResourceLocation = LibUtil.modRl("textures/gui/filter/spirit.png")
 
 		@JvmField
-		val EROSION: ResourceLocation = LibConstants.modRl("textures/gui/filter/erosion.png")
+		val EROSION: ResourceLocation = LibUtil.modRl("textures/gui/filter/erosion.png")
 
 		@JvmField
-		val THE_SOUL: ResourceLocation = LibConstants.modRl("textures/gui/filter/the_soul.png")
+		val THE_SOUL: ResourceLocation = LibUtil.modRl("textures/gui/filter/the_soul.png")
 
 		@JvmField
 		val INSTANCE: LcDamageScreenFilterLayer = LcDamageScreenFilterLayer()

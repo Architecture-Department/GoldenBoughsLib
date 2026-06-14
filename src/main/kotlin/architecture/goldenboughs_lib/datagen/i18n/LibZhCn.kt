@@ -1,7 +1,6 @@
 ﻿package architecture.goldenboughs_lib.datagen.i18n
 
 import architecture.goldenboughs_lib.core.LibConfig
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibItemTags
 import architecture.goldenboughs_lib.linkage.jade.LivingEntityVulnerable
@@ -9,6 +8,7 @@ import architecture.goldenboughs_lib.linkage.jade.ModJadePlugin
 import architecture.goldenboughs_lib.module.rationality.command.RationalityDataCommands
 import architecture.goldenboughs_lib.module.virtue.api.VirtueType
 import architecture.goldenboughs_lib.module.virtue.data_component.ItemVirtueUsageReq
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.data.PackOutput
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.world.effect.MobEffect
@@ -20,9 +20,9 @@ import org.jetbrains.annotations.ApiStatus
 import java.util.function.Supplier
 
 @ApiStatus.Internal
-class LibZhCn(output: PackOutput) : DatagenI18n(output, LibConstants.ID, "zh_cn") {
+class LibZhCn(output: PackOutput) : DatagenI18n(output, LibUtil.ID, "zh_cn") {
 	override fun addTranslations() {
-		addPackDescription(LibConstants.ID, "金枝")
+		addPackDescription(LibUtil.ID, "金枝")
 		addMobEffectList(MOB_EFFECT)
 		addAttributeList(ATTRIBUTE)
 		addSoundEventList(SOUND_EVENT)

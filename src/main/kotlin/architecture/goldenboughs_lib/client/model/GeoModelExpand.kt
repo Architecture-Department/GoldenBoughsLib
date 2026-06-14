@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.client.model
 
 import architecture.goldenboughs_lib.api.AllOpe
-import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.resources.ResourceLocation
 import software.bernie.geckolib.animatable.GeoAnimatable
 import software.bernie.geckolib.cache.GeckoLibCache
@@ -17,7 +17,7 @@ class GeoModelExpand<T : GeoAnimatable>(
 	val texturePath: ResourceLocation = texturePath.withSuffix(".png")
 	val animationsPath: ResourceLocation = animationsPath.withSuffix(".animation.json")
 
-	protected val defaultModelResource: ResourceLocation = LibConstants.modRl("geo/item/default.geo.json")
+	protected val defaultModelResource: ResourceLocation = LibUtil.modRl("geo/item/default.geo.json")
 
 	override fun getModelResource(animatable: T?): ResourceLocation =
 		if (GeckoLibCache.getBakedModels()[this.modelPath] == null) this.defaultModelResource

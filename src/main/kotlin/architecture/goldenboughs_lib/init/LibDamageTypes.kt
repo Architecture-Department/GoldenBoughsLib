@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.init
 
-import architecture.goldenboughs_lib.core.LibConstants.modRl
+import architecture.goldenboughs_lib.util.LibUtil.modRl
 import net.minecraft.core.Holder
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.worldgen.BootstrapContext

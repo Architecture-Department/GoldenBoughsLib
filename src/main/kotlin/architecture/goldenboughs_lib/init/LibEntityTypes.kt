@@ -1,10 +1,10 @@
 ﻿package architecture.goldenboughs_lib.init
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
 import architecture.goldenboughs_lib.module.corpse.entity.StaffCorpse
 import architecture.goldenboughs_lib.module.lc_damage.api.LcLevel
 import architecture.goldenboughs_lib.module.lc_damage.util.LcLevelUtil
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.registries.Registries
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
@@ -15,7 +15,7 @@ import java.util.function.Supplier
 
 object LibEntityTypes {
 	@JvmField
-	val REGISTRY: DeferredRegister<EntityType<*>> = DeferredRegister.create(Registries.ENTITY_TYPE, LibConstants.ID)
+	val REGISTRY: DeferredRegister<EntityType<*>> = DeferredRegister.create(Registries.ENTITY_TYPE, LibUtil.ID)
 
 	@JvmField
 	val STAFF_CORPSE: DeferredHolder<EntityType<*>, EntityType<StaffCorpse>> = register<StaffCorpse>(

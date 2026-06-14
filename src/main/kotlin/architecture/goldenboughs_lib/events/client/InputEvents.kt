@@ -2,8 +2,8 @@ package architecture.goldenboughs_lib.events.client
 
 import architecture.goldenboughs_lib.api.world.item.IGunWeapon
 import architecture.goldenboughs_lib.api.world.item.IPlayerItemAttackClick
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.eventexecute.client.InputEventExecute
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.client.Minecraft
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.EventPriority
@@ -13,7 +13,7 @@ import net.neoforged.neoforge.client.event.ClientTickEvent
 import net.neoforged.neoforge.client.event.InputEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent
 
-@EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = LibUtil.ID, value = [Dist.CLIENT])
 object InputEvents {
 	@SubscribeEvent
 	fun onClientTickPre(event: ClientTickEvent.Pre) {

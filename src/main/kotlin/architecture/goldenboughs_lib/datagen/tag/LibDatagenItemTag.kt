@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.datagen.tag
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.tag.LibItemTags
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.data.tags.ItemTagsProvider
@@ -17,7 +17,7 @@ class LibDatagenItemTag(
 	lookupProvider: CompletableFuture<HolderLookup.Provider>,
 	blockTags: CompletableFuture<TagLookup<Block>>,
 	existingFileHelper: ExistingFileHelper
-) : ItemTagsProvider(output, lookupProvider, blockTags, LibConstants.ID, existingFileHelper) {
+) : ItemTagsProvider(output, lookupProvider, blockTags, LibUtil.ID, existingFileHelper) {
 	override fun addTags(provider: HolderLookup.Provider) {
 		tag(LibItemTags.EGO)
 	}

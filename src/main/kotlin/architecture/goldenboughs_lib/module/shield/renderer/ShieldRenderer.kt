@@ -2,9 +2,9 @@
 
 package architecture.goldenboughs_lib.module.shield.renderer
 
-import architecture.goldenboughs_lib.core.LibConstants.modRl
 import architecture.goldenboughs_lib.init.LibAbsorptionShieldsRegistry
 import architecture.goldenboughs_lib.module.shield.model.ShieldSphereMesh
+import architecture.goldenboughs_lib.util.LibUtil.modRl
 import com.mojang.blaze3d.vertex.DefaultVertexFormat
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexFormat

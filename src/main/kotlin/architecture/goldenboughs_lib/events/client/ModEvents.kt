@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.events.client
 
-import architecture.goldenboughs_lib.core.LibConstants
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.client.Minecraft
 import net.minecraft.client.resources.model.ModelResourceLocation
 import net.minecraft.core.registries.BuiltInRegistries
@@ -9,7 +9,7 @@ import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.ModelEvent
 
-@EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = LibUtil.ID, value = [Dist.CLIENT])
 object ModEvents {
 	@SubscribeEvent
 	fun onRegisterAdditional(event: ModelEvent.RegisterAdditional) {

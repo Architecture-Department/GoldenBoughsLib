@@ -1,6 +1,5 @@
 package architecture.goldenboughs_lib.util
 
-import architecture.goldenboughs_lib.core.LibConstants
 import com.mojang.brigadier.context.CommandContext
 import com.mojang.brigadier.context.ParsedArgument
 
@@ -11,7 +10,7 @@ object CommandContextUtil {
 			argumentsField.isAccessible = true
 			return argumentsField.get(this) as? Map<String, ParsedArgument<T, *>>
 		} catch (exception: Exception) {
-			LibConstants.LOGGER.error("CommandContext.getArguments() error: ${exception.message}")
+			LibUtil.LOGGER.error("CommandContext.getArguments() error: ${exception.message}")
 		}
 		return null
 	}

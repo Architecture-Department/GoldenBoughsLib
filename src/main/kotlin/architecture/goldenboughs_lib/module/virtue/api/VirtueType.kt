@@ -1,9 +1,9 @@
 ﻿package architecture.goldenboughs_lib.module.virtue.api
 
 import architecture.goldenboughs_lib.api.ColourText
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import architecture.goldenboughs_lib.util.ColorUtil.rgbColor
+import architecture.goldenboughs_lib.util.LibUtil
 import com.mojang.serialization.Codec
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.Holder
@@ -32,7 +32,7 @@ enum class VirtueType(
 		0,
 		"fortitude",
 		LibAttachmentTypes.FORTITUDE,
-		LibConstants.modRlText("tooltip.fortitude"),
+		LibUtil.modRlText("tooltip.fortitude"),
 		"#ff0000"
 	),
 
@@ -43,7 +43,7 @@ enum class VirtueType(
 		1,
 		"prudence",
 		LibAttachmentTypes.PRUDENCE,
-		LibConstants.modRlText("tooltip.prudence"),
+		LibUtil.modRlText("tooltip.prudence"),
 		"#ffffff"
 	),
 
@@ -54,7 +54,7 @@ enum class VirtueType(
 		2,
 		"temperance",
 		LibAttachmentTypes.TEMPERANCE,
-		LibConstants.modRlText("tooltip.temperance"),
+		LibUtil.modRlText("tooltip.temperance"),
 		"#8a2be2"
 	),
 
@@ -65,7 +65,7 @@ enum class VirtueType(
 		3,
 		"justice",
 		LibAttachmentTypes.JUSTICE,
-		LibConstants.modRlText("tooltip.justice"),
+		LibUtil.modRlText("tooltip.justice"),
 		"#00ffff"
 	),
 
@@ -76,7 +76,7 @@ enum class VirtueType(
 		4,
 		"composite",
 		null,
-		LibConstants.modRlText("tooltip.composite_rating"),
+		LibUtil.modRlText("tooltip.composite_rating"),
 		null
 	);
 
@@ -87,7 +87,7 @@ enum class VirtueType(
 	override val colourValue: Int = colour?.run { rgbColor(colour) } ?: 0
 
 	override fun getSerializedName(): String {
-		return LibConstants.ID + "." + this.colourName
+		return LibUtil.ID + "." + this.colourName
 	}
 
 	fun <T : AbstractVirtue> getAttachmentTypeHolder(): Holder<AttachmentType<T>> {

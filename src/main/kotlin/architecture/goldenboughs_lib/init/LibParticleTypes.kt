@@ -2,9 +2,9 @@
 
 import architecture.goldenboughs_lib.client.particle.text.TextParticleOptions
 import architecture.goldenboughs_lib.common.particle.SpecialParticleType
-import architecture.goldenboughs_lib.core.LibConstants.modRegister
 import architecture.goldenboughs_lib.module.lc_damage.particle.DamageTextParticle
 import architecture.goldenboughs_lib.module.lc_damage.particle.LcDamageIconParticle
+import architecture.goldenboughs_lib.util.LibUtil.modRegister
 import com.mojang.serialization.MapCodec
 import net.minecraft.core.particles.ParticleOptions
 import net.minecraft.core.particles.ParticleType

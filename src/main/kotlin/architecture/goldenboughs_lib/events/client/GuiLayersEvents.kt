@@ -2,8 +2,8 @@ package architecture.goldenboughs_lib.events.client
 
 import architecture.goldenboughs_lib.client.LibGuiLayers
 import architecture.goldenboughs_lib.core.LibConfig
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.util.GunWeaponUtil
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.client.AttackIndicatorStatus
 import net.minecraft.client.Minecraft
 import net.neoforged.api.distmarker.Dist
@@ -12,7 +12,7 @@ import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.RenderGuiLayerEvent
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers
 
-@EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = LibUtil.ID, value = [Dist.CLIENT])
 object GuiLayersEvents {
 	@SubscribeEvent
 	fun onRenderGuiLayerEventPre(event: RenderGuiLayerEvent.Pre) {

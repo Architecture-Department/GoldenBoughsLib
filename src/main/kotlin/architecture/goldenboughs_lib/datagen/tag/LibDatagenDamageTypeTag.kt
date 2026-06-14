@@ -1,8 +1,8 @@
 package architecture.goldenboughs_lib.datagen.tag
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibDamageTypeTags
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.data.tags.DamageTypeTagsProvider
@@ -17,7 +17,7 @@ class LibDatagenDamageTypeTag(
 	output: PackOutput,
 	lookupProvider: CompletableFuture<HolderLookup.Provider>,
 	existingFileHelper: ExistingFileHelper
-) : DamageTypeTagsProvider(output, lookupProvider, LibConstants.ID, existingFileHelper) {
+) : DamageTypeTagsProvider(output, lookupProvider, LibUtil.ID, existingFileHelper) {
 	override fun addTags(provider: HolderLookup.Provider) {
 		// 物理伤害
 		tag(LibDamageTypeTags.PHYSICS).add(
@@ -90,6 +90,6 @@ class LibDatagenDamageTypeTag(
 
 	@Contract(pure = true)
 	override fun getName(): String {
-		return LibConstants.NAME + " Damage Type Tags"
+		return LibUtil.NAME + " Damage Type Tags"
 	}
 }

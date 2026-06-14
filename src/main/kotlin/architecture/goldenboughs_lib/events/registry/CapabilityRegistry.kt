@@ -1,12 +1,12 @@
 ﻿package architecture.goldenboughs_lib.events.registry
 
 import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibCapabilitys
 import architecture.goldenboughs_lib.init.LibItems
 import architecture.goldenboughs_lib.module.lc_damage.api.LcLevel
 import architecture.goldenboughs_lib.module.lc_damage.capability.*
 import architecture.goldenboughs_lib.module.lc_damage.util.LcLevelUtil
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.BlockPos
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.world.entity.EntityType
@@ -30,7 +30,7 @@ import java.util.function.Supplier
 /**
  * 注册能力
  */
-@EventBusSubscriber(modid = LibConstants.ID)
+@EventBusSubscriber(modid = LibUtil.ID)
 object CapabilityRegistry {
 	@JvmField
 	val ITEM_ZAYIN: MutableList<ItemLike> = ArrayList()

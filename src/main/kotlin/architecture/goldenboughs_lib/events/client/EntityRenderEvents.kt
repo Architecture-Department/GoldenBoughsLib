@@ -1,10 +1,10 @@
 ﻿package architecture.goldenboughs_lib.events.client
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.eventexecute.client.EntityRenderEventExecute
 import architecture.goldenboughs_lib.init.LibEntityTypes
 import architecture.goldenboughs_lib.module.corpse.renderer.StaffCorpseRenderer
 import architecture.goldenboughs_lib.module.shield.renderer.ShieldRenderer
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.entity.EntityRenderer
 import net.minecraft.client.renderer.entity.player.PlayerRenderer
@@ -15,7 +15,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent
 import net.neoforged.neoforge.client.event.RenderLivingEvent
 import net.neoforged.neoforge.client.event.RenderPlayerEvent
 
-@EventBusSubscriber(modid = LibConstants.ID, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = LibUtil.ID, value = [Dist.CLIENT])
 object EntityRenderEvents {
 	@SubscribeEvent
 	fun onRenderPlayerEventPre(event: RenderPlayerEvent.Pre) {

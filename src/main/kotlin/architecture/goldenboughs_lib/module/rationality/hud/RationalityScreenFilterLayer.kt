@@ -4,9 +4,9 @@ package architecture.goldenboughs_lib.module.rationality.hud
 
 import architecture.goldenboughs_lib.api.AllOpe
 import architecture.goldenboughs_lib.client.gui.hudlayers.BasicHudLayer
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.module.rationality.util.RationalityUtil.getMaxRationalityValue
 import architecture.goldenboughs_lib.module.rationality.util.RationalityUtil.getRationalityValue
+import architecture.goldenboughs_lib.util.LibUtil
 import com.mojang.blaze3d.systems.RenderSystem
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.gui.GuiGraphics
@@ -141,13 +141,13 @@ class RationalityScreenFilterLayer : BasicHudLayer() {
 
 	companion object {
 		@JvmField
-		val RATIONALITY: ResourceLocation = LibConstants.modRl("textures/gui/filter/rationality.png")
+		val RATIONALITY: ResourceLocation = LibUtil.modRl("textures/gui/filter/rationality.png")
 
 		@JvmField
-		val RATIONALITY1: ResourceLocation = LibConstants.modRl("textures/gui/filter/rationality1.png")
+		val RATIONALITY1: ResourceLocation = LibUtil.modRl("textures/gui/filter/rationality1.png")
 
 		@JvmField
-		val RATIONALITY2: ResourceLocation = LibConstants.modRl("textures/gui/filter/rationality2.png")
+		val RATIONALITY2: ResourceLocation = LibUtil.modRl("textures/gui/filter/rationality2.png")
 
 		@JvmField
 		val INSTANCE: RationalityScreenFilterLayer = RationalityScreenFilterLayer()

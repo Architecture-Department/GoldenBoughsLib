@@ -1,7 +1,7 @@
 ﻿package architecture.goldenboughs_lib.events.client
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.module.lc_damage.util.LcLevelUtil.getLevel
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.network.chat.Component
 import net.neoforged.bus.api.EventPriority
 import net.neoforged.bus.api.SubscribeEvent
@@ -13,7 +13,7 @@ import java.util.*
 /**
  * 物品提示/描述处理
  */
-@EventBusSubscriber(modid = LibConstants.ID)
+@EventBusSubscriber(modid = LibUtil.ID)
 object ItemTooltipEvents {
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	fun onItemTooltip(event: ItemTooltipEvent) {

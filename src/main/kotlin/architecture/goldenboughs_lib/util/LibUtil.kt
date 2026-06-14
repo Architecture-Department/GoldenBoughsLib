@@ -1,12 +1,32 @@
 package architecture.goldenboughs_lib.util
 
 import architecture.goldenboughs_lib.util.client.ClientLibUtil
+import io.netty.buffer.ByteBuf
+import net.minecraft.core.Registry
+import net.minecraft.network.codec.ByteBufCodecs
+import net.minecraft.network.codec.StreamCodec
+import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.neoforged.fml.loading.FMLEnvironment
+import net.neoforged.neoforge.registries.DeferredRegister
+import org.apache.logging.log4j.LogManager
+import org.apache.logging.log4j.Logger
+import org.jetbrains.annotations.Contract
 import org.joml.Vector3d
 import org.joml.Vector3fc
+import java.util.*
 
 object LibUtil {
+	const val ID: String = "goldenboughs_lib"
+	const val NAME: String = "GoldenBoughsLib"
+
+	@JvmField
+	val LOGGER: Logger = LogManager.getLogger(ID)
+
+	@JvmField
+	val OPTIONAL_RESOURCE_LOCATION_STREAM_CODEC: StreamCodec<ByteBuf, Optional<ResourceLocation>> =
+		ByteBufCodecs.optional(ResourceLocation.STREAM_CODEC)
+
 	@JvmStatic
 	fun isClientSingleplayer(): Boolean =
 		if (FMLEnvironment.dist.isClient) ClientLibUtil.isClientSingleplayer()
@@ -30,6 +50,28 @@ object LibUtil {
 	@JvmStatic
 	fun rlOf(location: String): ResourceLocation {
 		return ResourceLocation.parse(location)
+	}
+
+	@JvmStatic
+	@Contract("_ -> new")
+	fun modRl(name: String): ResourceLocation {
+		return rlOf(ID, name)
+	}
+
+	@JvmStatic
+	@Contract(pure = true)
+	fun modRlText(name: String): String {
+		return "$ID:$name"
+	}
+
+	@JvmStatic
+	fun <T> modRegister(registry: Registry<T>): DeferredRegister<T> {
+		return DeferredRegister.create<T>(registry, ID)
+	}
+
+	@JvmStatic
+	fun <T> modRegister(registry: ResourceKey<Registry<T>>): DeferredRegister<T> {
+		return DeferredRegister.create<T>(registry, ID)
 	}
 }
 

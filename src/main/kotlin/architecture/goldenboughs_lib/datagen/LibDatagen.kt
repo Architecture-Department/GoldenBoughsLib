@@ -1,11 +1,11 @@
 package architecture.goldenboughs_lib.datagen
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
 import architecture.goldenboughs_lib.datagen.tag.LibDatagenBlockTag
 import architecture.goldenboughs_lib.datagen.tag.LibDatagenDamageTypeTag
 import architecture.goldenboughs_lib.datagen.tag.LibDatagenItemTag
 import architecture.goldenboughs_lib.init.LibDamageTypes
+import architecture.goldenboughs_lib.util.LibUtil
 import architecture.goldenboughs_lib.util.datagen.buildClient
 import architecture.goldenboughs_lib.util.datagen.buildServer
 import net.minecraft.core.RegistrySetBuilder
@@ -17,7 +17,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent
 /**
  * 数据生成主类
  */
-@EventBusSubscriber(modid = LibConstants.ID)
+@EventBusSubscriber(modid = LibUtil.ID)
 object LibDatagen {
 	@SubscribeEvent
 	fun gatherData(event: GatherDataEvent) {

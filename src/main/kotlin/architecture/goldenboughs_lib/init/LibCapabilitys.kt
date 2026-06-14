@@ -3,11 +3,11 @@
 package architecture.goldenboughs_lib.init
 
 import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq
-import architecture.goldenboughs_lib.core.LibConstants.modRl
 import architecture.goldenboughs_lib.module.lc_damage.capability.IBlockLcLevel
 import architecture.goldenboughs_lib.module.lc_damage.capability.IEntityLcLevel
 import architecture.goldenboughs_lib.module.lc_damage.capability.IItemLcDamageType
 import architecture.goldenboughs_lib.module.lc_damage.capability.IItemLcLevel
+import architecture.goldenboughs_lib.util.LibUtil.modRl
 import net.neoforged.neoforge.capabilities.BlockCapability
 import net.neoforged.neoforge.capabilities.EntityCapability
 import net.neoforged.neoforge.capabilities.ItemCapability

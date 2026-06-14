@@ -1,10 +1,10 @@
 ﻿package architecture.goldenboughs_lib.init
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.datagen.i18n.LibZhCn
 import architecture.goldenboughs_lib.module.lc_damage.attribute.BasicAttribute
 import architecture.goldenboughs_lib.module.lc_damage.attribute.MaxAttribute
 import architecture.goldenboughs_lib.module.lc_damage.attribute.MinAttribute
+import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.world.entity.ai.attributes.Attribute
 import net.minecraft.world.entity.ai.attributes.RangedAttribute
@@ -16,7 +16,7 @@ import java.util.function.Supplier
 
 object LibAttributes {
 	@JvmField
-	val REGISTRY: DeferredRegister<Attribute> = LibConstants.modRegister(BuiltInRegistries.ATTRIBUTE)
+	val REGISTRY: DeferredRegister<Attribute> = LibUtil.modRegister(BuiltInRegistries.ATTRIBUTE)
 
 	const val PHYSICS_VULNERABLE_DEFAULT_VALUE: Double = 1.0
 	const val SPIRIT_VULNERABLE_DEFAULT_VALUE: Double = 1.0
@@ -248,7 +248,7 @@ object LibAttributes {
 	}
 
 	private fun descriptionId(name: String): String {
-		return LibConstants.ID + ".attribute.name." + name
+		return LibUtil.ID + ".attribute.name." + name
 	}
 
 	private fun register(

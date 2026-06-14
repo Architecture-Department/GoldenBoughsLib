@@ -1,14 +1,13 @@
 ﻿package architecture.goldenboughs_lib.module.lc_damage.api
 
 import architecture.goldenboughs_lib.api.ColourText
-
 import architecture.goldenboughs_lib.client.LibFontIcon
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttributes
 import architecture.goldenboughs_lib.init.LibDamageSources.Companion.createDamage
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibDamageTypeTags
 import architecture.goldenboughs_lib.util.ColorUtil
+import architecture.goldenboughs_lib.util.LibUtil
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
 import io.netty.buffer.ByteBuf
@@ -143,7 +142,7 @@ enum class LcDamageType(
 
 	@Contract(pure = true)
 	override fun getSerializedName(): String {
-		return LibConstants.modRlText(damageName)
+		return LibUtil.modRlText(damageName)
 	}
 
 	companion object {

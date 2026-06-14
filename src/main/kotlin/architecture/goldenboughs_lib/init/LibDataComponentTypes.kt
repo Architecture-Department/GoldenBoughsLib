@@ -1,8 +1,8 @@
 ﻿package architecture.goldenboughs_lib.init
 
 import architecture.goldenboughs_lib.common.command.LcDamageTypeDataComponent
-import architecture.goldenboughs_lib.core.LibConstants.modRegister
 import architecture.goldenboughs_lib.module.virtue.data_component.ItemVirtueUsageReq
+import architecture.goldenboughs_lib.util.LibUtil.modRegister
 import com.mojang.serialization.Codec
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.BuiltInRegistries

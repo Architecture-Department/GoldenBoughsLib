@@ -1,11 +1,11 @@
 ﻿package architecture.goldenboughs_lib.module.virtue.data_component
 
-import architecture.goldenboughs_lib.core.LibConstants
 import architecture.goldenboughs_lib.init.LibAttributes
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import architecture.goldenboughs_lib.module.virtue.api.VirtueRating
 import architecture.goldenboughs_lib.module.virtue.api.VirtueRating.Companion.getRating
 import architecture.goldenboughs_lib.module.virtue.api.VirtueType
+import architecture.goldenboughs_lib.util.LibUtil
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
 import com.mojang.serialization.MapCodec
@@ -807,31 +807,31 @@ data class ItemVirtueUsageReq(
 		 * 使用条件
 		 */
 		@JvmField
-		val USE_CONDITION: String = LibConstants.modRlText("tooltip.use_condition")
+		val USE_CONDITION: String = LibUtil.modRlText("tooltip.use_condition")
 
 		/**
 		 * 需求
 		 */
 		@JvmField
-		val REQUIREMENT: String = LibConstants.modRlText("tooltip.requirement")
+		val REQUIREMENT: String = LibUtil.modRlText("tooltip.requirement")
 
 		/**
 		 * 区间
 		 */
 		@JvmField
-		val INTERVAL: String = LibConstants.modRlText("tooltip.interval")
+		val INTERVAL: String = LibUtil.modRlText("tooltip.interval")
 
 		/**
 		 * 不超过
 		 */
 		@JvmField
-		val NOT_TO_EXCEED: String = LibConstants.modRlText("tooltip.not_to_exceed")
+		val NOT_TO_EXCEED: String = LibUtil.modRlText("tooltip.not_to_exceed")
 
 		/**
 		 * 不低于
 		 */
 		@JvmField
-		val NOT_LOWER_THAN: String = LibConstants.modRlText("tooltip.not_lower_than")
+		val NOT_LOWER_THAN: String = LibUtil.modRlText("tooltip.not_lower_than")
 
 		@JvmField
 		val LIST_STREAM_CODEC: StreamCodec<ByteBuf, List<UsageReq>> = UsageReq.STREAM_CODEC.apply(ByteBufCodecs.list())
