@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.datagen.i18n
 
-import architecture.goldenboughs_lib.datagen.LibDatagenSoundDefinitionsProvider
+import architecture.goldenboughs_lib.datagen.BasicSoundDefinitionsProvider
 import architecture.goldenboughs_lib.util.LibUtil
 import net.minecraft.core.Holder
 import net.minecraft.core.component.DataComponentType
@@ -56,7 +56,7 @@ abstract class DatagenI18n(
 	}
 
 	fun add(damageType: SoundEvent, name: String) {
-		add(LibDatagenSoundDefinitionsProvider.getSubtitle(damageType), name)
+		add(BasicSoundDefinitionsProvider.getSubtitle(damageType), name)
 	}
 
 	protected fun addJadePlugin(pluginId: ResourceLocation, name: String) {
