@@ -3,6 +3,8 @@ package architecture.goldenboughs_lib.util
 import architecture.goldenboughs_lib.util.client.ClientLibUtil
 import net.minecraft.resources.ResourceLocation
 import net.neoforged.fml.loading.FMLEnvironment
+import org.joml.Vector3d
+import org.joml.Vector3fc
 
 object LibUtil {
 	@JvmStatic
@@ -30,3 +32,5 @@ object LibUtil {
 		return ResourceLocation.parse(location)
 	}
 }
+
+fun Vector3fc.toVector3d(): Vector3d = get(Vector3d())
