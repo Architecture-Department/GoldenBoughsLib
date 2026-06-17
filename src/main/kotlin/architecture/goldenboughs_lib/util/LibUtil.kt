@@ -3,10 +3,14 @@ package architecture.goldenboughs_lib.util
 import architecture.goldenboughs_lib.util.client.ClientLibUtil
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.Registry
+import net.minecraft.network.RegistryFriendlyByteBuf
+import net.minecraft.network.chat.Component
+import net.minecraft.network.chat.ComponentSerialization
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.ItemDisplayContext
 import net.neoforged.fml.loading.FMLEnvironment
 import net.neoforged.neoforge.registries.DeferredRegister
 import org.apache.logging.log4j.LogManager
@@ -26,6 +30,14 @@ object LibUtil {
 	@JvmField
 	val OPTIONAL_RESOURCE_LOCATION_STREAM_CODEC: StreamCodec<ByteBuf, Optional<ResourceLocation>> =
 		ByteBufCodecs.optional(ResourceLocation.STREAM_CODEC)
+
+	@JvmField
+	val COMPONENT_SERIALIZATION_STREAM_CODEC_LIST: StreamCodec<RegistryFriendlyByteBuf, List<Component>> =
+		ComponentSerialization.STREAM_CODEC.apply(ByteBufCodecs.list())
+
+	@JvmField
+	val ITEM_DISPLAY_CONTEXT_STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, ItemDisplayContext> =
+		ByteBufCodecs.fromCodecWithRegistries(ItemDisplayContext.CODEC)
 
 	@JvmStatic
 	fun isClientSingleplayer(): Boolean =

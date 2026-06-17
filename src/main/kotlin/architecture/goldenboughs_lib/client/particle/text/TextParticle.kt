@@ -35,7 +35,7 @@ class TextParticle(
 	protected val isTargetingPlayers: Boolean = options.isTargetingPlayers
 	protected val isThrough: Boolean = options.isThrough
 	protected var baseSize: Float = options.size
-	protected var textComponent: MutableList<Component> = options.textComponent
+	protected var textComponent: MutableList<Component> = options.textComponent.toMutableList()
 	protected var strokeColor: Int = options.strokeColor
 	protected var strokeColorO: Int = options.strokeColor
 	protected var fontColor: Int = options.fontColor

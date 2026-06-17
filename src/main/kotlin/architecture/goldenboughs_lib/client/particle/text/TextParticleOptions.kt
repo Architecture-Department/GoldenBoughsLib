@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.client.particle.text
 
-import architecture.goldenboughs_lib.api.network.codec.CompositeStreamCodecBuilder
 import architecture.goldenboughs_lib.init.LibParticleTypes
+import architecture.goldenboughs_lib.util.LibUtil.COMPONENT_SERIALIZATION_STREAM_CODEC_LIST
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
@@ -17,7 +17,7 @@ import java.util.function.Function
 
 @JvmRecord
 data class TextParticleOptions(
-	@JvmField val textComponent: MutableList<Component>,
+	@JvmField val textComponent: List<Component>,
 	@JvmField val fontColor: Int,
 	@JvmField val strokeColor: Int,
 	@JvmField val particleLifeTime: Int,
@@ -32,7 +32,7 @@ data class TextParticleOptions(
 ) : ParticleOptions {
 	val build: TextParticleBuilder
 		get() = TextParticleBuilder(
-			this.textComponent,
+			this.textComponent.toMutableList(),
 			this.fontColor,
 			this.strokeColor,
 			this.particleLifeTime,
@@ -85,44 +85,37 @@ data class TextParticleOptions(
 
 		@JvmField
 		val STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, TextParticleOptions> =
-			CompositeStreamCodecBuilder.builder<RegistryFriendlyByteBuf, TextParticleOptions>()
-				.withComponent(
-					ComponentSerialization.STREAM_CODEC.apply(
-						ByteBufCodecs.list()
-					), TextParticleOptions::textComponent
-				)
-				.withComponent(ByteBufCodecs.INT, TextParticleOptions::fontColor)
-				.withComponent(ByteBufCodecs.INT, TextParticleOptions::strokeColor)
-				.withComponent(ByteBufCodecs.INT, TextParticleOptions::particleLifeTime)
-				.withComponent(ByteBufCodecs.FLOAT, TextParticleOptions::size)
-				.withComponent(
-					TextParticleAlignType.STREAM_CODEC,
-					TextParticleOptions::alignType
-				)
-				.withComponent(ByteBufCodecs.BOOL, TextParticleOptions::isShine)
-				.withComponent(
-					TextParticleStrokeType.STREAM_CODEC,
-					TextParticleOptions::strokeType
-				)
-				.withComponent(ByteBufCodecs.FLOAT, TextParticleOptions::xRot)
-				.withComponent(ByteBufCodecs.FLOAT, TextParticleOptions::yRot)
-				.withComponent(ByteBufCodecs.BOOL, TextParticleOptions::isTargetingPlayers)
-				.withComponent(ByteBufCodecs.BOOL, TextParticleOptions::isThrough)
-				.decoderFactory { components: MutableIterator<Any> ->
+			StreamCodec.of(
+				{ buf, p ->
+					COMPONENT_SERIALIZATION_STREAM_CODEC_LIST.encode(buf, p.textComponent)
+					ByteBufCodecs.INT.encode(buf, p.fontColor)
+					ByteBufCodecs.INT.encode(buf, p.strokeColor)
+					ByteBufCodecs.INT.encode(buf, p.particleLifeTime)
+					ByteBufCodecs.FLOAT.encode(buf, p.size)
+					TextParticleAlignType.STREAM_CODEC.encode(buf, p.alignType)
+					ByteBufCodecs.BOOL.encode(buf, p.isShine)
+					TextParticleStrokeType.STREAM_CODEC.encode(buf, p.strokeType)
+					ByteBufCodecs.FLOAT.encode(buf, p.xRot)
+					ByteBufCodecs.FLOAT.encode(buf, p.yRot)
+					ByteBufCodecs.BOOL.encode(buf, p.isTargetingPlayers)
+					ByteBufCodecs.BOOL.encode(buf, p.isThrough)
+				},
+				{ buf ->
 					TextParticleOptions(
-						components.next() as MutableList<Component>,
-						components.next() as Int,
-						components.next() as Int,
-						components.next() as Int,
-						components.next() as Float,
-						components.next() as TextParticleAlignType,
-						components.next() as Boolean,
-						components.next() as TextParticleStrokeType,
-						components.next() as Float,
-						components.next() as Float,
-						components.next() as Boolean,
-						components.next() as Boolean
+						COMPONENT_SERIALIZATION_STREAM_CODEC_LIST.decode(buf),
+						ByteBufCodecs.INT.decode(buf),
+						ByteBufCodecs.INT.decode(buf),
+						ByteBufCodecs.INT.decode(buf),
+						ByteBufCodecs.FLOAT.decode(buf),
+						TextParticleAlignType.STREAM_CODEC.decode(buf),
+						ByteBufCodecs.BOOL.decode(buf),
+						TextParticleStrokeType.STREAM_CODEC.decode(buf),
+						ByteBufCodecs.FLOAT.decode(buf),
+						ByteBufCodecs.FLOAT.decode(buf),
+						ByteBufCodecs.BOOL.decode(buf),
+						ByteBufCodecs.BOOL.decode(buf),
 					)
-				}.build()
+				}
+			)
 	}
 }

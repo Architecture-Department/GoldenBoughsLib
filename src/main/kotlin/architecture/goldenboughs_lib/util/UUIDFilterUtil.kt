@@ -11,7 +11,6 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.entity.EntityAccess
 import java.util.*
 import java.util.function.Consumer
-import java.util.function.Function
 import java.util.function.Predicate
 import java.util.stream.Collectors
 
@@ -182,19 +181,19 @@ class UUIDFilterUtil {
 
 	companion object {
 		val CODEC: Codec<UUIDFilterUtil> =
-			RecordCodecBuilder.create(Function { instance ->
+			RecordCodecBuilder.create { instance ->
 				instance.group(
-					UUIDUtil.CODEC.listOf().fieldOf("blacklist").forGetter { util -> util.getBlacklist().stream().toList() },
-					UUIDUtil.CODEC.listOf().fieldOf("whitelist").forGetter { util -> util.getWhitelist().stream().toList() }
+					UUIDUtil.CODEC.listOf().fieldOf("blacklist").forGetter { it.getBlacklist().stream().toList() },
+					UUIDUtil.CODEC.listOf().fieldOf("whitelist").forGetter { it.getWhitelist().stream().toList() }
 				).apply(instance, ::UUIDFilterUtil)
-			})
+			}
 
 		val STREAM_CODEC: StreamCodec<ByteBuf, UUIDFilterUtil> =
 			StreamCodec.composite(
 				UUIDUtil.STREAM_CODEC.apply(ByteBufCodecs.list()),
-				{ util -> util.getBlacklist().stream().toList() },
+				{ it.getBlacklist().stream().toList() },
 				UUIDUtil.STREAM_CODEC.apply(ByteBufCodecs.list()),
-				{ util -> util.getWhitelist().stream().toList() },
+				{ it.getWhitelist().stream().toList() },
 				::UUIDFilterUtil
 			)
 
