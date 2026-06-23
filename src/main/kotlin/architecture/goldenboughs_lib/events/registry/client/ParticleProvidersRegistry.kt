@@ -5,8 +5,6 @@ import architecture.goldenboughs_lib.init.LibParticleTypes
 import architecture.goldenboughs_lib.module.lc_damage.particle.DamageTextParticle
 import architecture.goldenboughs_lib.module.lc_damage.particle.LcDamageIconParticle
 import architecture.goldenboughs_lib.util.LibUtil
-import net.minecraft.client.particle.ParticleEngine
-import net.minecraft.client.particle.SpriteSet
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
@@ -22,7 +20,7 @@ object ParticleProvidersRegistry {
 			DamageTextParticle.Provider()
 		)
 		event.registerSpriteSet(
-			LibParticleTypes.LC_DAMAGE_ICON.get(),
-			ParticleEngine.SpriteParticleRegistration { spriteSet: SpriteSet -> LcDamageIconParticle.Provider(spriteSet) })
+			LibParticleTypes.LC_DAMAGE_ICON.get(), LcDamageIconParticle::Provider
+		)
 	}
 }

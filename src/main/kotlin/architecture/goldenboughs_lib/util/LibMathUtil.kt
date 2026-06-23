@@ -1,5 +1,9 @@
 package architecture.goldenboughs_lib.util
 
+import org.joml.Matrix4fc
+import org.joml.Quaternionf
+import org.joml.Vector3d
+import org.joml.Vector3f
 import kotlin.math.sin
 
 /**
@@ -31,4 +35,65 @@ fun calculateSineCycle(minValue: Float, maxValue: Float, durationSeconds: Float,
  */
 fun mapSinToRange(min: Float, max: Float, sinValue: Float): Float {
 	return min + (1 + sinValue) * (max - min) / 2
+}
+
+fun Float.toRadians(): Float {
+	return Math.toRadians(toDouble()).toFloat()
+}
+
+fun Double.toRadians(): Double {
+	return Math.toRadians(this)
+}
+
+fun Float.toDegrees(): Float {
+	return Math.toDegrees(toDouble()).toFloat()
+}
+
+fun Double.toDegrees(): Double {
+	return Math.toDegrees(this)
+}
+
+fun Matrix4fc.toPos(): Vector3d {
+	return transformPosition(Vector3f()).toVector3d()
+}
+
+fun Matrix4fc.toRot(): Vector3d {
+	val eulerAnglesRad = getUnnormalizedRotation(Quaternionf()).normalize().getEulerAnglesXYZ(Vector3f())
+	return Vector3d(
+		Math.toDegrees(eulerAnglesRad.x.toDouble()),
+		Math.toDegrees(eulerAnglesRad.y.toDouble()),
+		Math.toDegrees(eulerAnglesRad.z.toDouble())
+	)
+}
+
+fun PoseStack.Pose.toPos(): Vector3d {
+	return pose.toPos()
+}
+
+fun PoseStack.Pose.toRot(): Vector3d {
+	return pose.toRot()
+}
+
+fun com.mojang.blaze3d.vertex.PoseStack.Pose.toPos(): Vector3d {
+	return pose().toPos()
+}
+
+fun com.mojang.blaze3d.vertex.PoseStack.Pose.toRot(): Vector3d {
+	return pose().toRot()
+}
+
+fun PoseStack.toPos(): Vector3d {
+	return last().toPos()
+}
+
+fun PoseStack.toRot(): Vector3d {
+	return last().toRot()
+}
+
+fun com.mojang.blaze3d.vertex.PoseStack.toPos(): Vector3d {
+	return last().toPos()
+}
+
+fun com.mojang.blaze3d.vertex.PoseStack.toRot(): Vector3d {
+	return last().toRot()
 }

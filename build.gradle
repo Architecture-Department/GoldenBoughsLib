@@ -8,5 +8,5 @@ if (rootProject.file('build-conventions.gradle').exists()) {
 dependencies {
 	addMixinSquaredRuntime()
 	addJade()
-	addJEIRuntime()
+	addJEI()
 }
