@@ -165,7 +165,7 @@ object LivingEntityEvents {
 			val armorLevel = armorEntry.armorItemStack.getLevel()
 			val hasResistance = AtomicBoolean(false)
 			// 检查护甲是否具有对该伤害类型的抗性属性
-			armorEntry.armorItemStack.getAttributeModifiers()
+			armorEntry.armorItemStack.attributeModifiers
 				.forEach(slot) { attribute: Holder<Attribute>, modifier: AttributeModifier ->
 					if (lcDamageType != null) {
 						if (attribute === vulnerable || attribute === defense) {
@@ -263,7 +263,7 @@ object LivingEntityEvents {
 		val lcDamageType = damageSource.`goldenboughs_lib$getLcDamageType`()
 		if (lcDamageType != null) {
 			val attributeInstance = entity.getAttribute(lcDamageType.vulnerable)
-			if (attributeInstance != null && attributeInstance.getValue() > LcDamageEventExecutes.VULNERABILITY_DECELERATE_THRESHOLD) {
+			if (attributeInstance != null && attributeInstance.value > LcDamageEventExecutes.VULNERABILITY_DECELERATE_THRESHOLD) {
 				// TODO 替换成专属效果
 				entity.addEffect(MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 2))
 			}

@@ -90,7 +90,7 @@ object LcDamageEventExecutes {
 			// 获取实体的易伤属性值并应用到伤害计算
 			val vulnerable: Holder<Attribute> = lcDamageType.vulnerable
 			val attributeInstance = entity.getAttribute(vulnerable)
-			newDamage *= attributeInstance?.getValue()?.toFloat() ?: vulnerable.value().defaultValue.toFloat()
+			newDamage *= attributeInstance?.value?.toFloat() ?: vulnerable.value().defaultValue.toFloat()
 		}
 
 		damageContainer.newDamage = newDamage
