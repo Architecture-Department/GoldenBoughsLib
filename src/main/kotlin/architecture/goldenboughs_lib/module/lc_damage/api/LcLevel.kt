@@ -2,15 +2,11 @@
 
 import architecture.goldenboughs_lib.api.ColourText
 import architecture.goldenboughs_lib.util.ColorUtil
-import architecture.goldenboughs_lib.util.LibUtil
+import architecture.goldenboughs_lib.util.EnumCodec
+import architecture.goldenboughs_lib.util.EnumStreamCodec
 import com.mojang.serialization.Codec
-import com.mojang.serialization.DataResult
 import io.netty.buffer.ByteBuf
-import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
-import net.minecraft.util.ByIdMap
-import net.minecraft.util.StringRepresentable
-import org.jetbrains.annotations.Contract
 import java.util.*
 
 /**
@@ -24,38 +20,19 @@ enum class LcLevel(
 	val levelValue: Int,
 	name: String,
 	colour: String
-) : ColourText, StringRepresentable {
+) : ColourText {
 	ZAYIN(0, 1, "zayin", "#00ff00"),
 	TETH(1, 2, "teth", "#1e90ff"),
 	HE(2, 3, "he", "#ffff00"),
 	WAW(3, 4, "waw", "#8a2be2"),
 	ALEPH(4, 5, "aleph", "#ff0000");
 
-	val levelName: String = name
-	override val colourValue: Int = ColorUtil.rgbColor(colour)
-
-	override val colourName = levelName
-	override val colourText = colour
-
-	@Contract(pure = true)
-	override fun getSerializedName(): String {
-		return LibUtil.modRlText(this.levelName)
-	}
-
 	companion object {
 		@JvmField
-		val CODEC: Codec<LcLevel> = StringRepresentable
-			.fromEnum { entries.toTypedArray() }
-			.validate { DataResult.success(it) }
+		val CODEC: Codec<LcLevel> = EnumCodec.create(LcLevel::class)
 
 		@JvmField
-		val STREAM_CODEC: StreamCodec<ByteBuf, LcLevel> = ByteBufCodecs
-			.idMapper(
-				ByIdMap.continuous(
-					LcLevel::ordinal, entries.toTypedArray(),
-					ByIdMap.OutOfBoundsStrategy.WRAP
-				), LcLevel::ordinal
-			)
+		val STREAM_CODEC: StreamCodec<ByteBuf, LcLevel> = EnumStreamCodec.create(LcLevel::class)
 
 		private val LC_LEVEL_MAP = HashMap<Int, LcLevel>()
 
@@ -69,4 +46,11 @@ enum class LcLevel(
 			return LC_LEVEL_MAP.getOrDefault(level, ZAYIN)
 		}
 	}
+
+	val levelName: String = name
+
+	override val colourValue: Int = ColorUtil.rgbColor(colour)
+	override val colourName = levelName
+
+	override val colourText = colour
 }

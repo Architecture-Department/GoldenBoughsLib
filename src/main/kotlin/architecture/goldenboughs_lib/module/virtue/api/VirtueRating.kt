@@ -1,8 +1,10 @@
 ﻿package architecture.goldenboughs_lib.module.virtue.api
 
-import architecture.goldenboughs_lib.util.LibUtil
-import net.minecraft.util.StringRepresentable
-import org.jetbrains.annotations.Contract
+import architecture.goldenboughs_lib.util.EnumCodec
+import architecture.goldenboughs_lib.util.EnumStreamCodec
+import com.mojang.serialization.Codec
+import io.netty.buffer.ByteBuf
+import net.minecraft.network.codec.StreamCodec
 import java.util.*
 
 /**
@@ -12,7 +14,7 @@ enum class VirtueRating(
 	val virtueName: String,
 	val rating: Int,
 	val minValue: Int
-) : StringRepresentable {
+) {
 	I("I", 1, 1),
 	II("II", 2, 30),
 	III("III", 3, 45),
@@ -21,12 +23,13 @@ enum class VirtueRating(
 	EX("EX", 6, 101),
 	;
 
-	@Contract(pure = true)
-	override fun getSerializedName(): String {
-		return LibUtil.ID + "." + this.virtueName.lowercase(Locale.getDefault())
-	}
-
 	companion object {
+		@JvmField
+		var CODEC: Codec<VirtueRating> = EnumCodec.create(VirtueRating::class)
+
+		@JvmField
+		var STREAM_CODEC: StreamCodec<ByteBuf, VirtueRating> = EnumStreamCodec.create(VirtueRating::class)
+
 		@JvmField
 		val REVERSE_LIST: MutableList<VirtueRating> =
 			Collections.unmodifiableList(listOf(*entries.toTypedArray()).reversed())

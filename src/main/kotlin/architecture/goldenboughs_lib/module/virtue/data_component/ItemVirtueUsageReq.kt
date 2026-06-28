@@ -5,9 +5,10 @@ import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import architecture.goldenboughs_lib.module.virtue.api.VirtueRating
 import architecture.goldenboughs_lib.module.virtue.api.VirtueRating.Companion.getRating
 import architecture.goldenboughs_lib.module.virtue.api.VirtueType
+import architecture.goldenboughs_lib.util.EnumCodec
+import architecture.goldenboughs_lib.util.EnumStreamCodec
 import architecture.goldenboughs_lib.util.LibUtil
 import com.mojang.serialization.Codec
-import com.mojang.serialization.DataResult
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import io.netty.buffer.ByteBuf
@@ -16,9 +17,6 @@ import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
-import net.minecraft.util.ByIdMap
-import net.minecraft.util.StringRepresentable
-import net.minecraft.util.StringRepresentable.fromEnum
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.TooltipFlag
@@ -716,7 +714,7 @@ data class ItemVirtueUsageReq(
 			val index: Int,
 			private val usageReqName: String,
 			val symbol: Char
-		) : StringRepresentable {
+		) {
 			/**
 			 * 无限制
 			 */
@@ -737,24 +735,13 @@ data class ItemVirtueUsageReq(
 			 */
 			EQUAL(3, "equal", '='), ;
 
-			override fun getSerializedName(): String {
-				return usageReqName
-			}
-
 			companion object {
-				@JvmField
-				val CODEC: Codec<Type> = fromEnum { entries.toTypedArray() }
-					.validate { result -> DataResult.success(result) }
 
 				@JvmField
-				val STREAM_CODEC: StreamCodec<ByteBuf, Type> = ByteBufCodecs.idMapper(
-					ByIdMap.continuous(
-						Type::index,
-						entries.toTypedArray(),
-						ByIdMap.OutOfBoundsStrategy.WRAP
-					),
-					Type::index
-				)
+				var CODEC: Codec<Type> = EnumCodec.create(Type::class)
+
+				@JvmField
+				var STREAM_CODEC: StreamCodec<ByteBuf, Type> = EnumStreamCodec.create(Type::class)
 
 				@JvmStatic
 				fun byName(name: String): Type {

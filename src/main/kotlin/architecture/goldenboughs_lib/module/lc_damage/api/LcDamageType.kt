@@ -7,18 +7,15 @@ import architecture.goldenboughs_lib.init.LibDamageSources.Companion.createDamag
 import architecture.goldenboughs_lib.init.LibDamageTypes
 import architecture.goldenboughs_lib.init.tag.LibDamageTypeTags
 import architecture.goldenboughs_lib.util.ColorUtil
-import architecture.goldenboughs_lib.util.LibUtil
+import architecture.goldenboughs_lib.util.EnumCodec
+import architecture.goldenboughs_lib.util.EnumStreamCodec
 import com.mojang.serialization.Codec
-import com.mojang.serialization.DataResult
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.Holder
 import net.minecraft.core.RegistryAccess
 import net.minecraft.core.registries.Registries
-import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceKey
-import net.minecraft.util.ByIdMap
-import net.minecraft.util.StringRepresentable
 import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.damagesource.DamageType
 import net.minecraft.world.entity.Entity
@@ -45,7 +42,7 @@ enum class LcDamageType(
 	val defense: Holder<Attribute>,
 	val damageType: ResourceKey<DamageType>,
 	colour: String
-) : ColourText, StringRepresentable {
+) : ColourText {
 	/**
 	 * 物理
 	 */
@@ -108,8 +105,42 @@ enum class LcDamageType(
 		"#00ffff"
 	), ;
 
+	companion object {
+		@JvmField
+		val CODEC: Codec<LcDamageType> = EnumCodec.create(LcDamageType::class)
+
+		@JvmField
+		val STREAM_CODEC: StreamCodec<ByteBuf, LcDamageType> = EnumStreamCodec.create(LcDamageType::class)
+
+		@JvmStatic
+		fun byName(name: String): LcDamageType? {
+			return Arrays.stream(entries.toTypedArray()).filter { it.damageName == name }.findFirst().orElse(null)
+		}
+
+		/**
+		 * 根据[Holder]获取对应的[LcDamageType]
+		 *
+		 * @param damageType 伤害类型
+		 * @return 伤害类型对应的伤害类型，返回NULL则绕过LC伤害系统
+		 */
+		@JvmStatic
+		fun byDamageType(damageType: Holder<DamageType>): LcDamageType? {
+			return when {
+				damageType.`is`(LibDamageTypeTags.BYPASS_LC) -> null
+				damageType.`is`(LibDamageTypeTags.PHYSICS) -> PHYSICS
+				damageType.`is`(LibDamageTypeTags.SPIRIT) -> SPIRIT
+				damageType.`is`(LibDamageTypeTags.EROSION) -> EROSION
+				damageType.`is`(LibDamageTypeTags.THE_SOUL) -> THE_SOUL
+
+				// 默认为物理伤害
+				else -> PHYSICS
+			}
+		}
+	}
+
 	override val colourValue: Int = ColorUtil.rgbColor(colour)
 	override val colourName: String = damageName
+
 	override val colourText: String = colour
 
 	@Contract("_ -> new")
@@ -138,48 +169,5 @@ enum class LcDamageType(
 			registryAccess.registryOrThrow(Registries.DAMAGE_TYPE)
 				.getHolderOrThrow(damageType), null, null
 		)
-	}
-
-	@Contract(pure = true)
-	override fun getSerializedName(): String {
-		return LibUtil.modRlText(damageName)
-	}
-
-	companion object {
-		@JvmField
-		val CODEC: Codec<LcDamageType> = StringRepresentable.fromEnum { entries.toTypedArray() }
-			.validate { DataResult.success(it) }
-
-		@JvmField
-		val STREAM_CODEC: StreamCodec<ByteBuf, LcDamageType> = ByteBufCodecs.idMapper(
-			ByIdMap.continuous(
-				LcDamageType::index, entries.toTypedArray(), ByIdMap.OutOfBoundsStrategy.WRAP
-			), LcDamageType::index
-		)
-
-		@JvmStatic
-		fun byName(name: String): LcDamageType? {
-			return Arrays.stream(entries.toTypedArray()).filter { it.damageName == name }.findFirst().orElse(null)
-		}
-
-		/**
-		 * 根据[Holder]获取对应的[LcDamageType]
-		 *
-		 * @param damageType 伤害类型
-		 * @return 伤害类型对应的伤害类型，返回NULL则绕过LC伤害系统
-		 */
-		@JvmStatic
-		fun byDamageType(damageType: Holder<DamageType>): LcDamageType? {
-			return when {
-				damageType.`is`(LibDamageTypeTags.BYPASS_LC) -> null
-				damageType.`is`(LibDamageTypeTags.PHYSICS) -> PHYSICS
-				damageType.`is`(LibDamageTypeTags.SPIRIT) -> SPIRIT
-				damageType.`is`(LibDamageTypeTags.EROSION) -> EROSION
-				damageType.`is`(LibDamageTypeTags.THE_SOUL) -> THE_SOUL
-
-				// 默认为物理伤害
-				else -> PHYSICS
-			}
-		}
 	}
 }

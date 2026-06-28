@@ -24,6 +24,19 @@ import org.joml.Matrix4f
 class TextParticle(
 	level: ClientLevel, x: Double, y: Double, z: Double, options: TextParticleOptions
 ) : Particle(level, x, y, z) {
+	companion object {
+		private val DIRECTIONS = arrayOf(
+			floatArrayOf(-1f, 1f),
+			floatArrayOf(0f, 1f),
+			floatArrayOf(1f, 1f),
+			floatArrayOf(-1f, 0f),
+			floatArrayOf(1f, 0f),
+			floatArrayOf(-1f, -1f),
+			floatArrayOf(0f, -1f),
+			floatArrayOf(1f, -1f)
+		)
+	}
+
 	protected val minecraft: Minecraft = Minecraft.getInstance()
 	protected val font: Font = this.minecraft.font
 	protected val displayMode: Font.DisplayMode =
@@ -288,18 +301,5 @@ class TextParticle(
 			return LibParticleRenderTypes.TEXT_PARTICLE_THROUGH
 		}
 		return LibParticleRenderTypes.TEXT_PARTICLE
-	}
-
-	companion object {
-		private val DIRECTIONS = arrayOf<FloatArray>(
-			floatArrayOf(-1f, 1f),
-			floatArrayOf(0f, 1f),
-			floatArrayOf(1f, 1f),
-			floatArrayOf(-1f, 0f),
-			floatArrayOf(1f, 0f),
-			floatArrayOf(-1f, -1f),
-			floatArrayOf(0f, -1f),
-			floatArrayOf(1f, -1f)
-		)
 	}
 }

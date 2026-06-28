@@ -5,7 +5,6 @@ import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.chat.Style
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.util.StringRepresentable
 
 enum class LibFontIcon(
 	val index: Int,
@@ -14,7 +13,7 @@ enum class LibFontIcon(
 	val fileRl: ResourceLocation,
 	val width: Int,
 	val height: Int
-) : StringRepresentable {
+) {
 	PHYSICS(
 		0,
 		"physics",
@@ -98,10 +97,6 @@ enum class LibFontIcon(
 		get() = CACHE.computeIfAbsent(this.charName) {
 			Component.literal(it).setStyle(Style.EMPTY.withFont(LibUtil.modRl("goldenboughs_lib_icon")))
 		}
-
-	override fun getSerializedName(): String {
-		return fontIconName
-	}
 
 	companion object {
 		@JvmStatic

@@ -1,14 +1,12 @@
 package architecture.goldenboughs_lib.client.particle.text
 
+import architecture.goldenboughs_lib.util.EnumCodec
+import architecture.goldenboughs_lib.util.EnumStreamCodec
 import com.mojang.serialization.Codec
-import com.mojang.serialization.DataResult
 import io.netty.buffer.ByteBuf
-import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
-import net.minecraft.util.ByIdMap
-import net.minecraft.util.StringRepresentable
 
-enum class TextParticleStrokeType(@JvmField val index: Int, val typeName: String) : StringRepresentable {
+enum class TextParticleStrokeType(@JvmField val index: Int, val typeName: String) {
 	/**
 	 * 无描边
 	 */
@@ -30,19 +28,11 @@ enum class TextParticleStrokeType(@JvmField val index: Int, val typeName: String
 
 	companion object {
 		@JvmField
-		var CODEC: Codec<TextParticleStrokeType> = StringRepresentable
-			.fromEnum { entries.toTypedArray() }
-			.validate { result: TextParticleStrokeType -> DataResult.success(result) }
+		var CODEC: Codec<TextParticleStrokeType> = EnumCodec.create(TextParticleStrokeType::class)
 
 		@JvmField
-		var STREAM_CODEC: StreamCodec<ByteBuf, TextParticleStrokeType> = ByteBufCodecs
-			.idMapper(
-				ByIdMap.continuous(
-					TextParticleStrokeType::index,
-					entries.toTypedArray(),
-					ByIdMap.OutOfBoundsStrategy.WRAP
-				), TextParticleStrokeType::index
-			)
+		var STREAM_CODEC: StreamCodec<ByteBuf, TextParticleStrokeType> =
+			EnumStreamCodec.create(TextParticleStrokeType::class)
 	}
 }
 

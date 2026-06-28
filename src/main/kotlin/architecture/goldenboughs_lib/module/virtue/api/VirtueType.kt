@@ -3,28 +3,25 @@
 import architecture.goldenboughs_lib.api.ColourText
 import architecture.goldenboughs_lib.init.LibAttachmentTypes
 import architecture.goldenboughs_lib.util.ColorUtil.rgbColor
+import architecture.goldenboughs_lib.util.EnumCodec
+import architecture.goldenboughs_lib.util.EnumStreamCodec
 import architecture.goldenboughs_lib.util.LibUtil
 import com.mojang.serialization.Codec
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.Holder
-import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
-import net.minecraft.util.ByIdMap
-import net.minecraft.util.StringRepresentable
 import net.neoforged.neoforge.attachment.AttachmentType
-import java.util.function.IntFunction
-import java.util.function.Supplier
 
 /**
  * 心核四德 简称 四德
  */
 enum class VirtueType(
 	val id: Int,
-	name: String,
+	override val colourName: String,
 	private val attachmentTypeHolder: Holder<AttachmentType<*>>?,
 	@JvmField val tooltipName: String,
 	colour: String?
-) : ColourText, StringRepresentable {
+) : ColourText {
 	/**
 	 * 勇气 - 影响最大生命值
 	 */
@@ -80,15 +77,8 @@ enum class VirtueType(
 		null
 	);
 
-	override val colourName: String = name
-
 	override val colourText: String = colour ?: ""
-
 	override val colourValue: Int = colour?.run { rgbColor(colour) } ?: 0
-
-	override fun getSerializedName(): String {
-		return LibUtil.ID + "." + this.colourName
-	}
 
 	fun <T : AbstractVirtue> getAttachmentTypeHolder(): Holder<AttachmentType<T>> {
 		@Suppress("UNCHECKED_CAST")
@@ -97,18 +87,9 @@ enum class VirtueType(
 
 	companion object {
 		@JvmField
-		val CODEC: Codec<VirtueType> = StringRepresentable
-			.fromEnum<VirtueType>(Supplier { entries.toTypedArray() })
-
-		private val BY_ID: IntFunction<VirtueType> = ByIdMap
-			.continuous(
-				VirtueType::id,
-				entries.toTypedArray(),
-				ByIdMap.OutOfBoundsStrategy.ZERO
-			)
+		var CODEC: Codec<VirtueType> = EnumCodec.create(VirtueType::class)
 
 		@JvmField
-		val STREAM_CODEC: StreamCodec<ByteBuf, VirtueType> = ByteBufCodecs
-			.idMapper(BY_ID, VirtueType::id)
+		var STREAM_CODEC: StreamCodec<ByteBuf, VirtueType> = EnumStreamCodec.create(VirtueType::class)
 	}
 }
