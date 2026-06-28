@@ -6,11 +6,11 @@ import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
 import architecture.goldenboughs_lib.util.LibUtil
 import architecture.goldenboughs_lib.util.PayloadUtil.sendToPlayerClient
 import io.netty.buffer.ByteBuf
+import net.minecraft.client.player.AbstractClientPlayer
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.network.handling.IPayloadContext
 import java.util.*
 
@@ -28,7 +28,7 @@ data class PlayerDamagePayload(
 		return TYPE
 	}
 
-	override fun work(context: IPayloadContext, player: Player) {
+	override fun work(context: IPayloadContext, player: AbstractClientPlayer) {
 		LcDamageScreenFilterLayer.INSTANCE.addFilter(this.lcDamageType.orElse(null))
 	}
 

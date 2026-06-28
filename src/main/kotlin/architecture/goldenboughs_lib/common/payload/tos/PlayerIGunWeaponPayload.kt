@@ -23,9 +23,7 @@ data class PlayerIGunWeaponPayload(
 	 * @param shoot 0b1:射击 0b0:不射击
 	 */
 	constructor(hand: InteractionHand, sim: Boolean, shoot: Boolean) : this(
-		(setHand(hand) or setSim(sim) or setShoot(
-			shoot
-		))
+		(setHand(hand) or setSim(sim) or setShoot(shoot))
 	)
 
 	/**

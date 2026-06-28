@@ -22,10 +22,6 @@ enum class TextParticleStrokeType(@JvmField val index: Int, val typeName: String
 	 */
 	STROKE(2, "stroke");
 
-	override fun getSerializedName(): String {
-		return typeName
-	}
-
 	companion object {
 		@JvmField
 		var CODEC: Codec<TextParticleStrokeType> = EnumCodec.create(TextParticleStrokeType::class)

@@ -117,14 +117,13 @@ final class VirtueJustice(
 		override fun read(
 			holder: IAttachmentHolder,
 			buf: RegistryFriendlyByteBuf,
-			attachment: VirtueJustice?
+			previousValue: VirtueJustice?
 		): VirtueJustice? {
-			val newAttachment = super.read(holder, buf, attachment)
+			val newAttachment = super.read(holder, buf, previousValue)
 			newAttachment?.flightSpeedBonus = buf.readDouble()
 			return newAttachment
 		}
 	}
-
 
 	companion object {
 		const val MOVEMENT_SPEED: Double = 0.001

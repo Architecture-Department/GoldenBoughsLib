@@ -3,6 +3,7 @@ package architecture.goldenboughs_lib.util
 import architecture.goldenboughs_lib.util.client.ClientLibUtil
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.Registry
+import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.ComponentSerialization
@@ -38,6 +39,18 @@ object LibUtil {
 	@JvmField
 	val ITEM_DISPLAY_CONTEXT_STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, ItemDisplayContext> =
 		ByteBufCodecs.fromCodecWithRegistries(ItemDisplayContext.CODEC)
+
+	@JvmField
+	val COMPOUND_TAG_CODEC: StreamCodec<ByteBuf, CompoundTag> =
+		ByteBufCodecs.fromCodec(CompoundTag.CODEC)
+
+	@JvmField
+	val LIST_COMPOUND_TAG_CODEC: StreamCodec<ByteBuf, List<CompoundTag>> =
+		COMPOUND_TAG_CODEC.apply(ByteBufCodecs.list())
+
+	@JvmField
+	val MAP_RESOURCE_LOCATION_COMPOUND_TAG_CODEC: StreamCodec<ByteBuf, Map<ResourceLocation, CompoundTag>> =
+		ByteBufCodecs.map({ HashMap() }, ResourceLocation.STREAM_CODEC, COMPOUND_TAG_CODEC)
 
 	@JvmStatic
 	fun isClientSingleplayer(): Boolean =

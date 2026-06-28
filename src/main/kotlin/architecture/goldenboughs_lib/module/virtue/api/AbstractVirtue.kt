@@ -48,7 +48,7 @@ abstract class AbstractVirtue protected constructor(
 		if (player.level().isClientSide()) {
 			return
 		}
-		@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+		@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "TYPE_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 		player.syncData(virtue.getAttachmentTypeHolder<AbstractVirtue>()?.value())
 	}
 

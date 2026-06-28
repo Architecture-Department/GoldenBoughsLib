@@ -4,10 +4,10 @@ import architecture.goldenboughs_lib.api.payload.ToClientPayload
 import architecture.goldenboughs_lib.util.LibUtil
 import architecture.goldenboughs_lib.util.getTriggerableAnimations
 import io.netty.buffer.ByteBuf
+import net.minecraft.client.player.AbstractClientPlayer
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
-import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.network.handling.IPayloadContext
 import software.bernie.geckolib.animatable.GeoAnimatable
 import software.bernie.geckolib.animation.AnimatableManager
@@ -28,7 +28,7 @@ data class GeckolibAnimationSynchroPayload(
 		animName
 	)
 
-	override fun work(context: IPayloadContext, player: Player) {
+	override fun work(context: IPayloadContext, player: AbstractClientPlayer) {
 		val animatable = GeckoLibUtil.getSyncedAnimatable(this.syncableId)
 
 		if (animatable != null) {

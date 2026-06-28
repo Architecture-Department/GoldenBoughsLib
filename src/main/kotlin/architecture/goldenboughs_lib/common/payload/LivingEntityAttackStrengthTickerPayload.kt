@@ -24,12 +24,12 @@ data class LivingEntityAttackStrengthTickerPayload(
 		to(serverPlayer)
 	}
 
-	fun to(player: Player) {
-		player.setAttackStrengthTicker(this.attackStrengthTicker)
-	}
-
 	override fun toClient(context: IPayloadContext, clientPlayer: AbstractClientPlayer) {
 		to(clientPlayer)
+	}
+
+	fun to(player: Player) {
+		player.setAttackStrengthTicker(this.attackStrengthTicker)
 	}
 
 	companion object {
