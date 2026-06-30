@@ -10,6 +10,7 @@ import net.minecraft.world.entity.player.Player
  * 
  * 右键->使用键
  */
+@Deprecated("攻击输入由 RCF 的 AttackInputEvents 全权接管，不再使用此接口")
 @AllOpe
 interface IPlayerItemAttackClick {
 	/**

@@ -37,6 +37,7 @@ object InputEvents {
 
 		if (event.isAttack) {
 			val mainHandItem = player.mainHandItem
+			// @Deprecated: 攻击输入已由 RCF 接管，此处仅保留兼容性
 			if (mainHandItem.item is IPlayerItemAttackClick) {
 				event.setSwingHand(false)
 				event.setCanceled(true)
@@ -51,6 +52,7 @@ object InputEvents {
 		if (event.isUseItem) {
 			val offHandItem = player.offhandItem
 			val item = offHandItem.item
+			// @Deprecated: 攻击输入已由 RCF 接管
 			if (item is IPlayerItemAttackClick) {
 				event.setSwingHand(false)
 				event.setCanceled(true)

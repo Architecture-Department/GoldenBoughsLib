@@ -11,6 +11,7 @@ import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.InteractionHand
 import net.minecraft.world.item.ItemDisplayContext
 import net.neoforged.fml.loading.FMLEnvironment
 import net.neoforged.neoforge.registries.DeferredRegister
@@ -29,11 +30,11 @@ object LibUtil {
 	val LOGGER: Logger = LogManager.getLogger(ID)
 
 	@JvmField
-	val OPTIONAL_RESOURCE_LOCATION_STREAM_CODEC: StreamCodec<ByteBuf, Optional<ResourceLocation>> =
+	val RESOURCE_LOCATION_OPTIONAL_STREAM_CODEC: StreamCodec<ByteBuf, Optional<ResourceLocation>> =
 		ByteBufCodecs.optional(ResourceLocation.STREAM_CODEC)
 
 	@JvmField
-	val COMPONENT_SERIALIZATION_STREAM_CODEC_LIST: StreamCodec<RegistryFriendlyByteBuf, List<Component>> =
+	val COMPONENT_SERIALIZATION_LIST_STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, List<Component>> =
 		ComponentSerialization.STREAM_CODEC.apply(ByteBufCodecs.list())
 
 	@JvmField
@@ -41,16 +42,20 @@ object LibUtil {
 		ByteBufCodecs.fromCodecWithRegistries(ItemDisplayContext.CODEC)
 
 	@JvmField
-	val COMPOUND_TAG_CODEC: StreamCodec<ByteBuf, CompoundTag> =
+	val COMPOUND_TAG_STREAM_CODEC: StreamCodec<ByteBuf, CompoundTag> =
 		ByteBufCodecs.fromCodec(CompoundTag.CODEC)
 
 	@JvmField
-	val LIST_COMPOUND_TAG_CODEC: StreamCodec<ByteBuf, List<CompoundTag>> =
-		COMPOUND_TAG_CODEC.apply(ByteBufCodecs.list())
+	val COMPOUND_TAG_LIST_STREAM_CODEC: StreamCodec<ByteBuf, List<CompoundTag>> =
+		COMPOUND_TAG_STREAM_CODEC.apply(ByteBufCodecs.list())
 
 	@JvmField
-	val MAP_RESOURCE_LOCATION_COMPOUND_TAG_CODEC: StreamCodec<ByteBuf, Map<ResourceLocation, CompoundTag>> =
-		ByteBufCodecs.map({ HashMap() }, ResourceLocation.STREAM_CODEC, COMPOUND_TAG_CODEC)
+	val RESOURCE_LOCATION_BY_COMPOUND_TAG_MAP_STREAM_CODEC: StreamCodec<ByteBuf, Map<ResourceLocation, CompoundTag>> =
+		ByteBufCodecs.map(::HashMap, ResourceLocation.STREAM_CODEC, COMPOUND_TAG_STREAM_CODEC)
+
+	@JvmField
+	val INTERACTION_HAND_STREAM_CODEC: StreamCodec<ByteBuf, InteractionHand> =
+		EnumStreamCodec.create(InteractionHand::class.java)
 
 	@JvmStatic
 	fun isClientSingleplayer(): Boolean =

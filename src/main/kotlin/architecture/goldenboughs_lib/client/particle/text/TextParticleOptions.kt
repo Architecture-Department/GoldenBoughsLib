@@ -1,7 +1,7 @@
 package architecture.goldenboughs_lib.client.particle.text
 
 import architecture.goldenboughs_lib.init.LibParticleTypes
-import architecture.goldenboughs_lib.util.LibUtil.COMPONENT_SERIALIZATION_STREAM_CODEC_LIST
+import architecture.goldenboughs_lib.util.LibUtil.COMPONENT_SERIALIZATION_LIST_STREAM_CODEC
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
@@ -87,7 +87,7 @@ data class TextParticleOptions(
 		val STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, TextParticleOptions> =
 			StreamCodec.of(
 				{ buf, p ->
-					COMPONENT_SERIALIZATION_STREAM_CODEC_LIST.encode(buf, p.textComponent)
+					COMPONENT_SERIALIZATION_LIST_STREAM_CODEC.encode(buf, p.textComponent)
 					ByteBufCodecs.INT.encode(buf, p.fontColor)
 					ByteBufCodecs.INT.encode(buf, p.strokeColor)
 					ByteBufCodecs.INT.encode(buf, p.particleLifeTime)
@@ -102,7 +102,7 @@ data class TextParticleOptions(
 				},
 				{ buf ->
 					TextParticleOptions(
-						COMPONENT_SERIALIZATION_STREAM_CODEC_LIST.decode(buf),
+						COMPONENT_SERIALIZATION_LIST_STREAM_CODEC.decode(buf),
 						ByteBufCodecs.INT.decode(buf),
 						ByteBufCodecs.INT.decode(buf),
 						ByteBufCodecs.INT.decode(buf),
