@@ -18,5 +18,5 @@ import net.neoforged.bus.api.ICancellableEvent
 class PlayerDropItemEvent(
 	val player: Player,
 	val droppingStack: ItemStack,
-	var dropAll: Boolean,
+	var dropAround: Boolean,
 ) : Event(), ICancellableEvent
