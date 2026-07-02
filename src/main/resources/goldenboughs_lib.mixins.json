@@ -20,6 +20,8 @@
 		"world.entity.LivingEntityAccessor",
 		"world.entity.LivingEntityMixin",
 		"world.entity.PlayerMixin",
+		"world.entity.InventoryMixin",
+		"world.entity.PlayerDropMixin",
 		"world.item.ItemStackMixin"
 	],
 	"client": [
