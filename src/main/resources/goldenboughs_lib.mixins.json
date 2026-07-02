@@ -15,7 +15,6 @@
 		"world.CombatRulesMixin",
 		"world.DamageContainerMixin",
 		"world.DamageSourceMixin",
-		"world.entity.CommonHooksMixin",
 		"world.entity.EntityMixin",
 		"world.entity.InventoryMixin",
 		"world.entity.LivingDamageEvent$PostMixin",
@@ -27,7 +26,7 @@
 	"client": [
 		"client.FontMixin",
 		"client.KeyMappingMixin",
-		"client.MinecraftKeybindsMixin",
+		"client.MinecraftMixin",
 		"client.ModelManagerAccessor",
 		"client.item.ItemModelShaperMixin",
 		"client.item.ItemRendererMixin",

@@ -1,0 +1,4 @@
+﻿package architecture.goldenboughs_lib.core
+
+object LibClientEventHooks {
+}

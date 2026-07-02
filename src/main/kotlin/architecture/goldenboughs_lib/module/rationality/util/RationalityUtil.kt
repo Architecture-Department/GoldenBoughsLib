@@ -62,10 +62,10 @@ object RationalityUtil {
 		var newValue = value
 		if (isEvent) {
 			val pre = LibEventHooks.sourceRationalityPre(this, oldValue, value)
-			newValue = pre.value
-			if (pre.key) {
+			if (pre.isCanceled) {
 				return
 			}
+			newValue = pre.newValue
 		}
 
 		val maxRationalityValue = getMaxRationalityValue()

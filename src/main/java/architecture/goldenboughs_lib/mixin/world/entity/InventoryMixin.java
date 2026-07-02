@@ -10,17 +10,18 @@ import net.neoforged.neoforge.common.NeoForge;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
  * 拦截玩家热键栏槽位切换（滚轮），触发 [PlayerHotbarChangeEvent]。
- * 滚轮切换通过 [Inventory.swapPaint] 实现。
- * 数字键 1-9 切换直接设置 [Inventory.selected] 字段，需额外处理。
+ * <p>
+ * [swapPaint] 仅改变 [selected] 字段，无其他副作用，
+ * 取消时直接恢复 [fromSlot]，重定向时直接设置目标槽位。
+ * <p>
+ * 数字键 1-9 切换由 [MinecraftKeybindsMixin] 的 PUTFIELD 包裹处理。
  */
 @Mixin(Inventory.class)
 public abstract class InventoryMixin {
+
 	@Shadow
 	@Final
 	public Player player;
@@ -37,22 +38,19 @@ public abstract class InventoryMixin {
 		Operation<Void> original
 	) {
 		int fromSlot = selected;
-
-		// 使用源代码来切换获取槽位（以便适配有多个槽位的MOD修改）
 		original.call(direction);
 		int toSlot = selected;
 
-		ItemStack fromStack = getItem(fromSlot);
-		ItemStack toStack = getItem(toSlot);
+		PlayerHotbarChangeEvent event = NeoForge.EVENT_BUS.post(
+			new PlayerHotbarChangeEvent(player, fromSlot, toSlot,
+				getItem(fromSlot), getItem(toSlot))
+		);
 
-		PlayerHotbarChangeEvent event = NeoForge.EVENT_BUS.post(new PlayerHotbarChangeEvent(player, fromSlot, toSlot, fromStack, toStack));
-
-		if (event.isCanceled()){
+		if (event.isCanceled()) {
 			selected = fromSlot;
 			return;
 		}
 
-		double direction1 = Math.floorMod(event.getToSlot() - event.getFromSlot(), 9);
-		original.call(direction1);
+		selected = event.getToSlot();
 	}
 }

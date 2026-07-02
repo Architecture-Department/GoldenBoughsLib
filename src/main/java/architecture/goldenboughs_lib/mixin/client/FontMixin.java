@@ -45,7 +45,6 @@ public abstract class FontMixin implements IFontExtension, IFontLib {
 		boolean dropShadow,
 		Matrix4f matrix,
 		VertexConsumer vertexConsumer,
-
 		int backgroundColor,
 		int packedLightCoords
 	) {
