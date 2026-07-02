@@ -1,6 +1,8 @@
 package architecture.goldenboughs_lib.mixin.world.entity;
 
 import architecture.goldenboughs_lib.event.PlayerHotbarChangeEvent;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -23,25 +25,34 @@ public abstract class InventoryMixin {
 	@Final
 	public Player player;
 
-	@Inject(at = @At("HEAD"), method = "swapPaint", cancellable = true)
-	private void goldenboughs_lib$onSwapPaint(double direction, CallbackInfo ci) {
-		Inventory self = (Inventory) (Object) this;
-		int fromSlot = self.selected;
-		// swapPaint 根据 direction 方向计算目标槽位
-		int i = (int) Math.signum(direction);
-		int toSlot = fromSlot - i;
-		while (toSlot < 0) toSlot += 9;
-		while (toSlot >= 9) toSlot -= 9;
-		if (fromSlot == toSlot) return;
+	@Shadow
+	public int selected;
 
-		ItemStack fromStack = self.getItem(fromSlot);
-		ItemStack toStack = self.getItem(toSlot);
+	@Shadow
+	public abstract ItemStack getItem(int index);
 
-		PlayerHotbarChangeEvent event = new PlayerHotbarChangeEvent(player, fromSlot, toSlot, fromStack, toStack);
-		NeoForge.EVENT_BUS.post(event);
+	@WrapMethod(method = "swapPaint")
+	private void goldenboughs_lib$onSwapPaint(
+		double direction,
+		Operation<Void> original
+	) {
+		int fromSlot = selected;
 
-		if (event.isCanceled()) {
-			ci.cancel();
+		// 使用源代码来切换获取槽位（以便适配有多个槽位的MOD修改）
+		original.call(direction);
+		int toSlot = selected;
+
+		ItemStack fromStack = getItem(fromSlot);
+		ItemStack toStack = getItem(toSlot);
+
+		PlayerHotbarChangeEvent event = NeoForge.EVENT_BUS.post(new PlayerHotbarChangeEvent(player, fromSlot, toSlot, fromStack, toStack));
+
+		if (event.isCanceled()){
+			selected = fromSlot;
+			return;
 		}
+
+		double direction1 = Math.floorMod(event.getToSlot() - event.getFromSlot(), 9);
+		original.call(direction1);
 	}
 }
