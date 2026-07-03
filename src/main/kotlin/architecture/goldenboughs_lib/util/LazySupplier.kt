@@ -7,6 +7,7 @@ class LazySupplier<T>(private val factory: () -> T?) : Supplier<T?> {
 	private var cached: T? = null
 
 	override fun get(): T? {
+		if (!init) init()
 		return cached
 	}
 
