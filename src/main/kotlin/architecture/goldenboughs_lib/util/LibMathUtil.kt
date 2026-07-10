@@ -1,9 +1,14 @@
 package architecture.goldenboughs_lib.util
 
+import net.minecraft.core.Position
+import org.joml.Matrix4f
 import org.joml.Matrix4fc
 import org.joml.Quaternionf
 import org.joml.Vector3d
+import org.joml.Vector3dc
 import org.joml.Vector3f
+import org.joml.Vector3fc
+import java.lang.Math
 import kotlin.math.sin
 
 /**
@@ -74,14 +79,6 @@ fun PoseStack.Pose.toRot(): Vector3d {
 	return pose.toRot()
 }
 
-fun com.mojang.blaze3d.vertex.PoseStack.Pose.toPos(): Vector3d {
-	return pose().toPos()
-}
-
-fun com.mojang.blaze3d.vertex.PoseStack.Pose.toRot(): Vector3d {
-	return pose().toRot()
-}
-
 fun PoseStack.toPos(): Vector3d {
 	return last().toPos()
 }
@@ -90,10 +87,39 @@ fun PoseStack.toRot(): Vector3d {
 	return last().toRot()
 }
 
-fun com.mojang.blaze3d.vertex.PoseStack.toPos(): Vector3d {
-	return last().toPos()
+fun PoseStack.translate(vec3: Position) {
+	translate(vec3.x(), vec3.y(), vec3.z())
 }
 
-fun com.mojang.blaze3d.vertex.PoseStack.toRot(): Vector3d {
-	return last().toRot()
+fun PoseStack.translate(vector3fc: Vector3fc) {
+	translate(vector3fc.x(), vector3fc.y(), vector3fc.z())
+}
+
+fun PoseStack.translate(vector3fc: Vector3dc) {
+	translate(vector3fc.x(), vector3fc.y(), vector3fc.z())
+}
+
+fun PoseStack.scale(vector3fc: Vector3fc) {
+	scale(vector3fc.x(), vector3fc.y(), vector3fc.z())
+}
+
+fun PoseStack.scale(vector3fc: Vector3dc) {
+	scale(vector3fc.x().toFloat(), vector3fc.y().toFloat(), vector3fc.z().toFloat())
+}
+
+fun PoseStack.mulPose(matrix4fc: Matrix4fc) {
+	mulPose(Matrix4f(matrix4fc))
+}
+
+/**
+ * 从 4x4 变换矩阵提取三条归一化旋转轴（矩阵列）
+ */
+fun Matrix4fc.getObbAxes(): Array<Vector3f> = arrayOf(
+	Vector3f(m00(), m10(), m20()).normalize(),
+	Vector3f(m01(), m11(), m21()).normalize(),
+	Vector3f(m02(), m12(), m22()).normalize(),
+)
+
+fun Vector3fc.copy(): Vector3f {
+	return Vector3f(this)
 }
