@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.item
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.util.world.item.ItemBuilderUtil.addAttributeModifier
 import net.minecraft.world.entity.EquipmentSlotGroup
 import net.minecraft.world.entity.ai.attributes.AttributeModifier
@@ -11,7 +11,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers
 /**
  * 所有E.G.O近战武器都应该继承这个
  */
-@AllOpe
+@AllOpen
 interface IMeleeEgoWeaponItem : IEgoWeaponItem {
 	// TODO 近战的替换成史诗战斗的实际攻击范围
 	//  ResourceLocation ENTITY_RANGE = GoldenBoughsLib.modRl("weapon_entity_range");

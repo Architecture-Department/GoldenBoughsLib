@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.event
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.client.gui.hudlayers.chop_flavor.ChopFlavorLayer
 import architecture.goldenboughs_lib.util.ConditionalProviderFactory
 import net.minecraft.resources.ResourceLocation
@@ -11,7 +11,7 @@ import org.jetbrains.annotations.ApiStatus
 import java.util.function.Function
 import java.util.function.Predicate
 
-@AllOpe
+@AllOpen
 class ChopFlavorLayerEvent : Event(), IModBusEvent {
 	fun add(id: ResourceLocation, pair: Pair<Predicate<ItemStack>, ChopFlavorLayer.IChopFlavorBar?>) {
 		LIST[id] = pair

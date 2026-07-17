@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.particle.text
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.client.LibParticleRenderTypes
 import architecture.goldenboughs_lib.client.particle.text.TextParticleStrokeType.*
 import com.mojang.blaze3d.systems.RenderSystem
@@ -20,7 +20,7 @@ import net.minecraft.util.Mth
 import org.joml.Matrix4f
 
 // TODO 拆分成伤害，BOSS说话文本，普通文本
-@AllOpe
+@AllOpen
 class TextParticle(
 	level: ClientLevel, x: Double, y: Double, z: Double, options: TextParticleOptions
 ) : Particle(level, x, y, z) {

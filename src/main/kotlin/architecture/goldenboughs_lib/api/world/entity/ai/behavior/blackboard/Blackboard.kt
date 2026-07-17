@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.entity.ai.behavior.blackboard
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.api.world.entity.ai.behavior.BTNode
 import architecture.goldenboughs_lib.api.world.entity.ai.behavior.condition.ConditionBT
 import java.util.function.Predicate
@@ -9,7 +9,7 @@ import java.util.function.Supplier
 /**
  * 黑板变量，共享行为树数据
  */
-@AllOpe
+@AllOpen
 class Blackboard {
 	val data = HashMap<KeyType<*>, Any>()
 

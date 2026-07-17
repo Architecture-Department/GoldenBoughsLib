@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.gui.widget
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.util.client.GuiUtil.blitSprite
 import architecture.goldenboughs_lib.util.client.GuiUtil.fill
 import net.minecraft.client.gui.GuiGraphics
@@ -10,7 +10,7 @@ import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.Mth
 
-@AllOpe
+@AllOpen
 class HorizontalStatusBar(
 	width: Int,
 	height: Int,
@@ -116,7 +116,7 @@ class HorizontalStatusBar(
 	override fun updateWidgetNarration(narrationElementOutput: NarrationElementOutput) {
 	}
 
-	@AllOpe
+	@AllOpen
 	class TextureLayer(
 		var xPos: Float,
 		var yPos: Float,

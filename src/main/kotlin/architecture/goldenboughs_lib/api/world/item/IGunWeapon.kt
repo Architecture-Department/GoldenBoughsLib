@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.item
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack
  * 定义了枪械的基本行为和功能，包括普通射击、瞄准射击等操作
  * 该接口允许实现类自定义枪械的射击逻辑、瞄准行为和相关条件判断
  */
-@AllOpe
+@AllOpen
 interface IGunWeapon {
 	/**
 	 * 判断副手是否可以使用该枪械攻击

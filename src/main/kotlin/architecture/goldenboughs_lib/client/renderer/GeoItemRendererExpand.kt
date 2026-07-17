@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.renderer
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import com.mojang.blaze3d.vertex.PoseStack
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.world.entity.LivingEntity
@@ -15,7 +15,7 @@ import software.bernie.geckolib.renderer.layer.BlockAndItemGeoLayer
 /**
  * 一个特殊的物品渲染可在GUI和世界中以不同的模型渲染
  */
-@AllOpe
+@AllOpen
 class GeoItemRendererExpand<T>(
 	model: GeoModel<T>,
 ) : GeoItemRenderer<T>(model) where T : Item, T : GeoAnimatable {

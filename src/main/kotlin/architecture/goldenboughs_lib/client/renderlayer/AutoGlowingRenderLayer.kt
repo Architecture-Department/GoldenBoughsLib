@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.renderlayer
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.client.LibRenderTypes
 import architecture.goldenboughs_lib.util.LibUtil.getTextureLight
 import com.mojang.blaze3d.vertex.PoseStack
@@ -14,7 +14,7 @@ import software.bernie.geckolib.cache.`object`.BakedGeoModel
 import software.bernie.geckolib.renderer.GeoRenderer
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer
 
-@AllOpe
+@AllOpen
 class AutoGlowingRenderLayer<T : GeoAnimatable>(
 	renderer: GeoRenderer<T>,
 	@JvmField protected final val glowmaskValue: Array<Float>

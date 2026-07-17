@@ -1,13 +1,13 @@
 package architecture.goldenboughs_lib.api.world.entity
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.network.syncher.SynchedEntityData
 
 /**
  * 实体共享状态
  */
-@AllOpe
+@AllOpen
 class SharedFlagController(
 	val entityData: SynchedEntityData,
 	val dataStatusStatus: EntityDataAccessor<Int>

@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.module.virtue.api
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.ai.attributes.AttributeInstance
 import net.minecraft.world.entity.ai.attributes.AttributeModifier
@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Player
 /**
  * 心核四德接口
  */
-@AllOpe
+@AllOpen
 interface IVirtue {
 	/**
 	 * 对应的心核四德类型

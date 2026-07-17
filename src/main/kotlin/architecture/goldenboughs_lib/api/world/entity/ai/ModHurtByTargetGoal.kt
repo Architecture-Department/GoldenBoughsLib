@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.entity.ai
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.world.entity.*
 import net.minecraft.world.entity.ai.goal.target.TargetGoal
 import net.minecraft.world.entity.ai.targeting.TargetingConditions
@@ -17,7 +17,7 @@ import java.util.function.Predicate
  * 支持配置忽略特定类型的伤害来源，以及通知周围同类参与战斗。
  * 
  */
-@AllOpe
+@AllOpen
 class ModHurtByTargetGoal(
 	mob: Mob,
 	/**

@@ -1,3 +1,3 @@
 package architecture.goldenboughs_lib.api
 
-annotation class AllOpe
+annotation class AllOpen

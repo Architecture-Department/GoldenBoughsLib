@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.api.capability.item
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level
  * 一般捆绑[architecture.goldenboughs_lib.module.virtue.data_component.ItemVirtueUsageReq]或
  * [architecture.goldenboughs_lib.init.LibDataComponentTypes.ITEM_VIRTUE_USAGE_REQ]
  */
-@AllOpe
+@AllOpen
 interface IItemUsageReq {
 	/**
 	 * 使用物品时触发

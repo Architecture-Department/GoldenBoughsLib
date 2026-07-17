@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.entity.ai
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.EntitySelector
 import net.minecraft.world.entity.LivingEntity
@@ -11,7 +11,7 @@ import net.minecraft.world.level.pathfinder.Path
 import java.util.*
 import kotlin.math.max
 
-@AllOpe
+@AllOpen
 class ModMeleeAttackGoal(
 	protected val mob: Mob,
 	private val speedModifier: Double,

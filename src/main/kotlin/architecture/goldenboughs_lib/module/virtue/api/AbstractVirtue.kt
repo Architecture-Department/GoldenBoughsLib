@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.module.virtue.api
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import it.unimi.dsi.fastutil.objects.ObjectArraySet
 import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
@@ -195,7 +195,7 @@ abstract class AbstractVirtue protected constructor(
 		setAttributeModifier(amplitudeId, attribute, value, operation)
 	}
 
-	@AllOpe
+	@AllOpen
 	abstract class AbstractSerialize<T : AbstractVirtue> : IAttachmentSerializer<CompoundTag, T> {
 		override fun read(holder: IAttachmentHolder, nbt: CompoundTag, provider: HolderLookup.Provider): T {
 			return createAttachment(holder, nbt, provider)
@@ -212,7 +212,7 @@ abstract class AbstractVirtue protected constructor(
 		}
 	}
 
-	@AllOpe
+	@AllOpen
 	abstract class AbstractSync<T : AbstractVirtue> : AttachmentSyncHandler<T> {
 		override fun write(buf: RegistryFriendlyByteBuf, attachment: T, initialSync: Boolean) {
 		}

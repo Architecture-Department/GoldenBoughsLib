@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.gui.hudlayers.chop_flavor
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.client.gui.hudlayers.BasicHudLayer
 import architecture.goldenboughs_lib.event.ChopFlavorLayerEvent
 import net.minecraft.client.DeltaTracker
@@ -11,7 +11,7 @@ import java.util.function.Function
 
 
 // TODO 等新系统
-@AllOpe
+@AllOpen
 class ChopFlavorLayer : BasicHudLayer() {
 	private var chopFlavorBarProvider: Function<ItemStack, IChopFlavorBar?>? = null
 	private var activateBar: IChopFlavorBar? = null
@@ -50,14 +50,14 @@ class ChopFlavorLayer : BasicHudLayer() {
 		}
 	}
 
-	@AllOpe
+	@AllOpen
 	interface IChopFlavorBar {
 		fun render(guiGraphics: GuiGraphics, deltaTracker: DeltaTracker, x: Int, y: Int)
 
 		fun castSkill()
 	}
 
-	@AllOpe
+	@AllOpen
 	abstract class ChopFlavorBar : IChopFlavorBar {
 		abstract override fun render(guiGraphics: GuiGraphics, deltaTracker: DeltaTracker, x: Int, y: Int)
 	}

@@ -1,12 +1,12 @@
 package architecture.goldenboughs_lib.api.world.entity.ai.behavior
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.world.entity.Mob
 
 /**
  * 行为树根节点
  */
-@AllOpe
+@AllOpen
 abstract class BTRoot<T : Mob>(protected var mob: T) : BTNode() {
 	var child: BTNode? = null
 		protected set

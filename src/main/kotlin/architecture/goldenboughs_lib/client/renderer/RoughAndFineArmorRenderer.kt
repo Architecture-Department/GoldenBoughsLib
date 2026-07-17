@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.renderer
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.client.model.HumanoidModel
 import net.minecraft.client.model.geom.ModelPart
 import net.minecraft.client.player.AbstractClientPlayer
@@ -20,7 +20,7 @@ import software.bernie.geckolib.util.RenderUtil
 /**
  * 盔甲渲染
  */
-@AllOpe
+@AllOpen
 class RoughAndFineArmorRenderer<T>(model: GeoModel<T>) : GeoArmorRenderer<T>(model) where T : Item, T : GeoItem {
 	/**
 	 * 是否是细手臂渲染

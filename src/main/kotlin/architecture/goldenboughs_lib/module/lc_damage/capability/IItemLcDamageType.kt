@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.module.lc_damage.capability
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
 import net.minecraft.world.item.ItemStack
 
@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack
  *
  * 如果你可以直接返回[net.minecraft.world.damagesource.DamageSource]请使用[architecture.goldenboughs_lib.mixed.IDamageSourceLib.`goldenboughs_lib$setLcDamageType`]
  */
-@AllOpe
+@AllOpen
 interface IItemLcDamageType {
 	/**
 	 * 获取物品当前的伤害类型

@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.module.lc_damage.particle
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.client.LibParticleRenderTypes
 import architecture.goldenboughs_lib.init.LibParticleTypes
 import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
@@ -21,7 +21,7 @@ import net.minecraft.world.damagesource.DamageType
 import net.neoforged.neoforge.common.Tags
 import java.util.*
 
-@AllOpe
+@AllOpen
 class LcDamageIconParticle(
 	level: ClientLevel,
 	sprite: TextureAtlasSprite,

@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.gui.widget
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.ImageWidget
@@ -16,7 +16,7 @@ import kotlin.math.min
  * 该类继承自 [Sprite]，用于在 GUI 中显示一个可变长度的进度条，
  * 并提供工具提示功能。子类可以实现不同的方向（水平或垂直）。
  */
-@AllOpe
+@AllOpen
 abstract class ImageProgressBar private
 /**
  * 构造一个新的 ImageProgressBar 实例。

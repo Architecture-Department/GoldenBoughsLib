@@ -1,13 +1,13 @@
 package architecture.goldenboughs_lib.common.entiy.projectile
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.network.syncher.SynchedEntityData
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.projectile.ThrowableProjectile
 import net.minecraft.world.level.Level
 
-@AllOpe
+@AllOpen
 abstract class BulletEntity : ThrowableProjectile {
 	protected constructor(
 		entityType: EntityType<out BulletEntity>,

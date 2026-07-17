@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.api.world.item
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.init.LibAttributes
 import architecture.goldenboughs_lib.util.world.item.ItemBuilderUtil.addAttributeModifier
 import net.minecraft.world.entity.EquipmentSlotGroup
@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level
 /**
  * 所有E.G.O远程武器都应该继承这个
  */
-@AllOpe
+@AllOpen
 interface IRemoteEgoWeaponItem : IEgoWeaponItem {
 	@FunctionalInterface
 	fun interface CreateProjectile<T : Projectile> {

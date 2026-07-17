@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.event.client
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.Item
@@ -16,7 +16,7 @@ import java.util.function.Consumer
  * 
  * @param <T> TooltipProvider
 </T> */
-@AllOpe
+@AllOpen
 abstract class AddItemDataComponentTooltipEvent<T : TooltipProvider>(
 	val itemStack: ItemStack,
 	val component: DataComponentType<T>,

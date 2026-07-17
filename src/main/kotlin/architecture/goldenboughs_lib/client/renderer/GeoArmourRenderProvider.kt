@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.renderer
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.client.model.HumanoidModel
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.entity.LivingEntity
@@ -15,7 +15,7 @@ import java.util.function.Function
 /**
  * 盔甲渲染提供程序
  */
-@AllOpe
+@AllOpen
 class GeoArmourRenderProvider<T> : GeoRenderProvider where T : Item, T : GeoItem {
 	@JvmField
 	protected final val model: GeoModel<T>

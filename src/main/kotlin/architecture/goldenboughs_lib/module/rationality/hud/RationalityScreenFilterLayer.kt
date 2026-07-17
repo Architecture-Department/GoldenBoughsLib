@@ -2,7 +2,7 @@
 
 package architecture.goldenboughs_lib.module.rationality.hud
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.client.gui.hudlayers.BasicHudLayer
 import architecture.goldenboughs_lib.module.rationality.util.RationalityUtil.getMaxRationalityValue
 import architecture.goldenboughs_lib.module.rationality.util.RationalityUtil.getRationalityValue
@@ -102,7 +102,7 @@ class RationalityScreenFilterLayer : BasicHudLayer() {
 		this.rationalityFilters[2].setAlpha(max(0f, min(1f, (v - 0.666f) * 3)))
 	}
 
-	@AllOpe
+	@AllOpen
 	class Filter(private val texture: ResourceLocation) : AbstractWidget(0, 0, 0, 0, Component.empty()) {
 		override fun renderWidget(guiGraphics: GuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float) {
 			val pose = guiGraphics.pose()

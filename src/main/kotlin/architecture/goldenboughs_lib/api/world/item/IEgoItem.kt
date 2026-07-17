@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.api.world.item
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.init.LibDataComponentTypes
 import architecture.goldenboughs_lib.module.virtue.api.VirtueRating
 import architecture.goldenboughs_lib.module.virtue.data_component.ItemVirtueUsageReq
@@ -9,12 +9,12 @@ import net.minecraft.world.item.Item
 /**
  * 所有E.G.O类的物品都应该继承这个
  */
-@AllOpe
+@AllOpen
 interface IEgoItem {
 	/**
 	 * 武器属性构造器
 	 */
-	@AllOpe
+	@AllOpen
 	class Builder<T : Builder<T>> {
 		var virtueUsageReqBuilder: ItemVirtueUsageReq.Builder = ItemVirtueUsageReq.Builder()
 

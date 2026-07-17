@@ -1,11 +1,11 @@
 package architecture.goldenboughs_lib.api.world.item
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.player.Player
 
 // TODO 待完成
-@AllOpe
+@AllOpen
 interface IPayerItemWhellScroll {
 	/**
 	 * 滚轮

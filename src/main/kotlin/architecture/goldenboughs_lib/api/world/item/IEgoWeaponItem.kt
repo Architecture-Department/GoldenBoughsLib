@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.api.world.item
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.api.capability.item.IItemUsageReq
 import architecture.goldenboughs_lib.module.lc_damage.api.LcDamageType
 import architecture.goldenboughs_lib.module.lc_damage.capability.IItemLcDamageType
@@ -10,7 +10,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers
 /**
  * 所有E.G.O武器都应该继承这个
  */
-@AllOpe
+@AllOpen
 interface IEgoWeaponItem : IEgoItem, IItemUsageReq, IItemLcDamageType {
 	/**
 	 * 武器属性构造器

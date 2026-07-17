@@ -1,12 +1,12 @@
 package architecture.goldenboughs_lib.common.item
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.UseAnim
 
-@AllOpe
+@AllOpen
 class FoodItem
 @JvmOverloads
 constructor(

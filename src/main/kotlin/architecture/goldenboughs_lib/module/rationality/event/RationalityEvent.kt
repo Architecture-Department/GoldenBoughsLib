@@ -1,6 +1,6 @@
 ﻿package architecture.goldenboughs_lib.module.rationality.event
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import architecture.goldenboughs_lib.init.LibAttributes
 import net.minecraft.world.entity.ai.attributes.AttributeInstance
 import net.minecraft.world.entity.player.Player
@@ -8,7 +8,7 @@ import net.neoforged.bus.api.ICancellableEvent
 import net.neoforged.fml.event.IModBusEvent
 import net.neoforged.neoforge.event.entity.player.PlayerEvent
 
-@AllOpe
+@AllOpen
 abstract class RationalityEvent(player: Player) : PlayerEvent(player), IModBusEvent {
 	val max: AttributeInstance?
 		get() = entity.getAttribute(LibAttributes.MAX_RATIONALITY)

@@ -1,12 +1,12 @@
 package architecture.goldenboughs_lib.api.world.entity.ai.behavior
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.world.entity.ai.goal.Goal
 
 /**
  * 行为树节点基类
  */
-@AllOpe
+@AllOpen
 abstract class BTNode : Goal() {
 	var status: BTStatus = BTStatus.READY
 	protected var context: BehaviorTreeContext? = null

@@ -1,6 +1,6 @@
 package architecture.goldenboughs_lib.client.renderer
 
-import architecture.goldenboughs_lib.api.AllOpe
+import architecture.goldenboughs_lib.api.AllOpen
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer
 import net.minecraft.world.item.Item
 import software.bernie.geckolib.animatable.GeoItem
@@ -12,7 +12,7 @@ import java.util.function.Function
 /**
  * 物品渲染提供程序
  */
-@AllOpe
+@AllOpen
 class GeoItemRenderProvider<T> @JvmOverloads constructor(
 	@JvmField protected final val defaultModel: GeoModel<T>,
 	private val rendererFunction: Function<GeoModel<T>, GeoItemRenderer<T>> = { GeoItemRendererExpand(it) }
